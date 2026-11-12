@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life & Ministry of the Apostle Paul: Trivia Challenge</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Lora', 'serif'],
+          },
+          colors: {
+            notion: {
+              bg: '#FBFBFA',
+              card: '#FFFFFF',
+              sidebar: '#F7F6F3',
+              border: '#E6E6E4',
+              text: '#2F3437',
+              muted: '#787774',
+              accent: '#4F46E5',
+              gold: '#D97706',
+              goldLight: '#FEF3C7',
+              indigoLight: '#EEF2FF',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FBFBFA;
+      color: #2F3437;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .notion-shadow {
+      box-shadow: 0 1px 3px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+    }
+    .option-btn {
+      transition: all 0.18s ease;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Top Notion-Style Navigation Bar -->
+  <header class="sticky top-0 z-30 bg-[#FBFBFA]/90 backdrop-blur-md border-b border-notion-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5 cursor-pointer" onclick="resetToHome()">
+        <span class="text-xl" role="img" aria-label="Scroll">📜</span>
+        <div class="flex items-center space-x-1.5 text-sm font-medium">
+          <span class="text-notion-muted hidden sm:inline">Bible Curriculum</span>
+          <span class="text-notion-muted hidden sm:inline">/</span>
+          <span class="font-semibold text-notion-text">Life &amp; Ministry of Paul</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <button onclick="openStudyGuide()" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs sm:text-sm font-medium text-notion-text bg-white hover:bg-gray-50 border border-notion-border rounded-lg transition shadow-sm">
+          <svg class="w-4 h-4 text-notion-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>Study Guide (20)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
+    <div class="w-full max-w-2xl">
+
+      <!-- 1. WELCOME SCREEN -->
+      <section id="welcome-screen" class="fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-notion-indigoLight border border-indigo-100 flex items-center justify-center text-3xl shadow-sm">
+            ⛵
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200/70 rounded-md">Damascus • Journeys • Epistles • Rome</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200/70 rounded-md">20 Questions</span>
+          </div>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-notion-text mb-2">
+          Life &amp; Ministry of the Apostle Paul: Trivia Challenge
+        </h1>
+        <p class="text-notion-muted text-sm sm:text-base mb-8">
+          20 Questions on Saul's Conversion, Missionary Journeys, Shipwreck &amp; Letters • With Scripture References
+        </p>
+
+        <!-- Game Quick Overview -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">🎯</span>
+            <span class="text-notion-text font-medium">20 Apostle Paul Questions</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">📖</span>
+            <span class="text-notion-text font-medium">Scripture References</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">📋</span>
+            <span class="text-notion-text font-medium">Notion Markdown Ready</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="startGame()" class="w-full sm:flex-1 py-3.5 px-6 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2 text-base">
+            <span>Start Trivia</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+          <button onclick="openStudyGuide()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm">
+            Study Guide (20)
+          </button>
+          <button onclick="copyForNotion()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm flex items-center justify-center space-x-1.5">
+            <svg class="w-4 h-4 text-notion-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Copy for Notion</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 2. ACTIVE QUIZ SCREEN -->
+      <section id="quiz-screen" class="hidden fade-in">
+        <!-- Top Status Bar -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-4 mb-4 notion-shadow">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-medium mb-2.5">
+            <span class="text-notion-muted">
+              Question <strong id="q-current" class="text-notion-text">1</strong> of <span id="q-total">20</span>
+            </span>
+            <div class="flex items-center space-x-3">
+              <span id="streak-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                🔥 Streak: <span id="streak-count" class="ml-1">0</span>
+              </span>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                Score: <span id="score-count" class="ml-1">0</span>
+              </span>
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+            <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" style="width: 5%;"></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-8 notion-shadow">
+          <div class="flex items-center justify-between mb-4">
+            <span id="category-badge" class="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+              <span>Background &amp; Conversion</span>
+            </span>
+            <span id="reference-badge" class="hidden text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+              📖 Acts 21:39
+            </span>
+          </div>
+
+          <!-- Trivia Question Prompt -->
+          <div class="relative bg-[#F7F6F3] border-l-4 border-amber-500 rounded-r-xl p-5 sm:p-6 mb-6">
+            <p id="question-text" class="font-serif text-lg sm:text-2xl text-notion-text leading-relaxed font-medium">
+              In which Cilician city was Saul (Paul) born, and from which tribe of Israel was he descended?
+            </p>
+            <div id="revealed-reference" class="hidden mt-3 text-sm font-semibold text-amber-800 flex items-center space-x-1.5">
+              <span>📖 Scripture Reference:</span>
+              <span id="reference-label">Acts 21:39 / Philippians 3:5</span>
+            </div>
+          </div>
+
+          <!-- 4 Multiple Choice Options -->
+          <div id="options-grid" class="grid grid-cols-1 gap-3 mb-2">
+            <!-- Buttons injected dynamically -->
+          </div>
+
+          <!-- Instant Feedback & Context Note -->
+          <div id="feedback-panel" class="hidden mt-6 pt-6 border-t border-notion-border fade-in">
+            <div id="feedback-banner" class="flex items-center space-x-2.5 mb-3">
+              <!-- Status icon & message injected dynamically -->
+            </div>
+
+            <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4 sm:p-5 mb-5">
+              <div class="flex items-center justify-between mb-1.5">
+                <div class="flex items-center space-x-2">
+                  <span class="text-sm">💡</span>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-notion-muted">Scripture Context</h4>
+                </div>
+                <span id="feedback-ref-pill" class="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">
+                  Acts 21:39 / Philippians 3:5
+                </span>
+              </div>
+              <p id="commentary-text" class="text-sm text-notion-text leading-relaxed">
+                Commentary goes here...
+              </p>
+            </div>
+
+            <button id="next-btn" onclick="nextQuestion()" class="w-full py-3.5 px-6 bg-notion-text hover:bg-black text-white font-semibold rounded-xl transition flex items-center justify-center space-x-2 shadow-sm">
+              <span id="next-btn-text">Next Question</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RESULTS SCREEN -->
+      <section id="results-screen" class="hidden fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow text-center">
+        <div id="rank-emoji" class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-4xl shadow-sm">
+          🏆
+        </div>
+
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-700 rounded-full mb-2">
+          Challenge Complete
+        </span>
+        <h2 id="rank-title" class="text-2xl sm:text-3xl font-bold text-notion-text mb-2">
+          Pauline Scholar
+        </h2>
+        <p id="rank-description" class="text-sm sm:text-base text-notion-muted max-w-lg mx-auto mb-8">
+          Outstanding work! You know Paul's conversion, missionary journeys, trials, and epistles inside and out.
+        </p>
+
+        <!-- Stats Breakdown -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Final Score</p>
+            <p class="text-xl sm:text-2xl font-bold text-indigo-600"><span id="final-score">0</span>/20</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Accuracy</p>
+            <p class="text-xl sm:text-2xl font-bold text-notion-text"><span id="final-accuracy">0</span>%</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Best Streak</p>
+            <p class="text-xl sm:text-2xl font-bold text-amber-600">🔥 <span id="final-streak">0</span></p>
+          </div>
+        </div>
+
+        <!-- Stage Breakdown Pills -->
+        <div class="bg-white border border-notion-border rounded-xl p-4 mb-8 text-left">
+          <p class="text-xs font-semibold uppercase tracking-wider text-notion-muted mb-3">Performance by Stage</p>
+          <div id="section-breakdown" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="copyForNotion()" id="copy-notion-btn" class="flex-1 py-3.5 px-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span id="copy-btn-label">Copy for Notion</span>
+          </button>
+
+          <button onclick="startGame()" class="py-3.5 px-5 bg-white hover:bg-gray-50 text-notion-text font-semibold border border-notion-border rounded-xl transition flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            <span>Play Again</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-notion-text text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-2.5 text-sm font-medium">
+      <span class="text-emerald-400">✓</span>
+      <span id="toast-message">Copied Markdown for Notion!</span>
+    </div>
+  </div>
+
+  <!-- Study Guide Modal -->
+  <div id="study-modal" class="fixed inset-0 z-40 hidden bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-notion-card border border-notion-border rounded-2xl w-full max-w-3xl max-h-[88vh] flex flex-col shadow-2xl fade-in">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-notion-border flex items-center justify-between bg-[#F7F6F3] rounded-t-2xl">
+        <div class="flex items-center space-x-2.5">
+          <span class="text-xl">📚</span>
+          <div>
+            <h3 class="font-bold text-notion-text text-base sm:text-lg">Study Guide: Life &amp; Ministry of Paul (20)</h3>
+            <p class="text-xs text-notion-muted">Complete answer key, Scripture references &amp; notes</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="copyForNotion()" class="px-3 py-1.5 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition flex items-center space-x-1">
+            <span>Copy Markdown</span>
+          </button>
+          <button onclick="closeStudyGuide()" class="p-1.5 text-notion-muted hover:text-notion-text hover:bg-gray-200/60 rounded-lg transition" aria-label="Close modal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="px-6 py-2.5 border-b border-notion-border bg-white flex items-center space-x-2 overflow-x-auto text-xs font-medium">
+        <button onclick="filterStudyGuide('All')" class="study-filter-btn px-3 py-1 rounded-md bg-indigo-50 text-indigo-700 font-semibold" data-section="All">All (20)</button>
+        <button onclick="filterStudyGuide('Background & Conversion')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Background & Conversion">Conversion (5)</button>
+        <button onclick="filterStudyGuide('Missionary Journeys')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Missionary Journeys">Journeys (5)</button>
+        <button onclick="filterStudyGuide('Arrest, Trials & Rome')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Arrest, Trials & Rome">Trials &amp; Rome (5)</button>
+        <button onclick="filterStudyGuide('Paul\'s Epistles & Theology')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Paul's Epistles & Theology">Epistles (5)</button>
+      </div>
+
+      <!-- Modal Scrollable List -->
+      <div id="study-guide-list" class="p-6 overflow-y-auto space-y-4">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 text-center text-xs text-notion-muted border-t border-notion-border/60">
+    <p>Life &amp; Ministry of the Apostle Paul Trivia • Complete with Scripture References</p>
+  </footer>
+
+  <!-- Game Data & Application Logic -->
+  <script>
+    const PAUL_QUESTIONS = [
+      {
+        id: 1,
+        question: "In which Cilician city was Saul (Paul) born, and from which tribe of Israel was he descended?",
+        answer: "Tarsus, from the tribe of Benjamin",
+        reference: "Acts 21:39 / Philippians 3:5",
+        section: "Background & Conversion",
+        options: [
+          "Tarsus, from the tribe of Benjamin",
+          "Antioch, from the tribe of Judah",
+          "Damascus, from the tribe of Levi",
+          "Caesarea, from the tribe of Ephraim"
+        ],
+        commentary: "Born a Roman citizen by birth in Tarsus (a major university city), Paul was named after Israel's first king—Saul of Benjamin—and educated in Jerusalem under the famed rabbi Gamaliel (Acts 22:3)."
+      },
+      {
+        id: 2,
+        question: "How many days did Saul remain blind and without food or water in Damascus after encountering the risen Jesus on the road?",
+        answer: "Three days",
+        reference: "Acts 9:8–9",
+        section: "Background & Conversion",
+        options: ["Three days", "Seven days", "Forty days", "Twelve days"],
+        commentary: "Guided by the hand into Damascus, Saul spent three days praying in darkness until the Lord sent Ananias to lay hands on him so scales fell from his eyes and he was baptized."
+      },
+      {
+        id: 3,
+        question: "How did Saul escape Damascus when plots were made to kill him shortly after he began preaching Jesus in the synagogues?",
+        answer: "His followers lowered him in a basket through an opening in the city wall at night",
+        reference: "Acts 9:23–25 / 2 Corinthians 11:32–33",
+        section: "Background & Conversion",
+        options: [
+          "His followers lowered him in a basket through an opening in the city wall at night",
+          "He disguised himself as a Roman centurion and marched out the main gate",
+          "An angel opened the prison doors during an earthquake",
+          "He escaped aboard a merchant ship sailing down the river"
+        ],
+        commentary: "Because guards watched the city gates day and night to kill him, believers lowered Saul down the outer wall in a large woven basket under cover of darkness."
+      },
+      {
+        id: 4,
+        question: "Which early church leader—whose name means 'Son of Encouragement'—vouched for Saul before the skeptical apostles in Jerusalem?",
+        answer: "Barnabas",
+        reference: "Acts 9:26–27 / Acts 4:36",
+        section: "Background & Conversion",
+        options: ["Barnabas", "Silas", "Apollos", "Titus"],
+        commentary: "When the Jerusalem disciples were afraid of Saul, Barnabas took him to the apostles and testified how Saul had seen the Lord and preached fearlessly in Damascus."
+      },
+      {
+        id: 5,
+        question: "In which major Syrian city were believers first called 'Christians' after Barnabas brought Saul there to teach for a whole year?",
+        answer: "Antioch",
+        reference: "Acts 11:25–26",
+        section: "Background & Conversion",
+        options: ["Antioch", "Corinth", "Ephesus", "Thessalonica"],
+        commentary: "Antioch on the Orontes became the launchpad for Gentile missions, where the Holy Spirit later set apart Barnabas and Saul for their first missionary journey (Acts 13:2)."
+      },
+      {
+        id: 6,
+        question: "During Paul's first missionary journey in Lystra, which Greek gods did the crowd mistake Barnabas and Paul for after Paul healed a man lame from birth?",
+        answer: "Zeus (Barnabas) and Hermes (Paul)",
+        reference: "Acts 14:8–12",
+        section: "Missionary Journeys",
+        options: [
+          "Zeus (Barnabas) and Hermes (Paul)",
+          "Apollo (Barnabas) and Poseidon (Paul)",
+          "Ares (Barnabas) and Dionysus (Paul)",
+          "Hephaestus (Barnabas) and Helios (Paul)"
+        ],
+        commentary: "They called Paul 'Hermes' because he was the chief speaker; moments later, hostile agitators arrived and persuaded the same fickle crowd to stone Paul and drag him outside the city."
+      },
+      {
+        id: 7,
+        question: "What vision in Troas prompted Paul and his companions to cross into Europe (Macedonia) for the first time on his second missionary journey?",
+        answer: "A man of Macedonia standing and begging, 'Come over to Macedonia and help us'",
+        reference: "Acts 16:9–10",
+        section: "Missionary Journeys",
+        options: [
+          "A man of Macedonia standing and begging, 'Come over to Macedonia and help us'",
+          "A burning scroll descending from heaven toward Athens",
+          "An angel pointing a golden staff across the Aegean Sea",
+          "A white horse standing at the harbor of Neapolis"
+        ],
+        commentary: "Immediately concluding that God had called them to preach the gospel in Europe, Paul sailed to Macedonia, where Lydia—a seller of purple cloth in Philippi—became Europe's first recorded convert."
+      },
+      {
+        id: 8,
+        question: "In which city did the Jewish listeners receive Paul's message with great eagerness and examine the Scriptures every day to verify what he taught?",
+        answer: "Berea",
+        reference: "Acts 17:10–11",
+        section: "Missionary Journeys",
+        options: ["Berea", "Thessalonica", "Iconium", "Sardis"],
+        commentary: "Luke commends the Bereans as being of 'more noble character' than those in Thessalonica because they tested even an apostle's preaching daily against the Old Testament Scriptures."
+      },
+      {
+        id: 9,
+        question: "At the Areopagus (Mars Hill) in Athens, which altar inscription did Paul use as his starting point to proclaim the one true Creator God?",
+        answer: "\"TO AN UNKNOWN GOD\"",
+        reference: "Acts 17:22–23",
+        section: "Missionary Journeys",
+        options: [
+          "\"TO AN UNKNOWN GOD\"",
+          "\"TO THE LORD OF HOSTS\"",
+          "\"TO THE GOD OF ABRAHAM\"",
+          "\"TO THE CREATOR OF HEAVEN\""
+        ],
+        commentary: "Even quoting Greek poets ('In him we live and move and have our being'), Paul bridged Athenian philosophy to the resurrection of Jesus."
+      },
+      {
+        id: 10,
+        question: "Which silversmith in Ephesus sparked a massive two-hour theater riot because Paul's preaching threatened the sale of silver shrines of Artemis?",
+        answer: "Demetrius",
+        reference: "Acts 19:23–29",
+        section: "Missionary Journeys",
+        options: ["Demetrius", "Alexander", "Hymenaus", "Diotrephes"],
+        commentary: "Paul spent nearly three years in Ephesus—his longest stay in any city—where the gospel spread so powerfully across Asia that idol makers feared losing their livelihood."
+      },
+      {
+        id: 11,
+        question: "Which prophet from Judea tied his own hands and feet with Paul's belt at Caesarea to warn that the owner of the belt would be bound in Jerusalem?",
+        answer: "Agabus",
+        reference: "Acts 21:10–11",
+        section: "Arrest, Trials & Rome",
+        options: ["Agabus", "Silas", "Trophimus", "Ananias"],
+        commentary: "Though believers wept and pleaded with him not to go up to Jerusalem, Paul replied, 'I am ready not only to be bound, but also to die in Jerusalem for the name of the Lord Jesus.'"
+      },
+      {
+        id: 12,
+        question: "How did Paul avoid being flogged by a Roman centurion in Jerusalem after he was arrested at the temple?",
+        answer: "He revealed that he was a Roman citizen by birth",
+        reference: "Acts 22:25–29",
+        section: "Arrest, Trials & Rome",
+        options: [
+          "He revealed that he was a Roman citizen by birth",
+          "He showed a signed letter from the High Priest",
+          "He appealed directly to King Herod Agrippa",
+          "He paid a ransom of fifty silver denarii"
+        ],
+        commentary: "Under Roman law, scourging an uncondemned Roman citizen was a serious crime; the commander himself was alarmed when he realized he had put a Roman citizen in chains."
+      },
+      {
+        id: 13,
+        question: "Which Roman governor kept Paul imprisoned in Caesarea for two years hoping Paul would offer him a bribe?",
+        answer: "Felix",
+        reference: "Acts 24:24–27",
+        section: "Arrest, Trials & Rome",
+        options: ["Felix", "Festus", "Gallio", "Pilate"],
+        commentary: "When Felix's successor Porcius Festus later proposed sending Paul back to Jerusalem for trial, Paul exercised his legal right as a citizen and declared, 'I appeal to Caesar!'"
+      },
+      {
+        id: 14,
+        question: "On which Mediterranean island was Paul shipwrecked during a violent northeaster storm while sailing as a prisoner to Rome?",
+        answer: "Malta",
+        reference: "Acts 27:39–44 / Acts 28:1",
+        section: "Arrest, Trials & Rome",
+        options: ["Malta", "Crete", "Cyprus", "Sicily"],
+        commentary: "All 276 people aboard survived the shipwreck safely onto Malta, where Paul shook off a venomous viper into a campfire without harm and healed the father of Publius, the chief official."
+      },
+      {
+        id: 15,
+        question: "How long did Paul live under house arrest in his own rented dwelling in Rome, welcoming all visitors and preaching the Kingdom of God?",
+        answer: "Two whole years",
+        reference: "Acts 28:30–31",
+        section: "Arrest, Trials & Rome",
+        options: [
+          "Two whole years",
+          "Six months",
+          "Five years",
+          "Forty days"
+        ],
+        commentary: "The Book of Acts concludes on a triumphant note: even while chained to a Roman guard, Paul proclaimed the Lord Jesus Christ 'with all boldness and without hindrance.'"
+      },
+      {
+        id: 16,
+        question: "Which four New Testament letters are traditionally known as Paul's 'Prison Epistles,' written during his Roman imprisonment?",
+        answer: "Ephesians, Philippians, Colossians, and Philemon",
+        reference: "Ephesians 3:1 / Philippians 1:13 / Colossians 4:18 / Philemon 1:9",
+        section: "Paul's Epistles & Theology",
+        options: [
+          "Ephesians, Philippians, Colossians, and Philemon",
+          "Romans, 1 Corinthians, 2 Corinthians, and Galatians",
+          "1 Thessalonians, 2 Thessalonians, 1 Timothy, and Titus",
+          "Hebrews, James, 1 Peter, and Jude"
+        ],
+        commentary: "Despite being in chains, Paul wrote some of his most joyful and Christ-exalting letters from prison—including Philippians, where he repeats 'rejoice' over a dozen times."
+      },
+      {
+        id: 17,
+        question: "In 2 Corinthians 12, what did Paul say the Lord told him when he pleaded three times for his 'thorn in the flesh' to be removed?",
+        answer: "\"My grace is sufficient for you, for my power is made perfect in weakness\"",
+        reference: "2 Corinthians 12:7–9",
+        section: "Paul's Epistles & Theology",
+        options: [
+          "\"My grace is sufficient for you, for my power is made perfect in weakness\"",
+          "\"Fast for seven days and your strength will be renewed\"",
+          "\"Go wash in the Pool of Siloam and you will be healed\"",
+          "\"Wait until you reach Rome and the thorn will depart\""
+        ],
+        commentary: "Paul responded by boasting gladly in his weaknesses so that Christ's power might rest upon him—concluding, 'For when I am weak, then I am strong.'"
+      },
+      {
+        id: 18,
+        question: "Which three New Testament letters are addressed to individual pastors/church leaders and are known as the 'Pastoral Epistles'?",
+        answer: "1 Timothy, 2 Timothy, and Titus",
+        reference: "1 Timothy 1:2 / 2 Timothy 1:2 / Titus 1:4",
+        section: "Paul's Epistles & Theology",
+        options: [
+          "1 Timothy, 2 Timothy, and Titus",
+          "Philemon, Jude, and 3 John",
+          "Galatians, Ephesians, and Colossians",
+          "1 Corinthians, 2 Corinthians, and Romans"
+        ],
+        commentary: "Written to his trusted coworkers Timothy (serving in Ephesus) and Titus (serving on Crete), these letters provide timeless guidance on church leadership, sound doctrine, and godly living."
+      },
+      {
+        id: 19,
+        question: "In Romans 8:38–39, what does Paul declare can separate believers from the love of God that is in Christ Jesus our Lord?",
+        answer: "Nothing in all creation (neither death nor life, angels nor demons, present nor future)",
+        reference: "Romans 8:38–39",
+        section: "Paul's Epistles & Theology",
+        options: [
+          "Nothing in all creation (neither death nor life, angels nor demons, present nor future)",
+          "Only physical persecution by earthly rulers",
+          "Famine and shipwreck during missionary travels",
+          "Distance from the Jerusalem temple"
+        ],
+        commentary: "Capping off Romans 8—often called the mountaintop chapter of the New Testament—Paul celebrates the unbreakable security of God's love in Christ."
+      },
+      {
+        id: 20,
+        question: "In 2 Timothy 4:7—widely regarded as Paul's final surviving letter before his martyrdom in Rome—what three metaphors does he use to summarize his life?",
+        answer: "\"I have fought the good fight, I have finished the race, I have kept the faith\"",
+        reference: "2 Timothy 4:6–8",
+        section: "Paul's Epistles & Theology",
+        options: [
+          "\"I have fought the good fight, I have finished the race, I have kept the faith\"",
+          "\"I have built the temple, I have crossed the sea, I have written the law\"",
+          "\"I have planted the vineyard, I have tended the flock, I have gathered the harvest\"",
+          "\"I have climbed the mountain, I have weathered the storm, I have reached the harbor\""
+        ],
+        commentary: "Facing execution under Emperor Nero, Paul looked ahead with confidence to 'the crown of righteousness' awaiting not only him, but all who have longed for Christ's appearing."
+      }
+    ];
+
+    // State Management
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let streak = 0;
+    let bestStreak = 0;
+    let answered = false;
+    let sectionStats = {
+      "Background & Conversion": { correct: 0, total: 0 },
+      "Missionary Journeys": { correct: 0, total: 0 },
+      "Arrest, Trials & Rome": { correct: 0, total: 0 },
+      "Paul's Epistles & Theology": { correct: 0, total: 0 }
+    };
+
+    // DOM Elements
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultsScreen = document.getElementById('results-screen');
+    const studyModal = document.getElementById('study-modal');
+
+    /**
+     * Utility: Shuffle array cleanly (Fisher-Yates)
+     */
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Start / Reset Game
+     */
+    function startGame() {
+      currentQuestions = PAUL_QUESTIONS.map(q => ({
+        ...q,
+        shuffledOptions: shuffleArray(q.options)
+      }));
+
+      currentIndex = 0;
+      score = 0;
+      streak = 0;
+      bestStreak = 0;
+      answered = false;
+      sectionStats = {
+        "Background & Conversion": { correct: 0, total: 0 },
+        "Missionary Journeys": { correct: 0, total: 0 },
+        "Arrest, Trials & Rome": { correct: 0, total: 0 },
+        "Paul's Epistles & Theology": { correct: 0, total: 0 }
+      };
+
+      welcomeScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      quizScreen.classList.remove('hidden');
+
+      updateScoreHeader();
+      renderQuestion();
+    }
+
+    /**
+     * Return to Home Welcome Screen
+     */
+    function resetToHome() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      welcomeScreen.classList.remove('hidden');
+    }
+
+    /**
+     * Update Top Progress, Score, and Streak Display
+     */
+    function updateScoreHeader() {
+      document.getElementById('q-current').textContent = currentIndex + 1;
+      document.getElementById('q-total').textContent = currentQuestions.length;
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+
+      const progressPct = (currentIndex / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${Math.max(5, progressPct)}%`;
+    }
+
+    /**
+     * Render Current Question Card & Multiple Choice Buttons
+     */
+    function renderQuestion() {
+      answered = false;
+      const q = currentQuestions[currentIndex];
+      updateScoreHeader();
+
+      document.getElementById('category-badge').textContent = q.section;
+      document.getElementById('question-text').textContent = q.question;
+      document.getElementById('revealed-reference').classList.add('hidden');
+      document.getElementById('reference-badge').classList.add('hidden');
+      document.getElementById('feedback-panel').classList.add('hidden');
+
+      const optionsGrid = document.getElementById('options-grid');
+      optionsGrid.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      q.shuffledOptions.forEach((optionText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'option-btn w-full text-left p-4 rounded-xl border border-notion-border bg-white hover:border-indigo-400 hover:bg-indigo-50/30 flex items-center space-x-3 font-medium text-notion-text focus:outline-none focus:ring-2 focus:ring-indigo-500/40';
+        btn.dataset.value = optionText;
+
+        btn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg bg-[#F7F6F3] border border-notion-border text-xs font-bold flex items-center justify-center text-notion-muted flex-shrink-0 option-letter">
+            ${letters[idx]}
+          </span>
+          <span class="text-sm sm:text-base font-semibold">${optionText}</span>
+        `;
+
+        btn.addEventListener('click', () => handleAnswer(optionText));
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    /**
+     * Handle Option Selection & Reveal Answer + Scripture Reference
+     */
+    function handleAnswer(selectedOption) {
+      if (answered) return;
+      answered = true;
+
+      const q = currentQuestions[currentIndex];
+      const isCorrect = selectedOption === q.answer;
+
+      // Track section stats
+      sectionStats[q.section].total += 1;
+      if (isCorrect) {
+        score += 1;
+        streak += 1;
+        if (streak > bestStreak) bestStreak = streak;
+        sectionStats[q.section].correct += 1;
+      } else {
+        streak = 0;
+      }
+
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+      const completedPct = ((currentIndex + 1) / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${completedPct}%`;
+
+      // Highlight correct and incorrect buttons
+      const allButtons = document.querySelectorAll('#options-grid button');
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+        const val = btn.dataset.value;
+        const letterBadge = btn.querySelector('.option-letter');
+
+        if (val === q.answer) {
+          btn.classList.remove('bg-white', 'border-notion-border', 'hover:border-indigo-400');
+          btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-950', 'ring-1', 'ring-emerald-500');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+          letterBadge.textContent = '✓';
+        } else if (val === selectedOption && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-notion-border');
+          btn.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-950');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
+          letterBadge.textContent = '✕';
+        } else {
+          btn.classList.add('opacity-50');
+        }
+      });
+
+      // Reveal Scripture Reference
+      document.getElementById('reference-label').textContent = q.reference;
+      document.getElementById('revealed-reference').classList.remove('hidden');
+
+      const refBadge = document.getElementById('reference-badge');
+      refBadge.textContent = `📖 ${q.reference}`;
+      refBadge.classList.remove('hidden');
+
+      document.getElementById('feedback-ref-pill').textContent = q.reference;
+
+      // Feedback Banner
+      const feedbackBanner = document.getElementById('feedback-banner');
+      if (isCorrect) {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold flex-shrink-0">✓</span>
+          <span class="font-bold text-emerald-800 text-sm sm:text-base">Correct! (${q.reference})</span>
+        `;
+      } else {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-bold flex-shrink-0">!</span>
+          <span class="font-bold text-rose-800 text-sm sm:text-base">Not quite! Correct answer: <span class="underline">${q.answer}</span></span>
+        `;
+      }
+
+      document.getElementById('commentary-text').textContent = q.commentary;
+
+      const nextBtnText = document.getElementById('next-btn-text');
+      nextBtnText.textContent = (currentIndex === currentQuestions.length - 1)
+        ? 'See Final Results'
+        : 'Next Question';
+
+      document.getElementById('feedback-panel').classList.remove('hidden');
+    }
+
+    /**
+     * Advance to Next Question or Final Results
+     */
+    function nextQuestion() {
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    /**
+     * Display Final Score, Rank Title, and Stage Breakdown
+     */
+    function showResults() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.remove('hidden');
+
+      const total = currentQuestions.length;
+      const accuracy = Math.round((score / total) * 100);
+
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('final-accuracy').textContent = accuracy;
+      document.getElementById('final-streak').textContent = bestStreak;
+
+      let rankEmoji = '🌱';
+      let rankTitle = 'Traveler in Training';
+      let rankDesc = "Great start! Keep reading through Acts and Paul's letters—every journey and epistle unpacks the gospel in action.";
+
+      if (score === 20) {
+        rankEmoji = '👑';
+        rankTitle = 'Apostle to the Gentiles Master';
+        rankDesc = "A flawless 20 out of 20! You know Paul's conversion, missionary journeys, shipwreck, and epistles inside and out.";
+      } else if (score >= 16) {
+        rankEmoji = '🏆';
+        rankTitle = 'Pauline Scholar';
+        rankDesc = "Phenomenal work! You have an impressive command of Paul's ministry across the Mediterranean and his New Testament letters.";
+      } else if (score >= 11) {
+        rankEmoji = '📖';
+        rankTitle = 'Faithful Berean';
+        rankDesc = "Solid effort! You clearly know the major milestones of Paul's life and writings well.";
+      }
+
+      document.getElementById('rank-emoji').textContent = rankEmoji;
+      document.getElementById('rank-title').textContent = rankTitle;
+      document.getElementById('rank-description').textContent = rankDesc;
+
+      const breakdownContainer = document.getElementById('section-breakdown');
+      breakdownContainer.innerHTML = '';
+
+      Object.keys(sectionStats).forEach(sec => {
+        const stat = sectionStats[sec];
+        const card = document.createElement('div');
+        card.className = 'p-3 rounded-lg bg-[#F7F6F3] border border-notion-border flex items-center justify-between gap-2';
+        card.innerHTML = `
+          <span class="text-xs font-semibold text-notion-text truncate">${sec}</span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded bg-white border border-notion-border text-indigo-700 flex-shrink-0">
+            ${stat.correct}/${stat.total}
+          </span>
+        `;
+        breakdownContainer.appendChild(card);
+      });
+    }
+
+    /**
+     * Generate Clean Markdown & Copy to Clipboard for Notion
+     */
+    function copyForNotion() {
+      let md = `# ⛵ Life & Ministry of the Apostle Paul: Trivia Challenge (20 Questions)\n`;
+      md += `> **Complete Trivia & Answer Key:** *Includes all 20 questions on Saul's conversion, missionary journeys, trials, and epistles with Scripture references.*\n\n`;
+      md += `---\n\n`;
+
+      PAUL_QUESTIONS.forEach((q, index) => {
+        md += `### ${index + 1}. ${q.question}\n`;
+        md += `- **✅ Answer:** ${q.answer}\n`;
+        md += `- **📖 Scripture Reference:** ${q.reference} *(${q.section})*\n`;
+        md += `- **💡 Context:** ${q.commentary}\n\n`;
+      });
+
+      const textArea = document.createElement('textarea');
+      textArea.value = md;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        showToast('Copied all 20 Apostle Paul questions, answers & references for Notion!');
+      } catch (err) {
+        showToast('Unable to copy automatically. Please open Study Guide.');
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+
+    /**
+     * Show Toast Notification
+     */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    /**
+     * Study Guide Modal Controls
+     */
+    function openStudyGuide() {
+      renderStudyGuideList('All');
+      studyModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStudyGuide() {
+      studyModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function filterStudyGuide(sectionFilter) {
+      document.querySelectorAll('.study-filter-btn').forEach(btn => {
+        if (btn.dataset.section === sectionFilter) {
+          btn.classList.add('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.remove('text-notion-muted', 'hover:bg-gray-100');
+        } else {
+          btn.classList.remove('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.add('text-notion-muted', 'hover:bg-gray-100');
+        }
+      });
+
+      renderStudyGuideList(sectionFilter);
+    }
+
+    function renderStudyGuideList(sectionFilter) {
+      const container = document.getElementById('study-guide-list');
+      container.innerHTML = '';
+
+      const filtered = sectionFilter === 'All'
+        ? PAUL_QUESTIONS
+        : PAUL_QUESTIONS.filter(q => q.section === sectionFilter);
+
+      filtered.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'p-4 sm:p-5 rounded-xl border border-notion-border bg-[#FBFBFA] hover:bg-white transition';
+        item.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="inline-flex items-center space-x-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">#${q.id}</span>
+              <span class="font-bold text-xs sm:text-sm text-amber-800">📖 ${q.reference}</span>
+            </span>
+            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              ${q.section}
+            </span>
+          </div>
+          <p class="font-serif text-sm sm:text-base text-notion-text font-medium mb-2">
+            ${q.question}
+          </p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mb-2.5">
+            ✓ Answer: ${q.answer}
+          </p>
+          <div class="text-xs sm:text-sm text-notion-muted bg-white p-3 rounded-lg border border-notion-border/80">
+            <strong class="text-notion-text">💡 Context:</strong> ${q.commentary}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    studyModal.addEventListener('click', (e) => {
+      if (e.target === studyModal) {
+        closeStudyGuide();
+      }
+    });
+  </script>
+</body>
+</html>
