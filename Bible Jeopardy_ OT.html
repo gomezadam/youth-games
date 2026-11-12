@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)file:///C:/Users/adamg/Downloads/bible_jeopardy_the_old_testament.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Jeopardy: The Old Testament</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #173D72;
+      --border: #d7dce2;
+      --muted: #687386;
+      --surface: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 18px 48px;
+      background: #fff;
+      color: #202733;
+      font: 16px/1.5 Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 28px 0 12px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    p {
+      margin: 8px 0 16px;
+    }
+
+    .subtitle {
+      color: #4e5968;
+      margin-bottom: 22px;
+    }
+
+    .game-panel {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 20px 0 28px;
+    }
+
+    .panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 10px;
+      background: #e3f3e9;
+      color: #21633c;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 5px;
+    }
+
+    .category {
+      min-height: 66px;
+      padding: 8px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #eef0f3;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .tile {
+      min-height: 48px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--blue);
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tile:hover:not(:disabled) {
+      background: #24548f;
+    }
+
+    .tile:disabled {
+      background: #eef0f3;
+      color: #929aa5;
+      cursor: default;
+    }
+
+    .question-card {
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 16px;
+    }
+
+    .question-card[hidden] {
+      display: none;
+    }
+
+    .question-tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #e7f0fb;
+      color: #174b83;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+
+    .answer {
+      background: var(--surface);
+      border-radius: 9px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .answer-label {
+      color: #267348;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .action {
+      border: 0;
+      border-radius: 7px;
+      padding: 9px 14px;
+      background: var(--blue);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .action.secondary {
+      background: #fff;
+      color: #344154;
+      border: 1px solid #cbd2da;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .scores {
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 16px;
+    }
+
+    .team {
+      margin: 12px 0 16px;
+    }
+
+    .team input {
+      width: 100%;
+      border: 1px solid #cbd2da;
+      border-radius: 7px;
+      padding: 9px 10px;
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .score {
+      font-size: 25px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .bonus {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .bonus .badge {
+      background: #fff1d5;
+      color: #805500;
+    }
+
+    .rules li {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 20px 10px 36px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .category {
+        font-size: 10px;
+        min-height: 72px;
+        overflow-wrap: anywhere;
+      }
+
+      .tile {
+        min-height: 44px;
+        font-size: 16px;
+      }
+
+      .game-panel {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Bible Jeopardy: The Old Testament</h1>
+    <p class="subtitle"><strong>Theme:</strong> From Creation to the Prophets</p>
+    <p>
+      <strong>Format:</strong> 5 Categories | 5 Questions Each | 25 Total Questions<br>
+      <strong>Point Values:</strong> 100, 200, 300, 400, 500
+    </p>
+    <p>The questions increase in difficulty as the point values increase. All questions are based on the Old Testament. This game works well for adult Bible classes, youth groups, family devotionals, or church fellowships.</p>
+
+    <h2>Jeopardy Game Board</h2>
+    <section class="game-panel">
+      <div class="panel-heading">
+        <strong>GAME BOARD</strong>
+        <span class="badge">25 questions</span>
+      </div>
+
+      <!-- 5x5 Interactive Jeopardy Grid -->
+      <div class="board" id="board" aria-label="Jeopardy game board"><div class="category">Creation &amp; Beginnings</div><div class="category">Patriarchs &amp; Promises</div><div class="category">Exodus &amp; the Wilderness</div><div class="category">Israel's Leaders &amp; Kings</div><div class="category">Prophets &amp; Faith</div><button class="tile" aria-label="Creation &amp; Beginnings 100 points">100</button><button class="tile" aria-label="Patriarchs &amp; Promises 100 points">100</button><button class="tile" aria-label="Exodus &amp; the Wilderness 100 points">100</button><button class="tile" aria-label="Israel's Leaders &amp; Kings 100 points">100</button><button class="tile" aria-label="Prophets &amp; Faith 100 points">100</button><button class="tile" aria-label="Creation &amp; Beginnings 200 points">200</button><button class="tile" aria-label="Patriarchs &amp; Promises 200 points">200</button><button class="tile" aria-label="Exodus &amp; the Wilderness 200 points">200</button><button class="tile" aria-label="Israel's Leaders &amp; Kings 200 points">200</button><button class="tile" aria-label="Prophets &amp; Faith 200 points">200</button><button class="tile" aria-label="Creation &amp; Beginnings 300 points">300</button><button class="tile" aria-label="Patriarchs &amp; Promises 300 points">300</button><button class="tile" aria-label="Exodus &amp; the Wilderness 300 points">300</button><button class="tile" aria-label="Israel's Leaders &amp; Kings 300 points">300</button><button class="tile" aria-label="Prophets &amp; Faith 300 points">300</button><button class="tile" aria-label="Creation &amp; Beginnings 400 points">400</button><button class="tile" aria-label="Patriarchs &amp; Promises 400 points">400</button><button class="tile" aria-label="Exodus &amp; the Wilderness 400 points">400</button><button class="tile" aria-label="Israel's Leaders &amp; Kings 400 points">400</button><button class="tile" aria-label="Prophets &amp; Faith 400 points">400</button><button class="tile" aria-label="Creation &amp; Beginnings 500 points">500</button><button class="tile" aria-label="Patriarchs &amp; Promises 500 points">500</button><button class="tile" aria-label="Exodus &amp; the Wilderness 500 points">500</button><button class="tile" aria-label="Israel's Leaders &amp; Kings 500 points">500</button><button class="tile" aria-label="Prophets &amp; Faith 500 points">500</button></div>
+
+      <!-- Active Question Card -->
+      <section class="question-card" id="questionCard" hidden="" aria-live="polite">
+        <div class="question-tag" id="questionTag"></div>
+        <h3>Question:</h3>
+        <p class="question-text" id="questionText"></p>
+        <div class="answer" id="answerBox" hidden="">
+          <div class="answer-label">CORRECT RESPONSE</div>
+          <div id="answerText"></div>
+        </div>
+        <div class="actions">
+          <button class="action" id="revealButton">Reveal Answer</button>
+          <button class="action secondary" id="completeButton">Mark Complete</button>
+          <button class="action" id="closeButton">Close Question</button>
+        </div>
+      </section>
+
+      <!-- Team Scoreboards -->
+      <section class="scores">
+        <strong>Team Scores</strong>
+        <div id="teams"><div class="team"><input aria-label="Team 1 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div><div class="team"><input aria-label="Team 2 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div></div>
+        <button class="action secondary" id="resetButton">Reset Game</button>
+      </section>
+    </section>
+
+    <!-- Bonus Final Jeopardy Section -->
+    <h2>Bonus Final Jeopardy</h2>
+    <section class="bonus">
+      <span class="badge">FINAL JEOPARDY · 1,000 POINTS</span>
+      <h3 style="margin-top:12px">Category: God's Covenant</h3>
+      <p><strong>In Jeremiah 31, what new covenant did God promise to make with the house of Israel and the house of Judah, and where would he write his law?</strong></p>
+      <small style="color:var(--muted)">SCRIPTURE: JEREMIAH 31:31–34</small>
+      <div style="margin-top:12px">
+        <button class="action secondary" id="bonusButton">Reveal Answer</button>
+      </div>
+      <div class="answer" id="bonusAnswer" hidden=""><strong>Answer:</strong> A new covenant in which God would put his law within them and write it on their hearts.</div>
+    </section>
+
+    <!-- Suggested Game Rules -->
+    <h2>Suggested Game Rules</h2>
+    <ol class="rules">
+      <li>Divide the congregation into two or more teams.</li>
+      <li>Teams take turns selecting a category and point value.</li>
+      <li>Give teams 15–30 seconds to answer.</li>
+      <li>Require answers in the form of a question, just like Jeopardy.</li>
+      <li>Award points for correct answers and deduct points for incorrect answers.</li>
+      <li>The team with the highest score wins!</li>
+    </ol>
+    <p><strong>A great teaching addition:</strong> After each answer, have someone read the corresponding Old Testament passage aloud. This turns the game into a Bible study rather than simply a trivia competition.</p>
+  </main>
+
+  <script>
+    // Complete dataset for the 5 categories and 25 clues/responses
+    const categories = [
+      {
+        name: "Creation & Beginnings",
+        questions: [
+          ["According to Genesis 1, what did God create on the first day?", "What were the heavens and the earth, with light called into being?"],
+          ["From what did God form the man, and what did he breathe into him?", "What was dust from the ground, and the breath of life?"],
+          ["Who were the first two sons of Adam and Eve named in Genesis?", "Who were Cain and Abel?"],
+          ["What kind of wood was Noah told to use to build the ark?", "What was gopher wood (the exact meaning of the Hebrew term is uncertain)?"],
+          ["What city and tower were people building when God confused their language?", "What was Babel?"]
+        ]
+      },
+      {
+        name: "Patriarchs & Promises",
+        questions: [
+          ["Which patriarch was told by God to leave his country and go to a land God would show him?", "Who was Abram (later called Abraham)?"],
+          ["What was the name of Abraham and Sarah's promised son?", "Who was Isaac?"],
+          ["Which son of Isaac sold his birthright for a meal of bread and lentil stew?", "Who was Esau?"],
+          ["For how many pieces of silver did Joseph's brothers sell him to traders?", "What were twenty pieces of silver?"],
+          ["After wrestling with a mysterious man, what new name was given to Jacob?", "What was Israel?"]
+        ]
+      },
+      {
+        name: "Exodus & the Wilderness",
+        questions: [
+          ["What was the name of the baby placed in a basket among the reeds of the Nile River?", "Who was Moses?"],
+          ["From what did God speak to Moses when he called him to lead Israel out of Egypt?", "What was a burning bush?"],
+          ["What body of water did God divide so the Israelites could escape from the Egyptian army?", "What was the Red Sea?"],
+          ["What food did God provide for the Israelites to gather each morning in the wilderness?", "What was manna?"],
+          ["What object did Moses make so that Israelites bitten by snakes could look at it and live?", "What was a bronze serpent (or bronze snake)?"]
+        ]
+      },
+      {
+        name: "Israel's Leaders & Kings",
+        questions: [
+          ["What city did the Israelites march around before its walls fell?", "What was Jericho?"],
+          ["What judge was known for his great strength and long hair?", "Who was Samson?"],
+          ["What young shepherd defeated the Philistine giant Goliath?", "Who was David?"],
+          ["What did Solomon ask God to give him when God offered him whatever he wanted?", "What was wisdom (a discerning heart)?"],
+          ["During whose reign was the Book of the Law found in the temple, leading to religious reforms?", "Who was King Josiah?"]
+        ]
+      },
+      {
+        name: "Prophets & Faith",
+        questions: [
+          ["Which prophet was thrown into a den of lions because he continued praying to God?", "Who was Daniel?"],
+          ["Which prophet challenged the prophets of Baal on Mount Carmel?", "Who was Elijah?"],
+          ["Which prophet was swallowed by a great fish after fleeing from God's command?", "Who was Jonah?"],
+          ["What was the name of the Aramean commander whom Elisha told to wash seven times in the Jordan River to be healed of leprosy?", "Who was Naaman?"],
+          ["In Isaiah's vision of the Lord in the temple, what did the prophet answer when God asked, 'Whom shall I send?'", "What was, 'Here am I; send me'?"]
+        ]
+      }
+    ];
+
+    const board = document.getElementById('board');
+    const card = document.getElementById('questionCard');
+    let selected = null;
+    let completed = new Set();
+    let scores = [0, 0];
+    let teamNames = ['Team 1', 'Team 2'];
+
+    // Render the 5x5 game board
+    function renderBoard() {
+      board.innerHTML = '';
+
+      categories.forEach(cat => {
+        const heading = document.createElement('div');
+        heading.className = 'category';
+        heading.textContent = cat.name;
+        board.appendChild(heading);
+      });
+
+      for (let q = 0; q < 5; q++) {
+        categories.forEach((cat, c) => {
+          const key = c + '-' + q;
+          const btn = document.createElement('button');
+          btn.className = 'tile';
+          btn.textContent = completed.has(key) ? '—' : String((q + 1) * 100);
+          btn.disabled = completed.has(key);
+          btn.setAttribute('aria-label', cat.name + ' ' + ((q + 1) * 100) + ' points');
+          btn.addEventListener('click', () => openQuestion(c, q));
+          board.appendChild(btn);
+        });
+      }
+    }
+
+    // Open a specific clue card
+    function openQuestion(c, q) {
+      selected = { c, q };
+      document.getElementById('questionTag').textContent = categories[c].name + ' · ' + ((q + 1) * 100) + ' points';
+      document.getElementById('questionText').textContent = categories[c].questions[q][0];
+      document.getElementById('answerText').textContent = categories[c].questions[q][1];
+      document.getElementById('answerBox').hidden = true;
+      document.getElementById('revealButton').hidden = false;
+      card.hidden = false;
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Reveal the answer for the active question
+    document.getElementById('revealButton').addEventListener('click', () => {
+      document.getElementById('answerBox').hidden = false;
+      document.getElementById('revealButton').hidden = true;
+    });
+
+    // Mark clue complete and close the question card
+    function closeQuestion() {
+      if (selected) {
+        completed.add(selected.c + '-' + selected.q);
+      }
+      selected = null;
+      card.hidden = true;
+      renderBoard();
+    }
+
+    document.getElementById('completeButton').addEventListener('click', closeQuestion);
+    document.getElementById('closeButton').addEventListener('click', closeQuestion);
+
+    // Render team score trackers
+    function renderTeams() {
+      const el = document.getElementById('teams');
+      el.innerHTML = '';
+
+      teamNames.forEach((name, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'team';
+
+        const input = document.createElement('input');
+        input.value = name;
+        input.setAttribute('aria-label', 'Team ' + (i + 1) + ' name');
+        input.addEventListener('input', () => {
+          teamNames[i] = input.value;
+        });
+
+        const row = document.createElement('div');
+        row.className = 'score-row';
+
+        const score = document.createElement('div');
+        score.className = 'score';
+        score.textContent = scores[i] + ' pts';
+
+        const controls = document.createElement('div');
+        controls.className = 'score-buttons';
+
+        [[-100, '−100'], [100, '+100']].forEach(([delta, label]) => {
+          const b = document.createElement('button');
+          b.className = 'action ' + (delta < 0 ? 'secondary' : '');
+          b.textContent = label;
+          b.addEventListener('click', () => {
+            scores[i] += delta;
+            renderTeams();
+          });
+          controls.appendChild(b);
+        });
+
+        row.append(score, controls);
+        wrap.append(input, row);
+        el.appendChild(wrap);
+      });
+    }
+
+    // Reset board and scores
+    document.getElementById('resetButton').addEventListener('click', () => {
+      completed.clear();
+      scores = [0, 0];
+      selected = null;
+      card.hidden = true;
+      renderBoard();
+      renderTeams();
+    });
+
+    // Toggle Bonus Final Jeopardy answer
+    document.getElementById('bonusButton').addEventListener('click', () => {
+      const a = document.getElementById('bonusAnswer');
+      const b = document.getElementById('bonusButton');
+      a.hidden = !a.hidden;
+      b.textContent = a.hidden ? 'Reveal Answer' : 'Hide Answer';
+    });
+
+    // Initialize game
+    renderBoard();
+    renderTeams();
+  </script>
+
+</body></html>
