@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/adamg/Downloads/bible_jeopardy_old_testament_prophets%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Jeopardy: Old Testament Prophets</title>
+  <style>
+    :root {
+      --blue: #173D72;
+      --blue2: #24558f;
+      --ink: #172334;
+      --muted: #667085;
+      --line: #d9dee7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f5f8;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 28px auto;
+      padding: 0 16px 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--blue);
+      margin: 0 0 6px;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #15243a0b;
+    }
+
+    /* 5x5 Game Board Grid */
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .category {
+      background: #e9edf3;
+      color: #26364a;
+      font-weight: 700;
+      text-align: center;
+      padding: 13px 7px;
+      border-radius: 7px;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .tile {
+      background: var(--blue);
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      min-height: 67px;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tile:hover:not(:disabled) {
+      background: var(--blue2);
+    }
+
+    .tile:disabled {
+      background: #aeb8c6;
+      color: #eef1f5;
+      cursor: default;
+      text-decoration: line-through;
+    }
+
+    /* Interactive Question Card */
+    .question-card {
+      display: none;
+      margin-top: 18px;
+      padding: 20px;
+      border: 2px solid var(--blue);
+      border-radius: 10px;
+      background: #f8faff;
+    }
+
+    .question-card.active {
+      display: block;
+    }
+
+    .value {
+      font-weight: bold;
+      color: var(--blue);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .question-text {
+      font-size: 23px;
+      line-height: 1.35;
+      margin: 12px 0 18px;
+    }
+
+    .answer {
+      display: none;
+      background: #eaf4ed;
+      border-left: 4px solid #398454;
+      padding: 12px 14px;
+      border-radius: 5px;
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    .answer.show {
+      display: block;
+    }
+
+    .answer small {
+      display: block;
+      color: #52665a;
+      margin-top: 6px;
+    }
+
+    /* Action Buttons & Controls */
+    button.action {
+      border: 0;
+      border-radius: 7px;
+      padding: 10px 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 4px 6px 4px 0;
+      background: var(--blue);
+      color: white;
+    }
+
+    button.secondary {
+      background: #e8edf4;
+      color: #26364a;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* Inline Reset Confirmation (no browser confirm() popup) */
+    .reset-confirm {
+      display: none;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fef3f2;
+      border: 1px solid #fecdca;
+      padding: 6px 12px;
+      border-radius: 7px;
+      font-size: 13px;
+      color: #7a271a;
+    }
+
+    .reset-confirm.show {
+      display: inline-flex;
+    }
+
+    /* Team Scoreboards */
+    .teams {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .team {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-width: 190px;
+      flex: 1;
+    }
+
+    .team input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .score {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--blue);
+      margin: 3px 0 8px;
+    }
+
+    .team button {
+      padding: 7px 10px;
+      margin: 2px;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Final Jeopardy & Rules */
+    .section-title {
+      color: var(--blue);
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .final {
+      background: #f8faff;
+      border: 1px solid #cbd7e7;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .final-answer {
+      display: none;
+      margin-top: 12px;
+      background: #eaf4ed;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    .final-answer.show {
+      display: block;
+    }
+
+    .final-answer small {
+      display: block;
+      color: #52665a;
+      margin-top: 6px;
+    }
+
+    .rules li {
+      margin: 7px 0;
+      line-height: 1.4;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 650px) {
+      .wrap {
+        padding: 0 9px;
+      }
+
+      .board {
+        gap: 4px;
+      }
+
+      .category {
+        font-size: 11px;
+        padding: 7px 3px;
+        min-height: 86px;
+      }
+
+      .tile {
+        font-size: 18px;
+        min-height: 55px;
+      }
+
+      .question-text {
+        font-size: 19px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .panel {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Bible Jeopardy: Old Testament Prophets</h1>
+    <p class="subtitle">A youth-group challenge about the prophets and their stories</p>
+
+    <!-- Main Jeopardy Board & Scoreboard Panel -->
+    <div class="panel">
+      <div class="board" id="board"><div class="category">Meet the Prophets</div><div class="category">Prophets &amp; Their Stories</div><div class="category">God's Messages</div><div class="category">Big Moments &amp; Miracles</div><div class="category">Hope &amp; God's Promises</div><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button></div>
+
+      <!-- Active Question Card -->
+      <div class="question-card" id="questionCard">
+        <div class="value" id="questionValue"></div>
+        <div class="question-text" id="questionText"></div>
+        <div class="answer" id="answer"></div>
+        <div class="controls">
+          <button class="action" id="revealBtn" onclick="revealAnswer()">Reveal Answer</button>
+          <button class="action secondary" onclick="completeQuestion()">Mark Complete / Close Question</button>
+        </div>
+      </div>
+
+      <!-- Team Scoreboards -->
+      <div class="teams">
+        <div class="team">
+          <input id="team1name" value="Team 1" aria-label="Team 1 name">
+          <div class="score" id="score1">0</div>
+          <button onclick="changeScore(1,100)">+100</button>
+          <button onclick="changeScore(1,-100)">−100</button>
+        </div>
+        <div class="team">
+          <input id="team2name" value="Team 2" aria-label="Team 2 name">
+          <div class="score" id="score2">0</div>
+          <button onclick="changeScore(2,100)">+100</button>
+          <button onclick="changeScore(2,-100)">−100</button>
+        </div>
+      </div>
+
+      <!-- Board Reset Controls -->
+      <div class="controls" style="margin-top:14px">
+        <button class="action secondary" id="resetBtn" onclick="promptReset()">Reset Game</button>
+        <div class="reset-confirm" id="resetConfirm">
+          <span>Reset all used questions and team scores?</span>
+          <button class="action" style="padding:6px 12px;margin:0" onclick="confirmReset()">Yes, Reset</button>
+          <button class="action secondary" style="padding:6px 12px;margin:0" onclick="cancelReset()">Cancel</button>
+        </div>
+        <span id="boardHint" style="color:#667085;font-size:13px">Choose a point value to begin. Used questions are grayed out.</span>
+      </div>
+    </div>
+
+    <!-- Final Jeopardy Panel -->
+    <div class="panel">
+      <h2 class="section-title">Final Jeopardy</h2>
+      <div class="final">
+        <strong>Question:</strong>
+        <p id="finalQuestion" style="font-size:18px;line-height:1.4">Which prophet was carried away to Babylon as a young man, served in the royal court, and remained faithful to God?</p>
+        <button class="action" onclick="toggleFinal()">Reveal Final Answer</button>
+        <div class="final-answer" id="finalAnswer">Daniel<small>Daniel 1:1–21</small></div>
+      </div>
+    </div>
+
+    <!-- How to Play Panel -->
+    <div class="panel rules">
+      <h2 class="section-title">How to Play</h2>
+      <ul>
+        <li>Divide the group into teams. Teams take turns choosing a category and point value.</li>
+        <li>Read the clue aloud. Give teams a short time to discuss before they answer.</li>
+        <li>Click <strong>Reveal Answer</strong> to show the response and Scripture reference. Award points for a correct answer; subtract points for an incorrect answer if you choose.</li>
+        <li>Click <strong>Mark Complete / Close Question</strong> to remove that clue from play.</li>
+        <li>After the board is finished, play Final Jeopardy. Let teams wager points before revealing the answer.</li>
+        <li>Use the Scripture references to read the stories together. Ask students what each prophet's story teaches about listening to and trusting God.</li>
+      </ul>
+      <p><strong>Leader tip:</strong> This game is designed to be relatively easy. Encourage students to learn the big stories and remember that prophets delivered God's messages, even when the message was difficult.</p>
+    </div>
+
+    <div class="footer">Bible Jeopardy • Old Testament Prophets • Youth Group Edition</div>
+  </div>
+
+  <script>
+    // Complete Jeopardy dataset for Old Testament Prophets
+    const gameData = {
+      "categories": [
+        {
+          "name": "Meet the Prophets",
+          "questions": [
+            {"value": 100, "question": "Who was the prophet who built an ark because God warned him about a flood?", "answer": "Noah", "reference": "Genesis 6:13–22"},
+            {"value": 200, "question": "Which prophet was swallowed by a great fish after running away from God's mission?", "answer": "Jonah", "reference": "Jonah 1:1–17"},
+            {"value": 300, "question": "Which prophet heard God ask, “Whom shall I send?” and answered, “Here am I! Send me.”?", "answer": "Isaiah", "reference": "Isaiah 6:1–8"},
+            {"value": 400, "question": "Which prophet was called by God while he was still young?", "answer": "Jeremiah", "reference": "Jeremiah 1:4–8"},
+            {"value": 500, "question": "Which prophet spoke to a valley full of dry bones in a vision?", "answer": "Ezekiel", "reference": "Ezekiel 37:1–14"}
+          ]
+        },
+        {
+          "name": "Prophets & Their Stories",
+          "questions": [
+            {"value": 100, "question": "Which prophet challenged the prophets of Baal on Mount Carmel?", "answer": "Elijah", "reference": "1 Kings 18:17–40"},
+            {"value": 200, "question": "Who was Elijah's successor and received a double portion of his spirit?", "answer": "Elisha", "reference": "2 Kings 2:9–15"},
+            {"value": 300, "question": "Which prophet spent a night in a den of lions?", "answer": "Daniel", "reference": "Daniel 6:16–23"},
+            {"value": 400, "question": "Which prophet interpreted dreams for the king of Babylon?", "answer": "Daniel", "reference": "Daniel 2:24–45"},
+            {"value": 500, "question": "Which prophet was told to marry Gomer as a picture of God's relationship with Israel?", "answer": "Hosea", "reference": "Hosea 1:2–3"}
+          ]
+        },
+        {
+          "name": "God's Messages",
+          "questions": [
+            {"value": 100, "question": "Which prophet told King David the story of a rich man who took a poor man's lamb, helping David see his sin?", "answer": "Nathan", "reference": "2 Samuel 12:1–7"},
+            {"value": 200, "question": "Which prophet told Naaman to wash seven times in the Jordan River to be healed?", "answer": "Elisha", "reference": "2 Kings 5:1–14"},
+            {"value": 300, "question": "Which prophet warned Nineveh that the city would be destroyed if the people did not turn from evil?", "answer": "Jonah", "reference": "Jonah 3:1–10"},
+            {"value": 400, "question": "Which prophet said that the people should “act justly, love mercy, and walk humbly” with God?", "answer": "Micah", "reference": "Micah 6:8"},
+            {"value": 500, "question": "Which prophet encouraged the people to rebuild the temple after they returned from exile?", "answer": "Haggai", "reference": "Haggai 1:1–8"}
+          ]
+        },
+        {
+          "name": "Big Moments & Miracles",
+          "questions": [
+            {"value": 100, "question": "Which prophet prayed, and God sent fire from heaven to show that He is the true God?", "answer": "Elijah", "reference": "1 Kings 18:30–39"},
+            {"value": 200, "question": "Which prophet made a poisonous stew safe to eat by adding flour?", "answer": "Elisha", "reference": "2 Kings 4:38–41"},
+            {"value": 300, "question": "Which prophet's servant saw an army of horses and chariots of fire surrounding them?", "answer": "Elisha", "reference": "2 Kings 6:15–17"},
+            {"value": 400, "question": "Which prophet was thrown into a lions' den but protected by God?", "answer": "Daniel", "reference": "Daniel 6:16–23"},
+            {"value": 500, "question": "Which prophet was taken up into heaven in a whirlwind, with chariots of fire and horses of fire?", "answer": "Elijah", "reference": "2 Kings 2:1–12"}
+          ]
+        },
+        {
+          "name": "Hope & God's Promises",
+          "questions": [
+            {"value": 100, "question": "Which prophet said a young woman would give birth to a son called Immanuel?", "answer": "Isaiah", "reference": "Isaiah 7:14"},
+            {"value": 200, "question": "Which prophet foretold that a ruler would come from Bethlehem?", "answer": "Micah", "reference": "Micah 5:2"},
+            {"value": 300, "question": "Which prophet described a suffering servant who would bear the sins of many?", "answer": "Isaiah", "reference": "Isaiah 52:13–53:12"},
+            {"value": 400, "question": "Which prophet promised that God would give His people a new heart and a new spirit?", "answer": "Ezekiel", "reference": "Ezekiel 36:26–27"},
+            {"value": 500, "question": "Which prophet said that God would pour out His Spirit on all people?", "answer": "Joel", "reference": "Joel 2:28–29"}
+          ]
+        }
+      ],
+      "final": {
+        "question": "Which prophet was carried away to Babylon as a young man, served in the royal court, and remained faithful to God?",
+        "answer": "Daniel",
+        "reference": "Daniel 1:1–21"
+      }
+    };
+
+    let scores = [0, 0];
+    let used = new Set();
+    let active = null;
+    const board = document.getElementById('board');
+
+    // Render the 5x5 game board and Final Jeopardy clue
+    function build() {
+      board.innerHTML = '';
+      gameData.categories.forEach(cat => {
+        const h = document.createElement('div');
+        h.className = 'category';
+        h.textContent = cat.name;
+        board.appendChild(h);
+      });
+
+      for (let qi = 0; qi < 5; qi++) {
+        gameData.categories.forEach((cat, ci) => {
+          const b = document.createElement('button');
+          b.className = 'tile';
+          b.textContent = (qi + 1) * 100;
+          const id = ci + '-' + qi;
+          b.disabled = used.has(id);
+          b.onclick = () => openQuestion(ci, qi);
+          board.appendChild(b);
+        });
+      }
+
+      document.getElementById('finalQuestion').textContent = gameData.final.question;
+      document.getElementById('finalAnswer').innerHTML = esc(gameData.final.answer) + '<small>' + esc(gameData.final.reference) + '</small>';
+    }
+
+    // Escape HTML special characters
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, c => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[c]));
+    }
+
+    // Open a selected question card
+    function openQuestion(ci, qi) {
+      active = { id: ci + '-' + qi };
+      const q = gameData.categories[ci].questions[qi];
+      document.getElementById('questionValue').textContent = gameData.categories[ci].name + ' • ' + q.value + ' points';
+      document.getElementById('questionText').textContent = q.question;
+      document.getElementById('answer').className = 'answer';
+      document.getElementById('answer').innerHTML = esc(q.answer) + '<small>' + esc(q.reference) + '</small>';
+      document.getElementById('revealBtn').disabled = false;
+      document.getElementById('questionCard').classList.add('active');
+      document.getElementById('questionCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Reveal the answer and scripture reference inside the active question card
+    function revealAnswer() {
+      document.getElementById('answer').classList.add('show');
+      document.getElementById('revealBtn').disabled = true;
+    }
+
+    // Mark the current question complete and close the card
+    function completeQuestion() {
+      if (active) used.add(active.id);
+      active = null;
+      document.getElementById('questionCard').classList.remove('active');
+      build();
+    }
+
+    // Update team score
+    function changeScore(team, amount) {
+      scores[team - 1] += amount;
+      document.getElementById('score' + team).textContent = scores[team - 1];
+    }
+
+    // Inline confirmation for resetting the game
+    function promptReset() {
+      document.getElementById('resetBtn').style.display = 'none';
+      document.getElementById('boardHint').style.display = 'none';
+      document.getElementById('resetConfirm').classList.add('show');
+    }
+
+    function cancelReset() {
+      document.getElementById('resetConfirm').classList.remove('show');
+      document.getElementById('resetBtn').style.display = 'inline-block';
+      document.getElementById('boardHint').style.display = 'inline';
+    }
+
+    function confirmReset() {
+      used.clear();
+      scores = [0, 0];
+      document.getElementById('score1').textContent = '0';
+      document.getElementById('score2').textContent = '0';
+      document.getElementById('questionCard').classList.remove('active');
+      document.getElementById('finalAnswer').classList.remove('show');
+      active = null;
+      cancelReset();
+      build();
+    }
+
+    // Toggle Final Jeopardy answer visibility
+    function toggleFinal() {
+      document.getElementById('finalAnswer').classList.toggle('show');
+    }
+
+    // Initialize board on load
+    build();
+  </script>
+
+</body></html>
