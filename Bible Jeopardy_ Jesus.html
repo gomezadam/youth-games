@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)file:///C:/Users/adamg/Downloads/bible_jeopardy_the_life_of_jesus.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Jeopardy: The Life of Jesus</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #173D72;
+      --border: #d7dce2;
+      --muted: #687386;
+      --surface: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px 18px 48px;
+      background: #fff;
+      color: #202733;
+      font: 16px/1.5 Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 28px 0 12px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    p {
+      margin: 8px 0 16px;
+    }
+
+    .subtitle {
+      color: #4e5968;
+      margin-bottom: 22px;
+    }
+
+    .game-panel {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 20px 0 28px;
+    }
+
+    .panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 10px;
+      background: #e3f3e9;
+      color: #21633c;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 5px;
+    }
+
+    .category {
+      min-height: 66px;
+      padding: 8px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #eef0f3;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .tile {
+      min-height: 48px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--blue);
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tile:hover:not(:disabled) {
+      background: #24548f;
+    }
+
+    .tile:disabled {
+      background: #eef0f3;
+      color: #929aa5;
+      cursor: default;
+    }
+
+    .question-card {
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 16px;
+    }
+
+    .question-card[hidden] {
+      display: none;
+    }
+
+    .question-tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #e7f0fb;
+      color: #174b83;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+
+    .answer {
+      background: var(--surface);
+      border-radius: 9px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .answer-label {
+      color: #267348;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .action {
+      border: 0;
+      border-radius: 7px;
+      padding: 9px 14px;
+      background: var(--blue);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .action.secondary {
+      background: #fff;
+      color: #344154;
+      border: 1px solid #cbd2da;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .scores {
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 16px;
+    }
+
+    .team {
+      margin: 12px 0 16px;
+    }
+
+    .team input {
+      width: 100%;
+      border: 1px solid #cbd2da;
+      border-radius: 7px;
+      padding: 9px 10px;
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .score {
+      font-size: 25px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .bonus {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .bonus .badge {
+      background: #fff1d5;
+      color: #805500;
+    }
+
+    .rules li {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 20px 10px 36px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .category {
+        font-size: 10px;
+        min-height: 72px;
+        overflow-wrap: anywhere;
+      }
+
+      .tile {
+        min-height: 44px;
+        font-size: 16px;
+      }
+
+      .game-panel {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Bible Jeopardy: The Life of Jesus</h1>
+    <p class="subtitle"><strong>Theme:</strong> From Bethlehem to the Empty Tomb</p>
+    <p>
+      <strong>Format:</strong> 5 Categories | 5 Questions Each | 25 Total Questions<br>
+      <strong>Point Values:</strong> 100, 200, 300, 400, 500
+    </p>
+    <p>The questions increase in difficulty as the point values increase. All questions are based on the four Gospels: Matthew, Mark, Luke, and John. This game works well for adult Bible classes, youth groups, family devotionals, or church fellowships.</p>
+
+    <h2>Jeopardy Game Board</h2>
+    <section class="game-panel">
+      <div class="panel-heading">
+        <strong>GAME BOARD</strong>
+        <span class="badge">25 questions</span>
+      </div>
+
+      <!-- 5x5 Interactive Jeopardy Grid -->
+      <div class="board" id="board" aria-label="Jeopardy game board"><div class="category">Birth &amp; Early Life</div><div class="category">Miracles of Jesus</div><div class="category">Teachings &amp; Parables</div><div class="category">The Disciples &amp; Ministry</div><div class="category">The Cross &amp; Resurrection</div><button class="tile" aria-label="Birth &amp; Early Life 100 points">100</button><button class="tile" aria-label="Miracles of Jesus 100 points">100</button><button class="tile" aria-label="Teachings &amp; Parables 100 points">100</button><button class="tile" aria-label="The Disciples &amp; Ministry 100 points">100</button><button class="tile" aria-label="The Cross &amp; Resurrection 100 points">100</button><button class="tile" aria-label="Birth &amp; Early Life 200 points">200</button><button class="tile" aria-label="Miracles of Jesus 200 points">200</button><button class="tile" aria-label="Teachings &amp; Parables 200 points">200</button><button class="tile" aria-label="The Disciples &amp; Ministry 200 points">200</button><button class="tile" aria-label="The Cross &amp; Resurrection 200 points">200</button><button class="tile" aria-label="Birth &amp; Early Life 300 points">300</button><button class="tile" aria-label="Miracles of Jesus 300 points">300</button><button class="tile" aria-label="Teachings &amp; Parables 300 points">300</button><button class="tile" aria-label="The Disciples &amp; Ministry 300 points">300</button><button class="tile" aria-label="The Cross &amp; Resurrection 300 points">300</button><button class="tile" aria-label="Birth &amp; Early Life 400 points">400</button><button class="tile" aria-label="Miracles of Jesus 400 points">400</button><button class="tile" aria-label="Teachings &amp; Parables 400 points">400</button><button class="tile" aria-label="The Disciples &amp; Ministry 400 points">400</button><button class="tile" aria-label="The Cross &amp; Resurrection 400 points">400</button><button class="tile" aria-label="Birth &amp; Early Life 500 points">500</button><button class="tile" aria-label="Miracles of Jesus 500 points">500</button><button class="tile" aria-label="Teachings &amp; Parables 500 points">500</button><button class="tile" aria-label="The Disciples &amp; Ministry 500 points">500</button><button class="tile" aria-label="The Cross &amp; Resurrection 500 points">500</button></div>
+
+      <!-- Active Question Card -->
+      <section class="question-card" id="questionCard" hidden="" aria-live="polite">
+        <div class="question-tag" id="questionTag"></div>
+        <h3>Question:</h3>
+        <p class="question-text" id="questionText"></p>
+        <div class="answer" id="answerBox" hidden="">
+          <div class="answer-label">CORRECT RESPONSE</div>
+          <div id="answerText"></div>
+        </div>
+        <div class="actions">
+          <button class="action" id="revealButton">Reveal Answer</button>
+          <button class="action secondary" id="completeButton">Mark Complete</button>
+          <button class="action" id="closeButton">Close Question</button>
+        </div>
+      </section>
+
+      <!-- Team Scoreboards -->
+      <section class="scores">
+        <strong>Team Scores</strong>
+        <div id="teams"><div class="team"><input aria-label="Team 1 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div><div class="team"><input aria-label="Team 2 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div></div>
+        <button class="action secondary" id="resetButton">Reset Game</button>
+      </section>
+    </section>
+
+    <!-- Bonus Final Jeopardy Section -->
+    <h2>Bonus Final Jeopardy</h2>
+    <section class="bonus">
+      <span class="badge">FINAL JEOPARDY · 1,000 POINTS</span>
+      <h3 style="margin-top:12px">Category: The Identity of Jesus</h3>
+      <p><strong>In John 20, after seeing the risen Jesus, what did Thomas say that expressed his belief in who Jesus truly was?</strong></p>
+      <small style="color:var(--muted)">SCRIPTURE: JOHN 20:24–29</small>
+      <div style="margin-top:12px">
+        <button class="action secondary" id="bonusButton">Reveal Answer</button>
+      </div>
+      <div class="answer" id="bonusAnswer" hidden=""><strong>Answer:</strong> “My Lord and my God!”</div>
+    </section>
+
+    <!-- Suggested Game Rules -->
+    <h2>Suggested Game Rules</h2>
+    <ol class="rules">
+      <li>Divide the congregation into two or more teams.</li>
+      <li>Teams take turns selecting a category and point value.</li>
+      <li>Give teams 15–30 seconds to answer.</li>
+      <li>Require answers in the form of a question, just like Jeopardy.</li>
+      <li>Award points for correct answers and deduct points for incorrect answers.</li>
+      <li>The team with the highest score wins!</li>
+    </ol>
+    <p><strong>A great teaching addition:</strong> After each answer, have someone read the corresponding Gospel passage aloud. This turns the game into a Bible study rather than simply a trivia competition.</p>
+  </main>
+
+  <script>
+    // Complete dataset for the 5 categories and 25 clues/responses
+    const categories = [
+      {
+        name: "Birth & Early Life",
+        questions: [
+          ["In what town was Jesus born?", "What is Bethlehem?"],
+          ["Who was the king of Judea when the wise men came looking for the child Jesus?", "Who was Herod the Great?"],
+          ["On what day after his birth was Jesus circumcised and given his name?", "What was the eighth day?"],
+          ["To which country did Joseph take Mary and Jesus to escape Herod?", "What was Egypt?"],
+          ["How old was Jesus when he stayed behind in Jerusalem and was found among the teachers in the temple?", "What was twelve years old?"]
+        ]
+      },
+      {
+        name: "Miracles of Jesus",
+        questions: [
+          ["At what event did Jesus turn water into wine?", "What was a wedding in Cana?"],
+          ["What did Jesus calm while he and his disciples were in a boat?", "What was a storm (the wind and waves)?"],
+          ["What man did Jesus raise from the dead after he had been in the tomb for four days?", "Who was Lazarus?"],
+          ["How many loaves and fish were used to feed the five thousand?", "What were five loaves and two fish?"],
+          ["What was the name of the region where Jesus healed a man living among the tombs who was possessed by many demons?", "What was the region of the Gerasenes (also called the Gadarenes)?"]
+        ]
+      },
+      {
+        name: "Teachings & Parables",
+        questions: [
+          ["In the Sermon on the Mount, Jesus called his followers the light of what?", "What was the world?"],
+          ["Which parable tells of a wounded man helped by a traveler from Samaria?", "What was the Parable of the Good Samaritan?"],
+          ["In Jesus' parable, what did the younger son ask his father to give him before leaving home?", "What was his share of the inheritance?"],
+          ["In a parable, what valuable object did a man find hidden in a field and then sell everything to buy the field?", "What was a treasure?"],
+          ["According to Jesus, what are the two greatest commandments?", "What were to love God with all your heart, soul, and mind, and to love your neighbor as yourself?"]
+        ]
+      },
+      {
+        name: "The Disciples & Ministry",
+        questions: [
+          ["Which two brothers were called by Jesus while they were casting a net into the Sea of Galilee?", "Who were Simon Peter and Andrew?"],
+          ["Which disciple brought his brother Simon to Jesus?", "Who was Andrew?"],
+          ["Which disciple was also called the Zealot, and which disciple had been a tax collector?", "Who were Simon the Zealot and Matthew?"],
+          ["When Jesus asked his disciples who they said he was, what did Peter confess?", "What was, “You are the Christ, the Son of the living God”?"],
+          ["At the Last Supper, what did Jesus do for his disciples as an example of humble service?", "What was wash their feet?"]
+        ]
+      },
+      {
+        name: "The Cross & Resurrection",
+        questions: [
+          ["Who was compelled to carry Jesus' cross on the way to Golgotha?", "Who was Simon of Cyrene?"],
+          ["At about what time did darkness come over the land during Jesus' crucifixion, and when did it end?", "What was from about the sixth hour until the ninth hour?"],
+          ["Who first went to Jesus' tomb on the first day of the week, according to John's Gospel?", "Who was Mary Magdalene?"],
+          ["Which disciple said he would not believe Jesus had risen unless he saw the nail marks and put his hand into Jesus' side?", "Who was Thomas?"],
+          ["On the road to Emmaus, what did the two disciples recognize Jesus doing that opened their eyes to who he was?", "What was breaking the bread?"]
+        ]
+      }
+    ];
+
+    const board = document.getElementById('board');
+    const card = document.getElementById('questionCard');
+    let selected = null;
+    let completed = new Set();
+    let scores = [0, 0];
+    let teamNames = ['Team 1', 'Team 2'];
+
+    // Render the 5x5 game board
+    function renderBoard() {
+      board.innerHTML = '';
+
+      categories.forEach(cat => {
+        const heading = document.createElement('div');
+        heading.className = 'category';
+        heading.textContent = cat.name;
+        board.appendChild(heading);
+      });
+
+      for (let q = 0; q < 5; q++) {
+        categories.forEach((cat, c) => {
+          const key = c + '-' + q;
+          const btn = document.createElement('button');
+          btn.className = 'tile';
+          btn.textContent = completed.has(key) ? '—' : String((q + 1) * 100);
+          btn.disabled = completed.has(key);
+          btn.setAttribute('aria-label', cat.name + ' ' + ((q + 1) * 100) + ' points');
+          btn.addEventListener('click', () => openQuestion(c, q));
+          board.appendChild(btn);
+        });
+      }
+    }
+
+    // Open a specific clue card
+    function openQuestion(c, q) {
+      selected = { c, q };
+      document.getElementById('questionTag').textContent = categories[c].name + ' · ' + ((q + 1) * 100) + ' points';
+      document.getElementById('questionText').textContent = categories[c].questions[q][0];
+      document.getElementById('answerText').textContent = categories[c].questions[q][1];
+      document.getElementById('answerBox').hidden = true;
+      document.getElementById('revealButton').hidden = false;
+      card.hidden = false;
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Reveal the answer for the active question
+    document.getElementById('revealButton').addEventListener('click', () => {
+      document.getElementById('answerBox').hidden = false;
+      document.getElementById('revealButton').hidden = true;
+    });
+
+    // Mark clue complete and close the question card
+    function closeQuestion() {
+      if (selected) {
+        completed.add(selected.c + '-' + selected.q);
+      }
+      selected = null;
+      card.hidden = true;
+      renderBoard();
+    }
+
+    document.getElementById('completeButton').addEventListener('click', closeQuestion);
+    document.getElementById('closeButton').addEventListener('click', closeQuestion);
+
+    // Render team score trackers
+    function renderTeams() {
+      const el = document.getElementById('teams');
+      el.innerHTML = '';
+
+      teamNames.forEach((name, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'team';
+
+        const input = document.createElement('input');
+        input.value = name;
+        input.setAttribute('aria-label', 'Team ' + (i + 1) + ' name');
+        input.addEventListener('input', () => {
+          teamNames[i] = input.value;
+        });
+
+        const row = document.createElement('div');
+        row.className = 'score-row';
+
+        const score = document.createElement('div');
+        score.className = 'score';
+        score.textContent = scores[i] + ' pts';
+
+        const controls = document.createElement('div');
+        controls.className = 'score-buttons';
+
+        [[-100, '−100'], [100, '+100']].forEach(([delta, label]) => {
+          const b = document.createElement('button');
+          b.className = 'action ' + (delta < 0 ? 'secondary' : '');
+          b.textContent = label;
+          b.addEventListener('click', () => {
+            scores[i] += delta;
+            renderTeams();
+          });
+          controls.appendChild(b);
+        });
+
+        row.append(score, controls);
+        wrap.append(input, row);
+        el.appendChild(wrap);
+      });
+    }
+
+    // Reset board and scores
+    document.getElementById('resetButton').addEventListener('click', () => {
+      completed.clear();
+      scores = [0, 0];
+      selected = null;
+      card.hidden = true;
+      renderBoard();
+      renderTeams();
+    });
+
+    // Toggle Bonus Final Jeopardy answer
+    document.getElementById('bonusButton').addEventListener('click', () => {
+      const a = document.getElementById('bonusAnswer');
+      const b = document.getElementById('bonusButton');
+      a.hidden = !a.hidden;
+      b.textContent = a.hidden ? 'Reveal Answer' : 'Hide Answer';
+    });
+
+    // Initialize game
+    renderBoard();
+    renderTeams();
+  </script>
+
+</body></html>
