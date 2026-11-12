@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/adamg/Downloads/bible_jeopardy_pauls_letters%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Jeopardy: Paul's Letters</title>
+<style>
+  :root { color-scheme: light; --blue:#173D72; --border:#d7dce2; --muted:#687386; --surface:#f4f6f8; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 18px 48px; background:#fff; color:#202733; font:16px/1.5 Arial,Helvetica,sans-serif; }
+  main { max-width:1000px; margin:0 auto; }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 8px; }
+  h2 { font-size:23px; margin:28px 0 12px; }
+  h3 { font-size:18px; margin:0; }
+  p { margin:8px 0 16px; }
+  .subtitle { color:#4e5968; margin-bottom:22px; }
+  .game-panel { border:1px solid var(--border); border-radius:16px; padding:16px; margin:20px 0 28px; }
+  .panel-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+  .badge { display:inline-block; border-radius:999px; padding:3px 10px; background:#e3f3e9; color:#21633c; font-size:12px; font-weight:700; }
+  .board { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px; }
+  .category { min-height:66px; padding:8px 4px; display:flex; align-items:center; justify-content:center; text-align:center; background:#eef0f3; border-radius:5px; font-weight:700; font-size:13px; }
+  .tile { min-height:48px; border:0; border-radius:5px; background:var(--blue); color:white; font-size:20px; font-weight:700; cursor:pointer; }
+  .tile:hover:not(:disabled) { background:#24548f; }
+  .tile:disabled { background:#eef0f3; color:#929aa5; cursor:default; }
+  .question-card { border-top:1px solid var(--border); margin-top:18px; padding-top:16px; }
+  .question-card[hidden] { display:none; }
+  .question-tag { display:inline-block; padding:4px 9px; border-radius:999px; background:#e7f0fb; color:#174b83; font-size:12px; font-weight:700; margin-bottom:10px; }
+  .question-text { font-size:18px; font-weight:700; margin:0 0 14px; }
+  .answer { background:var(--surface); border-radius:9px; padding:14px; margin:12px 0; }
+  .answer-label { color:#267348; font-size:11px; font-weight:700; letter-spacing:.04em; }
+  button { font:inherit; }
+  .action { border:0; border-radius:7px; padding:9px 14px; background:var(--blue); color:#fff; cursor:pointer; }
+  .action.secondary { background:#fff; color:#344154; border:1px solid #cbd2da; }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .scores { border-top:1px solid var(--border); margin-top:18px; padding-top:16px; }
+  .team { margin:12px 0 16px; }
+  .team input { width:100%; border:1px solid #cbd2da; border-radius:7px; padding:9px 10px; font:inherit; font-size:16px; }
+  .score-row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:6px; }
+  .score { font-size:25px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .score-buttons { display:flex; gap:6px; }
+  .bonus { border:1px solid var(--border); border-radius:12px; padding:16px; margin-top:14px; }
+  .bonus .badge { background:#fff1d5; color:#805500; }
+  table { width:100%; border-collapse:collapse; margin:10px 0 22px; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid #e1e5e9; }
+  th { background:#f3f5f7; }
+  .rules li { margin:5px 0; }
+  @media(max-width:650px) {
+    body { padding:20px 10px 36px; }
+    h1 { font-size:25px; }
+    .category { font-size:10px; min-height:72px; overflow-wrap:anywhere; }
+    .tile { min-height:44px; font-size:16px; }
+    .game-panel { padding:10px; }
+    th,td { padding:7px 5px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bible Jeopardy: Paul's Letters</h1>
+  <p class="subtitle"><strong>Theme:</strong> The Apostle Paul's Letters to the Early Church</p>
+  <p><strong>Format:</strong> 5 Categories | 5 Questions Each | 25 Total Questions<br>
+  <strong>Point Values:</strong> 100, 200, 300, 400, 500</p>
+  <p>The questions increase in difficulty as the point values increase. This game works well for adult Bible classes, youth groups, family devotionals, or church fellowships.</p>
+
+  <h2>Jeopardy Game Board</h2>
+  <section class="game-panel">
+    <div class="panel-heading"><strong>GAME BOARD</strong><span class="badge">25 questions</span></div>
+    <div class="board" id="board" aria-label="Jeopardy game board"><div class="category">Paul's Calling &amp; Life</div><div class="category">Romans</div><div class="category">Corinthians</div><div class="category">Church &amp; Christian Living</div><div class="category">Paul's Fellow Workers &amp; Letters</div><button class="tile" aria-label="Paul's Calling &amp; Life 100 points">100</button><button class="tile" aria-label="Romans 100 points">100</button><button class="tile" aria-label="Corinthians 100 points">100</button><button class="tile" aria-label="Church &amp; Christian Living 100 points">100</button><button class="tile" aria-label="Paul's Fellow Workers &amp; Letters 100 points">100</button><button class="tile" aria-label="Paul's Calling &amp; Life 200 points">200</button><button class="tile" aria-label="Romans 200 points">200</button><button class="tile" aria-label="Corinthians 200 points">200</button><button class="tile" aria-label="Church &amp; Christian Living 200 points">200</button><button class="tile" aria-label="Paul's Fellow Workers &amp; Letters 200 points">200</button><button class="tile" aria-label="Paul's Calling &amp; Life 300 points">300</button><button class="tile" aria-label="Romans 300 points">300</button><button class="tile" aria-label="Corinthians 300 points">300</button><button class="tile" aria-label="Church &amp; Christian Living 300 points">300</button><button class="tile" aria-label="Paul's Fellow Workers &amp; Letters 300 points">300</button><button class="tile" aria-label="Paul's Calling &amp; Life 400 points">400</button><button class="tile" aria-label="Romans 400 points">400</button><button class="tile" aria-label="Corinthians 400 points">400</button><button class="tile" aria-label="Church &amp; Christian Living 400 points">400</button><button class="tile" aria-label="Paul's Fellow Workers &amp; Letters 400 points">400</button><button class="tile" aria-label="Paul's Calling &amp; Life 500 points">500</button><button class="tile" aria-label="Romans 500 points">500</button><button class="tile" aria-label="Corinthians 500 points">500</button><button class="tile" aria-label="Church &amp; Christian Living 500 points">500</button><button class="tile" aria-label="Paul's Fellow Workers &amp; Letters 500 points">500</button></div>
+    <section class="question-card" id="questionCard" hidden="" aria-live="polite">
+      <div class="question-tag" id="questionTag"></div>
+      <h3>Question:</h3>
+      <p class="question-text" id="questionText"></p>
+      <div class="answer" id="answerBox" hidden=""><div class="answer-label">CORRECT RESPONSE</div><div id="answerText"></div></div>
+      <div class="actions">
+        <button class="action" id="revealButton">Reveal Answer</button>
+        <button class="action secondary" id="completeButton">Mark Complete</button>
+        <button class="action" id="closeButton">Close Question</button>
+      </div>
+    </section>
+    <section class="scores">
+      <strong>Team Scores</strong>
+      <div id="teams"><div class="team"><input aria-label="Team 1 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div><div class="team"><input aria-label="Team 2 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div></div>
+      <button class="action secondary" id="resetButton">Reset Game</button>
+    </section>
+  </section>
+
+  <h2>Complete Answer Key and Scripture References</h2>
+  <p>Use these references to verify answers and encourage discussion after each question.</p>
+  <table>
+    <thead><tr><th>Category</th><th>Points</th><th>Scripture</th></tr></thead>
+    <tbody>
+      <tr><td>Paul's Calling &amp; Life</td><td>100</td><td>Acts 9:1–6</td></tr>
+      <tr><td></td><td>200</td><td>Acts 9:11</td></tr>
+      <tr><td></td><td>300</td><td>Acts 13:9</td></tr>
+      <tr><td></td><td>400</td><td>2 Corinthians 11:24–27</td></tr>
+      <tr><td></td><td>500</td><td>Philippians 3:5–6</td></tr>
+      <tr><td>Romans</td><td>100</td><td>Romans 3:23</td></tr>
+      <tr><td></td><td>200</td><td>Romans 6:23</td></tr>
+      <tr><td></td><td>300</td><td>Romans 8:1</td></tr>
+      <tr><td></td><td>400</td><td>Romans 12:1–2</td></tr>
+      <tr><td></td><td>500</td><td>Romans 9:3–5; 10:1</td></tr>
+      <tr><td>Corinthians</td><td>100</td><td>1 Corinthians 13:4–7</td></tr>
+      <tr><td></td><td>200</td><td>1 Corinthians 12:12–27</td></tr>
+      <tr><td></td><td>300</td><td>1 Corinthians 15:3–8</td></tr>
+      <tr><td></td><td>400</td><td>2 Corinthians 12:7–10</td></tr>
+      <tr><td></td><td>500</td><td>1 Corinthians 5:1–5</td></tr>
+      <tr><td>Church &amp; Christian Living</td><td>100</td><td>Ephesians 6:1–3</td></tr>
+      <tr><td></td><td>200</td><td>Galatians 5:22–23</td></tr>
+      <tr><td></td><td>300</td><td>Ephesians 2:8–10</td></tr>
+      <tr><td></td><td>400</td><td>Philippians 2:5–8</td></tr>
+      <tr><td></td><td>500</td><td>Colossians 3:1–4</td></tr>
+      <tr><td>Paul's Fellow Workers &amp; Letters</td><td>100</td><td>Romans 16:1–2</td></tr>
+      <tr><td></td><td>200</td><td>2 Timothy 4:11</td></tr>
+      <tr><td></td><td>300</td><td>Philemon 10–12</td></tr>
+      <tr><td></td><td>400</td><td>2 Timothy 4:13</td></tr>
+      <tr><td></td><td>500</td><td>2 Timothy 4:6–8</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bonus Final Jeopardy</h2>
+  <section class="bonus">
+    <span class="badge">FINAL JEOPARDY · 1,000 POINTS</span>
+    <h3 style="margin-top:12px">Category: Paul's Mission</h3>
+    <p><strong>Near the end of his life, Paul wrote that he had fought the good fight, finished the race, and kept what?</strong></p>
+    <small style="color:var(--muted)">SCRIPTURE: 2 TIMOTHY 4:7</small>
+    <div style="margin-top:12px"><button class="action secondary" id="bonusButton">Reveal Answer</button></div>
+    <div class="answer" id="bonusAnswer" hidden=""><strong>Answer:</strong> The faith.</div>
+  </section>
+
+  <h2>Suggested Game Rules</h2>
+  <ol class="rules">
+    <li>Divide the congregation into two or more teams.</li>
+    <li>Teams take turns selecting a category and point value.</li>
+    <li>Give teams 15–30 seconds to answer.</li>
+    <li>Require answers in the form of a question, just like Jeopardy.</li>
+    <li>Award points for correct answers and deduct points for incorrect answers.</li>
+    <li>The team with the highest score wins!</li>
+  </ol>
+  <p><strong>A great teaching addition:</strong> After each answer, have someone read the corresponding Bible passage aloud. This turns the game into a Bible study rather than simply a trivia competition.</p>
+</main>
+<script>
+const categories = [
+ {name:"Paul's Calling & Life", questions:[
+  ["What was Paul's name before he became widely known as Paul?","Who was Saul?"],
+  ["On what road was Saul traveling when Jesus appeared to him?","What was the road to Damascus?"],
+  ["What was the name of the Roman province or island where Paul was from?","What was Tarsus in Cilicia?"],
+  ["According to 2 Corinthians, how many times did Paul receive 39 lashes from the Jews?","What were five times?"],
+  ["Before his conversion, what religious group did Paul belong to, and what was his standing in it?","What was that he was a Pharisee?"]]},
+ {name:"Romans", questions:[
+  ["According to Romans 3, what have all people done and fallen short of?","What is the glory of God?"],
+  ["According to Romans 6:23, what is the wages of sin?","What is death?"],
+  ["According to Romans 8:1, what is there now for those who are in Christ Jesus?","What is no condemnation?"],
+  ["In Romans 12, what does Paul urge Christians to present as a living sacrifice?","What are their bodies?"],
+  ["In Romans 9 and 10, what deep desire does Paul express concerning his fellow Israelites?","What is that they might be saved, even to the point of wishing himself accursed for their sake?"]]},
+ {name:"Corinthians", questions:[
+  ["According to 1 Corinthians 13, what is patient and kind?","What is love?"],
+  ["In 1 Corinthians 12, what illustration does Paul use to describe the church's many members working together?","What is one body with many parts?"],
+  ["According to 1 Corinthians 15, what are the central events of the gospel Paul says he received and passed on?","What are that Christ died for our sins, was buried, and was raised on the third day?"],
+  ["What did Paul call his 'thorn in the flesh,' and what did God say about his grace?","What was a messenger of Satan to torment him; God's grace was sufficient and his power was made perfect in weakness?"],
+  ["In 1 Corinthians 5, what serious sin in the church does Paul address, calling the church to remove the unrepentant offender?","What was a man living with his father's wife?"]]},
+ {name:"Church & Christian Living", questions:[
+  ["In Ephesians 6, what does Paul tell children to do in the Lord?","What is obey their parents?"],
+  ["Name one of the fruit of the Spirit listed in Galatians 5.","What is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, or self-control?"],
+  ["According to Ephesians 2, how are people saved, and what is not the source of that salvation?","What is by grace through faith, not by works?"],
+  ["In Philippians 2, what attitude does Paul say Christians should have, using Jesus as the example?","What is humility, or the mindset of Christ?"],
+  ["According to Colossians 3, where does Paul tell believers to set their minds, and where is their life hidden?","What is on things above; their life is hidden with Christ in God?"]]},
+ {name:"Paul's Fellow Workers & Letters", questions:[
+  ["What woman does Paul commend in Romans 16 as a servant of the church at Cenchreae?","Who is Phoebe?"],
+  ["Which fellow worker did Paul say had deserted him because he loved this present world?","Who was Demas?"],
+  ["In his letter to Philemon, what is the name of the enslaved man Paul sends back, asking Philemon to receive him as a brother?","Who is Onesimus?"],
+  ["In 2 Timothy 4:13, what does Paul ask Timothy to bring, along with the books, especially the parchments?","What is his cloak?"],
+  ["Near the end of 2 Timothy, what three statements does Paul make about his life of faith and ministry?","What are: he fought the good fight, finished the race, and kept the faith?"]]}
+];
+const board=document.getElementById('board'), card=document.getElementById('questionCard');
+let selected=null, completed=new Set(), scores=[0,0], teamNames=['Team 1','Team 2'];
+function renderBoard(){
+ board.innerHTML='';
+ categories.forEach(cat=>{
+  const heading=document.createElement('div'); heading.className='category'; heading.textContent=cat.name; board.appendChild(heading);
+ });
+ for(let q=0;q<5;q++) categories.forEach((cat,c)=>{
+  const key=c+'-'+q, btn=document.createElement('button'); btn.className='tile'; btn.textContent=completed.has(key)?'—':String((q+1)*100); btn.disabled=completed.has(key); btn.setAttribute('aria-label',cat.name+' '+((q+1)*100)+' points');
+  btn.addEventListener('click',()=>openQuestion(c,q)); board.appendChild(btn);
+ });
+}
+function openQuestion(c,q){
+ selected={c,q};
+ card.hidden=false;
+ document.getElementById('questionTag').textContent=categories[c].name+' · '+((q+1)*100)+' points';
+ document.getElementById('questionText').textContent=categories[c].questions[q][0];
+ document.getElementById('answerText').textContent=categories[c].questions[q][1];
+ document.getElementById('answerBox').hidden=true; document.getElementById('revealButton').hidden=false;
+ card.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+document.getElementById('revealButton').addEventListener('click',()=>{
+ document.getElementById('answerBox').hidden=false; document.getElementById('revealButton').hidden=true;
+});
+function closeQuestion(){ if(selected) completed.add(selected.c+'-'+selected.q); selected=null; card.hidden=true; renderBoard(); }
+document.getElementById('completeButton').addEventListener('click',closeQuestion);
+document.getElementById('closeButton').addEventListener('click',closeQuestion);
+function renderTeams(){
+ const el=document.getElementById('teams'); el.innerHTML='';
+ teamNames.forEach((name,i)=>{
+  const wrap=document.createElement('div'); wrap.className='team';
+  const input=document.createElement('input'); input.value=name; input.setAttribute('aria-label','Team '+(i+1)+' name');
+  input.addEventListener('input',()=>teamNames[i]=input.value);
+  const row=document.createElement('div'); row.className='score-row';
+  const score=document.createElement('div'); score.className='score'; score.textContent=scores[i]+' pts';
+  const controls=document.createElement('div'); controls.className='score-buttons';
+  [[-100,'−100'],[100,'+100']].forEach(([delta,label])=>{
+   const b=document.createElement('button'); b.className='action '+(delta<0?'secondary':''); b.textContent=label;
+   b.addEventListener('click',()=>{scores[i]+=delta;renderTeams();}); controls.appendChild(b);
+  });
+  row.append(score,controls); wrap.append(input,row); el.appendChild(wrap);
+ });
+}
+document.getElementById('resetButton').addEventListener('click',()=>{
+ completed.clear(); scores=[0,0]; selected=null; card.hidden=true; renderBoard(); renderTeams();
+});
+document.getElementById('bonusButton').addEventListener('click',()=>{
+ const a=document.getElementById('bonusAnswer'), b=document.getElementById('bonusButton');
+ a.hidden=!a.hidden; b.textContent=a.hidden?'Reveal Answer':'Hide Answer';
+});
+renderBoard(); renderTeams();
+</script>
+
+</body></html>

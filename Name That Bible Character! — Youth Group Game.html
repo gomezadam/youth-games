@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)file:///C:/Users/adamg/Downloads/name_that_bible_character_no_answers_at_bottom.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Name That Bible Character! — Youth Group Game</title>
+<style>
+  :root {
+    --navy:#172554; --gold:#facc15; --green:#16a34a;
+    --bg:#f8fafc; --panel:#f1f5f9; --ink:#172033; --muted:#64748b;
+    --border:#dbe2ea; --white:#fff;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:24px; background:var(--bg); color:var(--ink);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  .game { max-width:900px; margin:0 auto; background:white; border:1px solid var(--border); border-radius:22px; overflow:hidden; box-shadow:0 12px 35px rgba(15,23,42,.08); }
+  .hero { background:var(--navy); color:white; text-align:center; padding:30px 18px 24px; }
+  h1 { font-size:clamp(1.8rem,5vw,3rem); margin:0 0 8px; letter-spacing:.025em; }
+  .who { color:var(--gold); font-weight:900; font-size:1.35rem; letter-spacing:.12em; margin:4px 0 10px; }
+  .hero p { margin:0 0 16px; }
+  .badges { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; }
+  .badge { display:inline-block; border-radius:999px; padding:5px 11px; font-size:.78rem; font-weight:800; background:#e2e8f0; color:#334155; }
+  .badge.green { background:#dcfce7; color:#166534; }
+  .badge.blue { background:#dbeafe; color:#1e40af; }
+  .badge.gold { background:#fef3c7; color:#92400e; }
+  main { padding:24px; }
+  .row { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .muted { color:var(--muted); }
+  .progress { height:8px; background:#e2e8f0; border-radius:99px; overflow:hidden; margin:12px 0 18px; }
+  .progress > div { height:100%; background:var(--green); transition:width .2s; }
+  .challenge { background:var(--panel); border-radius:16px; padding:20px; }
+  h2 { text-align:center; margin:0 0 6px; font-size:1.7rem; }
+  .clues { display:grid; gap:10px; margin-top:18px; }
+  .clue { background:white; border-radius:12px; padding:14px 16px; border:1px solid #e2e8f0; }
+  .clue-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:7px; }
+  .hidden { color:#94a3b8; font-style:italic; }
+  .answer { background:#f0fdf4; border:2px solid var(--green); border-radius:13px; padding:17px; margin-top:14px; }
+  .answer h2 { color:#15803d; margin:7px 0 12px; }
+  .actions { display:grid; gap:9px; margin:16px 0; }
+  button, select { font:inherit; }
+  button { border:0; border-radius:10px; padding:12px 16px; cursor:pointer; font-weight:800; transition:filter .15s,transform .05s; }
+  button:hover { filter:brightness(.96); }
+  button:active { transform:translateY(1px); }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  .primary { background:#2563eb; color:white; }
+  .success { background:var(--green); color:white; }
+  .outline { background:white; color:#15803d; border:1px solid #86efac; }
+  .secondary { background:#e2e8f0; color:#334155; }
+  .ghost { background:transparent; color:#475569; }
+  .team-buttons { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .scoreboard { border-top:1px solid var(--border); margin-top:22px; padding-top:18px; }
+  .score-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:10px; }
+  .score-card { background:var(--panel); border-radius:12px; text-align:center; padding:13px; }
+  .score-card strong { display:block; }
+  .score { font-size:2rem; font-weight:900; font-variant-numeric:tabular-nums; margin:4px 0 8px; }
+  .small-buttons { display:flex; justify-content:center; gap:6px; }
+  .small-buttons button { padding:7px 10px; font-size:.82rem; }
+  .settings { background:var(--panel); padding:16px 20px; border-top:1px solid var(--border); }
+  .settings small { color:var(--muted); display:block; margin:4px 0 12px; }
+  .team-select { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  select { border:1px solid var(--border); background:white; border-radius:9px; padding:9px 12px; }
+  .finished { text-align:center; padding:32px 12px; }
+  .trophy { font-size:3rem; }
+  .final-team { background:var(--panel); border-radius:12px; padding:14px; margin:9px 0; }
+  .final-team .score { margin:3px 0; }
+  section.guide { max-width:900px; margin:28px auto 0; }
+  section.guide h2 { text-align:left; font-size:1.55rem; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; background:white; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  th,td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--border); }
+  th { background:#e2e8f0; }
+  tr:last-child td { border-bottom:0; }
+  .recommendation { margin-top:20px; background:white; border:1px solid var(--border); border-radius:12px; padding:16px; line-height:1.6; }
+  .hidden-el { display:none !important; }
+  @media(max-width:560px) {
+    body { padding:10px; }
+    main { padding:15px; }
+    .score-grid { gap:7px; }
+    th,td { padding:9px 8px; font-size:.9rem; }
+  }
+  @media print {
+    body { background:white; padding:0; }
+    .game, table, .recommendation { box-shadow:none; }
+    button, .settings { display:none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="game">
+  <header class="hero">
+    <h1>NAME THAT BIBLE CHARACTER!</h1>
+    <div class="who">WHO AM I?</div>
+    <p>A Bible knowledge challenge</p>
+    <div class="badges">
+      <span class="badge gold" id="roundBadge">ROUND 1 OF 10</span>
+      <span class="badge green" id="testamentBadge">OLD TESTAMENT</span>
+    </div>
+  </header>
+  <main>
+    <div id="playing">
+      <div class="row">
+        <strong>CHARACTER CHALLENGE</strong>
+        <span class="muted" id="roundCount">1/10</span>
+      </div>
+      <div class="progress"><div id="progressBar" style="width:10%"></div></div>
+      <div class="challenge">
+        <h2>WHO AM I?</h2>
+        <div class="muted" style="text-align:center">Read the clues one at a time.</div>
+        <div class="clues" id="clues"><div class="clue"><div class="clue-head"><strong>CLUE 1</strong><span class="badge green">REVEALED</span></div><div>God told me to build something enormous.</div></div><div class="clue"><div class="clue-head"><strong>CLUE 2</strong><span class="badge ">LOCKED</span></div><div><span class="hidden">Clue hidden...</span></div></div><div class="clue"><div class="clue-head"><strong>CLUE 3</strong><span class="badge ">LOCKED</span></div><div><span class="hidden">Clue hidden...</span></div></div></div>
+        <div class="answer hidden-el" id="answer">
+          <span class="badge green">CORRECT ANSWER</span>
+          <h2 id="answerName">Noah</h2>
+          <p><strong>Bible references:</strong> <span id="answerVerse">Genesis 6–9</span></p>
+          <hr style="border:0;border-top:1px solid #bbf7d0">
+          <strong>Did you know?</strong>
+          <p id="answerFact" style="margin-bottom:0">God placed a rainbow in the sky as a covenant sign.</p>
+        </div>
+      </div>
+      <div class="actions" id="clueActions">
+        <button class="primary" id="nextClue">💡 Reveal Next Clue</button>
+        <button class="success" id="revealAnswer">◉ Reveal Answer</button>
+      </div>
+      <div id="award" class="hidden-el">
+        <strong>Award 100 points to the winning team</strong>
+        <div class="team-buttons" id="awardButtons" style="margin-top:9px"><button class="outline" data-award="0">Team 1 +100</button><button class="outline" data-award="1">Team 2 +100</button></div>
+        <button class="primary" id="nextCharacter" style="width:100%;margin-top:12px">Next Character →</button>
+      </div>
+      <div class="scoreboard">
+        <strong>TEAM SCOREBOARD</strong>
+        <div class="score-grid" id="scoreGrid">
+    <div class="score-card"><strong>TEAM 1</strong><div class="score">0</div>
+    <div class="small-buttons"><button class="secondary" data-minus="0">−100</button><button class="secondary" data-plus="0">+100</button></div></div>
+    <div class="score-card"><strong>TEAM 2</strong><div class="score">0</div>
+    <div class="small-buttons"><button class="secondary" data-minus="1">−100</button><button class="secondary" data-plus="1">+100</button></div></div></div>
+      </div>
+    </div>
+    <div id="finished" class="finished hidden-el">
+      <div class="trophy">🏆</div>
+      <h2 style="color:#15803d">GAME OVER!</h2>
+      <strong>Final Scores</strong>
+      <div id="finalScores" style="margin:12px 0"></div>
+      <h3>Great job!</h3>
+      <p class="muted">Keep learning God's Word and getting to know the people in the Bible.</p>
+      <button class="primary" id="playAgain">↻ Play Again</button>
+    </div>
+  </main>
+  <div class="settings">
+    <strong>Game settings</strong>
+    <small>Choose the number of teams before starting. Changing this resets the scoreboard.</small>
+    <div class="team-select">
+      <label for="teamCount">Number of teams</label>
+      <select id="teamCount">
+        <option value="2" selected="">2 Teams</option>
+        <option value="3">3 Teams</option>
+        <option value="4">4 Teams</option>
+      </select>
+    </div>
+    <button class="ghost" id="resetGame" style="width:100%;margin-top:8px">Reset entire game</button>
+  </div>
+</div>
+
+
+
+<script>
+const questions = [
+  {name:"Noah",testament:"Old Testament",clues:["God told me to build something enormous.","I gathered animals into it, two by two, and in groups of seven for some clean animals.","It rained for 40 days and 40 nights, and I survived a worldwide flood."],verse:"Genesis 6–9",fact:"God placed a rainbow in the sky as a covenant sign."},
+  {name:"Esther",testament:"Old Testament",clues:["I was a young Jewish woman living in a foreign kingdom.","My cousin Mordecai raised me, and I eventually became a queen.","I risked my life by approaching the king to save my people."],verse:"Esther 2–8",fact:"I became queen of Persia and helped save the Jewish people from destruction."},
+  {name:"Moses",testament:"Old Testament",clues:["I was placed in a basket as a baby and hidden in a river.","God spoke to me through a burning bush.","I led the Israelites out of Egypt and received the Ten Commandments."],verse:"Exodus 2–20",fact:"God used me to lead His people out of Egyptian slavery."},
+  {name:"David",testament:"Old Testament",clues:["I was the youngest son in my family.","I defeated a giant using a sling and a stone.","I became king of Israel and was known as a man after God's own heart."],verse:"1 Samuel 16–17; 2 Samuel 5",fact:"I defeated Goliath before eventually becoming king of Israel."},
+  {name:"Jonah",testament:"Old Testament",clues:["God gave me a mission, but I tried to run away.","I boarded a ship going in the opposite direction.","I spent three days and three nights inside a great fish."],verse:"Jonah 1–4",fact:"God sent me to preach to Nineveh, and I eventually obeyed."},
+  {name:"Peter",testament:"New Testament",clues:["I was a fisherman before following Jesus.","I once walked on water toward Jesus.","I denied knowing Jesus three times but later became a bold preacher."],verse:"Matthew 4:18–20; 14:28–31; 26:69–75; Acts 2",fact:"I preached on Pentecost, and about 3,000 people were baptized."},
+  {name:"Zacchaeus",testament:"New Testament",clues:["I had a job that made many people dislike me.","I was too short to see Jesus through the crowd.","I climbed a sycamore tree, and Jesus invited Himself to my house."],verse:"Luke 19:1–10",fact:"I was a tax collector who promised to repay those I had cheated."},
+  {name:"Mary Magdalene",testament:"New Testament",clues:["I was a devoted follower of Jesus.","I was present during the events surrounding His crucifixion.","I was among the first people to discover that Jesus had risen from the dead."],verse:"Luke 8:1–3; John 19–20",fact:"I encountered the risen Jesus and told the disciples that He was alive."},
+  {name:"Paul",testament:"New Testament",clues:["At first, I persecuted followers of Jesus.","I encountered Jesus on the road to Damascus.","I became a missionary and wrote many letters found in the New Testament."],verse:"Acts 9; Acts 13–28",fact:"I was formerly known as Saul and became one of the early church's most influential missionaries."},
+  {name:"Samson",testament:"Old Testament",clues:["God chose me to be a judge of Israel.","My great strength was connected to my uncut hair.","Delilah betrayed me, and the Philistines captured me."],verse:"Judges 13–16",fact:"I brought down the Philistine temple in my final act."}
+];
+
+let round = 0, clue = 0, revealed = false, teams = 2;
+let scores = [0,0,0,0];
+const $ = id => document.getElementById(id);
+
+function render() {
+  const q = questions[round];
+  $("roundBadge").textContent = `ROUND ${round+1} OF 10`;
+  $("testamentBadge").textContent = q.testament.toUpperCase();
+  $("roundCount").textContent = `${round+1}/10`;
+  $("progressBar").style.width = `${(round+1)*10}%`;
+  $("clues").innerHTML = q.clues.map((text,i) => {
+    const visible = i <= clue || revealed;
+    return `<div class="clue"><div class="clue-head"><strong>CLUE ${i+1}</strong><span class="badge ${visible?'green':''}">${visible?'REVEALED':'LOCKED'}</span></div><div>${visible ? text : '<span class="hidden">Clue hidden...</span>'}</div></div>`;
+  }).join("");
+  $("answer").classList.toggle("hidden-el",!revealed);
+  $("answerName").textContent = q.name;
+  $("answerVerse").textContent = q.verse;
+  $("answerFact").textContent = q.fact;
+  $("clueActions").classList.toggle("hidden-el",revealed);
+  $("award").classList.toggle("hidden-el",!revealed);
+  $("nextClue").disabled = clue === 2;
+  $("awardButtons").innerHTML = Array.from({length:teams},(_,i)=>`<button class="outline" data-award="${i}">Team ${i+1} +100</button>`).join("");
+  $("scoreGrid").innerHTML = Array.from({length:teams},(_,i)=>`
+    <div class="score-card"><strong>TEAM ${i+1}</strong><div class="score">${scores[i]}</div>
+    <div class="small-buttons"><button class="secondary" data-minus="${i}">−100</button><button class="secondary" data-plus="${i}">+100</button></div></div>`).join("");
+  $("nextCharacter").textContent = round === 9 ? "Finish Game →" : "Next Character →";
+  document.querySelectorAll("[data-award]").forEach(b=>b.addEventListener("click",()=>{scores[Number(b.dataset.award)]+=100;render();}));
+  document.querySelectorAll("[data-minus]").forEach(b=>b.addEventListener("click",()=>{const i=Number(b.dataset.minus);scores[i]=Math.max(0,scores[i]-100);render();}));
+  document.querySelectorAll("[data-plus]").forEach(b=>b.addEventListener("click",()=>{scores[Number(b.dataset.plus)]+=100;render();}));
+}
+function reset() {
+  round=0; clue=0; revealed=false; scores=[0,0,0,0];
+  $("playing").classList.remove("hidden-el");
+  $("finished").classList.add("hidden-el");
+  render();
+}
+$("nextClue").addEventListener("click",()=>{clue=Math.min(2,clue+1);render();});
+$("revealAnswer").addEventListener("click",()=>{revealed=true;render();});
+$("nextCharacter").addEventListener("click",()=>{
+  if(round===9){showFinal();} else {round++;clue=0;revealed=false;render();}
+});
+$("teamCount").addEventListener("change",e=>{teams=Number(e.target.value);scores=[0,0,0,0];render();});
+$("resetGame").addEventListener("click",reset);
+$("playAgain").addEventListener("click",reset);
+function showFinal() {
+  $("playing").classList.add("hidden-el");
+  $("finished").classList.remove("hidden-el");
+  const order=Array.from({length:teams},(_,i)=>i).sort((a,b)=>scores[b]-scores[a]);
+  $("finalScores").innerHTML=order.map(i=>`<div class="final-team"><strong>TEAM ${i+1}</strong><div class="score">${scores[i]} points</div>${scores[i]===Math.max(...scores.slice(0,teams))?'<span class="badge green">Winner / Tied Winner</span>':''}</div>`).join("");
+}
+render();
+</script>
+
+</body></html>

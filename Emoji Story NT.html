@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/adamg/Downloads/emoji_story_new_testament.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fact or Fiction | Youth Group Bible Game</title>
+<style>
+:root{--navy:#14243a;--blue:#245b86;--gold:#f4b942;--cream:#f7f4ed;--ink:#1d2937;--green:#287a55;--red:#a94343}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#e9eff5,#f8f5ed);font-family:Arial,Helvetica,sans-serif;color:var(--ink);min-height:100vh}
+header{background:var(--navy);color:white;padding:28px 18px;text-align:center;border-bottom:6px solid var(--gold)}
+header .eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:.75rem;color:#c9d8e7;font-weight:bold}
+h1{font-size:clamp(2.2rem,6vw,4rem);margin:8px 0 5px;letter-spacing:1px}
+header p{margin:0;color:#dbe5ef;font-size:1.05rem}
+main{max-width:1100px;margin:24px auto;padding:0 16px 40px}
+.panel{background:white;border-radius:18px;padding:22px;box-shadow:0 8px 24px #14243a12;margin-bottom:18px}
+.setup{display:flex;gap:14px;flex-wrap:wrap;align-items:end}
+label{font-weight:bold;display:block;margin-bottom:7px}
+input,select{padding:11px 12px;border:1px solid #cbd5df;border-radius:9px;font-size:1rem}
+button{border:0;border-radius:10px;padding:12px 17px;font-size:1rem;font-weight:bold;cursor:pointer;transition:.15s}
+button:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.primary{background:var(--blue);color:white}.gold{background:var(--gold);color:#30240b}.muted{background:#e7edf2;color:var(--navy)}.fact{background:var(--green);color:white}.fiction{background:var(--red);color:white}
+.scoreboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.score{background:#f1f5f8;border-radius:12px;padding:12px;text-align:center;border:2px solid transparent}
+.score.active{border-color:var(--gold);background:#fff8e8}.score strong{display:block;font-size:1.7rem;color:var(--navy);margin-top:4px}
+.game-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:#526273;font-weight:bold}
+.progress{height:9px;background:#e8edf2;border-radius:10px;overflow:hidden;margin:14px 0 22px}.bar{height:100%;background:var(--gold);width:0%;transition:width .25s}
+.question-card{text-align:center;padding:30px 18px;background:linear-gradient(145deg,#f4f7fa,#fff);border:1px solid #e4eaf0;border-radius:16px}
+.tag{display:inline-block;background:#e2edf6;color:#245b86;border-radius:30px;padding:6px 12px;font-size:.8rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
+.statement{font-size:clamp(2.4rem,6vw,4rem);line-height:1.4;max-width:850px;margin:22px auto;min-height:100px;letter-spacing:4px}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;max-width:850px;margin:20px auto 4px}
+.choice-btn{background:#f1f5f8;color:var(--navy);border:2px solid #cbd5df;font-size:1.05rem;padding:15px 16px;text-align:center}
+.choice-btn:hover{border-color:var(--blue);background:#e8f0f7}
+.feedback{display:none;text-align:left;margin:20px auto 0;max-width:850px;padding:18px;border-radius:12px;background:#eef6f1;border-left:5px solid var(--green)}
+.feedback.wrong{background:#fbefef;border-left-color:var(--red)}
+.feedback h3{margin:0 0 8px}.feedback p{line-height:1.55;margin:7px 0}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.hidden{display:none!important}.small{font-size:.9rem;color:#627184}
+.end{text-align:center}.end h2{font-size:2rem;color:var(--navy)}.winner{font-size:1.3rem;font-weight:bold;color:var(--green)}
+footer{text-align:center;color:#718096;font-size:.85rem;padding:10px}
+@media(max-width:560px){.panel{padding:16px}.choices{grid-template-columns:1fr}.statement{min-height:0;letter-spacing:2px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">A Bible challenge for youth groups</div>
+ <h1>EMOJI STORY: NEW TESTAMENT</h1>
+ <p>Can your team separate Bible truth from Bible myths?</p>
+</header>
+<main>
+ <section class="panel" id="setupPanel">
+  <h2>Get your teams ready</h2>
+  <p class="small">Choose how many teams are playing. Give each team a name, then start the challenge.</p>
+  <div class="setup">
+   <div><label for="teamCount">Number of teams</label><select id="teamCount"><option>2</option><option>3</option><option>4</option></select></div>
+   <div id="teamNames" class="setup"><div><label for="team0">Team 1 name</label><input id="team0" value="Team 1" maxlength="18"></div><div><label for="team1">Team 2 name</label><input id="team1" value="Team 2" maxlength="18"></div></div>
+   <button class="primary" id="startBtn">Start Game</button>
+  </div>
+ </section>
+ <section class="panel hidden" id="scorePanel">
+  <h2>Team scoreboard</h2><div class="scoreboard" id="scores"></div>
+  <p class="small">The highlighted team is up next. Teams earn 100 points for each correct answer.</p>
+ </section>
+ <section class="panel hidden" id="gamePanel">
+  <div class="game-top"><span id="roundLabel">Question 1 of 20</span><span id="turnLabel">Team 1's turn</span></div>
+  <div class="progress"><div class="bar" id="progressBar"></div></div>
+  <div class="question-card">
+   <span class="tag" id="category">New Testament</span>
+   <div class="statement" id="statement">Loading question...</div>
+   <p class="small">Talk it over with your team, then choose your answer.</p>
+   <div class="choices" id="choices"></div>
+   <div class="feedback" id="feedback" aria-live="polite"></div>
+  </div>
+  <div class="controls">
+   <button class="muted" id="skipBtn">Skip Question</button>
+   <button class="gold hidden" id="nextBtn">Next Question →</button>
+  </div>
+ </section>
+ <section class="panel end hidden" id="endPanel">
+  <h2>Game Over!</h2><p class="winner" id="winnerText"></p><div class="scoreboard" id="finalScores"></div>
+  <p>Great job! Take a minute to look up a few of the verses and talk about what you learned.</p>
+  <button class="primary" id="restartBtn">Play Again</button>
+ </section>
+ <footer>EMOJI STORY: NEW TESTAMENT • Youth Group Bible Game</footer>
+</main>
+<script>
+const questions = [
+{c:"Luke",s:"👼🌟👶🐄⭐🎁👑",o:["The Birth of Jesus","The Presentation at the Temple","The Boy Jesus in the Temple","John the Baptist's Birth"],a:0,e:"Angels announced the birth of Jesus to shepherds, Mary laid Him in a manger in Bethlehem, and wise men followed a star to bring gifts to the newborn King.",r:"Luke 2:1–20; Matthew 2:1–11"},
+{c:"Matthew",s:"🌊🕊️☁️🗣️❤️👦",o:["Jesus Walking on Water","The Baptism of Jesus","The Transfiguration","Calming the Storm"],a:1,e:"When John baptized Jesus in the Jordan River, heaven opened, the Spirit descended like a dove, and a voice from heaven declared, 'This is my beloved Son, with whom I am well pleased.'",r:"Matthew 3:13–17"},
+{c:"Matthew",s:"🏜️4️⃣0️⃣🍞🏛️⛰️😈",o:["The Temptation of Jesus","The Sermon on the Mount","Jesus Fasting in Gethsemane","Paul in Arabia"],a:0,e:"After fasting forty days and nights in the wilderness, Jesus resisted Satan's three temptations—turning stones to bread, jumping from the temple, and bowing for worldly kingdoms—by quoting Scripture.",r:"Matthew 4:1–11"},
+{c:"John",s:"💒💧🏺➡️🍷🎉",o:["The Last Supper","The Wedding at Cana","The Parable of the Wedding Banquet","Jesus Anointed at Bethany"],a:1,e:"At a wedding in Cana of Galilee when the wine ran out, Jesus told servants to fill six stone water jars with water and turned it into choice wine as His first public sign.",r:"John 2:1–11"},
+{c:"Mark",s:"🏠🧱🕳️🛏️⬇️🚶‍♂️",o:["Healing the Blind Man","Healing the Paralytic Lowered Through the Roof","Raising Jairus' Daughter","Healing the Man at Bethesda"],a:1,e:"Unable to get through the crowded doorway in Capernaum, four friends dug an opening through the roof and lowered a paralyzed man on a mat right in front of Jesus.",r:"Mark 2:1–12"},
+{c:"Matthew",s:"⛵⛈️😴🌊🗣️🤫",o:["Paul's Shipwreck","Jesus Calming the Storm","The Miraculous Catch of Fish","Jonah's Storm"],a:1,e:"While a furious squall swamped their boat on the Sea of Galilee, Jesus slept on a cushion until the disciples woke Him—and He rebuked the wind and waves into complete calm.",r:"Mark 4:35–41"},
+{c:"John",s:"👦🍞5️⃣🐟2️⃣🍽️🧺1️⃣2️⃣",o:["Feeding the 4,000","Feeding the 5,000","The Great Banquet","Breakfast on the Beach"],a:1,e:"Taking a boy's five small barley loaves and two fish, Jesus gave thanks, fed a crowd of five thousand men plus women and children, and had twelve baskets of leftovers gathered.",r:"John 6:1–14"},
+{c:"Matthew",s:"🌊🚶‍♂️💨😱⬇️🤝",o:["Peter Walking on Water","Philip and the Ethiopian","Baptism in the Jordan","Crossing the Sea"],a:0,e:"Seeing Jesus walking on the sea at night, Peter stepped out of the boat onto the water—until he noticed the wind, began to sink, and cried out for Jesus to catch him.",r:"Matthew 14:22–33"},
+{c:"Luke",s:"🛣️🤕🚶‍♂️🚫🩹🫏🪙",o:["The Prodigal Son","The Good Samaritan","The Rich Fool","The Lost Sheep"],a:1,e:"After a priest and a Levite passed by a beaten traveler on the Jericho road, a Samaritan bandaged his wounds, placed him on his own donkey, and paid an innkeeper to care for him.",r:"Luke 10:25–37"},
+{c:"Luke",s:"🐖🍽️💭🏃‍♂️🧥💍🎉",o:["The Prodigal Son","The Rich Young Ruler","Zacchaeus the Tax Collector","The Lost Coin"],a:0,e:"After squandering his inheritance and longing to eat pig pods, a younger son returned home—where his father ran to embrace him, put a robe and ring on him, and threw a feast.",r:"Luke 15:11–32"},
+{c:"John",s:"🤒😢🪦🪨🗣️🚶‍♂️",o:["Raising the Widow's Son","Raising Lazarus from the Dead","The Resurrection of Jesus","Raising Tabitha"],a:1,e:"Four days after Lazarus was laid in a tomb in Bethany, Jesus wept with Mary and Martha, had the stone rolled away, and called Lazarus out alive still wrapped in grave clothes.",r:"John 11:1–44"},
+{c:"Luke",s:"💰🌳👀🏠🍽️🔄",o:["Calling of Matthew","Zacchaeus in the Sycamore Tree","The Widow's Offering","Ananias and Sapphira"],a:1,e:"Short in stature and despised as a chief tax collector in Jericho, Zacchaeus climbed a sycamore-fig tree to see Jesus—who invited Himself to Zacchaeus' house and transformed his life.",r:"Luke 19:1–10"},
+{c:"Matthew",s:"🫏🌿🧥📣🏛️💰",o:["The Triumphal Entry","Jesus' Birth in Bethlehem","Flight to Egypt","The Ascension"],a:0,e:"Riding into Jerusalem on a donkey colt while crowds spread cloaks and palm branches shouting 'Hosanna,' Jesus fulfilled Zechariah's prophecy of Israel's humble King.",r:"Matthew 21:1–11"},
+{c:"Luke",s:"🍞🍷🤝👣💋🗡️",o:["The Wedding at Cana","The Last Supper & Betrayal","The Road to Emmaus","Pentecost"],a:1,e:"In an upper room at Passover, Jesus broke bread and shared the cup as the new covenant in His blood—shortly before Judas betrayed Him with a kiss in Gethsemane.",r:"Luke 22:14–20, 47–48"},
+{c:"Matthew",s:"🐓1️⃣2️⃣3️⃣😭💔",o:["Judas' Betrayal","Peter's Denial of Jesus","Thomas Doubting","Paul's Thorn in the Flesh"],a:1,e:"In the high priest's courtyard, Peter denied knowing Jesus three times—and the moment the rooster crowed, he remembered Jesus' words and went outside weeping bitterly.",r:"Matthew 26:69–75"},
+{c:"Matthew",s:"🪨👼🌅🏃‍♀️🏃‍♂️✨",o:["The Ascension","The Empty Tomb & Resurrection","The Transfiguration","Stephen's Vision"],a:1,e:"At dawn on the first day of the week, an earthquake rolled back the stone, an angel announced that Jesus had risen, and the women ran to tell the disciples.",r:"Matthew 28:1–10"},
+{c:"Luke",s:"🚶‍♂️🚶‍♂️🗣️🍞👀✨",o:["Philip and the Ethiopian","The Road to Emmaus","Peter and John at the Temple","Paul and Barnabas"],a:1,e:"Two disciples walking to Emmaus failed to recognize the risen Jesus explaining the Scriptures until He broke bread at their table—and their eyes were opened.",r:"Luke 24:13–35"},
+{c:"Acts",s:"💨🔥🗣️🌍👂🙌",o:["The Day of Pentecost","The Transfiguration","Elijah on Mount Carmel","Paul in Athens"],a:0,e:"Gathered in Jerusalem on Pentecost, believers heard a sound like a rushing wind, saw tongues of fire rest on them, and proclaimed God's wonders in every visitor's native language.",r:"Acts 2:1–13"},
+{c:"Acts",s:"🐎💡👀🙈🗣️💧",o:["The Conversion of Saul (Paul)","Cornelius' Vision","Peter's Rooftop Vision","Stephen's Martyrdom"],a:0,e:"On the road to Damascus to arrest Christians, Saul was blinded by a light from heaven, heard Jesus speak to him, and had his sight restored three days later by Ananias.",r:"Acts 9:1–19"},
+{c:"Acts",s:"⛓️🎶💥🚪🗡️💧",o:["Peter Freed by an Angel","Paul and Silas in the Philippian Jail","Paul's Arrest in Jerusalem","John Exiled on Patmos"],a:1,e:"Beaten and fastened in stocks in Philippi, Paul and Silas prayed and sang hymns at midnight until a violent earthquake opened the prison doors—leading the jailer and his household to faith.",r:"Acts 16:22–34"}
+];
+let teams=[],scores=[],current=0,turn=0,answered=false,order=[];
+const $=id=>document.getElementById(id);
+function renderNameInputs(){const n=+$("teamCount").value; $("teamNames").innerHTML="";for(let i=0;i<n;i++){const d=document.createElement("div");d.innerHTML=`<label for="team${i}">Team ${i+1} name</label><input id="team${i}" value="Team ${i+1}" maxlength="18">`; $("teamNames").appendChild(d)}}
+$("teamCount").addEventListener("change",renderNameInputs);renderNameInputs();
+function renderScores(){ $("scores").innerHTML=teams.map((t,i)=>`<div class="score ${i===turn?'active':''}">${escapeHtml(t)}<strong>${scores[i]}</strong><span class="small">${i===turn?'Up next':''}</span></div>`).join("");}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function start(){const n=+$("teamCount").value;teams=Array.from({length:n},(_,i)=>($("team"+i).value.trim()||`Team ${i+1}`));scores=teams.map(()=>0);order=questions.map((_,i)=>i);current=0;turn=0; $("setupPanel").classList.add("hidden");$("endPanel").classList.add("hidden");$("scorePanel").classList.remove("hidden");$("gamePanel").classList.remove("hidden");renderScores();showQuestion();}
+function showQuestion(){if(current>=order.length){endGame();return}answered=false;const q=questions[order[current]];$("roundLabel").textContent=`Question ${current+1} of ${order.length}`;$("turnLabel").textContent=`${teams[turn]}'s turn`;$("progressBar").style.width=`${current/order.length*100}%`;$("category").textContent=q.c;$("statement").textContent=q.s;$("feedback").style.display="none";$("feedback").className="feedback";const cBox=$("choices");cBox.classList.remove("hidden");cBox.innerHTML=q.o.map((opt,idx)=>`<button class="choice-btn" onclick="answer(${idx})">${escapeHtml(opt)}</button>`).join("");$("nextBtn").classList.add("hidden");renderScores();}
+function answer(choice){if(answered)return;answered=true;const q=questions[order[current]],correct=choice===q.a;if(correct)scores[turn]+=100;$("choices").classList.add("hidden");const f=$("feedback");f.style.display="block";f.className="feedback"+(correct?"":" wrong");f.innerHTML=`<h3>${correct?"🎉 Correct! +100 points":"Not quite!"} The answer is ${escapeHtml(q.o[q.a])}.</h3><p>${q.e}</p><p><strong>Read it:</strong> ${q.r}</p>`;$("nextBtn").classList.remove("hidden");$("nextBtn").textContent=current===order.length-1?"See Final Scores →":"Next Question →";renderScores();}
+function next(){current++;turn=(turn+1)%teams.length;showQuestion();}
+function skip(){if(answered)return;answered=true;const q=questions[order[current]];$("choices").classList.add("hidden");const f=$("feedback");f.style.display="block";f.className="feedback";f.innerHTML=`<h3>Skipped! The answer is ${escapeHtml(q.o[q.a])}.</h3><p>${q.e}</p><p><strong>Read it:</strong> ${q.r}</p>`;$("nextBtn").classList.remove("hidden");$("nextBtn").textContent=current===order.length-1?"See Final Scores →":"Next Question →";}
+function endGame(){ $("gamePanel").classList.add("hidden");$("endPanel").classList.remove("hidden");$("progressBar").style.width="100%";const high=Math.max(...scores);const winners=teams.filter((_,i)=>scores[i]===high);$("winnerText").textContent=winners.length===1?`${winners[0]} wins with ${high} points!`:`It's a tie! ${winners.join(" and ")} finish with ${high} points!`;$("finalScores").innerHTML=teams.map((t,i)=>`<div class="score">${escapeHtml(t)}<strong>${scores[i]}</strong></div>`).join("");}
+$("startBtn").addEventListener("click",start);$("nextBtn").addEventListener("click",next);$("skipBtn").addEventListener("click",skip);$("restartBtn").addEventListener("click",()=>{$("setupPanel").classList.remove("hidden");$("scorePanel").classList.add("hidden");$("endPanel").classList.add("hidden");$("gamePanel").classList.add("hidden");});
+</script>
+
+</body></html>

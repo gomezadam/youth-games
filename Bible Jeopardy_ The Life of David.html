@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/adamg/Downloads/bible_jeopardy_life_of_david%20(2).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Jeopardy: The Life of David</title>
+<style>
+  :root { color-scheme: light; --blue:#173D72; --border:#d7dce2; --muted:#687386; --surface:#f4f6f8; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 18px 48px; background:#fff; color:#202733; font:16px/1.5 Arial,Helvetica,sans-serif; }
+  main { max-width:1000px; margin:0 auto; }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 8px; }
+  h2 { font-size:23px; margin:28px 0 12px; }
+  h3 { font-size:18px; margin:0; }
+  p { margin:8px 0 16px; }
+  .subtitle { color:#4e5968; margin-bottom:22px; }
+  .game-panel { border:1px solid var(--border); border-radius:16px; padding:16px; margin:20px 0 28px; }
+  .panel-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+  .badge { display:inline-block; border-radius:999px; padding:3px 10px; background:#e3f3e9; color:#21633c; font-size:12px; font-weight:700; }
+  .board { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px; }
+  .category { min-height:66px; padding:8px 4px; display:flex; align-items:center; justify-content:center; text-align:center; background:#eef0f3; border-radius:5px; font-weight:700; font-size:13px; }
+  .tile { min-height:48px; border:0; border-radius:5px; background:var(--blue); color:white; font-size:20px; font-weight:700; cursor:pointer; }
+  .tile:hover:not(:disabled) { background:#24548f; }
+  .tile:disabled { background:#eef0f3; color:#929aa5; cursor:default; }
+  .question-card { border-top:1px solid var(--border); margin-top:18px; padding-top:16px; }
+  .question-card[hidden] { display:none; }
+  .question-tag { display:inline-block; padding:4px 9px; border-radius:999px; background:#e7f0fb; color:#174b83; font-size:12px; font-weight:700; margin-bottom:10px; }
+  .question-text { font-size:18px; font-weight:700; margin:0 0 14px; }
+  .answer { background:var(--surface); border-radius:9px; padding:14px; margin:12px 0; }
+  .answer-label { color:#267348; font-size:11px; font-weight:700; letter-spacing:.04em; }
+  button { font:inherit; }
+  .action { border:0; border-radius:7px; padding:9px 14px; background:var(--blue); color:#fff; cursor:pointer; }
+  .action.secondary { background:#fff; color:#344154; border:1px solid #cbd2da; }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .scores { border-top:1px solid var(--border); margin-top:18px; padding-top:16px; }
+  .team { margin:12px 0 16px; }
+  .team input { width:100%; border:1px solid #cbd2da; border-radius:7px; padding:9px 10px; font:inherit; font-size:16px; }
+  .score-row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:6px; }
+  .score { font-size:25px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .score-buttons { display:flex; gap:6px; }
+  .bonus { border:1px solid var(--border); border-radius:12px; padding:16px; margin-top:14px; }
+  .bonus .badge { background:#fff1d5; color:#805500; }
+  table { width:100%; border-collapse:collapse; margin:10px 0 22px; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid #e1e5e9; }
+  th { background:#f3f5f7; }
+  .rules li { margin:5px 0; }
+  @media(max-width:650px) {
+    body { padding:20px 10px 36px; }
+    h1 { font-size:25px; }
+    .category { font-size:10px; min-height:72px; overflow-wrap:anywhere; }
+    .tile { min-height:44px; font-size:16px; }
+    .game-panel { padding:10px; }
+    th,td { padding:7px 5px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bible Jeopardy: The Life of David</h1>
+  <p class="subtitle"><strong>Theme:</strong> From Shepherd Boy to King of Israel</p>
+  <p><strong>Format:</strong> 5 Categories | 5 Questions Each | 25 Total Questions<br>
+  <strong>Point Values:</strong> 100, 200, 300, 400, 500</p>
+  <p>The questions increase in difficulty as the point values increase. This game works well for adult Bible classes, youth groups, family devotionals, or church fellowships.</p>
+
+  <h2>Jeopardy Game Board</h2>
+  <section class="game-panel">
+    <div class="panel-heading"><strong>GAME BOARD</strong><span class="badge">25 questions</span></div>
+    <div class="board" id="board" aria-label="Jeopardy game board"><div class="category">David the Shepherd</div><div class="category">David &amp; Goliath</div><div class="category">David &amp; King Saul</div><div class="category">David the King</div><div class="category">David's Greatest Challenges</div><button class="tile" aria-label="David the Shepherd 100 points">100</button><button class="tile" aria-label="David &amp; Goliath 100 points">100</button><button class="tile" aria-label="David &amp; King Saul 100 points">100</button><button class="tile" aria-label="David the King 100 points">100</button><button class="tile" aria-label="David's Greatest Challenges 100 points">100</button><button class="tile" aria-label="David the Shepherd 200 points">200</button><button class="tile" aria-label="David &amp; Goliath 200 points">200</button><button class="tile" aria-label="David &amp; King Saul 200 points">200</button><button class="tile" aria-label="David the King 200 points">200</button><button class="tile" aria-label="David's Greatest Challenges 200 points">200</button><button class="tile" aria-label="David the Shepherd 300 points">300</button><button class="tile" aria-label="David &amp; Goliath 300 points">300</button><button class="tile" aria-label="David &amp; King Saul 300 points">300</button><button class="tile" aria-label="David the King 300 points">300</button><button class="tile" aria-label="David's Greatest Challenges 300 points">300</button><button class="tile" aria-label="David the Shepherd 400 points">400</button><button class="tile" aria-label="David &amp; Goliath 400 points">400</button><button class="tile" aria-label="David &amp; King Saul 400 points">400</button><button class="tile" aria-label="David the King 400 points">400</button><button class="tile" aria-label="David's Greatest Challenges 400 points">400</button><button class="tile" aria-label="David the Shepherd 500 points">500</button><button class="tile" aria-label="David &amp; Goliath 500 points">500</button><button class="tile" aria-label="David &amp; King Saul 500 points">500</button><button class="tile" aria-label="David the King 500 points">500</button><button class="tile" aria-label="David's Greatest Challenges 500 points">500</button></div>
+    <section class="question-card" id="questionCard" hidden="" aria-live="polite">
+      <div class="question-tag" id="questionTag"></div>
+      <h3>Question:</h3>
+      <p class="question-text" id="questionText"></p>
+      <div class="answer" id="answerBox" hidden=""><div class="answer-label">CORRECT RESPONSE</div><div id="answerText"></div></div>
+      <div class="actions">
+        <button class="action" id="revealButton">Reveal Answer</button>
+        <button class="action secondary" id="completeButton">Mark Complete</button>
+        <button class="action" id="closeButton">Close Question</button>
+      </div>
+    </section>
+    <section class="scores">
+      <strong>Team Scores</strong>
+      <div id="teams"><div class="team"><input aria-label="Team 1 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div><div class="team"><input aria-label="Team 2 name"><div class="score-row"><div class="score">0 pts</div><div class="score-buttons"><button class="action secondary">−100</button><button class="action ">+100</button></div></div></div></div>
+      <button class="action secondary" id="resetButton">Reset Game</button>
+    </section>
+  </section>
+
+  <h2>Complete Answer Key and Scripture References</h2>
+  <p>Use these references to verify answers and encourage discussion after each question.</p>
+  <table>
+    <thead><tr><th>Category</th><th>Points</th><th>Scripture</th></tr></thead>
+    <tbody>
+      <tr><td>David the Shepherd</td><td>100</td><td>1 Samuel 16:11</td></tr>
+      <tr><td></td><td>200</td><td>1 Samuel 16:1</td></tr>
+      <tr><td></td><td>300</td><td>1 Samuel 16:10–11</td></tr>
+      <tr><td></td><td>400</td><td>1 Samuel 16:23</td></tr>
+      <tr><td></td><td>500</td><td>1 Samuel 16:13</td></tr>
+      <tr><td>David &amp; Goliath</td><td>100</td><td>1 Samuel 17:4</td></tr>
+      <tr><td></td><td>200</td><td>1 Samuel 17:49</td></tr>
+      <tr><td></td><td>300</td><td>1 Samuel 17:40</td></tr>
+      <tr><td></td><td>400</td><td>1 Samuel 17:45–47</td></tr>
+      <tr><td></td><td>500</td><td>1 Samuel 17:51</td></tr>
+      <tr><td>David &amp; King Saul</td><td>100</td><td>1 Samuel 16:14–23</td></tr>
+      <tr><td></td><td>200</td><td>1 Samuel 18:6–9</td></tr>
+      <tr><td></td><td>300</td><td>1 Samuel 16:23</td></tr>
+      <tr><td></td><td>400</td><td>1 Samuel 24; 26</td></tr>
+      <tr><td></td><td>500</td><td>1 Samuel 24:4–5</td></tr>
+      <tr><td>David the King</td><td>100</td><td>2 Samuel 5:6–9</td></tr>
+      <tr><td></td><td>200</td><td>1 Samuel 18:20–27</td></tr>
+      <tr><td></td><td>300</td><td>2 Samuel 6:12–15</td></tr>
+      <tr><td></td><td>400</td><td>2 Samuel 12:1–7</td></tr>
+      <tr><td></td><td>500</td><td>2 Samuel 5:4–5</td></tr>
+      <tr><td>David's Greatest Challenges</td><td>100</td><td>2 Samuel 11:3</td></tr>
+      <tr><td></td><td>200</td><td>2 Samuel 15:1–14</td></tr>
+      <tr><td></td><td>300</td><td>2 Samuel 12:14–18</td></tr>
+      <tr><td></td><td>400</td><td>2 Samuel 11:14–17</td></tr>
+      <tr><td></td><td>500</td><td>2 Samuel 7:11–16</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bonus Final Jeopardy</h2>
+  <section class="bonus">
+    <span class="badge">FINAL JEOPARDY · 1,000 POINTS</span>
+    <h3 style="margin-top:12px">Category: David's Heart</h3>
+    <p><strong>David was described as a man after God's own heart. In Psalm 51, after being confronted about his sin, what did David ask God to create within him?</strong></p>
+    <small style="color:var(--muted)">SCRIPTURE: PSALM 51:10</small>
+    <div style="margin-top:12px"><button class="action secondary" id="bonusButton">Reveal Answer</button></div>
+    <div class="answer" id="bonusAnswer" hidden=""><strong>Answer:</strong> A clean heart and a right (steadfast) spirit.</div>
+  </section>
+
+  <h2>Suggested Game Rules</h2>
+  <ol class="rules">
+    <li>Divide the congregation into two or more teams.</li>
+    <li>Teams take turns selecting a category and point value.</li>
+    <li>Give teams 15–30 seconds to answer.</li>
+    <li>Require answers in the form of a question, just like Jeopardy.</li>
+    <li>Award points for correct answers and deduct points for incorrect answers.</li>
+    <li>The team with the highest score wins!</li>
+  </ol>
+  <p><strong>A great teaching addition:</strong> After each answer, have someone read the corresponding Bible passage aloud. This turns the game into a Bible study rather than simply a trivia competition.</p>
+</main>
+<script>
+const categories = [
+ {name:"David the Shepherd", questions:[
+  ["What was David's occupation before becoming king?","What was a shepherd?"],
+  ["Who was David's father?","Who was Jesse?"],
+  ["How many sons did Jesse present to Samuel before David was called?","Who were seven sons?"],
+  ["What instrument did David play to soothe King Saul?","What was a harp (lyre)?"],
+  ["What did Samuel use to anoint David as the future king?","What was oil?"]]},
+ {name:"David & Goliath", questions:[
+  ["What was the name of the giant David fought?","Who was Goliath?"],
+  ["What weapon did David use to strike Goliath?","What was a sling?"],
+  ["How many smooth stones did David collect from the brook?","What were five?"],
+  ["What did David declare would happen to Goliath before the battle?","What was that the Lord would deliver Goliath into David's hand?"],
+  ["What did David do with Goliath's sword after killing him?","What was use it to cut off Goliath's head?"]]},
+ {name:"David & King Saul", questions:[
+  ["Who was king when David first entered the royal service?","Who was Saul?"],
+  ["Why did Saul become jealous of David?","What was because the people praised David for his victories?"],
+  ["What did David play to calm Saul when an evil spirit troubled him?","What was the harp (lyre)?"],
+  ["How many times did David have an opportunity to kill Saul but spared him?","What were two times?"],
+  ["What did David cut off from Saul's robe in the cave at En Gedi?","What was a corner (or piece) of his robe?"]]},
+ {name:"David the King", questions:[
+  ["What city did David make the capital of Israel?","What was Jerusalem?"],
+  ["What was the name of David's wife who was Saul's daughter?","Who was Michal?"],
+  ["Who brought the Ark of the Covenant to Jerusalem during David's reign?","Who was David?"],
+  ["What prophet confronted David after his sin with Bathsheba?","Who was Nathan?"],
+  ["How long did David reign over all Israel?","What was 40 years?"]]},
+ {name:"David's Greatest Challenges", questions:[
+  ["What was the name of Bathsheba's husband?","Who was Uriah the Hittite?"],
+  ["What was the name of David's son who rebelled against him?","Who was Absalom?"],
+  ["What happened to David and Bathsheba's first child?","What was the child died?"],
+  ["What was the name of the commander David ordered to place Uriah in the fiercest part of battle?","Who was Joab?"],
+  ["In 2 Samuel 7, what did God promise David concerning his house and kingdom?","What was that his house, kingdom, and throne would be established forever?"]]}
+];
+const board=document.getElementById('board'), card=document.getElementById('questionCard');
+let selected=null, completed=new Set(), revealed=false, scores=[0,0], teamNames=['Team 1','Team 2'];
+function renderBoard(){
+ board.innerHTML='';
+ categories.forEach((cat,c)=>{
+  const heading=document.createElement('div'); heading.className='category'; heading.textContent=cat.name; board.appendChild(heading);
+ });
+ for(let q=0;q<5;q++) categories.forEach((cat,c)=>{
+  const key=c+'-'+q, btn=document.createElement('button'); btn.className='tile'; btn.textContent=completed.has(key)?'—':String((q+1)*100); btn.disabled=completed.has(key); btn.setAttribute('aria-label',cat.name+' '+((q+1)*100)+' points');
+  btn.addEventListener('click',()=>openQuestion(c,q)); board.appendChild(btn);
+ });
+}
+function openQuestion(c,q){
+ selected={c,q}; revealed=false; card.hidden=false;
+ document.getElementById('questionTag').textContent=categories[c].name+' · '+((q+1)*100)+' points';
+ document.getElementById('questionText').textContent=categories[c].questions[q][0];
+ document.getElementById('answerText').textContent=categories[c].questions[q][1];
+ document.getElementById('answerBox').hidden=true; document.getElementById('revealButton').hidden=false;
+ card.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+document.getElementById('revealButton').addEventListener('click',()=>{
+ revealed=true; document.getElementById('answerBox').hidden=false; document.getElementById('revealButton').hidden=true;
+});
+function closeQuestion(){ if(selected) completed.add(selected.c+'-'+selected.q); selected=null; card.hidden=true; renderBoard(); }
+document.getElementById('completeButton').addEventListener('click',closeQuestion);
+document.getElementById('closeButton').addEventListener('click',closeQuestion);
+function renderTeams(){
+ const el=document.getElementById('teams'); el.innerHTML='';
+ teamNames.forEach((name,i)=>{
+  const wrap=document.createElement('div'); wrap.className='team';
+  const input=document.createElement('input'); input.value=name; input.setAttribute('aria-label','Team '+(i+1)+' name');
+  input.addEventListener('input',()=>teamNames[i]=input.value);
+  const row=document.createElement('div'); row.className='score-row';
+  const score=document.createElement('div'); score.className='score'; score.textContent=scores[i]+' pts';
+  const controls=document.createElement('div'); controls.className='score-buttons';
+  [[-100,'−100'],[100,'+100']].forEach(([delta,label])=>{
+   const b=document.createElement('button'); b.className='action '+(delta<0?'secondary':''); b.textContent=label;
+   b.addEventListener('click',()=>{scores[i]+=delta;renderTeams();}); controls.appendChild(b);
+  });
+  row.append(score,controls); wrap.append(input,row); el.appendChild(wrap);
+ });
+}
+document.getElementById('resetButton').addEventListener('click',()=>{
+ completed.clear(); scores=[0,0]; selected=null; card.hidden=true; renderBoard(); renderTeams();
+});
+document.getElementById('bonusButton').addEventListener('click',()=>{
+ const a=document.getElementById('bonusAnswer'), b=document.getElementById('bonusButton');
+ a.hidden=!a.hidden; b.textContent=a.hidden?'Reveal Answer':'Hide Answer';
+});
+renderBoard(); renderTeams();
+</script>
+
+</body></html>

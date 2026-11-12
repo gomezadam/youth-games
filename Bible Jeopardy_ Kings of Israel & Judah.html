@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)file:///C:/Users/adamg/Downloads/bible_jeopardy_kings_of_israel_and_judah.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Jeopardy: Kings of Israel &amp; Judah</title>
+<style>
+:root{--blue:#173D72;--blue2:#24558f;--ink:#172334;--muted:#667085;--line:#d9dee7;--light:#f4f6f9}
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1000px;margin:28px auto;padding:0 16px 40px}
+h1{text-align:center;color:var(--blue);margin:0 0 6px;font-size:30px}
+.subtitle{text-align:center;color:var(--muted);margin:0 0 22px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 2px 8px #15243a0b}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.category{background:#e9edf3;color:#26364a;font-weight:700;text-align:center;padding:13px 7px;border-radius:7px;min-height:76px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.tile{background:var(--blue);color:white;border:0;border-radius:7px;min-height:67px;font-size:24px;font-weight:700;cursor:pointer}
+.tile:hover:not(:disabled){background:var(--blue2)}.tile:disabled{background:#aeb8c6;color:#eef1f5;cursor:default;text-decoration:line-through}
+.question-card{display:none;margin-top:18px;padding:20px;border:2px solid var(--blue);border-radius:10px;background:#f8faff}
+.question-card.active{display:block}.value{font-weight:bold;color:var(--blue);font-size:14px;text-transform:uppercase;letter-spacing:.05em}
+.question-text{font-size:23px;line-height:1.35;margin:12px 0 18px}
+.answer{display:none;background:#eaf4ed;border-left:4px solid #398454;padding:12px 14px;border-radius:5px;margin:12px 0;font-size:18px}
+.answer.show{display:block}.answer small{display:block;color:#52665a;margin-top:6px}
+button.action{border:0;border-radius:7px;padding:10px 15px;font-weight:700;cursor:pointer;margin:4px 6px 4px 0;background:var(--blue);color:white}
+button.secondary{background:#e8edf4;color:#26364a}.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.teams{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.team{border:1px solid var(--line);border-radius:8px;padding:12px;min-width:190px;flex:1}
+.team input{width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;margin-bottom:8px;font-size:15px}
+.score{font-size:24px;font-weight:bold;color:var(--blue);margin:3px 0 8px}
+.team button{padding:7px 10px;margin:2px;border:0;border-radius:5px;cursor:pointer}
+.section-title{color:var(--blue);margin:0 0 12px;font-size:20px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#edf1f6}
+.final{background:#f8faff;border:1px solid #cbd7e7;border-radius:8px;padding:16px}.final-answer{display:none;margin-top:12px;background:#eaf4ed;padding:12px;border-radius:6px}.final-answer.show{display:block}
+.rules li{margin:7px 0;line-height:1.4}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+@media(max-width:650px){.wrap{padding:0 9px}.board{gap:4px}.category{font-size:11px;padding:7px 3px;min-height:86px}.tile{font-size:18px;min-height:55px}.question-text{font-size:19px}h1{font-size:24px}.panel{padding:12px}table{font-size:12px}th,td{padding:7px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Bible Jeopardy: Kings of Israel &amp; Judah</h1>
+<p class="subtitle">A youth-group challenge from 1 &amp; 2 Kings and 1 &amp; 2 Chronicles</p>
+<div class="panel">
+<div class="board" id="board"><div class="category">Israel's First Kings</div><div class="category">The Kingdom Divided</div><div class="category">Kings Who Followed God</div><div class="category">Kings Who Went Wrong</div><div class="category">Prophets, Temples &amp; Turning Points</div><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">100</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">200</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">300</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">400</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button><button class="tile">500</button></div>
+<div class="question-card" id="questionCard">
+<div class="value" id="questionValue"></div>
+<div class="question-text" id="questionText"></div>
+<div class="answer" id="answer"></div>
+<div class="controls">
+<button class="action" id="revealBtn" onclick="revealAnswer()">Reveal Answer</button>
+<button class="action secondary" onclick="completeQuestion()">Mark Complete / Close Question</button>
+</div>
+</div>
+<div class="teams" id="teams">
+<div class="team"><input id="team1name" value="Team 1" aria-label="Team 1 name"><div class="score" id="score1">0</div><button onclick="changeScore(1,100)">+100</button><button onclick="changeScore(1,-100)">−100</button></div>
+<div class="team"><input id="team2name" value="Team 2" aria-label="Team 2 name"><div class="score" id="score2">0</div><button onclick="changeScore(2,100)">+100</button><button onclick="changeScore(2,-100)">−100</button></div>
+</div>
+<div class="controls" style="margin-top:14px"><button class="action secondary" onclick="resetGame()">Reset Game</button><span style="color:#667085;font-size:13px">Choose a point value to begin. Used questions are grayed out.</span></div>
+</div>
+<div class="panel">
+<h2 class="section-title">Answer Key &amp; Scripture References</h2>
+<p style="color:#667085;font-size:14px;margin-top:-4px">Use this section for leaders or discussion follow-up.</p>
+<table><thead><tr><th>Category</th><th>Points</th><th>Question</th><th>Answer</th><th>Scripture</th></tr></thead><tbody id="answerKey"><tr><td>Israel's First Kings</td><td>100</td><td>Who was the first king of Israel?</td><td>Saul</td><td>1 Samuel 10:1; 1 Chronicles 10:1–6</td></tr><tr><td>Israel's First Kings</td><td>200</td><td>Which king defeated Goliath before becoming king?</td><td>David</td><td>1 Samuel 17:45–50; 1 Chronicles 11:1–3</td></tr><tr><td>Israel's First Kings</td><td>300</td><td>Which son of David became king after him?</td><td>Solomon</td><td>1 Kings 1:39; 1 Chronicles 23:1</td></tr><tr><td>Israel's First Kings</td><td>400</td><td>Which king asked God for wisdom to govern the people?</td><td>Solomon</td><td>1 Kings 3:5–12; 2 Chronicles 1:7–12</td></tr><tr><td>Israel's First Kings</td><td>500</td><td>Which king ruled the united kingdom of Israel at the height of its power and then turned toward other gods?</td><td>Solomon</td><td>1 Kings 11:1–10; 2 Chronicles 9:22–23</td></tr><tr><td>The Kingdom Divided</td><td>100</td><td>After Solomon died, what was the name of his son who became king?</td><td>Rehoboam</td><td>1 Kings 11:43; 2 Chronicles 9:31</td></tr><tr><td>The Kingdom Divided</td><td>200</td><td>What was the name of the king who led the northern tribes in their break from Rehoboam?</td><td>Jeroboam</td><td>1 Kings 12:20; 2 Chronicles 10:16–19</td></tr><tr><td>The Kingdom Divided</td><td>300</td><td>How many tribes remained under Rehoboam's rule?</td><td>Two tribes: Judah and Benjamin</td><td>1 Kings 12:21; 2 Chronicles 11:1</td></tr><tr><td>The Kingdom Divided</td><td>400</td><td>What two golden objects did Jeroboam set up for the people to worship?</td><td>Two golden calves</td><td>1 Kings 12:28–30</td></tr><tr><td>The Kingdom Divided</td><td>500</td><td>What were the names of the two kingdoms after the division?</td><td>Israel in the north and Judah in the south</td><td>1 Kings 12:20–24; 2 Chronicles 10–11</td></tr><tr><td>Kings Who Followed God</td><td>100</td><td>Which king of Judah began major reforms and repaired the temple after the Book of the Law was found?</td><td>Josiah</td><td>2 Kings 22:1–13; 2 Chronicles 34:1–21</td></tr><tr><td>Kings Who Followed God</td><td>200</td><td>Which king prayed for help when a huge army came against Judah, and God gave Judah victory?</td><td>Jehoshaphat</td><td>2 Chronicles 20:1–30</td></tr><tr><td>Kings Who Followed God</td><td>300</td><td>Which king became seriously ill, prayed to God, and was given fifteen more years to live?</td><td>Hezekiah</td><td>2 Kings 20:1–6; 2 Chronicles 32:24</td></tr><tr><td>Kings Who Followed God</td><td>400</td><td>Which king tore his clothes when he heard the words of the Book of the Law and sought God's guidance?</td><td>Josiah</td><td>2 Kings 22:11–13; 2 Chronicles 34:19–21</td></tr><tr><td>Kings Who Followed God</td><td>500</td><td>Which king of Judah trusted God when the Assyrian king Sennacherib threatened Jerusalem?</td><td>Hezekiah</td><td>2 Kings 18:13–19:37; 2 Chronicles 32:1–22</td></tr><tr><td>Kings Who Went Wrong</td><td>100</td><td>Which king of Israel built golden calves at Bethel and Dan to keep people from worshiping in Jerusalem?</td><td>Jeroboam</td><td>1 Kings 12:26–30</td></tr><tr><td>Kings Who Went Wrong</td><td>200</td><td>Which wicked king of Israel married Jezebel and promoted the worship of Baal?</td><td>Ahab</td><td>1 Kings 16:29–33</td></tr><tr><td>Kings Who Went Wrong</td><td>300</td><td>Who was the queen who encouraged Ahab's worship of Baal and threatened Elijah?</td><td>Jezebel</td><td>1 Kings 18:4; 19:1–2</td></tr><tr><td>Kings Who Went Wrong</td><td>400</td><td>Which king of Judah became proud after becoming powerful and entered the temple to burn incense, a duty for priests?</td><td>Uzziah (also called Azariah)</td><td>2 Chronicles 26:16–21</td></tr><tr><td>Kings Who Went Wrong</td><td>500</td><td>Which king of Judah made an alliance with Ahab and was rebuked by the prophet Jehu?</td><td>Jehoshaphat</td><td>2 Chronicles 18:1–3; 19:1–3</td></tr><tr><td>Prophets, Temples &amp; Turning Points</td><td>100</td><td>Which prophet challenged the prophets of Baal on Mount Carmel?</td><td>Elijah</td><td>1 Kings 18:17–40</td></tr><tr><td>Prophets, Temples &amp; Turning Points</td><td>200</td><td>Which prophet succeeded Elijah and asked for a double portion of his spirit?</td><td>Elisha</td><td>2 Kings 2:9–15</td></tr><tr><td>Prophets, Temples &amp; Turning Points</td><td>300</td><td>What famous building did Solomon construct in Jerusalem as a house of worship for God?</td><td>The temple</td><td>1 Kings 6:1–14; 2 Chronicles 3:1–2</td></tr><tr><td>Prophets, Temples &amp; Turning Points</td><td>400</td><td>Which empire conquered the northern kingdom of Israel and carried its people into exile?</td><td>Assyria</td><td>2 Kings 17:5–6; 1 Chronicles 5:26</td></tr><tr><td>Prophets, Temples &amp; Turning Points</td><td>500</td><td>Which empire conquered Jerusalem, destroyed the temple, and carried many people of Judah into exile?</td><td>Babylon (the Babylonians)</td><td>2 Kings 25:8–11; 2 Chronicles 36:17–20</td></tr></tbody></table>
+</div>
+<div class="panel">
+<h2 class="section-title">Final Jeopardy</h2>
+<div class="final"><strong>Question:</strong><p id="finalQuestion" style="font-size:18px;line-height:1.4">After the temple was rebuilt, which Persian king's decree allowed the exiles to return to Jerusalem and rebuild it?</p>
+<button class="action" onclick="toggleFinal()">Reveal Final Answer</button>
+<div class="final-answer" id="finalAnswer">Cyrus<small>2 Chronicles 36:22–23</small></div></div>
+</div>
+<div class="panel rules">
+<h2 class="section-title">How to Play</h2>
+<ul>
+<li>Divide the group into teams. Teams take turns choosing a category and point value.</li>
+<li>Read the clue aloud. Give teams a short time to discuss before they answer.</li>
+<li>Click <strong>Reveal Answer</strong> to show the response and Scripture reference. Award the points for a correct answer; subtract points for an incorrect answer if you choose.</li>
+<li>Click <strong>Mark Complete / Close Question</strong> to remove that clue from play.</li>
+<li>After the board is finished, play Final Jeopardy. Let teams wager points before revealing the answer.</li>
+<li>Use the Scripture references to look up the story together. Ask: “What does this teach us about following God?”</li>
+</ul>
+<p><strong>Leader tip:</strong> Keep the focus on more than remembering names. Invite students to notice how a king's choices affected the people—and how faith, humility, and obedience mattered.</p>
+</div>
+<div class="footer">Bible Jeopardy • Kings of Israel &amp; Judah • 1 &amp; 2 Kings and 1 &amp; 2 Chronicles</div>
+</div>
+<script>
+const gameData = {"categories": [{"name": "Israel's First Kings", "questions": [{"value": 100, "question": "Who was the first king of Israel?", "answer": "Saul", "reference": "1 Samuel 10:1; 1 Chronicles 10:1–6"}, {"value": 200, "question": "Which king defeated Goliath before becoming king?", "answer": "David", "reference": "1 Samuel 17:45–50; 1 Chronicles 11:1–3"}, {"value": 300, "question": "Which son of David became king after him?", "answer": "Solomon", "reference": "1 Kings 1:39; 1 Chronicles 23:1"}, {"value": 400, "question": "Which king asked God for wisdom to govern the people?", "answer": "Solomon", "reference": "1 Kings 3:5–12; 2 Chronicles 1:7–12"}, {"value": 500, "question": "Which king ruled the united kingdom of Israel at the height of its power and then turned toward other gods?", "answer": "Solomon", "reference": "1 Kings 11:1–10; 2 Chronicles 9:22–23"}]}, {"name": "The Kingdom Divided", "questions": [{"value": 100, "question": "After Solomon died, what was the name of his son who became king?", "answer": "Rehoboam", "reference": "1 Kings 11:43; 2 Chronicles 9:31"}, {"value": 200, "question": "What was the name of the king who led the northern tribes in their break from Rehoboam?", "answer": "Jeroboam", "reference": "1 Kings 12:20; 2 Chronicles 10:16–19"}, {"value": 300, "question": "How many tribes remained under Rehoboam's rule?", "answer": "Two tribes: Judah and Benjamin", "reference": "1 Kings 12:21; 2 Chronicles 11:1"}, {"value": 400, "question": "What two golden objects did Jeroboam set up for the people to worship?", "answer": "Two golden calves", "reference": "1 Kings 12:28–30"}, {"value": 500, "question": "What were the names of the two kingdoms after the division?", "answer": "Israel in the north and Judah in the south", "reference": "1 Kings 12:20–24; 2 Chronicles 10–11"}]}, {"name": "Kings Who Followed God", "questions": [{"value": 100, "question": "Which king of Judah began major reforms and repaired the temple after the Book of the Law was found?", "answer": "Josiah", "reference": "2 Kings 22:1–13; 2 Chronicles 34:1–21"}, {"value": 200, "question": "Which king prayed for help when a huge army came against Judah, and God gave Judah victory?", "answer": "Jehoshaphat", "reference": "2 Chronicles 20:1–30"}, {"value": 300, "question": "Which king became seriously ill, prayed to God, and was given fifteen more years to live?", "answer": "Hezekiah", "reference": "2 Kings 20:1–6; 2 Chronicles 32:24"}, {"value": 400, "question": "Which king tore his clothes when he heard the words of the Book of the Law and sought God's guidance?", "answer": "Josiah", "reference": "2 Kings 22:11–13; 2 Chronicles 34:19–21"}, {"value": 500, "question": "Which king of Judah trusted God when the Assyrian king Sennacherib threatened Jerusalem?", "answer": "Hezekiah", "reference": "2 Kings 18:13–19:37; 2 Chronicles 32:1–22"}]}, {"name": "Kings Who Went Wrong", "questions": [{"value": 100, "question": "Which king of Israel built golden calves at Bethel and Dan to keep people from worshiping in Jerusalem?", "answer": "Jeroboam", "reference": "1 Kings 12:26–30"}, {"value": 200, "question": "Which wicked king of Israel married Jezebel and promoted the worship of Baal?", "answer": "Ahab", "reference": "1 Kings 16:29–33"}, {"value": 300, "question": "Who was the queen who encouraged Ahab's worship of Baal and threatened Elijah?", "answer": "Jezebel", "reference": "1 Kings 18:4; 19:1–2"}, {"value": 400, "question": "Which king of Judah became proud after becoming powerful and entered the temple to burn incense, a duty for priests?", "answer": "Uzziah (also called Azariah)", "reference": "2 Chronicles 26:16–21"}, {"value": 500, "question": "Which king of Judah made an alliance with Ahab and was rebuked by the prophet Jehu?", "answer": "Jehoshaphat", "reference": "2 Chronicles 18:1–3; 19:1–3"}]}, {"name": "Prophets, Temples & Turning Points", "questions": [{"value": 100, "question": "Which prophet challenged the prophets of Baal on Mount Carmel?", "answer": "Elijah", "reference": "1 Kings 18:17–40"}, {"value": 200, "question": "Which prophet succeeded Elijah and asked for a double portion of his spirit?", "answer": "Elisha", "reference": "2 Kings 2:9–15"}, {"value": 300, "question": "What famous building did Solomon construct in Jerusalem as a house of worship for God?", "answer": "The temple", "reference": "1 Kings 6:1–14; 2 Chronicles 3:1–2"}, {"value": 400, "question": "Which empire conquered the northern kingdom of Israel and carried its people into exile?", "answer": "Assyria", "reference": "2 Kings 17:5–6; 1 Chronicles 5:26"}, {"value": 500, "question": "Which empire conquered Jerusalem, destroyed the temple, and carried many people of Judah into exile?", "answer": "Babylon (the Babylonians)", "reference": "2 Kings 25:8–11; 2 Chronicles 36:17–20"}]}], "final": {"question": "After the temple was rebuilt, which Persian king's decree allowed the exiles to return to Jerusalem and rebuild it?", "answer": "Cyrus", "reference": "2 Chronicles 36:22–23"}};
+let scores=[0,0], used=new Set(), active=null;
+const board=document.getElementById('board');
+function build(){
+ board.innerHTML='';
+ gameData.categories.forEach((cat,ci)=>{
+  const h=document.createElement('div');h.className='category';h.textContent=cat.name;board.appendChild(h);
+ });
+ for(let qi=0;qi<5;qi++) gameData.categories.forEach((cat,ci)=>{
+  const b=document.createElement('button');b.className='tile';b.textContent=(qi+1)*100;
+  const id=ci+'-'+qi;b.disabled=used.has(id);b.onclick=()=>openQuestion(ci,qi);board.appendChild(b);
+ });
+ const rows=[];
+ gameData.categories.forEach((cat,ci)=>cat.questions.forEach((q,qi)=>{
+  rows.push(`<tr><td>${esc(cat.name)}</td><td>${q.value}</td><td>${esc(q.question)}</td><td>${esc(q.answer)}</td><td>${esc(q.reference)}</td></tr>`);
+ }));
+ document.getElementById('answerKey').innerHTML=rows.join('');
+ document.getElementById('finalQuestion').textContent=gameData.final.question;
+ document.getElementById('finalAnswer').innerHTML=esc(gameData.final.answer)+'<small>'+esc(gameData.final.reference)+'</small>';
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function openQuestion(ci,qi){
+ active={ci,qi,id:ci+'-'+qi};const q=gameData.categories[ci].questions[qi];
+ document.getElementById('questionValue').textContent=gameData.categories[ci].name+' • '+q.value+' points';
+ document.getElementById('questionText').textContent=q.question;
+ document.getElementById('answer').className='answer';document.getElementById('answer').innerHTML=esc(q.answer)+'<small>'+esc(q.reference)+'</small>';
+ document.getElementById('revealBtn').disabled=false;document.getElementById('questionCard').classList.add('active');
+ document.getElementById('questionCard').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function revealAnswer(){document.getElementById('answer').classList.add('show');document.getElementById('revealBtn').disabled=true;}
+function completeQuestion(){if(active)used.add(active.id);active=null;document.getElementById('questionCard').classList.remove('active');build();}
+function changeScore(team,amount){scores[team-1]+=amount;document.getElementById('score'+team).textContent=scores[team-1];}
+function resetGame(){if(!confirm('Reset all used questions and team scores?'))return;used.clear();scores=[0,0];document.getElementById('score1').textContent='0';document.getElementById('score2').textContent='0';document.getElementById('questionCard').classList.remove('active');document.getElementById('finalAnswer').classList.remove('show');active=null;build();}
+function toggleFinal(){document.getElementById('finalAnswer').classList.toggle('show');}
+build();
+</script>
+</body></html>

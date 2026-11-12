@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life & Leadership of Moses: Trivia Challenge</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Lora', 'serif'],
+          },
+          colors: {
+            notion: {
+              bg: '#FBFBFA',
+              card: '#FFFFFF',
+              sidebar: '#F7F6F3',
+              border: '#E6E6E4',
+              text: '#2F3437',
+              muted: '#787774',
+              accent: '#4F46E5',
+              gold: '#D97706',
+              goldLight: '#FEF3C7',
+              indigoLight: '#EEF2FF',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FBFBFA;
+      color: #2F3437;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .notion-shadow {
+      box-shadow: 0 1px 3px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+    }
+    .option-btn {
+      transition: all 0.18s ease;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Top Notion-Style Navigation Bar -->
+  <header class="sticky top-0 z-30 bg-[#FBFBFA]/90 backdrop-blur-md border-b border-notion-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5 cursor-pointer" onclick="resetToHome()">
+        <span class="text-xl" role="img" aria-label="Scroll">📜</span>
+        <div class="flex items-center space-x-1.5 text-sm font-medium">
+          <span class="text-notion-muted hidden sm:inline">Bible Curriculum</span>
+          <span class="text-notion-muted hidden sm:inline">/</span>
+          <span class="font-semibold text-notion-text">Life &amp; Leadership of Moses</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <button onclick="openStudyGuide()" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs sm:text-sm font-medium text-notion-text bg-white hover:bg-gray-50 border border-notion-border rounded-lg transition shadow-sm">
+          <svg class="w-4 h-4 text-notion-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>Study Guide (20)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
+    <div class="w-full max-w-2xl">
+
+      <!-- 1. WELCOME SCREEN -->
+      <section id="welcome-screen" class="fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-notion-indigoLight border border-indigo-100 flex items-center justify-center text-3xl shadow-sm">
+            🏔️
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200/70 rounded-md">Egypt • Exodus • Sinai • Wilderness</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200/70 rounded-md">20 Questions</span>
+          </div>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-notion-text mb-2">
+          Life &amp; Leadership of Moses: Trivia Challenge
+        </h1>
+        <p class="text-notion-muted text-sm sm:text-base mb-8">
+          20 Questions on the Burning Bush, Ten Plagues, Mount Sinai &amp; Wilderness Journey • With Scripture References
+        </p>
+
+        <!-- Game Quick Overview -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">🎯</span>
+            <span class="text-notion-text font-medium">20 Moses Questions</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">📖</span>
+            <span class="text-notion-text font-medium">Scripture References</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">📋</span>
+            <span class="text-notion-text font-medium">Notion Markdown Ready</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="startGame()" class="w-full sm:flex-1 py-3.5 px-6 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2 text-base">
+            <span>Start Trivia</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+          <button onclick="openStudyGuide()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm">
+            Study Guide (20)
+          </button>
+          <button onclick="copyForNotion()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm flex items-center justify-center space-x-1.5">
+            <svg class="w-4 h-4 text-notion-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Copy for Notion</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 2. ACTIVE QUIZ SCREEN -->
+      <section id="quiz-screen" class="hidden fade-in">
+        <!-- Top Status Bar -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-4 mb-4 notion-shadow">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-medium mb-2.5">
+            <span class="text-notion-muted">
+              Question <strong id="q-current" class="text-notion-text">1</strong> of <span id="q-total">20</span>
+            </span>
+            <div class="flex items-center space-x-3">
+              <span id="streak-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                🔥 Streak: <span id="streak-count" class="ml-1">0</span>
+              </span>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                Score: <span id="score-count" class="ml-1">0</span>
+              </span>
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+            <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" style="width: 5%;"></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-8 notion-shadow">
+          <div class="flex items-center justify-between mb-4">
+            <span id="category-badge" class="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+              <span>Egypt &amp; Burning Bush</span>
+            </span>
+            <span id="reference-badge" class="hidden text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+              📖 Exodus 2:1–10
+            </span>
+          </div>
+
+          <!-- Trivia Question Prompt -->
+          <div class="relative bg-[#F7F6F3] border-l-4 border-amber-500 rounded-r-xl p-5 sm:p-6 mb-6">
+            <p id="question-text" class="font-serif text-lg sm:text-2xl text-notion-text leading-relaxed font-medium">
+              From which of the twelve tribes of Israel were Moses' parents, Amram and Jochebed, descended?
+            </p>
+            <div id="revealed-reference" class="hidden mt-3 text-sm font-semibold text-amber-800 flex items-center space-x-1.5">
+              <span>📖 Scripture Reference:</span>
+              <span id="reference-label">Exodus 2:1 / Exodus 6:20</span>
+            </div>
+          </div>
+
+          <!-- 4 Multiple Choice Options -->
+          <div id="options-grid" class="grid grid-cols-1 gap-3 mb-2">
+            <!-- Buttons injected dynamically -->
+          </div>
+
+          <!-- Instant Feedback & Context Note -->
+          <div id="feedback-panel" class="hidden mt-6 pt-6 border-t border-notion-border fade-in">
+            <div id="feedback-banner" class="flex items-center space-x-2.5 mb-3">
+              <!-- Status icon & message injected dynamically -->
+            </div>
+
+            <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4 sm:p-5 mb-5">
+              <div class="flex items-center justify-between mb-1.5">
+                <div class="flex items-center space-x-2">
+                  <span class="text-sm">💡</span>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-notion-muted">Scripture Context</h4>
+                </div>
+                <span id="feedback-ref-pill" class="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">
+                  Exodus 2:1 / Exodus 6:20
+                </span>
+              </div>
+              <p id="commentary-text" class="text-sm text-notion-text leading-relaxed">
+                Commentary goes here...
+              </p>
+            </div>
+
+            <button id="next-btn" onclick="nextQuestion()" class="w-full py-3.5 px-6 bg-notion-text hover:bg-black text-white font-semibold rounded-xl transition flex items-center justify-center space-x-2 shadow-sm">
+              <span id="next-btn-text">Next Question</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RESULTS SCREEN -->
+      <section id="results-screen" class="hidden fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow text-center">
+        <div id="rank-emoji" class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-4xl shadow-sm">
+          🏆
+        </div>
+
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-700 rounded-full mb-2">
+          Challenge Complete
+        </span>
+        <h2 id="rank-title" class="text-2xl sm:text-3xl font-bold text-notion-text mb-2">
+          Torah Scholar
+        </h2>
+        <p id="rank-description" class="text-sm sm:text-base text-notion-muted max-w-lg mx-auto mb-8">
+          Outstanding work! You know Moses' journey from the Nile river basket to Mount Nebo inside and out.
+        </p>
+
+        <!-- Stats Breakdown -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Final Score</p>
+            <p class="text-xl sm:text-2xl font-bold text-indigo-600"><span id="final-score">0</span>/20</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Accuracy</p>
+            <p class="text-xl sm:text-2xl font-bold text-notion-text"><span id="final-accuracy">0</span>%</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Best Streak</p>
+            <p class="text-xl sm:text-2xl font-bold text-amber-600">🔥 <span id="final-streak">0</span></p>
+          </div>
+        </div>
+
+        <!-- Stage Breakdown Pills -->
+        <div class="bg-white border border-notion-border rounded-xl p-4 mb-8 text-left">
+          <p class="text-xs font-semibold uppercase tracking-wider text-notion-muted mb-3">Performance by Stage</p>
+          <div id="section-breakdown" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="copyForNotion()" id="copy-notion-btn" class="flex-1 py-3.5 px-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span id="copy-btn-label">Copy for Notion</span>
+          </button>
+
+          <button onclick="startGame()" class="py-3.5 px-5 bg-white hover:bg-gray-50 text-notion-text font-semibold border border-notion-border rounded-xl transition flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            <span>Play Again</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-notion-text text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-2.5 text-sm font-medium">
+      <span class="text-emerald-400">✓</span>
+      <span id="toast-message">Copied Markdown for Notion!</span>
+    </div>
+  </div>
+
+  <!-- Study Guide Modal -->
+  <div id="study-modal" class="fixed inset-0 z-40 hidden bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-notion-card border border-notion-border rounded-2xl w-full max-w-3xl max-h-[88vh] flex flex-col shadow-2xl fade-in">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-notion-border flex items-center justify-between bg-[#F7F6F3] rounded-t-2xl">
+        <div class="flex items-center space-x-2.5">
+          <span class="text-xl">📚</span>
+          <div>
+            <h3 class="font-bold text-notion-text text-base sm:text-lg">Study Guide: Life &amp; Leadership of Moses (20)</h3>
+            <p class="text-xs text-notion-muted">Complete answer key, Scripture references &amp; notes</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="copyForNotion()" class="px-3 py-1.5 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition flex items-center space-x-1">
+            <span>Copy Markdown</span>
+          </button>
+          <button onclick="closeStudyGuide()" class="p-1.5 text-notion-muted hover:text-notion-text hover:bg-gray-200/60 rounded-lg transition" aria-label="Close modal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="px-6 py-2.5 border-b border-notion-border bg-white flex items-center space-x-2 overflow-x-auto text-xs font-medium">
+        <button onclick="filterStudyGuide('All')" class="study-filter-btn px-3 py-1 rounded-md bg-indigo-50 text-indigo-700 font-semibold" data-section="All">All (20)</button>
+        <button onclick="filterStudyGuide('Egypt & Burning Bush')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Egypt & Burning Bush">Egypt &amp; Call (5)</button>
+        <button onclick="filterStudyGuide('Plagues & Exodus')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Plagues & Exodus">Plagues &amp; Exodus (5)</button>
+        <button onclick="filterStudyGuide('Mount Sinai & Law')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Mount Sinai & Law">Mount Sinai (5)</button>
+        <button onclick="filterStudyGuide('Wilderness & Legacy')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Wilderness & Legacy">Wilderness (5)</button>
+      </div>
+
+      <!-- Modal Scrollable List -->
+      <div id="study-guide-list" class="p-6 overflow-y-auto space-y-4">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 text-center text-xs text-notion-muted border-t border-notion-border/60">
+    <p>Life &amp; Leadership of Moses Trivia • Complete with Scripture References</p>
+  </footer>
+
+  <!-- Game Data & Application Logic -->
+  <script>
+    const MOSES_QUESTIONS = [
+      {
+        id: 1,
+        question: "From which of the twelve tribes of Israel were Moses' parents, Amram and Jochebed, descended?",
+        answer: "Levi",
+        reference: "Exodus 2:1 / Exodus 6:20",
+        section: "Egypt & Burning Bush",
+        options: ["Levi", "Judah", "Ephraim", "Benjamin"],
+        commentary: "Born to a Levite family during Pharaoh's decree to throw Hebrew baby boys into the Nile, Moses was hidden for three months before being placed in a waterproof papyrus basket among the reeds."
+      },
+      {
+        id: 2,
+        question: "What does the name 'Moses' mean, which Pharaoh's daughter gave him after rescuing him from the Nile?",
+        answer: "Drawn out of the water",
+        reference: "Exodus 2:10",
+        section: "Egypt & Burning Bush",
+        options: [
+          "Drawn out of the water",
+          "Prince of Egypt",
+          "Delivered by God",
+          "Voice in the wilderness"
+        ],
+        commentary: "Moses' older sister Miriam bravely offered to find a Hebrew nurse for the baby, bringing Moses' own mother Jochebed to care for him until he was weaned and adopted into Pharaoh's palace."
+      },
+      {
+        id: 3,
+        question: "To which land did Moses flee after killing an Egyptian taskmaster who was beating a Hebrew slave?",
+        answer: "Midian",
+        reference: "Exodus 2:11–15",
+        section: "Egypt & Burning Bush",
+        options: ["Midian", "Canaan", "Moab", "Edom"],
+        commentary: "At age 40, Moses fled across the Sinai Peninsula to Midian, where he defended the seven daughters of Jethro at a well, married Zipporah, and worked as a shepherd for 40 years."
+      },
+      {
+        id: 4,
+        question: "On which mountain did God appear to Moses in a burning bush that was not consumed?",
+        answer: "Mount Horeb (Sinai)",
+        reference: "Exodus 3:1–4",
+        section: "Egypt & Burning Bush",
+        options: [
+          "Mount Horeb (Sinai)",
+          "Mount Carmel",
+          "Mount Nebo",
+          "Mount Hermon"
+        ],
+        commentary: "Known as the mountain of God, Horeb was where God told Moses to remove his sandals on holy ground and commissioned him at age 80 to bring Israel out of Egypt."
+      },
+      {
+        id: 5,
+        question: "What covenant name did God reveal to Moses from the burning bush when Moses asked what to tell the Israelites?",
+        answer: "I AM WHO I AM (Yahweh / The Lord)",
+        reference: "Exodus 3:14–15",
+        section: "Egypt & Burning Bush",
+        options: [
+          "I AM WHO I AM (Yahweh / The Lord)",
+          "The God of Hosts",
+          "El Shaddai (God Almighty)",
+          "The Ancient of Days"
+        ],
+        commentary: "Revealing His self-existent, eternal nature, God declared that 'I AM' had sent Moses—and appointed Moses' eloquent older brother Aaron to serve as his spokesman."
+      },
+      {
+        id: 6,
+        question: "What was the very first of the ten plagues God brought upon Egypt through Moses and Aaron?",
+        answer: "Turning the water of the Nile into blood",
+        reference: "Exodus 7:19–21",
+        section: "Plagues & Exodus",
+        options: [
+          "Turning the water of the Nile into blood",
+          "Swarms of frogs",
+          "Thick darkness for three days",
+          "Hail mixed with fire"
+        ],
+        commentary: "Because the Nile was worshipped by Egyptians as a source of divine life, turning its waters to blood directly confronted Egypt's gods and ruined their primary water supply."
+      },
+      {
+        id: 7,
+        question: "During the tenth and final plague, what did the Israelites put on the sides and tops of their doorframes so the Lord would pass over their homes?",
+        answer: "The blood of a year-old lamb without defect",
+        reference: "Exodus 12:5–7, 13",
+        section: "Plagues & Exodus",
+        options: [
+          "The blood of a year-old lamb without defect",
+          "Anointing oil mixed with myrrh",
+          "Ashes from the burnt offering altar",
+          "A scarlet cord woven from wool"
+        ],
+        commentary: "That night inaugurated the annual Feast of Passover—and later provided the New Testament imagery for Jesus as 'Christ, our Passover lamb' (1 Corinthians 5:7)."
+      },
+      {
+        id: 8,
+        question: "How did the Lord guide the Israelites by day and by night as they traveled out of Egypt toward the Red Sea?",
+        answer: "A pillar of cloud by day and a pillar of fire by night",
+        reference: "Exodus 13:21–22",
+        section: "Plagues & Exodus",
+        options: [
+          "A pillar of cloud by day and a pillar of fire by night",
+          "A bright star moving ahead of the camp",
+          "The sound of silver trumpets from heaven",
+          "An eagle flying above the Ark"
+        ],
+        commentary: "The pillar never left its place in front of the people—providing shade from the desert heat during the day and light and warmth throughout the night."
+      },
+      {
+        id: 9,
+        question: "What did Moses do when the Israelites were trapped between Pharaoh's chariots and the Red Sea?",
+        answer: "He stretched out his hand and staff over the sea, and God divided the waters",
+        reference: "Exodus 14:16, 21–22",
+        section: "Plagues & Exodus",
+        options: [
+          "He stretched out his hand and staff over the sea, and God divided the waters",
+          "He threw twelve stones into the surf to form a bridge",
+          "He blew a ram's horn seven times toward Egypt",
+          "He struck a cliff with his staff to open a tunnel"
+        ],
+        commentary: "A strong east wind drove the sea back all night so the Israelites crossed on dry ground with a wall of water on their right and left before the waters swept over Pharaoh's army."
+      },
+      {
+        id: 10,
+        question: "At Marah in the desert, what did Moses throw into the bitter water at God's direction to make it fit to drink?",
+        answer: "A piece of wood (tree)",
+        reference: "Exodus 15:23–25",
+        section: "Plagues & Exodus",
+        options: [
+          "A piece of wood (tree)",
+          "A handful of salt",
+          "Ashes from the Passover fire",
+          "A bronze serpent"
+        ],
+        commentary: "Three days after celebrating at the Red Sea, the thirsty people grumbled at Marah ('bitter'), and God healed the water through a piece of wood—revealing Himself as 'the Lord, who heals you.'"
+      },
+      {
+        id: 11,
+        question: "During the battle against the Amalekites at Rephidim, who held up Moses' tired hands until sunset so Joshua's army would prevail?",
+        answer: "Aaron and Hur",
+        reference: "Exodus 17:10–13",
+        section: "Mount Sinai & Law",
+        options: [
+          "Aaron and Hur",
+          "Joshua and Caleb",
+          "Eleazar and Ithamar",
+          "Nadab and Abihu"
+        ],
+        commentary: "Seated on a stone with Aaron on one side and Hur on the other supporting his arms, Moses held up the staff of God until Israel won a decisive victory."
+      },
+      {
+        id: 12,
+        question: "How many days and nights did Moses spend on Mount Sinai without eating bread or drinking water while receiving the Law and stone tablets?",
+        answer: "40 days and 40 nights",
+        reference: "Exodus 24:18 / Exodus 34:28",
+        section: "Mount Sinai & Law",
+        options: [
+          "40 days and 40 nights",
+          "7 days and 7 nights",
+          "12 days and 12 nights",
+          "70 days and 70 nights"
+        ],
+        commentary: "Shrouded in the cloud of God's glory atop Mount Sinai, Moses received both the Ten Commandments inscribed by the finger of God and the blueprints for the Tabernacle."
+      },
+      {
+        id: 13,
+        question: "What idol did Aaron fashion out of melted gold earrings while Moses was delayed on Mount Sinai, causing Moses to smash the stone tablets in anger?",
+        answer: "A golden calf",
+        reference: "Exodus 32:2–4, 19",
+        section: "Mount Sinai & Law",
+        options: [
+          "A golden calf",
+          "A bronze eagle",
+          "A silver serpent",
+          "A stone pillar of Baal"
+        ],
+        commentary: "Returning down the mountain to hear the people reveling around the golden calf, Moses shattered the tablets at the foot of Sinai and interceded with God so Israel would not be destroyed."
+      },
+      {
+        id: 14,
+        question: "Why did Moses put a veil over his face after coming down from Mount Sinai with the second set of stone tablets?",
+        answer: "Because his face was radiant from speaking with the Lord",
+        reference: "Exodus 34:29–35",
+        section: "Mount Sinai & Law",
+        options: [
+          "Because his face was radiant from speaking with the Lord",
+          "To protect his eyes from desert sandstorms",
+          "Because he was mourning the loss of the first tablets",
+          "As a sign of fasting before the Day of Atonement"
+        ],
+        commentary: "Moses did not even realize his skin was shining until Aaron and the Israelites were afraid to come near him; he removed the veil whenever he entered the Lord's presence to speak with Him."
+      },
+      {
+        id: 15,
+        question: "What sacred chest made of acacia wood overlaid with gold housed the stone tablets of the covenant inside the Most Holy Place?",
+        answer: "The Ark of the Covenant",
+        reference: "Exodus 25:10–22 / Deuteronomy 10:1–5",
+        section: "Mount Sinai & Law",
+        options: [
+          "The Ark of the Covenant",
+          "The Table of Showbread",
+          "The Bronze Laver",
+          "The Altar of Incense"
+        ],
+        commentary: "Topped by the solid gold atonement cover (mercy seat) with two facing cherubim, the Ark symbolized God's throne and presence dwelling among His people."
+      },
+      {
+        id: 16,
+        question: "When Miriam and Aaron criticized Moses over his Cushite wife and questioned his unique prophetic authority, how does Numbers 12 describe Moses' character?",
+        answer: "More humble (meek) than anyone else on the face of the earth",
+        reference: "Numbers 12:1–3",
+        section: "Wilderness & Legacy",
+        options: [
+          "More humble (meek) than anyone else on the face of the earth",
+          "The fiercest warrior in all the tribes of Israel",
+          "The wealthiest prince in the ancient Near East",
+          "The swiftest runner in the desert of Paran"
+        ],
+        commentary: "Rather than defending himself, Moses let God defend his servant—and then immediately prayed to the Lord to heal Miriam when she was afflicted with leprosy."
+      },
+      {
+        id: 17,
+        question: "Why did God tell Moses he would not be allowed to lead the Israelites into the Promised Land?",
+        answer: "Because at Meribah he struck the rock twice instead of speaking to it as God commanded",
+        reference: "Numbers 20:7–12",
+        section: "Wilderness & Legacy",
+        options: [
+          "Because at Meribah he struck the rock twice instead of speaking to it as God commanded",
+          "Because he refused to send the twelve spies into Canaan",
+          "Because he broke the first set of stone tablets at Sinai",
+          "Because he married a Midianite woman"
+        ],
+        commentary: "In frustration with the complaining crowd, Moses struck the rock twice with his staff and took credit alongside Aaron rather than honoring God's holiness before the people."
+      },
+      {
+        id: 18,
+        question: "When venomous snakes bit the complaining Israelites in the wilderness, what did God instruct Moses to make and put on a pole so anyone bitten could look at it and live?",
+        answer: "A bronze snake (serpent)",
+        reference: "Numbers 21:8–9",
+        section: "Wilderness & Legacy",
+        options: [
+          "A bronze snake (serpent)",
+          "A golden eagle",
+          "A wooden cross",
+          "A silver staff"
+        ],
+        commentary: "Centuries later in John 3:14–15, Jesus pointed directly to Moses lifting up the bronze serpent in the wilderness as a picture of the Son of Man being lifted up on the cross."
+      },
+      {
+        id: 19,
+        question: "Whom did Moses commission and lay his hands upon in front of the assembly to succeed him as leader of Israel?",
+        answer: "Joshua son of Nun",
+        reference: "Numbers 27:18–23 / Deuteronomy 31:7–8",
+        section: "Wilderness & Legacy",
+        options: [
+          "Joshua son of Nun",
+          "Caleb son of Jephunneh",
+          "Eleazar son of Aaron",
+          "Phinehas son of Eleazar"
+        ],
+        commentary: "Having served faithfully as Moses' aide since youth and stood firm as one of the two faithful spies, Joshua was charged to be strong and courageous as he led Israel across the Jordan."
+      },
+      {
+        id: 20,
+        question: "How old was Moses when he died on Mount Nebo in Moab, where the Lord Himself buried him in an unknown grave?",
+        answer: "120 years old",
+        reference: "Deuteronomy 34:5–7",
+        section: "Wilderness & Legacy",
+        options: [
+          "120 years old",
+          "100 years old",
+          "147 years old",
+          "175 years old"
+        ],
+        commentary: "Deuteronomy notes that at 120 years old, Moses' eyes were not weak nor his strength gone—and no prophet since has arisen in Israel like Moses, whom the Lord knew face to face."
+      }
+    ];
+
+    // State Management
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let streak = 0;
+    let bestStreak = 0;
+    let answered = false;
+    let sectionStats = {
+      "Egypt & Burning Bush": { correct: 0, total: 0 },
+      "Plagues & Exodus": { correct: 0, total: 0 },
+      "Mount Sinai & Law": { correct: 0, total: 0 },
+      "Wilderness & Legacy": { correct: 0, total: 0 }
+    };
+
+    // DOM Elements
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultsScreen = document.getElementById('results-screen');
+    const studyModal = document.getElementById('study-modal');
+
+    /**
+     * Utility: Shuffle array cleanly (Fisher-Yates)
+     */
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Start / Reset Game
+     */
+    function startGame() {
+      currentQuestions = MOSES_QUESTIONS.map(q => ({
+        ...q,
+        shuffledOptions: shuffleArray(q.options)
+      }));
+
+      currentIndex = 0;
+      score = 0;
+      streak = 0;
+      bestStreak = 0;
+      answered = false;
+      sectionStats = {
+        "Egypt & Burning Bush": { correct: 0, total: 0 },
+        "Plagues & Exodus": { correct: 0, total: 0 },
+        "Mount Sinai & Law": { correct: 0, total: 0 },
+        "Wilderness & Legacy": { correct: 0, total: 0 }
+      };
+
+      welcomeScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      quizScreen.classList.remove('hidden');
+
+      updateScoreHeader();
+      renderQuestion();
+    }
+
+    /**
+     * Return to Home Welcome Screen
+     */
+    function resetToHome() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      welcomeScreen.classList.remove('hidden');
+    }
+
+    /**
+     * Update Top Progress, Score, and Streak Display
+     */
+    function updateScoreHeader() {
+      document.getElementById('q-current').textContent = currentIndex + 1;
+      document.getElementById('q-total').textContent = currentQuestions.length;
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+
+      const progressPct = (currentIndex / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${Math.max(5, progressPct)}%`;
+    }
+
+    /**
+     * Render Current Question Card & Multiple Choice Buttons
+     */
+    function renderQuestion() {
+      answered = false;
+      const q = currentQuestions[currentIndex];
+      updateScoreHeader();
+
+      document.getElementById('category-badge').textContent = q.section;
+      document.getElementById('question-text').textContent = q.question;
+      document.getElementById('revealed-reference').classList.add('hidden');
+      document.getElementById('reference-badge').classList.add('hidden');
+      document.getElementById('feedback-panel').classList.add('hidden');
+
+      const optionsGrid = document.getElementById('options-grid');
+      optionsGrid.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      q.shuffledOptions.forEach((optionText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'option-btn w-full text-left p-4 rounded-xl border border-notion-border bg-white hover:border-indigo-400 hover:bg-indigo-50/30 flex items-center space-x-3 font-medium text-notion-text focus:outline-none focus:ring-2 focus:ring-indigo-500/40';
+        btn.dataset.value = optionText;
+
+        btn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg bg-[#F7F6F3] border border-notion-border text-xs font-bold flex items-center justify-center text-notion-muted flex-shrink-0 option-letter">
+            ${letters[idx]}
+          </span>
+          <span class="text-sm sm:text-base font-semibold">${optionText}</span>
+        `;
+
+        btn.addEventListener('click', () => handleAnswer(optionText));
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    /**
+     * Handle Option Selection & Reveal Answer + Scripture Reference
+     */
+    function handleAnswer(selectedOption) {
+      if (answered) return;
+      answered = true;
+
+      const q = currentQuestions[currentIndex];
+      const isCorrect = selectedOption === q.answer;
+
+      // Track section stats
+      sectionStats[q.section].total += 1;
+      if (isCorrect) {
+        score += 1;
+        streak += 1;
+        if (streak > bestStreak) bestStreak = streak;
+        sectionStats[q.section].correct += 1;
+      } else {
+        streak = 0;
+      }
+
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+      const completedPct = ((currentIndex + 1) / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${completedPct}%`;
+
+      // Highlight correct and incorrect buttons
+      const allButtons = document.querySelectorAll('#options-grid button');
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+        const val = btn.dataset.value;
+        const letterBadge = btn.querySelector('.option-letter');
+
+        if (val === q.answer) {
+          btn.classList.remove('bg-white', 'border-notion-border', 'hover:border-indigo-400');
+          btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-950', 'ring-1', 'ring-emerald-500');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+          letterBadge.textContent = '✓';
+        } else if (val === selectedOption && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-notion-border');
+          btn.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-950');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
+          letterBadge.textContent = '✕';
+        } else {
+          btn.classList.add('opacity-50');
+        }
+      });
+
+      // Reveal Scripture Reference
+      document.getElementById('reference-label').textContent = q.reference;
+      document.getElementById('revealed-reference').classList.remove('hidden');
+
+      const refBadge = document.getElementById('reference-badge');
+      refBadge.textContent = `📖 ${q.reference}`;
+      refBadge.classList.remove('hidden');
+
+      document.getElementById('feedback-ref-pill').textContent = q.reference;
+
+      // Feedback Banner
+      const feedbackBanner = document.getElementById('feedback-banner');
+      if (isCorrect) {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold flex-shrink-0">✓</span>
+          <span class="font-bold text-emerald-800 text-sm sm:text-base">Correct! (${q.reference})</span>
+        `;
+      } else {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-bold flex-shrink-0">!</span>
+          <span class="font-bold text-rose-800 text-sm sm:text-base">Not quite! Correct answer: <span class="underline">${q.answer}</span></span>
+        `;
+      }
+
+      document.getElementById('commentary-text').textContent = q.commentary;
+
+      const nextBtnText = document.getElementById('next-btn-text');
+      nextBtnText.textContent = (currentIndex === currentQuestions.length - 1)
+        ? 'See Final Results'
+        : 'Next Question';
+
+      document.getElementById('feedback-panel').classList.remove('hidden');
+    }
+
+    /**
+     * Advance to Next Question or Final Results
+     */
+    function nextQuestion() {
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    /**
+     * Display Final Score, Rank Title, and Stage Breakdown
+     */
+    function showResults() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.remove('hidden');
+
+      const total = currentQuestions.length;
+      const accuracy = Math.round((score / total) * 100);
+
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('final-accuracy').textContent = accuracy;
+      document.getElementById('final-streak').textContent = bestStreak;
+
+      let rankEmoji = '🌱';
+      let rankTitle = 'Traveler in Training';
+      let rankDesc = "Great start! Keep walking through Exodus, Numbers, and Deuteronomy—every milestone reveals God's power and faithfulness.";
+
+      if (score === 20) {
+        rankEmoji = '👑';
+        rankTitle = 'Exodus & Sinai Master';
+        rankDesc = "A flawless 20 out of 20! You know Moses' journey from the Nile river basket to Mount Nebo inside and out.";
+      } else if (score >= 16) {
+        rankEmoji = '🏆';
+        rankTitle = 'Torah Scholar';
+        rankDesc = "Phenomenal work! You have an impressive command of the Exodus, Mount Sinai, and Israel's wilderness journey.";
+      } else if (score >= 11) {
+        rankEmoji = '📖';
+        rankTitle = 'Faithful Berean';
+        rankDesc = "Solid effort! You clearly know the major events of Moses' life and leadership well.";
+      }
+
+      document.getElementById('rank-emoji').textContent = rankEmoji;
+      document.getElementById('rank-title').textContent = rankTitle;
+      document.getElementById('rank-description').textContent = rankDesc;
+
+      const breakdownContainer = document.getElementById('section-breakdown');
+      breakdownContainer.innerHTML = '';
+
+      Object.keys(sectionStats).forEach(sec => {
+        const stat = sectionStats[sec];
+        const card = document.createElement('div');
+        card.className = 'p-3 rounded-lg bg-[#F7F6F3] border border-notion-border flex items-center justify-between gap-2';
+        card.innerHTML = `
+          <span class="text-xs font-semibold text-notion-text truncate">${sec}</span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded bg-white border border-notion-border text-indigo-700 flex-shrink-0">
+            ${stat.correct}/${stat.total}
+          </span>
+        `;
+        breakdownContainer.appendChild(card);
+      });
+    }
+
+    /**
+     * Generate Clean Markdown & Copy to Clipboard for Notion
+     */
+    function copyForNotion() {
+      let md = `# 🏔️ Life & Leadership of Moses: Trivia Challenge (20 Questions)\n`;
+      md += `> **Complete Trivia & Answer Key:** *Includes all 20 questions on Moses' call, the ten plagues, Mount Sinai, and the wilderness journey with Scripture references.*\n\n`;
+      md += `---\n\n`;
+
+      MOSES_QUESTIONS.forEach((q, index) => {
+        md += `### ${index + 1}. ${q.question}\n`;
+        md += `- **✅ Answer:** ${q.answer}\n`;
+        md += `- **📖 Scripture Reference:** ${q.reference} *(${q.section})*\n`;
+        md += `- **💡 Context:** ${q.commentary}\n\n`;
+      });
+
+      const textArea = document.createElement('textarea');
+      textArea.value = md;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        showToast('Copied all 20 Moses questions, answers & references for Notion!');
+      } catch (err) {
+        showToast('Unable to copy automatically. Please open Study Guide.');
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+
+    /**
+     * Show Toast Notification
+     */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    /**
+     * Study Guide Modal Controls
+     */
+    function openStudyGuide() {
+      renderStudyGuideList('All');
+      studyModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStudyGuide() {
+      studyModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function filterStudyGuide(sectionFilter) {
+      document.querySelectorAll('.study-filter-btn').forEach(btn => {
+        if (btn.dataset.section === sectionFilter) {
+          btn.classList.add('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.remove('text-notion-muted', 'hover:bg-gray-100');
+        } else {
+          btn.classList.remove('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.add('text-notion-muted', 'hover:bg-gray-100');
+        }
+      });
+
+      renderStudyGuideList(sectionFilter);
+    }
+
+    function renderStudyGuideList(sectionFilter) {
+      const container = document.getElementById('study-guide-list');
+      container.innerHTML = '';
+
+      const filtered = sectionFilter === 'All'
+        ? MOSES_QUESTIONS
+        : MOSES_QUESTIONS.filter(q => q.section === sectionFilter);
+
+      filtered.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'p-4 sm:p-5 rounded-xl border border-notion-border bg-[#FBFBFA] hover:bg-white transition';
+        item.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="inline-flex items-center space-x-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">#${q.id}</span>
+              <span class="font-bold text-xs sm:text-sm text-amber-800">📖 ${q.reference}</span>
+            </span>
+            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              ${q.section}
+            </span>
+          </div>
+          <p class="font-serif text-sm sm:text-base text-notion-text font-medium mb-2">
+            ${q.question}
+          </p>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-800 mb-2.5">
+            ✓ Answer: ${q.answer}
+          </p>
+          <div class="text-xs sm:text-sm text-notion-muted bg-white p-3 rounded-lg border border-notion-border/80">
+            <strong class="text-notion-text">💡 Context:</strong> ${q.commentary}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    studyModal.addEventListener('click', (e) => {
+      if (e.target === studyModal) {
+        closeStudyGuide();
+      }
+    });
+  </script>
+</body>
+</html>
