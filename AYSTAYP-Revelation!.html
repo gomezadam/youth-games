@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)file:///C:/Users/adamg/Downloads/are_you_smarter_than_a_youth_pastor_revelation_edition%20(2).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You Smarter Than a Youth Pastor? — Revelation Edition</title>
+  <style>
+    :root {
+      --bg: #FBFBFA;
+      --card: #FFFFFF;
+      --sidebar: #F7F6F3;
+      --border: #E6E6E4;
+      --text: #2F3437;
+      --muted: #787774;
+      --indigo: #4F46E5;
+      --indigo-hover: #4338CA;
+      --indigo-light: #EEF2FF;
+      --indigo-border: #C7D2FE;
+      --gold: #D97706;
+      --gold-light: #FEF3C7;
+      --gold-border: #FDE68A;
+      --emerald: #059669;
+      --emerald-light: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      --rose: #E11D48;
+      --rose-light: #FFF1F2;
+      --rose-border: #FECDD3;
+      --shadow: 0 1px 2px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input {
+      font-family: inherit;
+    }
+
+    /* Compact Notion-Style Embedded Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(251, 251, 250, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 14px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-muted {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .header-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .pill-gold {
+      background: var(--gold-light);
+      color: #92400E;
+      border-color: var(--gold-border);
+    }
+
+    .pill-indigo {
+      background: var(--indigo-light);
+      color: #3730A3;
+      border-color: var(--indigo-border);
+    }
+
+    /* Compact Notion Embed Container (max-w-3xl equivalent) */
+    main {
+      flex: 1;
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px 14px 28px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+
+    /* Welcome Screen */
+    .welcome-wrap {
+      padding: 24px;
+    }
+
+    .welcome-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--indigo-light);
+      border: 1px solid var(--indigo-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    h1 {
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 18px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .overview-item {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .overview-icon {
+      font-size: 18px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .overview-item strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .overview-item span {
+      color: var(--muted);
+      font-size: 12px;
+      display: block;
+      line-height: 1.4;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      font-size: 14px;
+      color: var(--text);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--indigo);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--indigo);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--indigo-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--text);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-dark:hover:not(:disabled) {
+      background: #181B1D;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--sidebar);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn-gold:hover:not(:disabled) {
+      background: #B45309;
+    }
+
+    .btn-danger-outline {
+      background: #fff;
+      color: var(--rose);
+      border-color: var(--rose-border);
+      font-size: 12.5px;
+      padding: 7px 12px;
+    }
+
+    .btn-danger-outline:hover:not(:disabled) {
+      background: var(--rose-light);
+    }
+
+    /* Active Game Layout */
+    .game-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .stage-card {
+      padding: 20px;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 7px;
+      background: var(--indigo-light);
+      color: var(--indigo);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .grade-badge.bonus-mode {
+      background: var(--gold-light);
+      color: #92400E;
+    }
+
+    .prize-tag {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    /* Lifelines Bar */
+    .lifelines-bar {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lifelines-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .lifeline-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .lifeline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .lifeline-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: var(--indigo-light);
+      color: var(--indigo);
+    }
+
+    .lifeline-btn.used {
+      background: #EFEFED;
+      color: #A1A09C;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .lifeline-btn.active-save {
+      border-color: var(--emerald-border);
+      background: var(--emerald-light);
+      color: #065F46;
+      cursor: default;
+    }
+
+    /* Youth Pastor Peek Callout */
+    .peek-banner {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-left: 4px solid var(--gold);
+      border-radius: 9px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .peek-banner-title {
+      font-weight: 700;
+      color: #92400E;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .peek-answer-text {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .peek-actions {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Question Prompt */
+    .question-box {
+      background: var(--sidebar);
+      border-left: 4px solid var(--indigo);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+
+    .question-box.bonus-box {
+      border-left-color: var(--gold);
+    }
+
+    .question-text {
+      font-family: var(--font-serif);
+      font-size: 18.5px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    /* Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 14px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: #F8F9FF;
+      transform: translateY(-1px);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      font-size: 11.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .option-btn.correct {
+      background: var(--emerald-light);
+      border-color: var(--emerald);
+      color: #064E3B;
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #fff;
+    }
+
+    .option-btn.wrong {
+      background: var(--rose-light);
+      border-color: var(--rose);
+      color: #881337;
+    }
+
+    .option-btn.wrong .option-letter {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .option-btn.dimmed {
+      opacity: 0.45;
+    }
+
+    /* Stage Footer */
+    .stage-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contestant-tag {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .contestant-tag strong {
+      color: var(--text);
+    }
+
+    /* Post-Answer Feedback & Commentary */
+    .feedback-panel {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .feedback-status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      font-size: 14.5px;
+      margin-bottom: 10px;
+    }
+
+    .status-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .status-icon.ok {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      border: 1px solid var(--emerald-border);
+    }
+
+    .status-icon.saved {
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .status-icon.bad {
+      background: var(--rose-light);
+      color: var(--rose);
+      border: 1px solid var(--rose-border);
+    }
+
+    .yp-note-card {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .yp-note-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .yp-note-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .scripture-ref {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--indigo);
+      background: var(--indigo-light);
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .yp-paper-pill {
+      font-size: 11.5px;
+      color: #92400E;
+      background: var(--gold-light);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    .yp-note-body {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Compact Horizontal/Grid Prize Ladder for Embeds */
+    .ladder-card {
+      padding: 14px 16px;
+    }
+
+    .ladder-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .ladder-header h3 {
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .ladder-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .ladder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 8px;
+      border-radius: 7px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--sidebar);
+      border: 1px solid transparent;
+    }
+
+    .ladder-item.current {
+      background: var(--indigo-light);
+      color: var(--indigo);
+      border-color: var(--indigo-border);
+      font-weight: 700;
+    }
+
+    .ladder-item.passed {
+      background: var(--emerald-light);
+      color: #065F46;
+    }
+
+    .ladder-item.milestone {
+      border-style: dashed;
+      border-color: var(--gold-border);
+    }
+
+    .ladder-item.bonus-step {
+      grid-column: span 2;
+      background: var(--gold-light);
+      color: #92400E;
+      border-color: var(--gold-border);
+      font-weight: 700;
+    }
+
+    .ladder-item.bonus-step.current {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* Pre-$1,000,000 Decision Screen */
+    .bonus-decision {
+      padding: 26px;
+      text-align: center;
+    }
+
+    .bonus-category-box {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .bonus-decision-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* Results & Confession Screen */
+    .results-wrap {
+      padding: 26px;
+      text-align: center;
+    }
+
+    .result-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+    }
+
+    .confession-box {
+      background: var(--rose-light);
+      border: 2px dashed var(--rose);
+      color: #881337;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 14px 0 20px;
+    }
+
+    .confession-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #BE123C;
+    }
+
+    .confession-quote {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .victory-banner {
+      background: var(--emerald-light);
+      border: 2px solid var(--emerald);
+      color: #064E3B;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 17px;
+      margin: 14px 0 20px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .stat-box {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .stat-box strong {
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .recap-box {
+      text-align: left;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 18px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .recap-box h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .recap-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    .recap-item:last-child {
+      border-bottom: none;
+    }
+
+    .results-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Inline Drop-Out Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 15, 15, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .modal-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      max-width: 420px;
+      width: 100%;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .modal-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .modal-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    /* Non-Blocking Toast */
+    #toast {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 60;
+      background: var(--text);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      border-radius: 9px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.22s ease;
+    }
+
+    @media (max-width: 640px) {
+      .welcome-wrap, .stage-card, .results-wrap, .bonus-decision {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .overview-grid, .options-grid, .stats-row, .bonus-decision-btns {
+        grid-template-columns: 1fr;
+      }
+
+      .ladder-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ladder-item.bonus-step {
+        grid-column: span 2;
+      }
+
+      .question-text {
+        font-size: 16.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Compact Notion-Style Top Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" onclick="returnHome()">
+        <span style="font-size: 17px;">📜</span>
+        <div>
+          <span class="brand-muted">Youth Games / </span>
+          <span>Revelation Edition</span>
+        </div>
+      </div>
+
+      <div class="header-status" id="header-status">
+        <span class="pill pill-indigo">Book of Revelation</span>
+        <span class="pill pill-gold">10 Grades + $1M Bonus</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. WELCOME SCREEN -->
+    <section id="welcome-screen" class="card welcome-wrap fade-in">
+      <div class="welcome-top">
+        <div class="hero-icon">🎓</div>
+        <div class="badge-group">
+          <span class="pill pill-indigo">Book of Revelation</span>
+          <span class="pill pill-gold">10 Grades + $1M Bonus</span>
+        </div>
+      </div>
+
+      <h1>Are You Smarter Than a Youth Pastor?</h1>
+      <p class="subtitle">Revelation Edition • Youth Group Screen Game</p>
+
+      <!-- Quick Rules & Lifelines Overview Cards -->
+      <div class="overview-grid">
+        <div class="overview-item">
+          <span class="overview-icon">👀</span>
+          <div>
+            <strong>Peek</strong>
+            <span>See what the Youth Pastor wrote down before locking in your answer.</span>
+          </div>
+        </div>
+        <div class="overview-item">
+          <span class="overview-icon">📋</span>
+          <div>
+            <strong>Copy</strong>
+            <span>Automatically lock in the Youth Pastor's written answer as your own.</span>
+          </div>
+        </div>
+        <div class="overview-item">
+          <span class="overview-icon">🛡️</span>
+          <div>
+            <strong>Save (Automatic)</strong>
+            <span>If you miss once and the Youth Pastor got it right, you're rescued!</span>
+          </div>
+        </div>
+        <div class="overview-item">
+          <span class="overview-icon">🚪</span>
+          <div>
+            <strong>Drop Out</strong>
+            <span>Walk away with banked winnings—or read the official confession!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="player-name-input">Contestant or Team Name (Optional)</label>
+        <input type="text" id="player-name-input" class="text-input" placeholder="e.g., Team Patmos or Jordan K." maxlength="40">
+      </div>
+
+      <button class="btn btn-primary" onclick="startGame()">
+        <span>Start Game</span>
+        <span>→</span>
+      </button>
+    </section>
+
+    <!-- 2. ACTIVE GAMEPLAY & PRIZE LADDER -->
+    <section id="game-screen" class="game-wrap hidden fade-in">
+      <!-- Question Stage Card -->
+      <div class="card stage-card" id="question-stage">
+        <div class="stage-header">
+          <span class="grade-badge" id="grade-badge">1st Grade • Intro &amp; Patmos</span>
+          <span class="prize-tag" id="prize-tag">Playing for $1,000</span>
+        </div>
+
+        <!-- Lifelines Bar -->
+        <div class="lifelines-bar" id="lifelines-bar">
+          <span class="lifelines-label">Youth Pastor Lifelines</span>
+          <div class="lifeline-buttons">
+            <button type="button" class="lifeline-btn" id="btn-peek" onclick="usePeek()">
+              <span>👀</span>
+              <span>Peek</span>
+            </button>
+            <button type="button" class="lifeline-btn" id="btn-copy" onclick="useCopy()">
+              <span>📋</span>
+              <span>Copy</span>
+            </button>
+            <button type="button" class="lifeline-btn active-save" id="btn-save" disabled="">
+              <span>🛡️</span>
+              <span id="save-label">Save: Ready</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Peek Callout Box -->
+        <div class="peek-banner hidden fade-in" id="peek-banner">
+          <div class="peek-banner-title">📝 The Youth Pastor wrote down:</div>
+          <div class="peek-answer-text" id="peek-answer-text"></div>
+          <div class="peek-actions" id="peek-actions">
+            <button type="button" class="btn btn-gold" style="padding: 6px 12px; font-size: 12.5px;" onclick="acceptPeekAnswer()">Use Youth Pastor's Answer</button>
+            <span style="font-size: 12px; color: #92400E;">...or pick any option below!</span>
+          </div>
+        </div>
+
+        <!-- Question Text -->
+        <div class="question-box" id="question-box">
+          <p class="question-text" id="question-text"></p>
+        </div>
+
+        <!-- 4 Multiple-Choice Options -->
+        <div class="options-grid" id="options-grid"></div>
+
+        <!-- Stage Footer with Drop Out Button -->
+        <div class="stage-footer" id="stage-footer">
+          <div class="contestant-tag">
+            Player: <strong id="contestant-display">Youth Challenger</strong> • Banked: <strong id="banked-display">$0</strong>
+          </div>
+          <button type="button" class="btn btn-danger-outline" id="dropout-btn" onclick="openDropOutModal()" disabled="">
+            Drop Out &amp; Take Money (<span id="dropout-amount">$0</span>)
+          </button>
+        </div>
+
+        <!-- Post-Answer Feedback & Teaching Note -->
+        <div class="feedback-panel hidden fade-in" id="feedback-panel">
+          <div class="feedback-status" id="feedback-status"></div>
+
+          <div class="yp-note-card">
+            <div class="yp-note-header">
+              <span class="yp-note-title">💡 Scripture &amp; Context Note</span>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="yp-paper-pill" id="yp-paper-status">Youth Pastor wrote: ...</span>
+                <span class="scripture-ref" id="scripture-ref">Revelation 1:9</span>
+              </div>
+            </div>
+            <p class="yp-note-body" id="yp-note-body"></p>
+          </div>
+
+          <button type="button" class="btn btn-dark" id="next-btn" onclick="handleNextStep()">
+            <span id="next-btn-label">Next Grade</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pre-$1,000,000 Decision Screen -->
+      <div class="card bonus-decision hidden fade-in" id="bonus-decision-card">
+        <div class="hero-icon" style="margin: 0 auto 12px; background: var(--gold-light); border-color: var(--gold-border);">🏆</div>
+        <span class="grade-badge bonus-mode">All 10 Grades Cleared • $500,000 Secured</span>
+        <h2 style="font-size: 23px; margin: 10px 0 6px;">The $1,000,000 Youth Pastor Question</h2>
+        <p style="color: var(--muted); font-size: 13.5px;">
+          Lifelines are disabled for the final question. Review the category below and decide whether to walk away with <strong>$500,000</strong> or risk it for <strong>$1,000,000</strong>!
+        </p>
+
+        <div class="bonus-category-box">
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #92400E; margin-bottom: 4px;">
+            $1,000,000 Category
+          </div>
+          <div style="font-size: 19px; font-weight: 800; color: var(--text);">
+            Apocalyptic Symbolism &amp; Final Victory
+          </div>
+        </div>
+
+        <p style="font-size: 12.5px; color: var(--muted);">
+          Note: If you risk it and miss the $1,000,000 question, you drop back to the $25,000 safety net.
+        </p>
+
+        <div class="bonus-decision-btns">
+          <button type="button" class="btn btn-secondary" onclick="confirmDropOut(true)">
+            Walk Away with $500,000
+          </button>
+          <button type="button" class="btn btn-gold" onclick="startBonusQuestion()">
+            Risk It for $1,000,000
+          </button>
+        </div>
+      </div>
+
+      <!-- Compact Prize Ladder -->
+      <div class="card ladder-card">
+        <div class="ladder-header">
+          <h3>Prize Ladder</h3>
+          <span style="font-size: 11px; color: var(--muted);">🛡️ = Safety Net</span>
+        </div>
+        <ul class="ladder-list" id="ladder-list"></ul>
+      </div>
+    </section>
+
+    <!-- 3. RESULTS & CONFESSION SCREEN -->
+    <section id="results-screen" class="card results-wrap hidden fade-in">
+      <div class="result-icon" id="result-icon">🎓</div>
+      <span class="grade-badge" id="result-badge">Challenge Complete</span>
+      <h1 id="result-title" style="margin-top: 8px;">Game Over</h1>
+      <p class="subtitle" id="result-subtitle" style="margin-bottom: 10px;"></p>
+
+      <!-- Victory or Read-Aloud Confession Box -->
+      <div id="result-verdict-container"></div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <span>Final Winnings</span>
+          <strong id="final-winnings" style="color: var(--gold);">$0</strong>
+        </div>
+        <div class="stat-box">
+          <span>Grades Cleared</span>
+          <strong id="final-correct">0 / 10</strong>
+        </div>
+        <div class="stat-box">
+          <span>Youth Pastor Comparison</span>
+          <strong id="final-yp-match">0 / 10</strong>
+        </div>
+      </div>
+
+      <!-- Question Recap -->
+      <div class="recap-box">
+        <h4>Question Recap</h4>
+        <div id="recap-list"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="results-actions">
+        <button type="button" class="btn btn-secondary" id="copy-result-btn" onclick="copyResultSummary()">
+          <span>📋 Copy Result</span>
+        </button>
+        <button type="button" class="btn btn-primary" style="width: auto; min-width: 170px;" onclick="startGame()">
+          <span>Play Again</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Inline Drop-Out Modal -->
+  <div class="modal-overlay hidden" id="dropout-modal">
+    <div class="modal-card fade-in">
+      <div style="font-size: 30px; margin-bottom: 6px;">🚪</div>
+      <h3>Drop Out &amp; Take Money?</h3>
+      <p>
+        You will walk away with <strong id="modal-prize-text" style="color: var(--text);">$0</strong>—and you must read the confession: <em>“I am NOT smarter than a Youth Pastor... yet!”</em>
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeDropOutModal()">Keep Playing</button>
+        <button type="button" class="btn btn-gold" onclick="confirmDropOut(false)">Yes, Drop Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Non-Blocking Toast -->
+  <div id="toast">✓ Result copied to clipboard!</div>
+
+  <script>
+    /**
+     * Exact 11 Revelation Questions (10 Grades + $1,000,000 Youth Pastor Question)
+     * All answers and notes stay hidden until the player locks in a choice.
+     */
+    const QUESTIONS = [
+      {
+        grade: "1st Grade",
+        theme: "Intro & Patmos",
+        prize: 1000,
+        milestone: false,
+        question: "On what island was the Apostle John exiled when he received the visions recorded in Revelation?",
+        options: ["Patmos", "Crete", "Cyprus", "Malta"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 1:9",
+        note: "Patmos was a small rocky Roman penal island in the Aegean Sea where John was exiled 'because of the word of God and the testimony of Jesus.'"
+      },
+      {
+        grade: "2nd Grade",
+        theme: "Letters to the Churches",
+        prize: 2000,
+        milestone: false,
+        question: "How many churches in Asia Minor received specific letters from Jesus in Revelation chapters 2 and 3?",
+        options: ["Seven", "Twelve", "Three", "Ten"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 1:11",
+        note: "The seven churches—Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea—sat along a circular Roman mail route in modern-day western Turkey."
+      },
+      {
+        grade: "3rd Grade",
+        theme: "Church of Laodicea",
+        prize: 5000,
+        milestone: false,
+        question: "Which lukewarm church did Jesus warn He was about to spit out of His mouth because they were neither cold nor hot?",
+        options: ["Laodicea", "Ephesus", "Sardis", "Philadelphia"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 3:14–16",
+        note: "Laodicea piped its water in from distant hot springs; by the time it arrived, it was lukewarm and mineral-heavy—a vivid picture of spiritual complacency."
+      },
+      {
+        grade: "4th Grade",
+        theme: "The Throne Room",
+        prize: 10000,
+        milestone: false,
+        question: "Around God's throne in Revelation 4, how many elders are seated on thrones dressed in white with crowns of gold?",
+        options: ["24", "12", "7", "70"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 4:4",
+        note: "The 24 elders represent the fullness of God's redeemed people across both the 12 tribes of Israel and the 12 apostles, casting their crowns before God's throne."
+      },
+      {
+        grade: "5th Grade",
+        theme: "The Scroll & the Lamb",
+        prize: 25000,
+        milestone: true, // Safety Net #1
+        question: "In Revelation 5, how many seals closed the scroll that only the Lamb was worthy to open?",
+        options: ["Seven", "Four", "Twelve", "Three"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 5:1–5",
+        note: "A scroll sealed with seven seals signified a complete, authoritative royal decree. Only Christ—the Lion of Judah who conquered as a slain Lamb—was worthy to open it."
+      },
+      {
+        grade: "6th Grade",
+        theme: "The Four Horsemen",
+        prize: 50000,
+        milestone: false,
+        question: "In Revelation 6, what is the name of the rider on the pale (ash-colored) horse?",
+        options: ["Death", "Famine", "War", "Conquest"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 6:8",
+        note: "The fourth horseman is explicitly named Death, with Hades following close behind—a sobering reminder of the brokenness of a fallen world apart from Christ."
+      },
+      {
+        grade: "7th Grade",
+        theme: "Trumpets & Worship",
+        prize: 100000,
+        milestone: false,
+        question: "In Revelation 7, a great multitude from every nation stands before the throne waving what in their hands?",
+        options: ["Palm branches", "Olive branches", "Golden harps", "Torches of fire"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 7:9",
+        note: "Just as crowds waved palm branches to welcome Jesus as King on Palm Sunday, this multi-ethnic multitude waves palm branches celebrating God's final victory."
+      },
+      {
+        grade: "8th Grade",
+        theme: "The Two Witnesses",
+        prize: 175000,
+        milestone: false,
+        question: "For how many days does Revelation 11 say God's two witnesses will prophesy clothed in sackcloth?",
+        options: ["1,260 days", "1,000 days", "40 days", "365 days"],
+        correctIndex: 0,
+        ypIndex: 1, // Youth Pastor intentionally misses this one ("1,000 days")
+        reference: "Revelation 11:3",
+        note: "1,260 days equals 42 months or 3.5 years on a 360-day prophetic calendar—symbolizing faithful witness during intense opposition. (Even the Youth Pastor missed this one!)"
+      },
+      {
+        grade: "9th Grade",
+        theme: "Spiritual Warfare",
+        prize: 300000,
+        milestone: false,
+        question: "Which archangel led the angels in fighting against the dragon in Revelation 12?",
+        options: ["Michael", "Gabriel", "Raphael", "Uriel"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 12:7",
+        note: "Michael and his angels defeat the dragon (Satan), and Revelation 12:11 highlights that believers triumph 'by the blood of the Lamb and by the word of their testimony.'"
+      },
+      {
+        grade: "10th Grade",
+        theme: "New Creation",
+        prize: 500000,
+        milestone: true, // Safety Net #2
+        question: "In Revelation 21, what are the twelve gates of the New Jerusalem made from?",
+        options: ["Twelve single pearls", "Solid beaten gold", "Pure jasper stone", "Crystal glass"],
+        correctIndex: 0,
+        ypIndex: 0,
+        reference: "Revelation 21:21",
+        note: "Each of the twelve gates—inscribed with the names of the twelve tribes of Israel—is crafted from a single giant pearl, symbolizing priceless beauty and permanent welcome into God's presence."
+      }
+    ];
+
+    const BONUS_QUESTION = {
+      grade: "$1,000,000 Bonus",
+      theme: "Apocalyptic Symbolism & Final Victory",
+      prize: 1000000,
+      question: "In Revelation 19, what name is written on the robe and on the thigh of the Rider on the white horse?",
+      options: [
+        "KING OF KINGS AND LORD OF LORDS",
+        "ALPHA AND OMEGA",
+        "THE LION OF JUDAH",
+        "THE BRIGHT MORNING STAR"
+      ],
+      correctIndex: 0,
+      ypIndex: 0,
+      reference: "Revelation 19:16",
+      note: "Returning in majesty and righteousness, Christ bears the supreme title 'KING OF KINGS AND LORD OF LORDS'—proclaiming His ultimate victory over every earthly power."
+    };
+
+    // Game State
+    let state = {
+      playerName: "Youth Challenger",
+      currentIdx: 0,
+      isBonus: false,
+      bankedPrize: 0,
+      milestonePrize: 0,
+      lifelines: {
+        peekUsed: false,
+        copyUsed: false,
+        saveUsed: false
+      },
+      answered: false,
+      history: [],
+      lastEndReason: ""
+    };
+
+    function formatMoney(num) {
+      return "$" + num.toLocaleString("en-US");
+    }
+
+    function returnHome() {
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("welcome-screen").classList.remove("hidden");
+      document.getElementById("header-status").innerHTML =
+        '<span class="pill pill-indigo">Book of Revelation</span><span class="pill pill-gold">10 Grades + $1M Bonus</span>';
+    }
+
+    function startGame() {
+      const rawName = document.getElementById("player-name-input").value.trim();
+      state = {
+        playerName: rawName || "Youth Challenger",
+        currentIdx: 0,
+        isBonus: false,
+        bankedPrize: 0,
+        milestonePrize: 0,
+        lifelines: {
+          peekUsed: false,
+          copyUsed: false,
+          saveUsed: false
+        },
+        answered: false,
+        history: [],
+        lastEndReason: ""
+      };
+
+      document.getElementById("welcome-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      document.getElementById("game-screen").classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    function renderLadder() {
+      const list = document.getElementById("ladder-list");
+      list.innerHTML = "";
+
+      QUESTIONS.forEach((q, idx) => {
+        const li = document.createElement("li");
+        let cls = "ladder-item";
+        if (q.milestone) cls += " milestone";
+        if (!state.isBonus && idx === state.currentIdx) cls += " current";
+        else if (idx < state.currentIdx || state.isBonus) cls += " passed";
+
+        li.className = cls;
+        li.innerHTML = `
+          <span>${q.grade}${q.milestone ? " 🛡️" : ""}</span>
+          <span>${formatMoney(q.prize)}</span>
+        `;
+        list.appendChild(li);
+      });
+
+      const bonusLi = document.createElement("li");
+      bonusLi.className = "ladder-item bonus-step" + (state.isBonus ? " current" : "");
+      bonusLi.innerHTML = `
+        <span>🎓 Youth Pastor Bonus</span>
+        <span>$1,000,000</span>
+      `;
+      list.appendChild(bonusLi);
+    }
+
+    function updateStatusAndLifelines() {
+      const peekBtn = document.getElementById("btn-peek");
+      const copyBtn = document.getElementById("btn-copy");
+      const saveBtn = document.getElementById("btn-save");
+      const saveLabel = document.getElementById("save-label");
+
+      peekBtn.disabled = state.lifelines.peekUsed || state.answered;
+      peekBtn.classList.toggle("used", state.lifelines.peekUsed);
+
+      copyBtn.disabled = state.lifelines.copyUsed || state.answered;
+      copyBtn.classList.toggle("used", state.lifelines.copyUsed);
+
+      if (state.lifelines.saveUsed) {
+        saveBtn.classList.remove("active-save");
+        saveBtn.classList.add("used");
+        saveLabel.textContent = "Save: Used";
+      } else {
+        saveBtn.classList.add("active-save");
+        saveBtn.classList.remove("used");
+        saveLabel.textContent = "Save: Ready";
+      }
+
+      const currentQ = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      document.getElementById("header-status").innerHTML = `
+        <span class="pill pill-indigo">${currentQ.grade}</span>
+        <span class="pill pill-gold">Banked: ${formatMoney(state.bankedPrize)}</span>
+        <span class="pill">🛡️ Safety Net: ${formatMoney(state.milestonePrize)}</span>
+      `;
+    }
+
+    function renderQuestion() {
+      state.answered = false;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const badge = document.getElementById("grade-badge");
+      badge.textContent = `${q.grade} • ${q.theme}`;
+      badge.className = state.isBonus ? "grade-badge bonus-mode" : "grade-badge";
+
+      document.getElementById("prize-tag").textContent = `Playing for ${formatMoney(q.prize)}`;
+      document.getElementById("question-text").textContent = q.question;
+
+      const qBox = document.getElementById("question-box");
+      qBox.className = state.isBonus ? "question-box bonus-box" : "question-box";
+
+      // Lifelines disabled on the $1,000,000 question
+      document.getElementById("lifelines-bar").classList.toggle("hidden", state.isBonus);
+      document.getElementById("peek-banner").classList.add("hidden");
+      document.getElementById("feedback-panel").classList.add("hidden");
+
+      document.getElementById("contestant-display").textContent = state.playerName;
+      document.getElementById("banked-display").textContent = formatMoney(state.bankedPrize);
+
+      const dropoutBtn = document.getElementById("dropout-btn");
+      if (state.isBonus) {
+        dropoutBtn.classList.add("hidden");
+      } else {
+        dropoutBtn.classList.remove("hidden");
+        dropoutBtn.disabled = state.bankedPrize < 1000;
+        document.getElementById("dropout-amount").textContent = formatMoney(state.bankedPrize);
+      }
+
+      const grid = document.getElementById("options-grid");
+      grid.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.innerHTML = `
+          <span class="option-letter">${letters[idx]}</span>
+          <span class="option-label">${optText}</span>
+        `;
+        btn.addEventListener("click", () => submitAnswer(idx, false));
+        grid.appendChild(btn);
+      });
+
+      renderLadder();
+      updateStatusAndLifelines();
+    }
+
+    // Peek Lifeline
+    function usePeek() {
+      if (state.lifelines.peekUsed || state.answered || state.isBonus) return;
+      state.lifelines.peekUsed = true;
+
+      const q = QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      document.getElementById("peek-answer-text").textContent =
+        `${letters[q.ypIndex]}. ${q.options[q.ypIndex]}`;
+      document.getElementById("peek-actions").classList.remove("hidden");
+      document.getElementById("peek-banner").classList.remove("hidden");
+
+      updateStatusAndLifelines();
+    }
+
+    function acceptPeekAnswer() {
+      if (state.answered) return;
+      const q = QUESTIONS[state.currentIdx];
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Copy Lifeline
+    function useCopy() {
+      if (state.lifelines.copyUsed || state.answered || state.isBonus) return;
+      state.lifelines.copyUsed = true;
+      const q = QUESTIONS[state.currentIdx];
+      updateStatusAndLifelines();
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Lock In & Evaluate Answer
+    function submitAnswer(selectedIdx, usedYpAnswer) {
+      if (state.answered) return;
+      state.answered = true;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      const isCorrect = selectedIdx === q.correctIndex;
+      const ypIsCorrect = q.ypIndex === q.correctIndex;
+
+      let outcome = "wrong";
+
+      if (isCorrect) {
+        outcome = "correct";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.milestonePrize = q.prize;
+        }
+      } else if (!state.isBonus && !state.lifelines.saveUsed && ypIsCorrect) {
+        // Automatic Save Lifeline
+        state.lifelines.saveUsed = true;
+        outcome = "saved";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.milestonePrize = q.prize;
+        }
+      } else {
+        outcome = "wrong";
+        state.bankedPrize = state.milestonePrize;
+      }
+
+      document.getElementById("peek-actions").classList.add("hidden");
+      document.getElementById("dropout-btn").disabled = true;
+
+      const buttons = document.querySelectorAll("#options-grid .option-btn");
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        const letterEl = btn.querySelector(".option-letter");
+
+        if (idx === q.correctIndex) {
+          btn.classList.add("correct");
+          letterEl.textContent = "✓";
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.add("wrong");
+          letterEl.textContent = "✕";
+        } else {
+          btn.classList.add("dimmed");
+        }
+      });
+
+      state.history.push({
+        grade: q.grade,
+        theme: q.theme,
+        correctAnswer: q.options[q.correctIndex],
+        userPassed: outcome === "correct" || outcome === "saved",
+        ypCorrect: ypIsCorrect,
+        outcome: outcome,
+        prize: q.prize
+      });
+
+      const statusEl = document.getElementById("feedback-status");
+      if (outcome === "correct") {
+        statusEl.innerHTML = `
+          <span class="status-icon ok">✓</span>
+          <span style="color: #065F46;">${usedYpAnswer ? "The Youth Pastor got it right!" : "Correct!"} Banked ${formatMoney(q.prize)}.</span>
+        `;
+      } else if (outcome === "saved") {
+        statusEl.innerHTML = `
+          <span class="status-icon saved">🛡️</span>
+          <span style="color: #92400E;">SAVED BY THE YOUTH PASTOR! You chose ${letters[selectedIdx]}, but the Youth Pastor wrote ${letters[q.ypIndex]} (${q.options[q.ypIndex]})!</span>
+        `;
+      } else {
+        statusEl.innerHTML = `
+          <span class="status-icon bad">✕</span>
+          <span style="color: #881337;">Incorrect! The correct answer was ${letters[q.correctIndex]}. ${q.options[q.correctIndex]}.</span>
+        `;
+      }
+
+      document.getElementById("yp-paper-status").textContent =
+        `Youth Pastor wrote: ${letters[q.ypIndex]}. ${q.options[q.ypIndex]} (${ypIsCorrect ? "Right ✓" : "Missed ✕"})`;
+      document.getElementById("scripture-ref").textContent = q.reference;
+      document.getElementById("yp-note-body").textContent = q.note;
+
+      const nextLabel = document.getElementById("next-btn-label");
+      if (outcome === "wrong") {
+        nextLabel.textContent = "See Final Results";
+      } else if (state.isBonus) {
+        nextLabel.textContent = "Claim $1,000,000 Victory!";
+      } else if (state.currentIdx === QUESTIONS.length - 1) {
+        nextLabel.textContent = "Continue to $1,000,000 Decision";
+      } else {
+        nextLabel.textContent = `Advance to ${QUESTIONS[state.currentIdx + 1].grade}`;
+      }
+
+      document.getElementById("banked-display").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("feedback-panel").classList.remove("hidden");
+      updateStatusAndLifelines();
+      renderLadder();
+    }
+
+    function handleNextStep() {
+      const lastEntry = state.history[state.history.length - 1];
+
+      if (lastEntry && lastEntry.outcome === "wrong") {
+        endGame("missed");
+        return;
+      }
+
+      if (state.isBonus) {
+        endGame("won_million");
+        return;
+      }
+
+      if (state.currentIdx < QUESTIONS.length - 1) {
+        state.currentIdx += 1;
+        renderQuestion();
+      } else {
+        document.getElementById("question-stage").classList.add("hidden");
+        document.getElementById("bonus-decision-card").classList.remove("hidden");
+      }
+    }
+
+    function startBonusQuestion() {
+      state.isBonus = true;
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      renderQuestion();
+    }
+
+    function openDropOutModal() {
+      if (state.answered || state.bankedPrize < 1000) return;
+      document.getElementById("modal-prize-text").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("dropout-modal").classList.remove("hidden");
+    }
+
+    function closeDropOutModal() {
+      document.getElementById("dropout-modal").classList.add("hidden");
+    }
+
+    function confirmDropOut(fromBonusScreen) {
+      closeDropOutModal();
+      if (fromBonusScreen) {
+        state.bankedPrize = 500000;
+      }
+      endGame("dropout");
+    }
+
+    function endGame(reason) {
+      state.lastEndReason = reason;
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.remove("hidden");
+
+      const iconEl = document.getElementById("result-icon");
+      const badgeEl = document.getElementById("result-badge");
+      const titleEl = document.getElementById("result-title");
+      const subEl = document.getElementById("result-subtitle");
+      const verdictEl = document.getElementById("result-verdict-container");
+
+      const totalAnswered = state.history.length;
+      const totalPassed = state.history.filter(h => h.userPassed).length;
+      const matchedOrBeatYp = state.history.filter(h =>
+        h.userPassed || (!h.userPassed && !h.ypCorrect)
+      ).length;
+
+      if (reason === "won_million") {
+        iconEl.textContent = "🏆";
+        badgeEl.textContent = "$1,000,000 Champion";
+        badgeEl.className = "grade-badge bonus-mode";
+        titleEl.textContent = `Congratulations, ${state.playerName}!`;
+        subEl.textContent = "You conquered all 10 grades and the $1,000,000 Youth Pastor Question!";
+        verdictEl.innerHTML = `
+          <div class="victory-banner">
+            🏆 YOU ARE SMARTER THAN A YOUTH PASTOR!
+          </div>
+        `;
+      } else if (reason === "dropout") {
+        iconEl.textContent = "🚪";
+        badgeEl.textContent = "Dropped Out";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Smart Play, ${state.playerName}!`;
+        subEl.textContent = `You walked away with ${formatMoney(state.bankedPrize)} safely in the bank.`;
+        verdictEl.innerHTML = `
+          <div class="confession-box">
+            <div class="confession-label">📢 Read Aloud to the Group</div>
+            <div class="confession-quote">“I am NOT smarter than a Youth Pastor... yet!”</div>
+          </div>
+        `;
+      } else {
+        iconEl.textContent = "📖";
+        badgeEl.textContent = "Eliminated";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Good Effort, ${state.playerName}!`;
+        subEl.textContent = state.bankedPrize > 0
+          ? `Your safety net caught you! You still walk away with ${formatMoney(state.bankedPrize)}.`
+          : "You missed before reaching the $25,000 safety net, finishing with $0.";
+        verdictEl.innerHTML = `
+          <div class="confession-box">
+            <div class="confession-label">📢 Read Aloud to the Group</div>
+            <div class="confession-quote">“I am NOT smarter than a Youth Pastor... yet!”</div>
+          </div>
+        `;
+      }
+
+      document.getElementById("final-winnings").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("final-correct").textContent = `${totalPassed} / ${totalAnswered}`;
+      document.getElementById("final-yp-match").textContent = `${matchedOrBeatYp} / ${totalAnswered}`;
+
+      const recapList = document.getElementById("recap-list");
+      recapList.innerHTML = "";
+
+      if (state.history.length === 0) {
+        recapList.innerHTML = '<div style="font-size: 12.5px; color: var(--muted);">No questions answered before dropping out.</div>';
+      } else {
+        state.history.forEach(item => {
+          const row = document.createElement("div");
+          row.className = "recap-item";
+          const tag = item.outcome === "correct"
+            ? '<span style="color: var(--emerald); font-weight: 700;">✓ Correct</span>'
+            : item.outcome === "saved"
+              ? '<span style="color: var(--gold); font-weight: 700;">🛡️ Saved</span>'
+              : '<span style="color: var(--rose); font-weight: 700;">✕ Missed</span>';
+
+          row.innerHTML = `
+            <div>
+              <strong>${item.grade} (${item.theme})</strong>
+              <div style="color: var(--muted); font-size: 11.5px;">Answer: ${item.correctAnswer}</div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              ${tag}
+              <div style="font-size: 11px; color: var(--muted);">${formatMoney(item.prize)}</div>
+            </div>
+          `;
+          recapList.appendChild(row);
+        });
+      }
+
+      document.getElementById("header-status").innerHTML =
+        `<span class="pill pill-gold">Final Winnings: ${formatMoney(state.bankedPrize)}</span>`;
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.style.opacity = "1";
+      toast.style.transform = "translateY(0)";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(10px)";
+      }, 2800);
+    }
+
+    function copyResultSummary() {
+      const totalAnswered = state.history.length;
+      const totalPassed = state.history.filter(h => h.userPassed).length;
+      const matchedOrBeatYp = state.history.filter(h =>
+        h.userPassed || (!h.userPassed && !h.ypCorrect)
+      ).length;
+
+      const verdict = state.lastEndReason === "won_million"
+        ? "🏆 YOU ARE SMARTER THAN A YOUTH PASTOR! ($1,000,000)"
+        : `📢 Official Confession: "I am NOT smarter than a Youth Pastor... yet!" (${formatMoney(state.bankedPrize)})`;
+
+      const summary = [
+        `📜 Are You Smarter Than a Youth Pastor? — Revelation Edition`,
+        `Contestant: ${state.playerName}`,
+        `Grades Cleared: ${totalPassed} / ${totalAnswered}`,
+        `Youth Pastor Comparison: ${matchedOrBeatYp} / ${totalAnswered}`,
+        `Final Winnings: ${formatMoney(state.bankedPrize)}`,
+        verdict
+      ].join("\n");
+
+      const textarea = document.createElement("textarea");
+      textarea.value = summary;
+      textarea.style.position = "fixed";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      const btn = document.getElementById("copy-result-btn");
+      try {
+        document.execCommand("copy");
+        if (btn) btn.innerHTML = "<span>✓ Copied!</span>";
+        showToast("✓ Result copied to clipboard!");
+      } catch (err) {
+        showToast("Unable to copy automatically.");
+      } finally {
+        document.body.removeChild(textarea);
+        setTimeout(() => {
+          if (btn) btn.innerHTML = "<span>📋 Copy Result</span>";
+        }, 2400);
+      }
+    }
+  </script>
+
+</body></html>
