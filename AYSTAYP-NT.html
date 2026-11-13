@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/adamg/Downloads/guess_the_verse_the_new_testament_challenge.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Verse: The New Testament Challenge</title>
+  <style>
+    /* Notion-Inspired Design Tokens & Reset */
+    :root {
+      --bg: #FBFBFA;
+      --card: #FFFFFF;
+      --sidebar: #F7F6F3;
+      --border: #E6E6E4;
+      --text: #2F3437;
+      --muted: #787774;
+      --indigo: #4F46E5;
+      --indigo-hover: #4338CA;
+      --indigo-active: #3730A3;
+      --indigo-light: #EEF2FF;
+      --indigo-border: #C7D2FE;
+      --gold: #D97706;
+      --gold-light: #FEF3C7;
+      --gold-border: #FDE68A;
+      --emerald: #059669;
+      --emerald-light: #ECFDF5;
+      --emerald-border: #10B981;
+      --rose: #E11D48;
+      --rose-light: #FFF1F2;
+      --rose-border: #FB7185;
+      --shadow: 0 1px 3px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #E0E7FF;
+      color: #312E81;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: default;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Sticky Top Notion-Style Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background-color: rgba(251, 251, 250, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 896px; /* max-w-4xl */
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .breadcrumb-emoji {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .breadcrumb-text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .breadcrumb-muted {
+      color: var(--muted);
+    }
+
+    .breadcrumb-title {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: background-color 0.15s ease;
+    }
+
+    .header-btn:hover {
+      background: #F9FAFB;
+    }
+
+    .icon-sm {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Main Content Container */
+    main {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .container-card {
+      width: 100%;
+      max-width: 672px; /* max-w-2xl */
+    }
+
+    .notion-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    /* 1. Welcome Screen */
+    .welcome-card {
+      padding: 28px;
+    }
+
+    .welcome-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--indigo-light);
+      border: 1px solid #E0E7FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge-pill {
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 6px;
+    }
+
+    .badge-gold {
+      background: #FFFBEB;
+      color: #92400E;
+      border: 1px solid rgba(253, 230, 138, 0.8);
+    }
+
+    .badge-indigo {
+      background: var(--indigo-light);
+      color: #4338CA;
+      border: 1px solid rgba(199, 210, 254, 0.8);
+    }
+
+    .welcome-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .welcome-subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .overview-box {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(247, 246, 243, 0.65);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .overview-emoji {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      flex: 1;
+      padding: 14px 24px;
+      background: var(--indigo);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--indigo-hover);
+    }
+
+    .btn-primary:active {
+      background: var(--indigo-active);
+    }
+
+    .btn-secondary {
+      padding: 14px 16px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #F9FAFB;
+    }
+
+    /* 2. Active Quiz Screen */
+    .status-card {
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .status-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13.5px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .status-muted {
+      color: var(--muted);
+    }
+
+    .status-muted strong {
+      color: var(--text);
+    }
+
+    .status-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .stat-pill-streak {
+      background: #FFFBEB;
+      color: #B45309;
+      border: 1px solid #FDE68A;
+    }
+
+    .stat-pill-score {
+      background: var(--indigo-light);
+      color: #4338CA;
+      border: 1px solid var(--indigo-border);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: #F3F4F6;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--indigo);
+      border-radius: 9999px;
+      transition: width 0.5s ease-out;
+    }
+
+    .question-card {
+      padding: 28px;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 8px;
+    }
+
+    .passage-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--indigo);
+      background: var(--indigo-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .section-hint-badge {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      background: #F3F4F6;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .verse-blockquote {
+      position: relative;
+      background: var(--sidebar);
+      border-left: 4px solid #F59E0B;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .verse-text {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      line-height: 1.6;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .revealed-ref {
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #92400E;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 15px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+      transition: all 0.18s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: #818CF8;
+      background: rgba(238, 242, 255, 0.35);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.08);
+    }
+
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .option-btn.opt-correct {
+      background: var(--emerald-light);
+      border-color: var(--emerald-border);
+      color: #064E3B;
+      box-shadow: 0 0 0 1px var(--emerald-border);
+    }
+
+    .option-btn.opt-correct .option-letter {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #FFFFFF;
+    }
+
+    .option-btn.opt-wrong {
+      background: var(--rose-light);
+      border-color: var(--rose-border);
+      color: #881337;
+    }
+
+    .option-btn.opt-wrong .option-letter {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #FFFFFF;
+    }
+
+    .option-btn.opt-dimmed {
+      opacity: 0.5;
+    }
+
+    /* Feedback & Context Takeaway Callout */
+    .feedback-panel {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .feedback-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .feedback-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .feedback-icon-ok {
+      background: #D1FAE5;
+      color: #047857;
+    }
+
+    .feedback-icon-bad {
+      background: #FFE4E6;
+      color: #BE123C;
+    }
+
+    .feedback-text-ok {
+      color: #065F46;
+    }
+
+    .feedback-text-bad {
+      color: #9F1239;
+    }
+
+    .context-callout {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .context-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .context-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .context-body {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .btn-next {
+      width: 100%;
+      padding: 14px 24px;
+      background: var(--text);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-next:hover {
+      background: #000000;
+    }
+
+    /* 3. Results Screen */
+    .results-card {
+      padding: 32px;
+      text-align: center;
+    }
+
+    .rank-badge-box {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      border-radius: 16px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .complete-pill {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--indigo-light);
+      color: #4338CA;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+
+    .rank-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .rank-desc {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 512px;
+      margin: 0 auto 28px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .breakdown-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+
+    .breakdown-heading {
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .breakdown-item {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .breakdown-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .breakdown-score {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: #4338CA;
+      flex-shrink: 0;
+    }
+
+    /* Study Guide Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-dialog {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 768px; /* max-w-3xl */
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--sidebar);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .modal-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .modal-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-copy-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--indigo);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-copy-sm:hover {
+      background: var(--indigo-hover);
+    }
+
+    .btn-close {
+      padding: 6px;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-close:hover {
+      color: var(--text);
+      background: rgba(229, 231, 235, 0.6);
+    }
+
+    .filter-bar {
+      padding: 10px 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .filter-pill {
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      white-space: nowrap;
+      transition: background-color 0.15s ease;
+    }
+
+    .filter-pill:hover {
+      background: #F3F4F6;
+    }
+
+    .filter-pill.active {
+      background: var(--indigo-light);
+      color: #4338CA;
+      font-weight: 600;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-item {
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: background-color 0.15s ease;
+    }
+
+    .guide-item:hover {
+      background: var(--card);
+    }
+
+    .guide-item-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .guide-ref-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-num {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: #E0E7FF;
+      color: #3730A3;
+    }
+
+    .guide-ref {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .guide-section-pill {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      background: #FFFBEB;
+      color: #92400E;
+      border: 1px solid #FDE68A;
+    }
+
+    .guide-verse {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .guide-note {
+      font-size: 13.5px;
+      color: var(--muted);
+      background: var(--card);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(230, 230, 228, 0.85);
+    }
+
+    .guide-note strong {
+      color: var(--text);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+      background: var(--text);
+      color: #FFFFFF;
+      padding: 12px 16px;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      pointer-events: none;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-check {
+      color: #34D399;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid rgba(230, 230, 228, 0.65);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 640px) {
+      .breadcrumb-muted {
+        display: none;
+      }
+
+      .welcome-card,
+      .question-card,
+      .results-card {
+        padding: 20px;
+      }
+
+      .welcome-title,
+      .rank-title {
+        font-size: 24px;
+      }
+
+      .overview-grid,
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .action-row {
+        flex-direction: column;
+      }
+
+      .verse-text {
+        font-size: 18px;
+      }
+
+      .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        gap: 8px;
+      }
+
+      .stat-card {
+        padding: 12px 8px;
+      }
+
+      .stat-value {
+        font-size: 20px;
+      }
+
+      .modal-header,
+      .filter-bar,
+      .modal-body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Notion-Style Navigation Bar -->
+  <header>
+    <div class="header-inner">
+      <div class="breadcrumb" onclick="resetToHome()" role="button" tabindex="0" aria-label="Return to Welcome Screen">
+        <span class="breadcrumb-emoji" role="img" aria-label="Scroll">📜</span>
+        <div class="breadcrumb-text">
+          <span class="breadcrumb-muted">Youth Curriculum</span>
+          <span class="breadcrumb-muted">/</span>
+          <span class="breadcrumb-title">Guess the Verse: New Testament</span>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" onclick="openStudyGuide()" class="header-btn">
+          <svg class="icon-sm" style="color: var(--gold);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>Study Guide (20)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    <div class="container-card">
+
+      <!-- 1. WELCOME SCREEN -->
+      <section id="welcome-screen" class="fade-in notion-card welcome-card">
+        <div class="welcome-top">
+          <div class="hero-icon-box" role="img" aria-label="Open Book">📖</div>
+          <div class="badge-row">
+            <span class="badge-pill badge-gold">Acts • Epistles • Revelation</span>
+            <span class="badge-pill badge-indigo">20 Questions</span>
+          </div>
+        </div>
+
+        <h1 class="welcome-title">
+          Guess the Verse: The New Testament Challenge
+        </h1>
+        <p class="welcome-subtitle">
+          Youth Group Edition • New Testament Curriculum
+        </p>
+
+        <!-- 3-Column Overview Cards -->
+        <div class="overview-grid">
+          <div class="overview-box">
+            <span class="overview-emoji">🎯</span>
+            <span>20 Key NT Verses</span>
+          </div>
+          <div class="overview-box">
+            <span class="overview-emoji">💡</span>
+            <span>Verse Context &amp; Notes</span>
+          </div>
+          <div class="overview-box">
+            <span class="overview-emoji">📋</span>
+            <span>Notion Markdown Ready</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-row">
+          <button type="button" onclick="startGame()" class="btn-primary">
+            <span>Start Quiz</span>
+            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+          <button type="button" onclick="openStudyGuide()" class="btn-secondary">
+            Study Guide (20)
+          </button>
+          <button type="button" onclick="copyForNotion()" class="btn-secondary">
+            <svg class="icon-sm" style="color: var(--muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Copy for Notion</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 2. ACTIVE QUIZ SCREEN -->
+      <section id="quiz-screen" class="hidden fade-in">
+        <!-- Top Status Bar: Progress, Score, Streak -->
+        <div class="notion-card status-card">
+          <div class="status-top">
+            <span class="status-muted">
+              Question <strong id="q-current">1</strong> of <span id="q-total">20</span>
+            </span>
+            <div class="status-pills">
+              <span class="stat-pill stat-pill-streak">
+                🔥 Streak: <span id="streak-count" style="margin-left: 4px;">0</span>
+              </span>
+              <span class="stat-pill stat-pill-score">
+                Score: <span id="score-count" style="margin-left: 4px;">0</span>
+              </span>
+            </div>
+          </div>
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-fill" style="width: 5%;"></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="notion-card question-card">
+          <div class="question-header">
+            <span class="passage-tag">Scripture Passage</span>
+            <span id="section-hint-badge" class="section-hint-badge hidden">New Testament</span>
+          </div>
+
+          <!-- Verse Blockquote -->
+          <blockquote class="verse-blockquote">
+            <p id="verse-text" class="verse-text"></p>
+            <footer id="revealed-reference" class="revealed-ref hidden">
+              <span>—</span>
+              <span id="reference-label"></span>
+            </footer>
+          </blockquote>
+
+          <!-- 2x2 Multiple Choice Options -->
+          <div id="options-grid" class="options-grid"></div>
+
+          <!-- Instant Feedback & Context Takeaway (Hidden until answered) -->
+          <div id="feedback-panel" class="feedback-panel hidden fade-in">
+            <div id="feedback-banner" class="feedback-banner"></div>
+
+            <div class="context-callout">
+              <div class="context-header">
+                <span style="font-size: 14px;">💡</span>
+                <h4 class="context-title">Context &amp; Takeaway</h4>
+              </div>
+              <p id="commentary-text" class="context-body"></p>
+            </div>
+
+            <button type="button" id="next-btn" onclick="nextQuestion()" class="btn-next">
+              <span id="next-btn-text">Next Verse</span>
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RESULTS SCREEN -->
+      <section id="results-screen" class="hidden fade-in notion-card results-card">
+        <div id="rank-emoji" class="rank-badge-box">🏆</div>
+
+        <span class="complete-pill">Challenge Complete</span>
+        <h2 id="rank-title" class="rank-title">New Testament Scholar</h2>
+        <p id="rank-description" class="rank-desc"></p>
+
+        <!-- Stats Breakdown -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p class="stat-label">Final Score</p>
+            <p class="stat-value" style="color: var(--indigo);"><span id="final-score">0</span>/20</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Accuracy</p>
+            <p class="stat-value" style="color: var(--text);"><span id="final-accuracy">0</span>%</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Best Streak</p>
+            <p class="stat-value" style="color: var(--gold);">🔥 <span id="final-streak">0</span></p>
+          </div>
+        </div>
+
+        <!-- Performance by Section -->
+        <div class="breakdown-box">
+          <p class="breakdown-heading">Performance by Section</p>
+          <div id="section-breakdown" class="breakdown-grid"></div>
+        </div>
+
+        <!-- Action Buttons: Copy for Notion & Play Again -->
+        <div class="action-row">
+          <button type="button" onclick="copyForNotion()" class="btn-primary">
+            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span>Copy for Notion</span>
+          </button>
+
+          <button type="button" onclick="startGame()" class="btn-secondary">
+            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            <span>Play Again</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-check">✓</span>
+    <span id="toast-message">Copied Markdown for Notion!</span>
+  </div>
+
+  <!-- Study Guide Modal -->
+  <div id="study-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="study-modal-title">
+    <div class="modal-dialog fade-in">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span style="font-size: 20px;">📚</span>
+          <div>
+            <h3 id="study-modal-title" class="modal-title">Study Guide: All 20 New Testament Verses</h3>
+            <p class="modal-subtitle">Complete reference sheet &amp; context notes</p>
+          </div>
+        </div>
+        <div class="modal-controls">
+          <button type="button" onclick="copyForNotion()" class="btn-copy-sm">
+            <span>Copy Markdown</span>
+          </button>
+          <button type="button" onclick="closeStudyGuide()" class="btn-close" aria-label="Close modal">
+            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-bar">
+        <button type="button" onclick="filterStudyGuide('All')" class="filter-pill active" data-section="All">All (20)</button>
+        <button type="button" onclick="filterStudyGuide('Acts')" class="filter-pill" data-section="Acts">Acts (5)</button>
+        <button type="button" onclick="filterStudyGuide(&quot;Paul's Letters&quot;)" class="filter-pill" data-section="Paul's Letters">Paul's Letters (7)</button>
+        <button type="button" onclick="filterStudyGuide('General Epistles')" class="filter-pill" data-section="General Epistles">General Epistles (5)</button>
+        <button type="button" onclick="filterStudyGuide('Revelation')" class="filter-pill" data-section="Revelation">Revelation (3)</button>
+      </div>
+
+      <!-- Modal Scrollable List -->
+      <div id="study-guide-list" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built for Youth Ministry • New Testament Curriculum Series</p>
+  </footer>
+
+  <!-- Game Data & Application Logic -->
+  <script>
+    /**
+     * Complete 20-Question Dataset for "Guess the Verse: The New Testament Challenge"
+     * Covers Acts, Paul's Letters, General Epistles, and Revelation with youth-accessible
+     * Scripture commentary revealed after each response.
+     */
+    const NT_QUESTIONS = [
+      {
+        id: 1,
+        verse: "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.",
+        answer: "Acts 1:8",
+        section: "Acts",
+        options: ["Acts 1:8", "Acts 2:38", "Romans 1:16", "2 Timothy 1:7"],
+        commentary: "Spoken by Jesus right before His ascension, this verse serves as the outline for the entire Book of Acts! Notice how the gospel spreads in widening circles—from Jerusalem to Judea and Samaria, and all the way to us today through the power of the Holy Spirit."
+      },
+      {
+        id: 2,
+        verse: "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.",
+        answer: "Acts 2:38",
+        section: "Acts",
+        options: ["Acts 2:38", "Acts 3:19", "Romans 6:4", "1 Peter 3:21"],
+        commentary: "On the Day of Pentecost, Peter—the same disciple who denied Jesus weeks earlier—boldly preached the first Christian sermon. When the crowd asked how to respond, Peter invited them to turn to Jesus, publicly identify with Him in baptism, and receive the Spirit."
+      },
+      {
+        id: 3,
+        verse: "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.",
+        answer: "Acts 4:12",
+        section: "Acts",
+        options: ["Acts 4:12", "Romans 10:9", "Philippians 2:9", "1 Timothy 2:5"],
+        commentary: "Standing on trial before the powerful religious council in Jerusalem after healing a crippled beggar, Peter refused to back down. Even under threat of arrest, the early church centered everything on the exclusive saving power of Jesus."
+      },
+      {
+        id: 4,
+        verse: "Believe in the Lord Jesus, and you will be saved—you and your household.",
+        answer: "Acts 16:31",
+        section: "Acts",
+        options: ["Acts 16:31", "Romans 10:13", "Ephesians 2:8", "Acts 2:21"],
+        commentary: "After a midnight earthquake shook open a Roman prison in Philippi, the terrified jailer fell before Paul and Silas asking how to be saved. That very night, the jailer and his entire family trusted Christ and were baptized."
+      },
+      {
+        id: 5,
+        verse: "Now the Berean Jews were of more noble character than those in Thessalonica, for they received the message with great eagerness and examined the Scriptures every day to see if what Paul said was true.",
+        answer: "Acts 17:11",
+        section: "Acts",
+        options: ["Acts 17:11", "2 Timothy 2:15", "1 Thessalonians 5:21", "Hebrews 4:12"],
+        commentary: "The Bereans model the ideal balance of an open heart and a thoughtful mind: they listened eagerly to Paul's preaching while checking every claim directly against God's Word for themselves."
+      },
+      {
+        id: 6,
+        verse: "For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile.",
+        answer: "Romans 1:16",
+        section: "Paul's Letters",
+        options: ["Romans 1:16", "1 Corinthians 1:18", "2 Timothy 1:8", "Galatians 1:11"],
+        commentary: "Writing to Christians living in the capital of the mighty Roman Empire, Paul declares that the message of a crucified and risen Savior isn't weak or embarrassing—it is God's unstoppable power to rescue anyone who trusts Him."
+      },
+      {
+        id: 7,
+        verse: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+        answer: "Romans 8:28",
+        section: "Paul's Letters",
+        options: ["Romans 8:28", "Philippians 4:19", "Ephesians 1:11", "2 Corinthians 4:17"],
+        commentary: "Paul isn't saying that every bad thing in life is good—rather, God is so sovereign and faithful that He weaves even painful and confusing circumstances together for our ultimate good: becoming more like Jesus (Romans 8:29)."
+      },
+      {
+        id: 8,
+        verse: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God’s will is—his good, pleasing and perfect will.",
+        answer: "Romans 12:2",
+        section: "Paul's Letters",
+        options: ["Romans 12:2", "Ephesians 4:23", "Colossians 3:2", "1 John 2:15"],
+        commentary: "Culture constantly tries to press us into its mold, but real spiritual transformation starts from the inside out as Scripture reshapes how we think, value, and live every day."
+      },
+      {
+        id: 9,
+        verse: "No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear.",
+        answer: "1 Corinthians 10:13",
+        section: "Paul's Letters",
+        options: ["1 Corinthians 10:13", "James 1:12", "Hebrews 2:18", "2 Peter 2:9"],
+        commentary: "Temptation often tricks us into thinking 'nobody else struggles with this' or 'I have no choice.' Paul reminds us that our struggles are shared by others and that God always provides a way out so we can stand strong."
+      },
+      {
+        id: 10,
+        verse: "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me.",
+        answer: "Galatians 2:20",
+        section: "Paul's Letters",
+        options: ["Galatians 2:20", "Romans 6:6", "Philippians 1:21", "Colossians 3:3"],
+        commentary: "Written to believers tempted to earn God's approval through strict rule-keeping, this verse captures the heart of Christian identity: our old self died with Jesus on the cross, and His resurrection life now powers us forward."
+      },
+      {
+        id: 11,
+        verse: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God—not by works, so that no one can boast.",
+        answer: "Ephesians 2:8-9",
+        section: "Paul's Letters",
+        options: ["Ephesians 2:8-9", "Romans 3:24", "Titus 3:5", "Galatians 2:16"],
+        commentary: "Salvation isn't a paycheck we earn by good behavior—it is a free gift received with empty hands of faith, leaving zero room for spiritual pride and every reason for grateful worship."
+      },
+      {
+        id: 12,
+        verse: "I can do all this through him who gives me strength.",
+        answer: "Philippians 4:13",
+        section: "Paul's Letters",
+        options: ["Philippians 4:13", "2 Corinthians 12:9", "Ephesians 6:10", "Colossians 1:11"],
+        commentary: "Often quoted before big games, Paul actually wrote this while chained to a Roman guard! In context, 'all this' means learning contentment whether having plenty or going hungry—because Christ supplies inner strength in every season."
+      },
+      {
+        id: 13,
+        verse: "Now faith is confidence in what we hope for and assurance about what we do not see.",
+        answer: "Hebrews 11:1",
+        section: "General Epistles",
+        options: ["Hebrews 11:1", "2 Corinthians 5:7", "Romans 8:24", "James 2:17"],
+        commentary: "Opening the famous 'Hall of Faith' chapter, this verse shows that biblical faith isn't blind wishful thinking—it is solid, active trust in God's reliable character and future promises even before we see them fulfilled."
+      },
+      {
+        id: 14,
+        verse: "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us, fixing our eyes on Jesus...",
+        answer: "Hebrews 12:1-2",
+        section: "General Epistles",
+        options: ["Hebrews 12:1-2", "1 Corinthians 9:24", "2 Timothy 4:7", "Philippians 3:14"],
+        commentary: "Using the imagery of an ancient stadium race, the writer urges tired believers to drop distracting weights, keep running with endurance, and keep their focus locked on Jesus—who already finished the race ahead of us."
+      },
+      {
+        id: 15,
+        verse: "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.",
+        answer: "James 1:2-3",
+        section: "General Epistles",
+        options: ["James 1:2-3", "Romans 5:3-4", "1 Peter 1:6-7", "Hebrews 10:36"],
+        commentary: "James—the brother of Jesus—doesn't ask us to pretend pain feels good. Instead, we can have deep joy in hard times because God uses pressure like a spiritual workout to build resilient, mature character."
+      },
+      {
+        id: 16,
+        verse: "Cast all your anxiety on him because he cares for you.",
+        answer: "1 Peter 5:7",
+        section: "General Epistles",
+        options: ["1 Peter 5:7", "Philippians 4:6", "Matthew 6:25", "1 John 4:18"],
+        commentary: "The Greek word for 'cast' means to throw a heavy load onto someone else—like tossing a heavy backpack onto a stronger friend. Peter reminds stressed believers that God personally and deeply cares about what weighs on them."
+      },
+      {
+        id: 17,
+        verse: "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.",
+        answer: "1 John 1:9",
+        section: "General Epistles",
+        options: ["1 John 1:9", "James 5:16", "Acts 3:19", "Ephesians 1:7"],
+        commentary: "When we mess up, shame tempts us to hide from God. John reassures us that honest confession brings immediate forgiveness and a fresh start because Jesus already paid the full price for our sins."
+      },
+      {
+        id: 18,
+        verse: "'I am the Alpha and the Omega,' says the Lord God, 'who is, and who was, and who is to come, the Almighty.'",
+        answer: "Revelation 1:8",
+        section: "Revelation",
+        options: ["Revelation 1:8", "Revelation 22:13", "Hebrews 13:8", "Revelation 4:8"],
+        commentary: "Alpha and Omega are the first and last letters of the Greek alphabet. Speaking to exiled, persecuted Christians, God declares that He holds the beginning, the middle, and the final chapter of human history in His hands."
+      },
+      {
+        id: 19,
+        verse: "Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with that person, and they with me.",
+        answer: "Revelation 3:20",
+        section: "Revelation",
+        options: ["Revelation 3:20", "Revelation 2:10", "James 4:8", "1 John 3:20"],
+        commentary: "Spoken to the lukewarm church in Laodicea, this warm invitation reveals Jesus' heart: He never kicks the door down, yet He patiently knocks, inviting anyone who opens up to share close, daily friendship with Him."
+      },
+      {
+        id: 20,
+        verse: "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away.",
+        answer: "Revelation 21:4",
+        section: "Revelation",
+        options: ["Revelation 21:4", "Revelation 7:17", "1 Corinthians 15:54", "Revelation 22:3"],
+        commentary: "At the climax of the entire Bible, God makes all things new! Not only will death, grief, and pain be gone forever, but God Himself tenderly comforts His people and wipes away every single tear."
+      }
+    ];
+
+    // Game State
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let streak = 0;
+    let bestStreak = 0;
+    let answered = false;
+    let sectionStats = {
+      "Acts": { correct: 0, total: 0 },
+      "Paul's Letters": { correct: 0, total: 0 },
+      "General Epistles": { correct: 0, total: 0 },
+      "Revelation": { correct: 0, total: 0 }
+    };
+
+    // Cached DOM References
+    const welcomeScreen = document.getElementById("welcome-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultsScreen = document.getElementById("results-screen");
+    const studyModal = document.getElementById("study-modal");
+
+    /**
+     * Fisher-Yates shuffle for randomizing multiple-choice button positions
+     */
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Start or restart a 20-question quiz session
+     */
+    function startGame() {
+      currentQuestions = NT_QUESTIONS.map(q => ({
+        ...q,
+        shuffledOptions: shuffleArray(q.options)
+      }));
+
+      currentIndex = 0;
+      score = 0;
+      streak = 0;
+      bestStreak = 0;
+      answered = false;
+      sectionStats = {
+        "Acts": { correct: 0, total: 0 },
+        "Paul's Letters": { correct: 0, total: 0 },
+        "General Epistles": { correct: 0, total: 0 },
+        "Revelation": { correct: 0, total: 0 }
+      };
+
+      welcomeScreen.classList.add("hidden");
+      resultsScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      updateScoreHeader();
+      renderQuestion();
+    }
+
+    /**
+     * Reset back to the Welcome screen
+     */
+    function resetToHome() {
+      quizScreen.classList.add("hidden");
+      resultsScreen.classList.add("hidden");
+      welcomeScreen.classList.remove("hidden");
+    }
+
+    /**
+     * Update live question counter, score, streak, and progress bar
+     */
+    function updateScoreHeader() {
+      document.getElementById("q-current").textContent = currentIndex + 1;
+      document.getElementById("q-total").textContent = currentQuestions.length;
+      document.getElementById("score-count").textContent = score;
+      document.getElementById("streak-count").textContent = streak;
+
+      const progressPct = (currentIndex / currentQuestions.length) * 100;
+      document.getElementById("progress-bar").style.width = `${Math.max(5, progressPct)}%`;
+    }
+
+    /**
+     * Render the active question card and A/B/C/D options
+     */
+    function renderQuestion() {
+      answered = false;
+      const q = currentQuestions[currentIndex];
+      updateScoreHeader();
+
+      document.getElementById("verse-text").textContent = `"${q.verse}"`;
+      document.getElementById("revealed-reference").classList.add("hidden");
+      document.getElementById("feedback-panel").classList.add("hidden");
+      document.getElementById("section-hint-badge").classList.add("hidden");
+
+      const optionsGrid = document.getElementById("options-grid");
+      optionsGrid.innerHTML = "";
+
+      const letters = ["A", "B", "C", "D"];
+      q.shuffledOptions.forEach((optionText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.dataset.value = optionText;
+
+        btn.innerHTML = `
+          <span class="option-letter">${letters[idx]}</span>
+          <span class="option-label">${optionText}</span>
+        `;
+
+        btn.addEventListener("click", () => handleAnswer(optionText));
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    /**
+     * Evaluate the user's answer and reveal feedback + context note
+     */
+    function handleAnswer(selectedOption) {
+      if (answered) return;
+      answered = true;
+
+      const q = currentQuestions[currentIndex];
+      const isCorrect = selectedOption === q.answer;
+
+      // Update section statistics
+      sectionStats[q.section].total += 1;
+      if (isCorrect) {
+        score += 1;
+        streak += 1;
+        if (streak > bestStreak) bestStreak = streak;
+        sectionStats[q.section].correct += 1;
+      } else {
+        streak = 0;
+      }
+
+      // Update header metrics and progress bar
+      document.getElementById("score-count").textContent = score;
+      document.getElementById("streak-count").textContent = streak;
+      const completedPct = ((currentIndex + 1) / currentQuestions.length) * 100;
+      document.getElementById("progress-bar").style.width = `${completedPct}%`;
+
+      // Highlight right/wrong buttons
+      const allButtons = document.querySelectorAll("#options-grid button");
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+        const val = btn.dataset.value;
+        const letterBadge = btn.querySelector(".option-letter");
+
+        if (val === q.answer) {
+          btn.classList.add("opt-correct");
+          letterBadge.textContent = "✓";
+        } else if (val === selectedOption && !isCorrect) {
+          btn.classList.add("opt-wrong");
+          letterBadge.textContent = "✕";
+        } else {
+          btn.classList.add("opt-dimmed");
+        }
+      });
+
+      // Reveal canonical reference & section badge
+      document.getElementById("reference-label").textContent = `${q.answer} (${q.section})`;
+      document.getElementById("revealed-reference").classList.remove("hidden");
+
+      const sectionBadge = document.getElementById("section-hint-badge");
+      sectionBadge.textContent = q.section;
+      sectionBadge.classList.remove("hidden");
+
+      // Show feedback banner and Context & Takeaway
+      const feedbackBanner = document.getElementById("feedback-banner");
+      if (isCorrect) {
+        feedbackBanner.innerHTML = `
+          <span class="feedback-icon feedback-icon-ok">✓</span>
+          <span class="feedback-text-ok">Spot on! That is ${q.answer}.</span>
+        `;
+      } else {
+        feedbackBanner.innerHTML = `
+          <span class="feedback-icon feedback-icon-bad">✕</span>
+          <span class="feedback-text-bad">Good try! This verse is actually <span style="text-decoration: underline;">${q.answer}</span>.</span>
+        `;
+      }
+
+      document.getElementById("commentary-text").textContent = q.commentary;
+
+      const nextBtnText = document.getElementById("next-btn-text");
+      nextBtnText.textContent = (currentIndex === currentQuestions.length - 1)
+        ? "See Final Results"
+        : "Next Verse";
+
+      document.getElementById("feedback-panel").classList.remove("hidden");
+    }
+
+    /**
+     * Advance to the next verse or show final results
+     */
+    function nextQuestion() {
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    /**
+     * Render the final score, rank title, and 4-section breakdown
+     */
+    function showResults() {
+      quizScreen.classList.add("hidden");
+      resultsScreen.classList.remove("hidden");
+
+      const total = currentQuestions.length;
+      const accuracy = Math.round((score / total) * 100);
+
+      document.getElementById("final-score").textContent = score;
+      document.getElementById("final-accuracy").textContent = accuracy;
+      document.getElementById("final-streak").textContent = bestStreak;
+
+      let rankEmoji = "🌱";
+      let rankTitle = "Disciple in Training";
+      let rankDesc = "You're off to a great start! Every time you open the New Testament, God's Word takes deeper root.";
+
+      if (score === 20) {
+        rankEmoji = "👑";
+        rankTitle = "New Testament Master";
+        rankDesc = "A perfect 20 out of 20! You know the verses and context from Acts through Revelation inside and out.";
+      } else if (score >= 16) {
+        rankEmoji = "🏆";
+        rankTitle = "New Testament Scholar";
+        rankDesc = "Phenomenal work! You have a sharp memory for the exact words, context, and message of the early church.";
+      } else if (score >= 11) {
+        rankEmoji = "📖";
+        rankTitle = "Faithful Berean";
+        rankDesc = "Solid effort! Just like the Bereans in Acts 17, you clearly examine Scripture and know its core truth well.";
+      }
+
+      document.getElementById("rank-emoji").textContent = rankEmoji;
+      document.getElementById("rank-title").textContent = rankTitle;
+      document.getElementById("rank-description").textContent = rankDesc;
+
+      // Render Performance by Section
+      const breakdownContainer = document.getElementById("section-breakdown");
+      breakdownContainer.innerHTML = "";
+
+      ["Acts", "Paul's Letters", "General Epistles", "Revelation"].forEach(sectionName => {
+        const stat = sectionStats[sectionName];
+        const card = document.createElement("div");
+        card.className = "breakdown-item";
+        card.innerHTML = `
+          <span class="breakdown-name">${sectionName}</span>
+          <span class="breakdown-score">${stat.correct}/${stat.total}</span>
+        `;
+        breakdownContainer.appendChild(card);
+      });
+    }
+
+    /**
+     * Copy all 20 verses, multiple-choice options, and context notes in Notion Markdown
+     */
+    function copyForNotion() {
+      let md = `# 📜 Guess the Verse: The New Testament Challenge\n`;
+      md += `> **Youth Group Curriculum:** *Use these 20 pivotal verses from Acts, Paul's Letters, General Epistles, and Revelation for youth group trivia nights, small group icebreakers, or Scripture memory.*\n\n`;
+      md += `---\n\n`;
+
+      NT_QUESTIONS.forEach((q, index) => {
+        md += `### ${index + 1}. ${q.answer} (${q.section})\n`;
+        md += `> *"${q.verse}"*\n\n`;
+        md += `- **Multiple Choice Options:** ${q.options.join(" • ")}\n`;
+        md += `- **💡 Context & Takeaway:** ${q.commentary}\n\n`;
+      });
+
+      const textArea = document.createElement("textarea");
+      textArea.value = md;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand("copy");
+        showToast("Copied all 20 verses & study notes in Notion Markdown!");
+      } catch (err) {
+        showToast("Unable to copy automatically. Please open Study Guide.");
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+
+    /**
+     * Display non-blocking bottom-right toast notification
+     */
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toast-message").textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+    }
+
+    /**
+     * Study Guide Modal Controls & Section Filtering
+     */
+    function openStudyGuide() {
+      filterStudyGuide("All");
+      studyModal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeStudyGuide() {
+      studyModal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    function filterStudyGuide(sectionFilter) {
+      document.querySelectorAll(".filter-pill").forEach(btn => {
+        if (btn.dataset.section === sectionFilter) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+
+      renderStudyGuideList(sectionFilter);
+    }
+
+    function renderStudyGuideList(sectionFilter) {
+      const container = document.getElementById("study-guide-list");
+      container.innerHTML = "";
+
+      const filtered = sectionFilter === "All"
+        ? NT_QUESTIONS
+        : NT_QUESTIONS.filter(q => q.section === sectionFilter);
+
+      filtered.forEach(q => {
+        const item = document.createElement("div");
+        item.className = "guide-item";
+        item.innerHTML = `
+          <div class="guide-item-top">
+            <span class="guide-ref-group">
+              <span class="guide-num">#${q.id}</span>
+              <span class="guide-ref">${q.answer}</span>
+            </span>
+            <span class="guide-section-pill">${q.section}</span>
+          </div>
+          <p class="guide-verse">"${q.verse}"</p>
+          <div class="guide-note">
+            <strong>💡 Context &amp; Takeaway:</strong> ${q.commentary}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // Close modal when clicking outside the dialog card
+    studyModal.addEventListener("click", event => {
+      if (event.target === studyModal) {
+        closeStudyGuide();
+      }
+    });
+  </script>
+
+</body></html>
