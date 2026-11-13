@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/adamg/Downloads/high_or_low_new_testament_edition.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High or Low: New Testament Edition</title>
+  <!-- Tailwind CSS -->
+  <script src="./High or Low_ New Testament Edition_files/saved_resource"></script>
+  <!-- Google Fonts: Cinzel & Playfair Display for classical Greco-Roman / Early Church headings, Inter for clean UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./High or Low_ New Testament Edition_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-aegean-deep: #0b1120;
+      --bg-burgundy-tint: #1d101b;
+      --parchment-light: #fcf9f2;
+      --parchment-warm: #f3ead8;
+      --ink-dark: #1c1917;
+      --ink-muted: #57534e;
+      --gold-primary: #d4af37;
+      --gold-bright: #f5df96;
+      --gold-deep: #9a6e14;
+      --burgundy-accent: #7f1d1d;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-aegean-deep);
+      color: #f8f5ec;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(127, 29, 29, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 85% 20%, rgba(30, 58, 138, 0.30) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.10) 0%, transparent 50%),
+        linear-gradient(165deg, #090e1a 0%, #11182c 52%, #190e17 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+
+    .font-playfair {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Warm Parchment Manuscript Cards with Antique Gold Trim */
+    .nt-card {
+      background: linear-gradient(155deg, #fcf9f2 0%, #f4ebd9 100%);
+      color: var(--ink-dark);
+      border: 2px solid rgba(212, 175, 55, 0.75);
+      box-shadow:
+        0 18px 40px -10px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(154, 110, 20, 0.3),
+        inset 0 2px 6px rgba(255, 255, 255, 0.9);
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Inner manuscript hairline frame */
+    .nt-card::before {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(154, 110, 20, 0.28);
+      border-radius: 0.75rem;
+      pointer-events: none;
+    }
+
+    .nt-card.correct-glow {
+      border-color: #10b981;
+      box-shadow:
+        0 0 32px rgba(16, 185, 129, 0.5),
+        0 18px 40px -10px rgba(0, 0, 0, 0.7),
+        inset 0 0 18px rgba(16, 185, 129, 0.14);
+    }
+
+    .nt-card.wrong-glow {
+      border-color: #dc2626;
+      box-shadow:
+        0 0 32px rgba(220, 38, 38, 0.55),
+        0 18px 40px -10px rgba(0, 0, 0, 0.7),
+        inset 0 0 18px rgba(220, 38, 38, 0.14);
+      animation: shakeCard 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    /* Dark Royal Modal Card */
+    .nt-modal-card {
+      background: linear-gradient(155deg, #131c31 0%, #1c1220 100%);
+      color: #f8f5ec;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      position: relative;
+    }
+
+    @keyframes shakeCard {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    @keyframes slideInRound {
+      from {
+        opacity: 0;
+        transform: translateX(24px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes fadeUpPanel {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-round-slide {
+      animation: slideInRound 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .animate-panel-up {
+      animation: fadeUpPanel 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Antique Gold Gradient Text */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fbf0c9 0%, #d4af37 52%, #a67614 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-ink-text {
+      background: linear-gradient(135deg, #9a6e14 0%, #78350f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Tactile Buttons */
+    .btn-higher {
+      background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+      border: 1px solid #34d399;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-higher:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #047857 0%, #059669 100%);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .btn-higher:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-lower {
+      background: linear-gradient(135deg, #881337 0%, #991b1b 100%);
+      border: 1px solid #fb7185;
+      box-shadow: 0 4px 14px rgba(153, 27, 27, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-lower:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #9f1239 0%, #b91c1c 100%);
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.45);
+    }
+    .btn-lower:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e5c158 0%, #b8871c 100%);
+      color: #0b1120;
+      border: 1px solid #fef3c7;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.38);
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.52);
+    }
+
+    /* Imperial Medallion VS Badge */
+    .vs-badge {
+      background: radial-gradient(circle at 30% 30%, #fef3c7, #d4af37 60%, #78350f 100%);
+      color: #1c1917;
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b1120;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.4);
+      border-radius: 9999px;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.z-30{z-index:30}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-1{margin-top:0.25rem;margin-bottom:0.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-2{margin-top:0.5rem}.mt-2\.5{margin-top:0.625rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.list-none{list-style-type:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.875rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.875rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-amber-400\/40{border-color:rgb(251 191 36 / 0.4)}.border-amber-400\/45{border-color:rgb(251 191 36 / 0.45)}.border-amber-400\/50{border-color:rgb(251 191 36 / 0.5)}.border-amber-500\/20{border-color:rgb(245 158 11 / 0.2)}.border-amber-500\/25{border-color:rgb(245 158 11 / 0.25)}.border-amber-500\/30{border-color:rgb(245 158 11 / 0.3)}.border-amber-800\/25{border-color:rgb(146 64 14 / 0.25)}.border-amber-900\/20{border-color:rgb(120 53 15 / 0.2)}.border-rose-800\/25{border-color:rgb(159 18 57 / 0.25)}.border-stone-300{--tw-border-opacity:1;border-color:rgb(214 211 209 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-amber-500\/15{background-color:rgb(245 158 11 / 0.15)}.bg-amber-900\/10{background-color:rgb(120 53 15 / 0.1)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-rose-900\/10{background-color:rgb(136 19 55 / 0.1)}.bg-rose-950\/60{background-color:rgb(76 5 25 / 0.6)}.bg-rose-950\/80{background-color:rgb(76 5 25 / 0.8)}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-950\/75{background-color:rgb(2 6 23 / 0.75)}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.bg-slate-950\/95{background-color:rgb(2 6 23 / 0.95)}.bg-stone-200{--tw-bg-opacity:1;background-color:rgb(231 229 228 / var(--tw-bg-opacity, 1))}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-slate-900\/80{background-color:rgb(15 23 42 / 0.8)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-rose-950{--tw-gradient-from:#4c0519 var(--tw-gradient-from-position);--tw-gradient-to:rgb(76 5 25 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-slate-900{--tw-gradient-to:#0f172a var(--tw-gradient-to-position)}.p-1\.5{padding:0.375rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-4{padding-bottom:1rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-100{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-200\/80{color:rgb(253 230 138 / 0.8)}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-50\/95{color:rgb(255 251 235 / 0.95)}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-rose-900{--tw-text-opacity:1;color:rgb(136 19 55 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-stone-500{--tw-text-opacity:1;color:rgb(120 113 108 / var(--tw-text-opacity, 1))}.text-stone-700{--tw-text-opacity:1;color:rgb(68 64 60 / var(--tw-text-opacity, 1))}.text-stone-800{--tw-text-opacity:1;color:rgb(41 37 36 / var(--tw-text-opacity, 1))}.text-stone-900{--tw-text-opacity:1;color:rgb(28 25 23 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-amber-700\/60{-webkit-text-decoration-color:rgb(180 83 9 / 0.6);text-decoration-color:rgb(180 83 9 / 0.6)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-amber-500\/30 *::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200 *::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.selection\:bg-amber-500\/30::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.hover\:border-amber-500\/40:hover{border-color:rgb(245 158 11 / 0.4)}.hover\:bg-amber-500\/15:hover{background-color:rgb(245 158 11 / 0.15)}.hover\:bg-amber-500\/25:hover{background-color:rgb(245 158 11 / 0.25)}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-amber-200:hover{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:inline{display:inline}.sm\:h-14{height:3.5rem}.sm\:w-14{width:3.5rem}.sm\:gap-3\.5{gap:0.875rem}.sm\:p-8{padding:2rem}.sm\:py-8{padding-top:2rem;padding-bottom:2rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:my-0{margin-top:0px;margin-bottom:0px}.lg\:grid-cols-11{grid-template-columns:repeat(11, minmax(0, 1fr))}.lg\:gap-4{gap:1rem}}</style></head>
+<body class="flex flex-col justify-between selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- Top Navigation & Score Bar -->
+  <header class="w-full border-b border-amber-500/25 bg-slate-950/80 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand / Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-950 to-slate-900 border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-inner">
+          <!-- Early Church Manuscript / Chi-Rho & Scroll Emblem -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M8 7l8 10M16 7l-8 10M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-lg sm:text-xl font-extrabold tracking-wide gold-gradient-text leading-tight">
+            HIGH OR LOW
+          </h1>
+          <p class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-amber-200/80 font-medium">
+            New Testament Edition
+          </p>
+        </div>
+      </div>
+
+      <!-- Scoreboard & Utility Controls -->
+      <div class="flex items-center gap-2 sm:gap-3.5">
+        <!-- Current Streak -->
+        <div class="px-3 py-1.5 rounded-xl bg-slate-900/90 border border-amber-500/30 flex items-center gap-2">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Streak</span>
+          <span id="current-score" class="font-cinzel text-lg sm:text-xl font-bold text-amber-400">0</span>
+        </div>
+
+        <!-- Best Streak -->
+        <div class="px-3 py-1.5 rounded-xl bg-slate-900/90 border border-amber-500/30 flex items-center gap-2">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Best</span>
+          <span id="best-score" class="font-cinzel text-lg sm:text-xl font-bold text-emerald-400">1</span>
+        </div>
+
+        <!-- Sound Toggle Button -->
+        <button id="sound-toggle" type="button" title="Toggle Sound Effects" class="p-2.5 rounded-xl bg-slate-900/90 border border-amber-500/30 text-amber-300 hover:bg-amber-500/15 transition cursor-pointer">
+          <svg id="sound-on-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          </svg>
+          <svg id="sound-off-icon" class="w-5 h-5 hidden text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
+          </svg>
+        </button>
+
+        <!-- How to Play Button -->
+        <button id="how-to-play-btn" type="button" class="px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-400/45 text-amber-200 hover:bg-amber-500/25 text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="hidden sm:inline">How to Play</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Game Container -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-6 sm:py-8 flex flex-col items-center justify-center">
+
+    <!-- Category Selector Pills -->
+    <div class="w-full mb-5 flex flex-col items-center">
+      <div class="flex flex-wrap items-center justify-center gap-2" id="category-bar">
+        <button data-category="ALL" class="cat-btn active px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-amber-400 bg-amber-400/20 text-amber-200 shadow-sm transition cursor-pointer">
+          All Scrolls (Mixed)
+        </button>
+        <button data-category="CHAPTERS" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Book Length (Chapters)
+        </button>
+        <button data-category="DURATION" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Biblical Durations (Days)
+        </button>
+        <button data-category="AGE_MILESTONE" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Milestones &amp; Ages (Years)
+        </button>
+        <button data-category="MULTITUDES" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Multitudes &amp; Counts (People)
+        </button>
+        <button data-category="PARABLES_MIRACLES" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Parables &amp; Miracles
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Round Metric Banner -->
+    <div class="mb-6 text-center">
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-950/60 border border-amber-400/40 text-amber-200 text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-md">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>Comparing: <strong id="metric-title" class="text-amber-100">Milestones &amp; Ages (Years)</strong></span>
+      </div>
+    </div>
+
+    <!-- Arena: Anchor Card (Left) + Imperial VS Medallion + Challenger Card (Right) -->
+    <div id="arena" class="w-full grid grid-cols-1 lg:grid-cols-11 gap-5 lg:gap-4 items-stretch relative">
+
+      <!-- LEFT CARD (Anchor - Known Value) -->
+      <div id="left-card" class="lg:col-span-5 nt-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center animate-round-slide">
+        <div>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-900/10 text-amber-900 border border-amber-800/25">
+              Anchor Scroll
+            </span>
+          </div>
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-900/10 border border-amber-800/25 text-3xl mb-3 shadow-inner" id="left-icon">⛓️</div>
+          <p class="text-xs uppercase tracking-[0.18em] text-rose-900 font-bold mb-1" id="left-subtitle">Under Governor Felix</p>
+          <h2 id="left-name" class="font-playfair text-2xl sm:text-3xl font-bold text-stone-900 mb-2">Paul’s Imprisonment in Caesarea</h2>
+          <p id="left-desc" class="text-sm text-stone-700 max-w-md mx-auto leading-relaxed">Held in custody in Caesarea Maritima until Porcius Festus succeeded Felix.</p>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-amber-900/20">
+          <span class="block text-xs uppercase tracking-widest text-stone-500 font-bold mb-1" id="left-metric-label">Duration / Age</span>
+          <div class="flex items-baseline justify-center gap-2">
+            <span id="left-value" class="font-cinzel text-4xl sm:text-5xl font-extrabold gold-ink-text">2</span>
+            <span id="left-unit" class="text-base sm:text-lg font-bold text-stone-700">years</span>
+          </div>
+          <p id="left-ref" class="mt-2 text-xs font-bold text-rose-900">Acts 24:27</p>
+        </div>
+      </div>
+
+      <!-- CENTER VS MEDALLION -->
+      <div class="lg:col-span-1 flex items-center justify-center my-1 lg:my-0 z-10">
+        <div id="vs-medallion" class="vs-badge w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-cinzel font-extrabold text-base sm:text-lg tracking-wider select-none border-2 border-amber-100">
+          VS
+        </div>
+      </div>
+
+      <!-- RIGHT CARD (Challenger - Hidden Value) -->
+      <div id="right-card" class="lg:col-span-5 nt-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center animate-round-slide">
+        <div>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-rose-900/10 text-rose-900 border border-rose-800/25">
+              Challenger Scroll
+            </span>
+          </div>
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-900/10 border border-amber-800/25 text-3xl mb-3 shadow-inner" id="right-icon">🌌</div>
+          <p class="text-xs uppercase tracking-[0.18em] text-rose-900 font-bold mb-1" id="right-subtitle">Caught Up to Paradise</p>
+          <h2 id="right-name" class="font-playfair text-2xl sm:text-3xl font-bold text-stone-900 mb-2">Paul’s Vision of the Third Heaven</h2>
+          <p id="right-desc" class="text-sm text-stone-700 max-w-md mx-auto leading-relaxed">Paul recounts knowing a man in Christ caught up to the third heaven 14 years earlier.</p>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-amber-900/20">
+          <span class="block text-xs uppercase tracking-widest text-stone-500 font-bold mb-1" id="right-metric-label">Duration / Age</span>
+
+          <!-- Guess Controls (Shown before answering) -->
+          <div id="guess-controls" class="mt-3 flex flex-col items-center">
+            <p class="text-xs sm:text-sm text-stone-800 mb-3 font-medium">
+              Is <span id="right-prompt-name" class="text-rose-900 font-bold">Paul’s Vision of the Third Heaven</span>'s value <span class="underline decoration-amber-700/60 font-semibold">Higher</span> or <span class="underline decoration-amber-700/60 font-semibold">Lower</span> than <span id="left-prompt-value" class="text-amber-900 font-bold">2 years</span>?
+            </p>
+            <div class="grid grid-cols-2 gap-3 w-full max-w-xs">
+              <button id="btn-higher" type="button" class="btn-higher py-3.5 px-4 rounded-xl font-bold text-white text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+                </svg>
+                HIGHER
+              </button>
+              <button id="btn-lower" type="button" class="btn-lower py-3.5 px-4 rounded-xl font-bold text-white text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                LOWER
+              </button>
+            </div>
+            <p class="mt-2.5 text-[11px] text-stone-500 hidden sm:block">
+              Ties count as correct • Shortcuts: <kbd class="px-1.5 py-0.5 rounded bg-stone-200 border border-stone-300 text-stone-700 font-mono">↑</kbd> or <kbd class="px-1.5 py-0.5 rounded bg-stone-200 border border-stone-300 text-stone-700 font-mono">↓</kbd>
+            </p>
+          </div>
+
+          <!-- Revealed Value Box (Shown after answering) -->
+          <div id="reveal-box" class="hidden">
+            <div class="flex items-baseline justify-center gap-2">
+              <span id="right-value" class="font-cinzel text-4xl sm:text-5xl font-extrabold text-stone-900">
+                0
+              </span>
+              <span id="right-unit" class="text-base sm:text-lg font-bold text-stone-700">
+                chapters
+              </span>
+            </div>
+            <p id="right-ref" class="mt-2 text-xs font-bold text-rose-900">
+              Acts 1–28
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Round Feedback & Next Action Bar -->
+    <div id="feedback-panel" class="hidden w-full max-w-2xl mt-6 p-5 rounded-2xl bg-slate-950/95 border border-amber-400/45 text-center shadow-2xl animate-panel-up">
+      <div id="feedback-badge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2.5">
+        <!-- Populated dynamically -->
+      </div>
+      <p id="feedback-fact" class="text-sm sm:text-base text-amber-50/95 leading-relaxed mb-4">
+        <!-- Scripture context explanation -->
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button id="next-round-btn" type="button" class="btn-gold px-7 py-3 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+          Next Comparison →
+        </button>
+        <button id="play-again-btn" type="button" class="hidden btn-gold px-7 py-3 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+          Play Again ↻
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-amber-500/20 py-4 px-4 text-center text-xs text-slate-400">
+    <p>Scripture figures &amp; book counts sourced from the New Testament canon • Ties always favor the reader</p>
+  </footer>
+
+  <!-- HOW TO PLAY MODAL -->
+  <div id="how-to-play-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="nt-modal-card max-w-lg w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl animate-panel-up">
+      <div class="flex items-center justify-between border-b border-amber-500/25 pb-4 mb-4">
+        <h3 class="font-cinzel text-xl sm:text-2xl font-bold gold-gradient-text">How to Play</h3>
+        <button id="close-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-sm text-slate-200 leading-relaxed">
+        <p>
+          Test your knowledge of the Gospels, Acts, the Epistles, and Revelation in this Greco-Roman manuscript challenge!
+        </p>
+        <ul class="space-y-2.5 list-none">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">1.</span>
+            <span>Every round compares <strong>two New Testament entries</strong> using the exact same unit of measurement (<em>Chapters</em>, <em>Days</em>, <em>Years</em>, <em>People</em>, or <em>Quantities</em>).</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">2.</span>
+            <span>The <strong>Anchor Scroll (Left)</strong> reveals its true biblical number.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">3.</span>
+            <span>Predict whether the <strong>Challenger Scroll (Right)</strong> has a <strong class="text-emerald-400">HIGHER</strong> or <strong class="text-rose-400">LOWER</strong> value. <strong>Equal values (ties) count as correct!</strong></span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">4.</span>
+            <span>Use the category pills above the arena to play mixed scrolls or master a specific New Testament theme.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-amber-500/20 flex justify-end">
+        <button id="start-playing-modal-btn" type="button" class="btn-gold px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer">
+          Open the Scrolls
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME OVER SUMMARY MODAL -->
+  <div id="gameover-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="nt-modal-card max-w-md w-full rounded-2xl p-6 sm:p-8 text-center shadow-2xl animate-panel-up">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-rose-950/80 border border-amber-400/40 flex items-center justify-center text-3xl">
+        📜
+      </div>
+      <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mb-1">Scroll Closed</h3>
+      <p id="gameover-subtitle" class="text-sm text-slate-300 mb-5">
+        Your streak has ended, faithful scribe!
+      </p>
+
+      <div class="bg-slate-950/75 border border-amber-500/30 rounded-xl p-4 mb-5 text-left text-xs sm:text-sm text-slate-200">
+        <p id="gameover-recap" class="leading-relaxed"></p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/30">
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Final Streak</span>
+          <span id="final-score" class="font-cinzel text-3xl font-extrabold text-amber-400">0</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/30">
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-semibold">All-Time Best</span>
+          <span id="final-best" class="font-cinzel text-3xl font-extrabold text-emerald-400">0</span>
+        </div>
+      </div>
+
+      <button id="modal-restart-btn" type="button" class="btn-gold w-full py-3.5 rounded-xl font-bold text-base tracking-wide cursor-pointer">
+        Start New Streak ↻
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * NEW TESTAMENT DATASET
+     * Organized into 5 strict unit-matched categories for fair, educational,
+     * and biblically faithful comparisons.
+     */
+    const NT_DATA = [
+      // ================= 1. BOOK LENGTH (Chapters) =================
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '👑',
+        name: 'Gospel of Matthew',
+        subtitle: 'First Book of the New Testament',
+        value: 28,
+        ref: 'Matthew 1–28',
+        desc: 'Presents Jesus as the promised Messiah and King of Israel, featuring the Sermon on the Mount.',
+        fact: 'Matthew has 28 chapters—tying with the Book of Acts for the highest chapter count in the New Testament.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🔥',
+        name: 'Acts of the Apostles',
+        subtitle: 'Sequel to Luke’s Gospel',
+        value: 28,
+        ref: 'Acts 1–28',
+        desc: 'Chronicles the birth of the Church at Pentecost and Paul’s missionary journeys to Rome.',
+        fact: 'Acts spans 28 chapters, making it the longest New Testament book by total word count.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🩺',
+        name: 'Gospel of Luke',
+        subtitle: 'Written by the Beloved Physician',
+        value: 24,
+        ref: 'Luke 1–24',
+        desc: 'A carefully investigated account highlighting Jesus’ compassion for the outcast and Gentiles.',
+        fact: 'Luke contains 24 chapters—one for every hour of the day—and preserves unique parables like the Prodigal Son.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🌅',
+        name: 'Book of Revelation',
+        subtitle: 'Apocalypse of John on Patmos',
+        value: 22,
+        ref: 'Revelation 1–22',
+        desc: 'Prophetic visions of the Lamb upon the throne, the seven churches, and the New Jerusalem.',
+        fact: 'Revelation has 22 chapters—matching the 22 letters of the Hebrew alphabet.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🦅',
+        name: 'Gospel of John',
+        subtitle: 'The Fourth Gospel',
+        value: 21,
+        ref: 'John 1–21',
+        desc: 'Focuses on seven miraculous signs and Jesus’ seven "I AM" declarations so readers may believe.',
+        fact: 'John comprises 21 chapters, concluding with Jesus restoring Peter beside the Sea of Galilee.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🦁',
+        name: 'Gospel of Mark',
+        subtitle: 'Fast-Paced Servant Gospel',
+        value: 16,
+        ref: 'Mark 1–16',
+        desc: 'The earliest and most action-oriented Gospel, emphasizing Jesus’ miracles and authority.',
+        fact: 'Mark is the shortest of the four Gospels with 16 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🏛️',
+        name: 'Epistle to the Romans',
+        subtitle: 'Paul’s Theological Masterpiece',
+        value: 16,
+        ref: 'Romans 1–16',
+        desc: 'Expounds salvation by grace through faith for both Jew and Gentile alike.',
+        fact: 'Romans is the longest of Paul’s epistles with 16 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '❤️',
+        name: '1 Corinthians',
+        subtitle: 'Paul’s First Letter to Corinth',
+        value: 16,
+        ref: '1 Corinthians 1–16',
+        desc: 'Addresses church unity, spiritual gifts, the Resurrection, and the famous Love Chapter (ch. 13).',
+        fact: '1 Corinthians has 16 chapters—equal in chapter count to Romans and Mark.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '✉️',
+        name: '2 Corinthians',
+        subtitle: 'Strength Made Perfect in Weakness',
+        value: 13,
+        ref: '2 Corinthians 1–13',
+        desc: 'Paul’s deeply personal defense of his apostolic ministry and appeal for generosity.',
+        fact: '2 Corinthians has 13 chapters, three fewer than Paul’s first letter to Corinth.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '⛺',
+        name: 'Epistle to the Hebrews',
+        subtitle: 'Christ Our Great High Priest',
+        value: 13,
+        ref: 'Hebrews 1–13',
+        desc: 'Demonstrates Jesus’ supremacy over angels, Moses, and the Levitical priesthood.',
+        fact: 'Hebrews contains 13 chapters, including the famous "Hall of Faith" in chapter 11.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🍇',
+        name: 'Epistle to the Galatians',
+        subtitle: 'Charter of Christian Freedom',
+        value: 6,
+        ref: 'Galatians 1–6',
+        desc: 'Defends justification by faith and lists the ninefold Fruit of the Spirit.',
+        fact: 'Galatians has 6 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🛡️',
+        name: 'Epistle to the Ephesians',
+        subtitle: 'The Full Armor of God',
+        value: 6,
+        ref: 'Ephesians 1–6',
+        desc: 'Celebrates believers’ spiritual blessings in Christ and the unity of the Church.',
+        fact: 'Ephesians has 6 chapters, culminating in the spiritual armor passage in chapter 6.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '⏳',
+        name: '1 Thessalonians',
+        subtitle: 'Hope in Christ’s Return',
+        value: 5,
+        ref: '1 Thessalonians 1–5',
+        desc: 'One of Paul’s earliest letters, encouraging young believers in Macedonia.',
+        fact: '1 Thessalonians consists of 5 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '⚖️',
+        name: 'Epistle of James',
+        subtitle: 'Faith Without Works Is Dead',
+        value: 5,
+        ref: 'James 1–5',
+        desc: 'Practical wisdom on enduring trials, taming the tongue, and caring for the poor.',
+        fact: 'The Epistle of James has 5 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🪨',
+        name: '1 Peter',
+        subtitle: 'Living Stones & Standing Firm',
+        value: 5,
+        ref: '1 Peter 1–5',
+        desc: 'Encourages scattered believers facing fiery trials to rejoice in their living hope.',
+        fact: '1 Peter has 5 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🕯️',
+        name: '1 John',
+        subtitle: 'God Is Light & God Is Love',
+        value: 5,
+        ref: '1 John 1–5',
+        desc: 'Assures believers of eternal life through fellowship with the Father and Son.',
+        fact: '1 John contains 5 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '😊',
+        name: 'Epistle to the Philippians',
+        subtitle: 'The Epistle of Joy',
+        value: 4,
+        ref: 'Philippians 1–4',
+        desc: 'Written from prison, urging believers to rejoice always and have the mind of Christ.',
+        fact: 'Philippians has just 4 chapters yet overflows with themes of joy and contentment.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🌌',
+        name: 'Epistle to the Colossians',
+        subtitle: 'The Supremacy of Christ',
+        value: 4,
+        ref: 'Colossians 1–4',
+        desc: 'Proclaims Christ as the image of the invisible God in whom all fullness dwells.',
+        fact: 'Colossians comprises 4 chapters.'
+      },
+
+      // ================= 2. BIBLICAL DURATIONS (Days) =================
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🕊️',
+        name: 'Resurrection to Pentecost',
+        subtitle: 'Arrival of the Holy Spirit',
+        value: 50,
+        ref: 'Acts 2:1',
+        desc: 'Pentecost ("fiftieth day") fell 50 days after Passover/Resurrection when the Spirit descended.',
+        fact: 'Fifty days after Jesus’ resurrection, tongues of fire appeared over the disciples in Jerusalem.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🏜️',
+        name: 'Jesus Fasting in the Wilderness',
+        subtitle: 'Temptation by Satan',
+        value: 40,
+        ref: 'Matthew 4:2',
+        desc: 'Led by the Spirit into the Judean wilderness after His baptism in the Jordan.',
+        fact: 'Jesus fasted 40 days and 40 nights before overcoming the three temptations of the devil.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '☁️',
+        name: 'Risen Jesus Appearing Before Ascension',
+        subtitle: 'Teaching on the Kingdom of God',
+        value: 40,
+        ref: 'Acts 1:3',
+        desc: 'Between His empty tomb and His ascension from the Mount of Olives.',
+        fact: 'Jesus presented Himself alive to the apostles by many proofs over 40 days.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🤝',
+        name: 'Paul Staying with Peter in Jerusalem',
+        subtitle: 'First Visit After Conversion',
+        value: 15,
+        ref: 'Galatians 1:18',
+        desc: 'Three years after his Damascus road encounter, Paul went up to Jerusalem to visit Cephas.',
+        fact: 'Paul remained with Peter in Jerusalem for 15 days.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '⛈️',
+        name: 'Storm at Sea Before Paul’s Shipwreck',
+        subtitle: 'Adrift in the Adriatic Sea',
+        value: 14,
+        ref: 'Acts 27:27',
+        desc: 'Driven by the Northeaster tempest until sailors sensed land near Malta.',
+        fact: 'For 14 nights and days the ship was tossed by the storm without sun or stars appearing.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🍞',
+        name: 'Paul Staying in Troas',
+        subtitle: 'Breaking Bread on the First Day',
+        value: 7,
+        ref: 'Acts 20:6',
+        desc: 'Where Paul preached until midnight and raised young Eutychus after his fall.',
+        fact: 'Paul and his companions stayed in Troas for 7 days.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '⚓',
+        name: 'Paul Staying with Believers in Puteoli',
+        subtitle: 'En Route to Rome',
+        value: 7,
+        ref: 'Acts 28:14',
+        desc: 'After landing in Italy following the Malta shipwreck, local brothers invited Paul to stay.',
+        fact: 'Paul stayed 7 days with the believers in Puteoli before walking the Appian Way toward Rome.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🪦',
+        name: 'Lazarus in the Tomb',
+        subtitle: 'Raised by Jesus in Bethany',
+        value: 4,
+        ref: 'John 11:39',
+        desc: 'Martha noted that Lazarus had already been dead four days when Jesus arrived.',
+        fact: 'Lazarus had been in the tomb 4 days when Jesus called, "Lazarus, come out!"'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '✨',
+        name: 'Jesus in the Tomb',
+        subtitle: 'Crucifixion to Resurrection',
+        value: 3,
+        ref: 'Matthew 12:40',
+        desc: 'Fulfilling the sign of Jonah before rising victoriously on the third day.',
+        fact: 'Jesus was in the heart of the earth 3 days and rose on the third day.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Durations (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '👁️',
+        name: 'Saul Blind in Damascus',
+        subtitle: 'Before Ananias Prayed for Him',
+        value: 3,
+        ref: 'Acts 9:9',
+        desc: 'Struck by heavenly light on the road to Damascus, Saul neither ate nor drank.',
+        fact: 'Saul was without sight for 3 days until scales fell from his eyes at Ananias’ touch.'
+      },
+
+      // ================= 3. MILESTONES & AGES (Years) =================
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🕯️',
+        name: 'Anna the Prophetess’s Widowhood',
+        subtitle: 'Worshiping Night & Day in the Temple',
+        value: 84,
+        ref: 'Luke 2:37',
+        desc: 'Blessed the infant Jesus when Mary and Joseph presented Him at the Temple.',
+        fact: 'Anna had lived as a widow until she was 84 years old (or for 84 years after 7 years of marriage).'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🚶',
+        name: 'Lame Man Healed at Gate Beautiful',
+        subtitle: 'Healed Through Peter & John',
+        value: 40,
+        ref: 'Acts 4:22',
+        desc: 'Carried daily to the Temple gate to beg until healed in the name of Jesus Christ.',
+        fact: 'Acts 4:22 notes the man on whom this sign of healing was performed was more than 40 years old.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🌊',
+        name: 'Man Healed at the Pool of Bethesda',
+        subtitle: 'Invalid Near the Sheep Gate',
+        value: 38,
+        ref: 'John 5:5',
+        desc: 'Jesus asked him, "Do you want to be healed?" and told him to take up his bed and walk.',
+        fact: 'The man at Bethesda had been an invalid for 38 years.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '✝️',
+        name: 'Jesus’ Age at Start of Ministry',
+        subtitle: 'Baptism in the Jordan River',
+        value: 30,
+        ref: 'Luke 3:23',
+        desc: 'Jesus began His public preaching and healing ministry following His baptism by John.',
+        fact: 'Luke records that Jesus was about 30 years of age when He began His ministry.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🌌',
+        name: 'Paul’s Vision of the Third Heaven',
+        subtitle: 'Caught Up to Paradise',
+        value: 14,
+        ref: '2 Corinthians 12:2',
+        desc: 'Paul recounts knowing a man in Christ caught up to the third heaven 14 years earlier.',
+        fact: 'Paul wrote that this heavenly vision occurred 14 years before his second letter to Corinth.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🏛️',
+        name: 'Boy Jesus in the Temple',
+        subtitle: 'Sitting Among the Teachers',
+        value: 12,
+        ref: 'Luke 2:42',
+        desc: 'Amazed the Jerusalem teachers with His understanding during the Feast of Passover.',
+        fact: 'Jesus was 12 years old when He stayed behind in His Father’s house.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🩸',
+        name: 'Woman with the Issue of Blood',
+        subtitle: 'Touched the Hem of Jesus’ Garment',
+        value: 12,
+        ref: 'Mark 5:25',
+        desc: 'Instantly healed in the crowd when she reached out in faith to touch Jesus’ cloak.',
+        fact: 'She had suffered from a discharge of blood for 12 years before Jesus said, "Your faith has made you well."'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🌸',
+        name: 'Jairus’ Daughter Raised by Jesus',
+        subtitle: '"Talitha Cumi" (Little Girl, Arise)',
+        value: 12,
+        ref: 'Mark 5:42',
+        desc: 'The synagogue ruler’s daughter immediately got up and began walking when Jesus took her hand.',
+        fact: 'Mark notes that Jairus’ daughter was 12 years old—matching the 12 years of the woman healed moments earlier.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🛏️',
+        name: 'Aeneas Bedridden in Lydda',
+        subtitle: 'Healed Through Peter’s Ministry',
+        value: 8,
+        ref: 'Acts 9:33',
+        desc: 'Peter told him, "Aeneas, Jesus Christ heals you; rise and make your bed."',
+        fact: 'Aeneas had been bedridden with paralysis for 8 years.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🐪',
+        name: 'Paul in Arabia & Damascus',
+        subtitle: 'Before Visiting Jerusalem',
+        value: 3,
+        ref: 'Galatians 1:18',
+        desc: 'Following his conversion, Paul spent time in Arabia and Damascus before meeting the apostles.',
+        fact: 'Three years passed after Paul’s conversion before he went up to Jerusalem.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🗣️',
+        name: 'Paul Admonishing Ephesus Night & Day',
+        subtitle: 'Total Time Serving the Ephesian Church',
+        value: 3,
+        ref: 'Acts 20:31',
+        desc: 'Paul reminded the Ephesian elders at Miletus of his tireless ministry among them.',
+        fact: 'Paul served and admonished the believers in Ephesus for 3 years in total.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '📚',
+        name: 'Paul Reasoning in the Hall of Tyrannus',
+        subtitle: 'Spreading the Word Across Asia',
+        value: 2,
+        ref: 'Acts 19:10',
+        desc: 'Daily lectures in Ephesus so that all residents of Asia heard the word of the Lord.',
+        fact: 'Paul reasoned daily in the lecture hall of Tyrannus for 2 years.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '⛓️',
+        name: 'Paul’s Imprisonment in Caesarea',
+        subtitle: 'Under Governor Felix',
+        value: 2,
+        ref: 'Acts 24:27',
+        desc: 'Held in custody in Caesarea Maritima until Porcius Festus succeeded Felix.',
+        fact: 'Paul spent 2 years imprisoned in Caesarea before appealing to Caesar.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Milestones & Ages (Years)',
+        metricLabel: 'Duration / Age',
+        unit: 'years',
+        icon: '🏛️',
+        name: 'Paul Under House Arrest in Rome',
+        subtitle: 'Preaching Boldly Without Hindrance',
+        value: 2,
+        ref: 'Acts 28:30',
+        desc: 'Welcomed all who came to his rented quarters in Rome while awaiting trial.',
+        fact: 'Acts closes with Paul living 2 full years at his own expense in Rome, proclaiming the Kingdom.'
+      },
+
+      // ================= 4. MULTITUDES & COUNTS (People) =================
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🎺',
+        name: 'Sealed from the Tribes of Israel',
+        subtitle: 'Vision in Revelation 7',
+        value: 144000,
+        ref: 'Revelation 7:4',
+        desc: '12,000 sealed from each of the twelve tribes of the sons of Israel.',
+        fact: 'John heard the number of the sealed: 144,000 from every tribe of Israel.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🍞',
+        name: 'Men Fed with Five Loaves & Two Fish',
+        subtitle: 'Miracle by the Sea of Galilee',
+        value: 5000,
+        ref: 'Matthew 14:21',
+        desc: 'The only miracle recorded in all four Gospels, feeding a vast crowd beside women and children.',
+        fact: 'About 5,000 men ate and were satisfied, besides women and children.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🏛️',
+        name: 'Men Who Believed After Peter’s Temple Sermon',
+        subtitle: 'Portico of Solomon',
+        value: 5000,
+        ref: 'Acts 4:4',
+        desc: 'Following the healing of the lame man at Gate Beautiful, the Jerusalem church surged.',
+        fact: 'Many who heard the word believed, bringing the number of the men to about 5,000.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🧺',
+        name: 'Men Fed with Seven Loaves & Small Fish',
+        subtitle: 'Miracle in the Decapolis',
+        value: 4000,
+        ref: 'Matthew 15:38',
+        desc: 'Jesus had compassion on a crowd that had stayed with Him three days without food.',
+        fact: 'Those who ate were 4,000 men, besides women and children.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🔥',
+        name: 'Souls Baptized on the Day of Pentecost',
+        subtitle: 'Birth of the Early Church',
+        value: 3000,
+        ref: 'Acts 2:41',
+        desc: 'Cut to the heart by Peter’s sermon, pilgrims from across the empire repented and were baptized.',
+        fact: 'About 3,000 souls were added to the believers on that single day.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🚢',
+        name: 'People Aboard Paul’s Shipwrecked Vessel',
+        subtitle: 'All Safely Rescued on Malta',
+        value: 276,
+        ref: 'Acts 27:37',
+        desc: 'Soldiers, sailors, and prisoners aboard the Alexandrian grain ship.',
+        fact: 'Luke records the exact manifest: there were 276 persons in all on the ship—and not one perished!'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🛡️',
+        name: 'Armed Soldiers Escorting Paul to Caesarea',
+        subtitle: 'Night Escort Ordered by Claudius Lysias',
+        value: 200,
+        ref: 'Acts 23:23',
+        desc: 'Dispatched from Jerusalem to protect Paul from an ambush plot.',
+        fact: 'The Roman tribune ordered 200 foot soldiers (plus 70 horsemen and 200 spearmen) to escort Paul.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🗡️',
+        name: 'Spearmen Escorting Paul to Caesarea',
+        subtitle: 'Roman Night Detachment',
+        value: 200,
+        ref: 'Acts 23:23',
+        desc: 'Lightly armed auxiliaries accompanying the legionaries guarding Paul.',
+        fact: '200 spearmen marched alongside 200 soldiers and 70 horsemen to bring Paul safely to Governor Felix.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🙏',
+        name: 'Believers Gathered in the Upper Room',
+        subtitle: 'Praying Together Before Pentecost',
+        value: 120,
+        ref: 'Acts 1:15',
+        desc: 'Devoted themselves to prayer in Jerusalem while choosing Matthias to replace Judas.',
+        fact: 'The company of believers gathered in the Upper Room numbered about 120.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '👣',
+        name: 'Disciples Sent Out Two-by-Two',
+        subtitle: 'Harvest Workers Appointed by Jesus',
+        value: 72,
+        ref: 'Luke 10:1',
+        desc: 'Sent ahead into every town and place Jesus Himself was about to go.',
+        fact: 'The Lord appointed 72 (70 in some manuscripts) others and sent them two by two ahead of Him.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🐎',
+        name: 'Horsemen Escorting Paul to Caesarea',
+        subtitle: 'Roman Cavalry Guard',
+        value: 70,
+        ref: 'Acts 23:23',
+        desc: 'Continued with Paul all the way from Antipatris to Caesarea.',
+        fact: '70 Roman horsemen rode as Paul’s cavalry escort.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '👑',
+        name: 'Elders Around the Throne in Revelation',
+        subtitle: 'Clothed in White with Golden Crowns',
+        value: 24,
+        ref: 'Revelation 4:4',
+        desc: 'Seated on 24 thrones around God’s heavenly throne, casting their crowns before Him.',
+        fact: 'John saw 24 elders seated around the throne in heaven.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '⛵',
+        name: 'The Twelve Apostles',
+        subtitle: 'Chosen by Jesus',
+        value: 12,
+        ref: 'Matthew 10:2',
+        desc: 'Appointed to be with Jesus and sent out to preach the Kingdom and heal.',
+        fact: 'Jesus called 12 disciples—corresponding to the twelve tribes of Israel.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '🙌',
+        name: 'Lepers Healed by Jesus at Once',
+        subtitle: 'Between Samaria and Galilee',
+        value: 10,
+        ref: 'Luke 17:12',
+        desc: 'All ten were cleansed as they went to show themselves to the priests, though only one returned.',
+        fact: 'Jesus cleansed 10 lepers at once—and only one, a Samaritan, turned back to give thanks.'
+      },
+      {
+        category: 'MULTITUDES',
+        metricTitle: 'Multitudes & Counts (People)',
+        metricLabel: 'Number of People',
+        unit: 'people',
+        icon: '⭐',
+        name: 'Gifts Brought by the Magi',
+        subtitle: 'Gold, Frankincense & Myrrh',
+        value: 3,
+        ref: 'Matthew 2:11',
+        desc: 'Wise men from the East opened their treasures to worship the young King in Bethlehem.',
+        fact: 'Scripture names 3 royal treasures presented to Jesus: gold, frankincense, and myrrh.'
+      },
+
+      // ================= 5. PARABLES & MIRACLES (Quantities) =================
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🐖',
+        name: 'Pigs Rushing into the Sea of Galilee',
+        subtitle: 'Deliverance of the Gerasene Demoniac',
+        value: 2000,
+        ref: 'Mark 5:13',
+        desc: 'Legion entered the herd feeding on the hillside, and the herd rushed down the steep bank.',
+        fact: 'Mark notes the herd numbered about 2,000 pigs.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🐟',
+        name: 'Miraculous Catch of Fish After Resurrection',
+        subtitle: 'Breakfast on the Shore of Tiberias',
+        value: 153,
+        ref: 'John 21:11',
+        desc: 'The disciples cast their net on the right side of the boat at Jesus’ word, yet the net did not tear.',
+        fact: 'Simon Peter hauled the net ashore full of 153 large fish.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🐑',
+        name: 'Total Sheep in the Good Shepherd’s Flock',
+        subtitle: 'Parable of the Lost Sheep',
+        value: 100,
+        ref: 'Luke 15:4',
+        desc: 'The shepherd leaves the ninety-nine in the open country to search until he finds the one lost sheep.',
+        fact: 'The shepherd owned 100 sheep and rejoiced over finding the 1 that went astray.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🪙',
+        name: 'Denarii Owed to the Unmerciful Servant',
+        subtitle: 'Parable of Forgiveness',
+        value: 100,
+        ref: 'Matthew 18:28',
+        desc: 'Forgiven 10,000 talents by his king, the servant choked a fellow servant over a tiny debt.',
+        fact: 'His fellow servant owed him just 100 denarii—a fraction of the 10,000 talents he had been forgiven.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '💰',
+        name: 'Pieces of Silver Paid to Judas',
+        subtitle: 'Price of Betrayal',
+        value: 30,
+        ref: 'Matthew 26:15',
+        desc: 'Agreed upon with the chief priests in Jerusalem, fulfilling Zechariah’s prophecy.',
+        fact: 'The chief priests weighed out 30 pieces of silver to Judas Iscariot.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🧺',
+        name: 'Baskets of Leftovers After Feeding the 5,000',
+        subtitle: 'One Basket per Apostle',
+        value: 12,
+        ref: 'Matthew 14:20',
+        desc: 'Broken pieces gathered so nothing would be wasted after everyone ate their fill.',
+        fact: 'The disciples took up 12 baskets full of broken pieces left over.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🪔',
+        name: 'Virgins in Jesus’ Wedding Parable',
+        subtitle: 'Five Wise & Five Foolish',
+        value: 10,
+        ref: 'Matthew 25:1',
+        desc: 'Took their lamps to meet the bridegroom; five brought extra flasks of oil.',
+        fact: 'There were 10 virgins in the parable—5 wise and 5 foolish.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🪙',
+        name: 'Silver Coins Owned by the Woman in Luke 15',
+        subtitle: 'Parable of the Lost Coin',
+        value: 10,
+        ref: 'Luke 15:8',
+        desc: 'Lights a lamp and sweeps the house diligently until she finds the one missing drachma.',
+        fact: 'The woman had 10 silver coins and called her friends to rejoice when she found the 1 lost coin.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🧺',
+        name: 'Baskets of Leftovers After Feeding the 4,000',
+        subtitle: 'Large Hampers Gathered',
+        value: 7,
+        ref: 'Matthew 15:37',
+        desc: 'Gathered after seven loaves and a few small fish fed four thousand men.',
+        fact: 'They took up 7 large baskets full of broken pieces left over.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🏺',
+        name: 'Stone Water Jars Turned to Wine at Cana',
+        subtitle: 'Jesus’ First Miraculous Sign',
+        value: 6,
+        ref: 'John 2:6',
+        desc: 'Each holding twenty or thirty gallons, filled to the brim with water before becoming choice wine.',
+        fact: 'There were 6 stone water jars standing there for Jewish rites of purification.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '⚖️',
+        name: 'Talents Entrusted to the First Servant',
+        subtitle: 'Parable of the Talents',
+        value: 5,
+        ref: 'Matthew 25:15',
+        desc: 'Traded with them at once and earned five talents more, hearing "Well done, good and faithful servant."',
+        fact: 'The master gave 5 talents to the first servant, 2 to the second, and 1 to the third.'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🥖',
+        name: 'Barley Loaves Used to Feed the 5,000',
+        subtitle: 'Shared by a Boy in the Crowd',
+        value: 5,
+        ref: 'Matthew 14:17',
+        desc: 'Blessed and broken by Jesus along with two small fish to feed thousands.',
+        fact: 'Jesus began with just 5 loaves and 2 fish—and ended with 12 full baskets of leftovers!'
+      },
+      {
+        category: 'PARABLES_MIRACLES',
+        metricTitle: 'Parables & Miracles (Quantities)',
+        metricLabel: 'Scriptural Quantity',
+        unit: 'items',
+        icon: '🐑',
+        name: 'Lost Sheep Searched for by the Shepherd',
+        subtitle: 'Leaving the Ninety-Nine',
+        value: 1,
+        ref: 'Luke 15:4',
+        desc: 'Carried home joyfully on the shepherd’s shoulders.',
+        fact: 'Heaven rejoices over 1 sinner who repents—represented by the 1 lost sheep found out of 100.'
+      }
+    ];
+
+    /**
+     * SOUND SYNTHESIZER (Web Audio API - zero external audio URLs)
+     */
+    class SoundEffects {
+      constructor() {
+        this.enabled = true;
+        this.ctx = null;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            this.ctx = new AudioCtx();
+          }
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playTone(freq, type, duration, delay = 0, gainVal = 0.12) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime + delay;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(gainVal, now + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration + 0.02);
+      }
+
+      playCorrect() {
+        // Uplifting classical lyre/chime arpeggio (D5 - F#5 - A5 - D6)
+        this.playTone(587.33, 'triangle', 0.25, 0.00, 0.14);
+        this.playTone(739.99, 'triangle', 0.25, 0.07, 0.14);
+        this.playTone(880.00, 'triangle', 0.35, 0.14, 0.15);
+        this.playTone(1174.66, 'sine', 0.50, 0.21, 0.12);
+      }
+
+      playWrong() {
+        // Deep resonant brass/organ cadence
+        this.playTone(220, 'sawtooth', 0.30, 0.00, 0.10);
+        this.playTone(164.81, 'sawtooth', 0.45, 0.14, 0.11);
+      }
+
+      playClick() {
+        this.playTone(480, 'sine', 0.08, 0, 0.06);
+      }
+    }
+
+    /**
+     * MAIN GAME STATE & CONTROLLER
+     */
+    const sfx = new SoundEffects();
+
+    const state = {
+      selectedCategory: 'ALL',
+      score: 0,
+      bestScore: parseInt(localStorage.getItem('nt_highlow_best') || '0', 10),
+      leftItem: null,
+      rightItem: null,
+      usedPairKeys: new Set(),
+      roundLocked: false
+    };
+
+    // DOM Elements
+    const el = {
+      currentScore: document.getElementById('current-score'),
+      bestScore: document.getElementById('best-score'),
+      metricTitle: document.getElementById('metric-title'),
+      categoryBtns: document.querySelectorAll('.cat-btn'),
+
+      leftCard: document.getElementById('left-card'),
+      leftIcon: document.getElementById('left-icon'),
+      leftSubtitle: document.getElementById('left-subtitle'),
+      leftName: document.getElementById('left-name'),
+      leftDesc: document.getElementById('left-desc'),
+      leftMetricLabel: document.getElementById('left-metric-label'),
+      leftValue: document.getElementById('left-value'),
+      leftUnit: document.getElementById('left-unit'),
+      leftRef: document.getElementById('left-ref'),
+
+      rightCard: document.getElementById('right-card'),
+      rightIcon: document.getElementById('right-icon'),
+      rightSubtitle: document.getElementById('right-subtitle'),
+      rightName: document.getElementById('right-name'),
+      rightDesc: document.getElementById('right-desc'),
+      rightMetricLabel: document.getElementById('right-metric-label'),
+      rightPromptName: document.getElementById('right-prompt-name'),
+      leftPromptValue: document.getElementById('left-prompt-value'),
+
+      guessControls: document.getElementById('guess-controls'),
+      btnHigher: document.getElementById('btn-higher'),
+      btnLower: document.getElementById('btn-lower'),
+
+      revealBox: document.getElementById('reveal-box'),
+      rightValue: document.getElementById('right-value'),
+      rightUnit: document.getElementById('right-unit'),
+      rightRef: document.getElementById('right-ref'),
+
+      feedbackPanel: document.getElementById('feedback-panel'),
+      feedbackBadge: document.getElementById('feedback-badge'),
+      feedbackFact: document.getElementById('feedback-fact'),
+      nextRoundBtn: document.getElementById('next-round-btn'),
+      playAgainBtn: document.getElementById('play-again-btn'),
+
+      soundToggle: document.getElementById('sound-toggle'),
+      soundOnIcon: document.getElementById('sound-on-icon'),
+      soundOffIcon: document.getElementById('sound-off-icon'),
+
+      howToPlayBtn: document.getElementById('how-to-play-btn'),
+      howToPlayModal: document.getElementById('how-to-play-modal'),
+      closeModalBtn: document.getElementById('close-modal-btn'),
+      startPlayingModalBtn: document.getElementById('start-playing-modal-btn'),
+
+      gameoverModal: document.getElementById('gameover-modal'),
+      gameoverRecap: document.getElementById('gameover-recap'),
+      finalScore: document.getElementById('final-score'),
+      finalBest: document.getElementById('final-best'),
+      modalRestartBtn: document.getElementById('modal-restart-btn')
+    };
+
+    /**
+     * Update Scoreboard & Category Styling
+     */
+    function updateScoreUI() {
+      el.currentScore.textContent = state.score;
+      el.bestScore.textContent = state.bestScore;
+    }
+
+    function updateCategoryPills() {
+      el.categoryBtns.forEach(btn => {
+        const isSelected = btn.dataset.category === state.selectedCategory;
+        if (isSelected) {
+          btn.className = 'cat-btn active px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-amber-400 bg-amber-400/20 text-amber-200 shadow-sm transition cursor-pointer';
+        } else {
+          btn.className = 'cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer';
+        }
+      });
+    }
+
+    /**
+     * Pick two distinct items from the SAME category.
+     * Supports carrying the previous Challenger over as the new Anchor when in the same category!
+     */
+    function pickNextPair(carryOverAnchor = false) {
+      const categories = ['CHAPTERS', 'DURATION', 'AGE_MILESTONE', 'MULTITUDES', 'PARABLES_MIRACLES'];
+      const activeCategory = state.selectedCategory === 'ALL'
+        ? categories[Math.floor(Math.random() * categories.length)]
+        : state.selectedCategory;
+
+      const pool = NT_DATA.filter(item => item.category === activeCategory);
+
+      // If carrying over the previous right card as the new left anchor in the same category
+      if (carryOverAnchor && state.rightItem && state.rightItem.category === activeCategory) {
+        const newAnchor = state.rightItem;
+        const candidates = pool.filter(item => item.name !== newAnchor.name);
+        let unseen = candidates.filter(c => !state.usedPairKeys.has(`${newAnchor.name}|${c.name}`));
+        if (unseen.length === 0) {
+          unseen = candidates;
+        }
+        const chosenChallenger = unseen[Math.floor(Math.random() * unseen.length)];
+        state.usedPairKeys.add(`${newAnchor.name}|${chosenChallenger.name}`);
+        state.leftItem = newAnchor;
+        state.rightItem = chosenChallenger;
+        return;
+      }
+
+      // Build all distinct item pairs in this category
+      const validPairs = [];
+      for (let i = 0; i < pool.length; i++) {
+        for (let j = 0; j < pool.length; j++) {
+          if (i !== j) {
+            const pairKey = `${pool[i].name}|${pool[j].name}`;
+            validPairs.push({ left: pool[i], right: pool[j], key: pairKey });
+          }
+        }
+      }
+
+      let unseenPairs = validPairs.filter(p => !state.usedPairKeys.has(p.key));
+      if (unseenPairs.length === 0) {
+        state.usedPairKeys.clear();
+        unseenPairs = validPairs;
+      }
+
+      const chosen = unseenPairs[Math.floor(Math.random() * unseenPairs.length)];
+      state.usedPairKeys.add(chosen.key);
+      state.leftItem = chosen.left;
+      state.rightItem = chosen.right;
+    }
+
+    /**
+     * Render a New Round onto the Cards with Slide Transition
+     */
+    function renderRound(carryOverAnchor = false) {
+      state.roundLocked = false;
+      pickNextPair(carryOverAnchor);
+
+      const L = state.leftItem;
+      const R = state.rightItem;
+
+      // Reset card visual states & trigger smooth slide entrance
+      el.leftCard.classList.remove('correct-glow', 'wrong-glow', 'animate-round-slide');
+      el.rightCard.classList.remove('correct-glow', 'wrong-glow', 'animate-round-slide');
+      void el.leftCard.offsetWidth; // trigger reflow
+      el.leftCard.classList.add('animate-round-slide');
+      el.rightCard.classList.add('animate-round-slide');
+
+      // Metric Header
+      el.metricTitle.textContent = L.metricTitle;
+
+      // Left Anchor Card Population
+      el.leftIcon.textContent = L.icon;
+      el.leftSubtitle.textContent = L.subtitle;
+      el.leftName.textContent = L.name;
+      el.leftDesc.textContent = L.desc;
+      el.leftMetricLabel.textContent = L.metricLabel;
+      el.leftValue.textContent = L.value.toLocaleString();
+      el.leftUnit.textContent = L.unit;
+      el.leftRef.textContent = L.ref;
+
+      // Right Challenger Card Population
+      el.rightIcon.textContent = R.icon;
+      el.rightSubtitle.textContent = R.subtitle;
+      el.rightName.textContent = R.name;
+      el.rightDesc.textContent = R.desc;
+      el.rightMetricLabel.textContent = R.metricLabel;
+      el.rightPromptName.textContent = R.name;
+      el.leftPromptValue.textContent = `${L.value.toLocaleString()} ${L.unit}`;
+
+      // Show Guess Buttons, Hide Reveal & Feedback
+      el.guessControls.classList.remove('hidden');
+      el.revealBox.classList.add('hidden');
+      el.feedbackPanel.classList.add('hidden');
+      el.btnHigher.disabled = false;
+      el.btnLower.disabled = false;
+    }
+
+    /**
+     * Smooth Number Count-Up Animation
+     */
+    function animateNumberReveal(targetEl, finalValue, duration = 550) {
+      const startTime = performance.now();
+      const startValue = 0;
+
+      function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(startValue + (finalValue - startValue) * eased);
+        targetEl.textContent = current.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          targetEl.textContent = finalValue.toLocaleString();
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    /**
+     * Evaluate Player Guess ('HIGHER' or 'LOWER') - Ties count as correct!
+     */
+    function handleGuess(guess) {
+      if (state.roundLocked) return;
+      state.roundLocked = true;
+
+      el.btnHigher.disabled = true;
+      el.btnLower.disabled = true;
+
+      const L = state.leftItem;
+      const R = state.rightItem;
+
+      const isTie = R.value === L.value;
+      const isCorrect =
+        isTie ||
+        (guess === 'HIGHER' && R.value > L.value) ||
+        (guess === 'LOWER' && R.value < L.value);
+
+      // Swap guess buttons for revealed value
+      el.guessControls.classList.add('hidden');
+      el.revealBox.classList.remove('hidden');
+      el.rightUnit.textContent = R.unit;
+      el.rightRef.textContent = R.ref;
+
+      animateNumberReveal(el.rightValue, R.value, 520);
+
+      if (isCorrect) {
+        sfx.playCorrect();
+        state.score += 1;
+        if (state.score > state.bestScore) {
+          state.bestScore = state.score;
+          localStorage.setItem('nt_highlow_best', String(state.bestScore));
+        }
+        updateScoreUI();
+
+        el.rightCard.classList.add('correct-glow');
+        el.rightValue.className = 'font-cinzel text-4xl sm:text-5xl font-extrabold text-emerald-700';
+
+        el.feedbackBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2.5 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300';
+        el.feedbackBadge.innerHTML = isTie
+          ? `<span>✓</span> Exact Tie (${R.value.toLocaleString()} = ${L.value.toLocaleString()})! Streak +1`
+          : '<span>✓</span> Correct! Streak +1';
+        el.feedbackFact.textContent = R.fact;
+
+        el.nextRoundBtn.classList.remove('hidden');
+        el.playAgainBtn.classList.add('hidden');
+        el.feedbackPanel.classList.remove('hidden');
+      } else {
+        sfx.playWrong();
+        el.rightCard.classList.add('wrong-glow');
+        el.rightValue.className = 'font-cinzel text-4xl sm:text-5xl font-extrabold text-rose-700';
+
+        el.feedbackBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2.5 bg-rose-500/20 border border-rose-400/40 text-rose-300';
+        el.feedbackBadge.innerHTML = `<span>✕</span> Not Quite! (${R.name}: ${R.value.toLocaleString()} vs ${L.name}: ${L.value.toLocaleString()})`;
+        el.feedbackFact.textContent = R.fact;
+
+        el.nextRoundBtn.classList.add('hidden');
+        el.playAgainBtn.classList.remove('hidden');
+        el.feedbackPanel.classList.remove('hidden');
+
+        // Display Game Over summary modal after brief pause so player sees the revealed number
+        setTimeout(() => {
+          showGameOverModal();
+        }, 1300);
+      }
+    }
+
+    /**
+     * Show Game Over Summary Modal
+     */
+    function showGameOverModal() {
+      const L = state.leftItem;
+      const R = state.rightItem;
+      el.finalScore.textContent = state.score;
+      el.finalBest.textContent = state.bestScore;
+      el.gameoverRecap.innerHTML = `
+        <strong class="text-amber-300">${R.name}</strong> has <strong>${R.value.toLocaleString()} ${R.unit}</strong> (${R.ref}),
+        whereas <strong class="text-amber-300">${L.name}</strong> has <strong>${L.value.toLocaleString()} ${L.unit}</strong> (${L.ref}).
+      `;
+      el.gameoverModal.classList.remove('hidden');
+      el.gameoverModal.classList.add('flex');
+    }
+
+    /**
+     * Restart Game / Start New Streak
+     */
+    function resetGame() {
+      sfx.playClick();
+      state.score = 0;
+      updateScoreUI();
+      el.gameoverModal.classList.add('hidden');
+      el.gameoverModal.classList.remove('flex');
+      renderRound(false);
+    }
+
+    // ================= EVENT LISTENERS =================
+    el.btnHigher.addEventListener('click', () => handleGuess('HIGHER'));
+    el.btnLower.addEventListener('click', () => handleGuess('LOWER'));
+
+    el.nextRoundBtn.addEventListener('click', () => {
+      sfx.playClick();
+      renderRound(true);
+    });
+
+    el.playAgainBtn.addEventListener('click', resetGame);
+    el.modalRestartBtn.addEventListener('click', resetGame);
+
+    // Category Filter Selection
+    el.categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chosenCat = btn.dataset.category;
+        if (chosenCat === state.selectedCategory) return;
+        sfx.playClick();
+        state.selectedCategory = chosenCat;
+        state.score = 0;
+        updateScoreUI();
+        updateCategoryPills();
+        renderRound(false);
+      });
+    });
+
+    // Sound Toggle
+    el.soundToggle.addEventListener('click', () => {
+      sfx.enabled = !sfx.enabled;
+      el.soundOnIcon.classList.toggle('hidden', !sfx.enabled);
+      el.soundOffIcon.classList.toggle('hidden', sfx.enabled);
+      if (sfx.enabled) sfx.playClick();
+    });
+
+    // How to Play Modal Controls
+    el.howToPlayBtn.addEventListener('click', () => {
+      sfx.playClick();
+      el.howToPlayModal.classList.remove('hidden');
+      el.howToPlayModal.classList.add('flex');
+    });
+
+    function closeHowToPlay() {
+      sfx.playClick();
+      el.howToPlayModal.classList.add('hidden');
+      el.howToPlayModal.classList.remove('flex');
+    }
+
+    el.closeModalBtn.addEventListener('click', closeHowToPlay);
+    el.startPlayingModalBtn.addEventListener('click', closeHowToPlay);
+    el.howToPlayModal.addEventListener('click', (e) => {
+      if (e.target === el.howToPlayModal) closeHowToPlay();
+    });
+
+    // Keyboard Shortcuts (ArrowUp = Higher, ArrowDown = Lower, Enter/Space = Next)
+    window.addEventListener('keydown', (e) => {
+      const modalOpen =
+        !el.howToPlayModal.classList.contains('hidden') ||
+        !el.gameoverModal.classList.contains('hidden');
+      if (modalOpen) return;
+
+      if (!state.roundLocked) {
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          handleGuess('HIGHER');
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          handleGuess('LOWER');
+        }
+      } else if (!el.nextRoundBtn.classList.contains('hidden')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          sfx.playClick();
+          renderRound(true);
+        }
+      }
+    });
+
+    // Initialize Game on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateScoreUI();
+      updateCategoryPills();
+      renderRound(false);
+    });
+  </script>
+
+</body></html>

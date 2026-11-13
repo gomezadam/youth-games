@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/adamg/Downloads/high_or_low_old_testament_edition.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High or Low: Old Testament Edition</title>
+  <!-- Tailwind CSS -->
+  <script src="./High or Low_ Old Testament Edition_files/saved_resource"></script>
+  <!-- Google Fonts: Cinzel for ancient/royal headings and Inter for crisp UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./High or Low_ Old Testament Edition_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #0e131f;
+      --bg-card: #161e2e;
+      --bg-card-elevated: #1e293b;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #996515;
+      --parchment: #f8f5ec;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--parchment);
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 80% 85%, rgba(153, 101, 21, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #0b0f19 0%, #111827 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+
+    /* Ornate Scroll / Royal Gold Card Styling */
+    .ot-card {
+      background: linear-gradient(145deg, #192234 0%, #111726 100%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow:
+        0 10px 30px -5px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .ot-card::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.14);
+      border-radius: 0.75rem;
+      pointer-events: none;
+    }
+
+    .ot-card.correct-glow {
+      border-color: #10b981;
+      box-shadow:
+        0 0 28px rgba(16, 185, 129, 0.35),
+        inset 0 0 15px rgba(16, 185, 129, 0.12);
+    }
+
+    .ot-card.wrong-glow {
+      border-color: #ef4444;
+      box-shadow:
+        0 0 28px rgba(239, 68, 68, 0.38),
+        inset 0 0 15px rgba(239, 68, 68, 0.15);
+      animation: shakeCard 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes shakeCard {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-card-enter {
+      animation: fadeSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Gold Gradient Text */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f7e7b4 0%, #d4af37 50%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Tactile Buttons */
+    .btn-higher {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-higher:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .btn-higher:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-lower {
+      background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+      border: 1px solid rgba(248, 113, 113, 0.4);
+      box-shadow: 0 4px 14px rgba(185, 28, 28, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-lower:hover:not(:disabled) {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45);
+    }
+    .btn-lower:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #a67c1e 100%);
+      color: #0b0f19;
+      border: 1px solid #f3e5ab;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
+    }
+
+    /* VS Medallion */
+    .vs-badge {
+      background: radial-gradient(circle at 30% 30%, #f3e5ab, #d4af37 65%, #8a6210 100%);
+      color: #0e131f;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0e131f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.35);
+      border-radius: 9999px;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.z-30{z-index:30}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-1{margin-top:0.25rem;margin-bottom:0.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-2{margin-top:0.5rem}.mt-2\.5{margin-top:0.625rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.list-none{list-style-type:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.875rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.875rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-amber-400\/30{border-color:rgb(251 191 36 / 0.3)}.border-amber-400\/35{border-color:rgb(251 191 36 / 0.35)}.border-amber-400\/40{border-color:rgb(251 191 36 / 0.4)}.border-amber-500\/15{border-color:rgb(245 158 11 / 0.15)}.border-amber-500\/20{border-color:rgb(245 158 11 / 0.2)}.border-amber-500\/25{border-color:rgb(245 158 11 / 0.25)}.border-amber-500\/35{border-color:rgb(245 158 11 / 0.35)}.border-rose-400\/40{border-color:rgb(251 113 133 / 0.4)}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-amber-500\/10{background-color:rgb(245 158 11 / 0.1)}.bg-amber-500\/15{background-color:rgb(245 158 11 / 0.15)}.bg-black\/75{background-color:rgb(0 0 0 / 0.75)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-rose-500\/15{background-color:rgb(244 63 94 / 0.15)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-900\/95{background-color:rgb(15 23 42 / 0.95)}.bg-slate-950\/70{background-color:rgb(2 6 23 / 0.7)}.bg-slate-950\/75{background-color:rgb(2 6 23 / 0.75)}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-slate-900\/80{background-color:rgb(15 23 42 / 0.8)}.p-1\.5{padding:0.375rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-4{padding-bottom:1rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-100{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.text-amber-100\/90{color:rgb(254 243 199 / 0.9)}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-200\/70{color:rgb(253 230 138 / 0.7)}.text-amber-200\/80{color:rgb(253 230 138 / 0.8)}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-400\/80{color:rgb(251 191 36 / 0.8)}.text-amber-400\/90{color:rgb(251 191 36 / 0.9)}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-300\/90{color:rgb(203 213 225 / 0.9)}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-amber-400\/60{-webkit-text-decoration-color:rgb(251 191 36 / 0.6);text-decoration-color:rgb(251 191 36 / 0.6)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-amber-500\/30 *::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200 *::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.selection\:bg-amber-500\/30::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.hover\:border-amber-500\/40:hover{border-color:rgb(245 158 11 / 0.4)}.hover\:bg-amber-500\/15:hover{background-color:rgb(245 158 11 / 0.15)}.hover\:bg-amber-500\/25:hover{background-color:rgb(245 158 11 / 0.25)}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-amber-200:hover{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:inline{display:inline}.sm\:h-14{height:3.5rem}.sm\:w-14{width:3.5rem}.sm\:gap-4{gap:1rem}.sm\:p-8{padding:2rem}.sm\:py-8{padding-top:2rem;padding-bottom:2rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:my-0{margin-top:0px;margin-bottom:0px}.lg\:grid-cols-11{grid-template-columns:repeat(11, minmax(0, 1fr))}.lg\:gap-4{gap:1rem}}</style></head>
+<body class="flex flex-col justify-between selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- Top Navigation & Score Bar -->
+  <header class="w-full border-b border-amber-500/20 bg-slate-950/75 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand / Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/40 flex items-center justify-center text-amber-400 shadow-inner">
+          <!-- Scroll SVG Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-lg sm:text-xl font-bold tracking-wide gold-gradient-text leading-tight">
+            HIGH OR LOW
+          </h1>
+          <p class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-amber-200/70 font-medium">
+            Old Testament Edition
+          </p>
+        </div>
+      </div>
+
+      <!-- Scoreboard & Utility Controls -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Current Streak -->
+        <div class="px-3 py-1.5 rounded-xl bg-slate-900/90 border border-amber-500/25 flex items-center gap-2">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Streak</span>
+          <span id="current-score" class="font-cinzel text-lg sm:text-xl font-bold text-amber-400">0</span>
+        </div>
+
+        <!-- Best Streak -->
+        <div class="px-3 py-1.5 rounded-xl bg-slate-900/90 border border-amber-500/25 flex items-center gap-2">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Best</span>
+          <span id="best-score" class="font-cinzel text-lg sm:text-xl font-bold text-emerald-400">4</span>
+        </div>
+
+        <!-- Sound Toggle Button -->
+        <button id="sound-toggle" type="button" title="Toggle Sound Effects" class="p-2.5 rounded-xl bg-slate-900/90 border border-amber-500/25 text-amber-300 hover:bg-amber-500/15 transition">
+          <svg id="sound-on-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          </svg>
+          <svg id="sound-off-icon" class="w-5 h-5 hidden text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
+          </svg>
+        </button>
+
+        <!-- How to Play Button -->
+        <button id="how-to-play-btn" type="button" class="px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-400/40 text-amber-200 hover:bg-amber-500/25 text-xs sm:text-sm font-semibold transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="hidden sm:inline">How to Play</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Game Container -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-6 sm:py-8 flex flex-col items-center justify-center">
+
+    <!-- Category Selector Pills -->
+    <div class="w-full mb-6 flex flex-col items-center">
+      <div class="flex flex-wrap items-center justify-center gap-2" id="category-bar">
+        <button data-category="ALL" class="cat-btn active px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-amber-400 bg-amber-400/20 text-amber-200 shadow-sm transition cursor-pointer">
+          All Scrolls (Mixed)
+        </button>
+        <button data-category="LIFESPAN" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Lifespans (Years)
+        </button>
+        <button data-category="CHAPTERS" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Book Length (Chapters)
+        </button>
+        <button data-category="REIGN" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Reigns of Kings (Years)
+        </button>
+        <button data-category="DURATION" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Durations (Days)
+        </button>
+        <button data-category="AGE_MILESTONE" class="cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer">
+          Milestone Ages (Years)
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Round Metric Banner -->
+    <div class="mb-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/35 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>Comparing: <strong id="metric-title" class="text-amber-100">Royal Reign (Years)</strong></span>
+      </div>
+    </div>
+
+    <!-- Arena: Two Comparison Cards + VS Badge -->
+    <div id="arena" class="w-full grid grid-cols-1 lg:grid-cols-11 gap-5 lg:gap-4 items-stretch relative">
+
+      <!-- LEFT CARD (Known Value) -->
+      <div id="left-card" class="lg:col-span-5 ot-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center animate-card-enter">
+        <div>
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-400/30 text-3xl mb-4 shadow-inner" id="left-icon">🪨</div>
+          <p class="text-xs uppercase tracking-[0.18em] text-amber-400/80 font-semibold mb-1" id="left-subtitle">Son of Solomon</p>
+          <h2 id="left-name" class="font-cinzel text-2xl sm:text-3xl font-bold text-white mb-2">King Rehoboam of Judah</h2>
+          <p id="left-desc" class="text-sm text-slate-300/90 max-w-md mx-auto leading-relaxed">His harsh refusal to lighten taxes caused the ten northern tribes to split away.</p>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-amber-500/20">
+          <span class="block text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1" id="left-metric-label">Length of Reign</span>
+          <div class="flex items-baseline justify-center gap-2">
+            <span id="left-value" class="font-cinzel text-4xl sm:text-5xl font-extrabold gold-gradient-text">17</span>
+            <span id="left-unit" class="text-base sm:text-lg font-semibold text-amber-200/80">years</span>
+          </div>
+          <p id="left-ref" class="mt-2 text-xs font-medium text-amber-400/90">1 Kings 14:21</p>
+        </div>
+      </div>
+
+      <!-- CENTER VS MEDALLION -->
+      <div class="lg:col-span-1 flex items-center justify-center my-1 lg:my-0 z-10">
+        <div id="vs-medallion" class="vs-badge w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-cinzel font-extrabold text-base sm:text-lg tracking-wider select-none border-2 border-amber-100">
+          VS
+        </div>
+      </div>
+
+      <!-- RIGHT CARD (Challenger / Hidden Value) -->
+      <div id="right-card" class="lg:col-span-5 ot-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center animate-card-enter">
+        <div>
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-400/30 text-3xl mb-4 shadow-inner" id="right-icon">📜</div>
+          <p class="text-xs uppercase tracking-[0.18em] text-amber-400/80 font-semibold mb-1" id="right-subtitle">The Boy King Reformer</p>
+          <h2 id="right-name" class="font-cinzel text-2xl sm:text-3xl font-bold text-white mb-2">King Josiah of Judah</h2>
+          <p id="right-desc" class="text-sm text-slate-300/90 max-w-md mx-auto leading-relaxed">Crowned at age 8; rediscovered the Book of the Law during Temple repairs.</p>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-amber-500/20">
+          <span class="block text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1" id="right-metric-label">Length of Reign</span>
+
+          <!-- Guess Controls (Shown before answering) -->
+          <div id="guess-controls" class="mt-3 flex flex-col items-center">
+            <p class="text-xs sm:text-sm text-amber-100/90 mb-3 font-medium">
+              Is <span id="right-prompt-name" class="text-amber-300 font-bold">King Josiah of Judah</span>'s value <span class="underline decoration-amber-400/60">Higher</span> or <span class="underline decoration-amber-400/60">Lower</span> than <span id="left-prompt-value" class="text-amber-300 font-bold">17 years</span>?
+            </p>
+            <div class="grid grid-cols-2 gap-3 w-full max-w-xs">
+              <button id="btn-higher" type="button" class="btn-higher py-3.5 px-4 rounded-xl font-bold text-white text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+                </svg>
+                HIGHER
+              </button>
+              <button id="btn-lower" type="button" class="btn-lower py-3.5 px-4 rounded-xl font-bold text-white text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                LOWER
+              </button>
+            </div>
+            <p class="mt-2.5 text-[11px] text-slate-400 hidden sm:block">
+              Tip: Use <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">↑</kbd> or <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">↓</kbd> arrow keys
+            </p>
+          </div>
+
+          <!-- Revealed Value Box (Shown after answering) -->
+          <div id="reveal-box" class="hidden">
+            <div class="flex items-baseline justify-center gap-2">
+              <span id="right-value" class="font-cinzel text-4xl sm:text-5xl font-extrabold text-white">
+                0
+              </span>
+              <span id="right-unit" class="text-base sm:text-lg font-semibold text-amber-200/80">
+                years
+              </span>
+            </div>
+            <p id="right-ref" class="mt-2 text-xs font-medium text-amber-400/90">
+              Genesis 9:29
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Round Feedback & Next Action Bar -->
+    <div id="feedback-panel" class="hidden w-full max-w-2xl mt-6 p-5 rounded-2xl bg-slate-900/95 border border-amber-500/35 text-center shadow-2xl animate-card-enter">
+      <div id="feedback-badge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+        <!-- Populated dynamically -->
+      </div>
+      <p id="feedback-fact" class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+        <!-- Scripture context explanation -->
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button id="next-round-btn" type="button" class="btn-gold px-7 py-3 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+          Next Comparison →
+        </button>
+        <button id="play-again-btn" type="button" class="hidden btn-gold px-7 py-3 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+          Play Again ↻
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-amber-500/15 py-4 px-4 text-center text-xs text-slate-400">
+    <p>Scripture figures &amp; book counts sourced from the Old Testament canon • Built for learning &amp; fun</p>
+  </footer>
+
+  <!-- HOW TO PLAY MODAL -->
+  <div id="how-to-play-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="ot-card max-w-lg w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl animate-card-enter">
+      <div class="flex items-center justify-between border-b border-amber-500/25 pb-4 mb-4">
+        <h3 class="font-cinzel text-xl sm:text-2xl font-bold gold-gradient-text">How to Play</h3>
+        <button id="close-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-sm text-slate-200 leading-relaxed">
+        <p>
+          Test your knowledge of Old Testament history, patriarchs, kings, prophets, and sacred scrolls!
+        </p>
+        <ul class="space-y-2.5 list-none">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">1.</span>
+            <span>Each round compares <strong>two Old Testament entries</strong> using the exact same measurement (such as <em>Lifespan in Years</em>, <em>Book Chapters</em>, or <em>Reign Duration</em>).</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">2.</span>
+            <span>The <strong>Left Card</strong> displays its true biblical number.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">3.</span>
+            <span>Decide whether the <strong>Right Card's</strong> hidden value is <strong class="text-emerald-400">HIGHER</strong> or <strong class="text-rose-400">LOWER</strong> than the Left Card.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 font-bold">4.</span>
+            <span>Build the longest streak possible! Use the category pills at the top to play mixed scrolls or focus on a specific theme.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-amber-500/20 flex justify-end">
+        <button id="start-playing-modal-btn" type="button" class="btn-gold px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer">
+          Let's Begin!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME OVER SUMMARY MODAL -->
+  <div id="gameover-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="ot-card max-w-md w-full rounded-2xl p-6 sm:p-8 text-center shadow-2xl animate-card-enter">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-rose-500/15 border border-rose-400/40 flex items-center justify-center text-3xl">
+        📜
+      </div>
+      <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mb-1">Scroll Closed</h3>
+      <p id="gameover-subtitle" class="text-sm text-slate-300 mb-5">
+        Your streak has come to an end, scribe!
+      </p>
+
+      <div class="bg-slate-950/70 border border-amber-500/25 rounded-xl p-4 mb-5 text-left text-xs sm:text-sm text-slate-200">
+        <p id="gameover-recap" class="leading-relaxed"></p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/25">
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Final Streak</span>
+          <span id="final-score" class="font-cinzel text-3xl font-extrabold text-amber-400">0</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/25">
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-semibold">All-Time Best</span>
+          <span id="final-best" class="font-cinzel text-3xl font-extrabold text-emerald-400">0</span>
+        </div>
+      </div>
+
+      <button id="modal-restart-btn" type="button" class="btn-gold w-full py-3.5 rounded-xl font-bold text-base tracking-wide cursor-pointer">
+        Start New Streak ↻
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * OLD TESTAMENT DATASET
+     * Grouped into strict unit-matched categories so every comparison is fair,
+     * unambiguous, and biblically accurate.
+     */
+    const OT_DATA = [
+      // ================= CATEGORY: LIFESPAN (Years) =================
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '🌳',
+        name: 'Methuselah',
+        subtitle: 'Son of Enoch',
+        value: 969,
+        ref: 'Genesis 5:27',
+        desc: 'Grandfather of Noah and the oldest person recorded in the Bible.',
+        fact: 'Methuselah lived 969 years and died in the very year the Great Flood began.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '⏳',
+        name: 'Jared',
+        subtitle: 'Father of Enoch',
+        value: 962,
+        ref: 'Genesis 5:20',
+        desc: 'Sixth-generation descendant of Adam through Seth.',
+        fact: 'Jared lived 962 years—the second-longest lifespan recorded in Scripture, just 7 years shy of Methuselah.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '🚢',
+        name: 'Noah',
+        subtitle: 'Builder of the Ark',
+        value: 950,
+        ref: 'Genesis 9:29',
+        desc: 'Righteous patriarch who survived the Deluge with his family.',
+        fact: 'Noah was 600 years old when the floodwaters came and lived another 350 years afterward, totaling 950 years.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '🌿',
+        name: 'Adam',
+        subtitle: 'The First Man',
+        value: 930,
+        ref: 'Genesis 5:5',
+        desc: 'Created from the dust of the ground in the Garden of Eden.',
+        fact: 'Adam lived 930 years, long enough to see eight generations of his descendants.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '✨',
+        name: 'Seth',
+        subtitle: 'Third Son of Adam & Eve',
+        value: 912,
+        ref: 'Genesis 5:8',
+        desc: 'Born after Abel’s death, continuing the ancestral line to Noah.',
+        fact: 'Seth lived 912 years; in his days people began to call upon the name of the Lord.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '☁️',
+        name: 'Enoch',
+        subtitle: 'Walked with God',
+        value: 365,
+        ref: 'Genesis 5:23',
+        desc: 'Great-grandfather of Noah who never experienced physical death.',
+        fact: 'Enoch lived 365 years before God took him directly to heaven—a notably shorter earthly span than his forebears.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '⛺',
+        name: 'Abraham',
+        subtitle: 'Father of Many Nations',
+        value: 175,
+        ref: 'Genesis 25:7',
+        desc: 'Called out of Ur to journey to the Promised Land of Canaan.',
+        fact: 'Abraham died at 175 years old and was buried beside Sarah in the Cave of Machpelah.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '💧',
+        name: 'Isaac',
+        subtitle: 'Son of Promise',
+        value: 180,
+        ref: 'Genesis 35:28',
+        desc: 'Son of Abraham and Sarah, and father of Esau and Jacob.',
+        fact: 'Isaac lived 180 years—5 years longer than his father Abraham and 33 years longer than his son Jacob.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '🪜',
+        name: 'Jacob (Israel)',
+        subtitle: 'Father of the Twelve Tribes',
+        value: 147,
+        ref: 'Genesis 47:28',
+        desc: 'Wrestled with God at Peniel and spent his final 17 years in Egypt.',
+        fact: 'Jacob lived 147 years, blessing his twelve sons before passing away in the land of Goshen.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '👑',
+        name: 'Sarah',
+        subtitle: 'Matriarch of Israel',
+        value: 127,
+        ref: 'Genesis 23:1',
+        desc: 'Wife of Abraham who gave birth to Isaac at age 90.',
+        fact: 'Sarah is the only woman in the Bible whose exact age at death (127 years) is explicitly recorded.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '🏔️',
+        name: 'Moses',
+        subtitle: 'Lawgiver of Israel',
+        value: 120,
+        ref: 'Deuteronomy 34:7',
+        desc: 'Led the Israelites out of Egypt and received the Torah on Sinai.',
+        fact: 'Moses lived 120 years (three periods of 40 years), and his eyes were undimmed when he died on Mount Nebo.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '⚔️',
+        name: 'Joshua',
+        subtitle: 'Successor to Moses',
+        value: 110,
+        ref: 'Joshua 24:29',
+        desc: 'Led Israel across the Jordan River into the Promised Land.',
+        fact: 'Joshua lived 110 years, matching the exact lifespan of his ancestor Joseph.'
+      },
+      {
+        category: 'LIFESPAN',
+        metricTitle: 'Lifespan in Years',
+        metricLabel: 'Total Lifespan',
+        unit: 'years',
+        icon: '👑',
+        name: 'King David',
+        subtitle: 'Sweet Psalmist of Israel',
+        value: 70,
+        ref: '2 Samuel 5:4',
+        desc: 'Shepherd boy who defeated Goliath and united the tribes of Israel.',
+        fact: 'David became king at age 30 and reigned for 40 years, living to the age of 70.'
+      },
+
+      // ================= CATEGORY: CHAPTERS (Book Length) =================
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🎵',
+        name: 'Book of Psalms',
+        subtitle: 'Hymns & Prayers of Israel',
+        value: 150,
+        ref: 'Psalms 1–150',
+        desc: 'The largest collection of sacred poetry and songs in the Old Testament.',
+        fact: 'Psalms has 150 chapters—more than twice as many as any other book in the Bible.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🔥',
+        name: 'Book of Isaiah',
+        subtitle: 'Major Prophet',
+        value: 66,
+        ref: 'Isaiah 1–66',
+        desc: 'Prophecies of judgment, comfort, and the coming Suffering Servant.',
+        fact: 'Isaiah contains 66 chapters—coincidentally matching the total number of books in the Protestant Bible.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '😢',
+        name: 'Book of Jeremiah',
+        subtitle: 'The Weeping Prophet',
+        value: 52,
+        ref: 'Jeremiah 1–52',
+        desc: 'Warnings to Judah prior to the Babylonian exile and fall of Jerusalem.',
+        fact: 'Jeremiah has 52 chapters, making it the longest prophetic book by word count.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🌍',
+        name: 'Book of Genesis',
+        subtitle: 'First Book of the Torah',
+        value: 50,
+        ref: 'Genesis 1–50',
+        desc: 'Accounts of Creation, the Flood, and the patriarchs Abraham, Isaac, and Jacob.',
+        fact: 'Genesis spans 50 chapters, ending with Joseph’s death in Egypt.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🎡',
+        name: 'Book of Ezekiel',
+        subtitle: 'Prophet by the Kebar River',
+        value: 48,
+        ref: 'Ezekiel 1–48',
+        desc: 'Dramatic visions of God’s glory, the Valley of Dry Bones, and the restored Temple.',
+        fact: 'Ezekiel comprises 48 chapters written during the Babylonian exile.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '⚖️',
+        name: 'Book of Job',
+        subtitle: 'Wisdom Literature',
+        value: 42,
+        ref: 'Job 1–42',
+        desc: 'Poetic dialogues exploring suffering, divine justice, and human faith.',
+        fact: 'The Book of Job has 42 chapters, concluding with God speaking out of the whirlwind.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🌊',
+        name: 'Book of Exodus',
+        subtitle: 'Deliverance from Egypt',
+        value: 40,
+        ref: 'Exodus 1–40',
+        desc: 'The Ten Plagues, the Red Sea crossing, the Ten Commandments, and the Tabernacle.',
+        fact: 'Exodus has 40 chapters—echoing Israel’s 40 years in the wilderness.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '📜',
+        name: 'Book of Deuteronomy',
+        subtitle: 'Fifth Book of Moses',
+        value: 34,
+        ref: 'Deuteronomy 1–34',
+        desc: 'Moses’ farewell speeches to Israel on the plains of Moab.',
+        fact: 'Deuteronomy contains 34 chapters, ending with the death of Moses.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '💡',
+        name: 'Book of Proverbs',
+        subtitle: 'Sayings of Solomon',
+        value: 31,
+        ref: 'Proverbs 1–31',
+        desc: 'Practical wisdom for righteous living, culminating in the poem of the noble wife.',
+        fact: 'Proverbs has 31 chapters—one for every day of a month!'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🦁',
+        name: 'Book of Daniel',
+        subtitle: 'Visions in Babylon',
+        value: 12,
+        ref: 'Daniel 1–12',
+        desc: 'The fiery furnace, the lions’ den, and apocalyptic prophecies of kingdoms.',
+        fact: 'Daniel is neatly divided into 12 chapters: 6 chapters of court narratives and 6 chapters of visions.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '👸',
+        name: 'Book of Esther',
+        subtitle: 'Queen of Persia',
+        value: 10,
+        ref: 'Esther 1–10',
+        desc: 'How Queen Esther and Mordecai saved the Jewish people from Haman’s plot.',
+        fact: 'Esther has 10 chapters and is famous for never explicitly mentioning the name of God.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '🌾',
+        name: 'Book of Ruth',
+        subtitle: 'Story of Loyalty & Redemption',
+        value: 4,
+        ref: 'Ruth 1–4',
+        desc: 'A Moabite widow’s devotion to Naomi and marriage to Boaz in Bethlehem.',
+        fact: 'Ruth is a compact, cherished narrative of just 4 chapters.'
+      },
+      {
+        category: 'CHAPTERS',
+        metricTitle: 'Book Length (Chapters)',
+        metricLabel: 'Number of Chapters',
+        unit: 'chapters',
+        icon: '⛰️',
+        name: 'Book of Obadiah',
+        subtitle: 'Minor Prophet',
+        value: 1,
+        ref: 'Obadiah 1',
+        desc: 'A prophecy concerning the pride and downfall of Edom.',
+        fact: 'With just 1 chapter (21 verses), Obadiah is the shortest book in the entire Old Testament.'
+      },
+
+      // ================= CATEGORY: REIGN (Years) =================
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '👑',
+        name: 'King Manasseh of Judah',
+        subtitle: 'Longest-Reigning King',
+        value: 55,
+        ref: '2 Kings 21:1',
+        desc: 'Son of Hezekiah who began ruling Jerusalem at only 12 years old.',
+        fact: 'Manasseh reigned 55 years in Jerusalem—the longest reign of any king in Judah or Israel.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🏰',
+        name: 'King Uzziah (Azariah)',
+        subtitle: 'King of Judah',
+        value: 52,
+        ref: '2 Kings 15:2',
+        desc: 'Strengthened Jerusalem’s fortifications and agriculture before being struck with leprosy.',
+        fact: 'Uzziah reigned for 52 years; Isaiah’s famous temple vision occurred in the year King Uzziah died.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🛡️',
+        name: 'King Asa of Judah',
+        subtitle: 'Reformer King',
+        value: 41,
+        ref: '1 Kings 15:10',
+        desc: 'Removed idols from Judah and defeated a massive Cushite army.',
+        fact: 'Asa reigned 41 years in Jerusalem, one of Judah’s longest-serving monarchs.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🏛️',
+        name: 'King Solomon',
+        subtitle: 'Builder of the First Temple',
+        value: 40,
+        ref: '1 Kings 11:42',
+        desc: 'Renowned across the ancient world for his wisdom, wealth, and proverbs.',
+        fact: 'Just like his father David and predecessor Saul, Solomon reigned over all Israel for 40 years.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '📜',
+        name: 'King Josiah of Judah',
+        subtitle: 'The Boy King Reformer',
+        value: 31,
+        ref: '2 Kings 22:1',
+        desc: 'Crowned at age 8; rediscovered the Book of the Law during Temple repairs.',
+        fact: 'Josiah reigned 31 years in Jerusalem and led one of Israel’s greatest spiritual revivals.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '☀️',
+        name: 'King Hezekiah of Judah',
+        subtitle: 'Faithful King of Jerusalem',
+        value: 29,
+        ref: '2 Kings 18:2',
+        desc: 'Trusted God during Sennacherib’s siege and was granted 15 extra years of life.',
+        fact: 'Hezekiah reigned 29 years in Jerusalem.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🎺',
+        name: 'King Jehoshaphat of Judah',
+        subtitle: 'King Who Sent Choirs Ahead',
+        value: 25,
+        ref: '1 Kings 22:42',
+        desc: 'Sent Levites throughout Judah to teach the Book of the Law.',
+        fact: 'Jehoshaphat reigned 25 years in Jerusalem.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '⚡',
+        name: 'King Ahab of Israel',
+        subtitle: 'Rival of Prophet Elijah',
+        value: 22,
+        ref: '1 Kings 16:29',
+        desc: 'Ruled the Northern Kingdom alongside Queen Jezebel in Samaria.',
+        fact: 'Ahab reigned over Israel in Samaria for 22 years.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🪨',
+        name: 'King Rehoboam of Judah',
+        subtitle: 'Son of Solomon',
+        value: 17,
+        ref: '1 Kings 14:21',
+        desc: 'His harsh refusal to lighten taxes caused the ten northern tribes to split away.',
+        fact: 'Rehoboam reigned 17 years in Jerusalem over the divided southern kingdom.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '⛓️',
+        name: 'King Zedekiah of Judah',
+        subtitle: 'Final King Before Exile',
+        value: 11,
+        ref: '2 Kings 24:18',
+        desc: 'Last king of Judah before Nebuchadnezzar destroyed Jerusalem in 586 BC.',
+        fact: 'Zedekiah reigned 11 years before Jerusalem fell to Babylon.'
+      },
+      {
+        category: 'REIGN',
+        metricTitle: 'Royal Reign (Years)',
+        metricLabel: 'Length of Reign',
+        unit: 'years',
+        icon: '🗡️',
+        name: 'King Nadab of Israel',
+        subtitle: 'Son of Jeroboam I',
+        value: 2,
+        ref: '1 Kings 15:25',
+        desc: 'Second king of the Northern Kingdom of Israel.',
+        fact: 'Nadab reigned over Israel for just 2 years before Baasha conspired against him.'
+      },
+
+      // ================= CATEGORY: DURATION (Days) =================
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🌊',
+        name: 'Flood Waters Prevailing on Earth',
+        subtitle: 'Genesis Deluge Account',
+        value: 150,
+        ref: 'Genesis 7:24',
+        desc: 'The time the floodwaters stayed at their peak height before receding.',
+        fact: 'While it rained for 40 days and nights, the waters prevailed upon the earth for 150 days.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🌧️',
+        name: 'Rain During Noah’s Flood',
+        subtitle: 'Windows of Heaven Opened',
+        value: 40,
+        ref: 'Genesis 7:12',
+        desc: 'Continuous torrential rain that fell upon the earth as Noah’s family stayed inside the ark.',
+        fact: 'Rain fell upon the earth for 40 days and 40 nights.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🍇',
+        name: 'Spies Exploring Canaan',
+        subtitle: 'Joshua, Caleb & Ten Others',
+        value: 40,
+        ref: 'Numbers 13:25',
+        desc: 'Twelve tribal leaders scouted the Promised Land and returned with giant clusters of grapes.',
+        fact: 'The spies explored Canaan for 40 days—leading to 40 years of wandering (one year per day).'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🛡️',
+        name: 'Goliath Taunting Israel',
+        subtitle: 'Valley of Elah Standoff',
+        value: 40,
+        ref: '1 Samuel 17:16',
+        desc: 'Morning and evening, the Philistine champion challenged Israel to send a warrior.',
+        fact: 'Goliath stepped forward to taunt Israel’s ranks for 40 days before young David arrived.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🎺',
+        name: 'Marching Around Jericho',
+        subtitle: 'Conquest of Canaan',
+        value: 7,
+        ref: 'Joshua 6:15',
+        desc: 'Israel’s army and priests circled the walled city once a day, and seven times on the final day.',
+        fact: 'Israel marched around Jericho for 7 days before the walls collapsed at the shout and trumpet blast.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '✨',
+        name: 'Days of Creation Work',
+        subtitle: 'Genesis Chapter 1',
+        value: 6,
+        ref: 'Genesis 1:31',
+        desc: 'From separating light from darkness to forming humanity in God’s image.',
+        fact: 'God completed the work of Creation in 6 days and rested on the 7th day.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🐋',
+        name: 'Jonah Inside the Great Fish',
+        subtitle: 'Belly of the Deep',
+        value: 3,
+        ref: 'Jonah 1:17',
+        desc: 'Where the runaway prophet prayed and repented before being delivered onto dry land.',
+        fact: 'Jonah was inside the belly of the great fish for 3 days and 3 nights.'
+      },
+      {
+        category: 'DURATION',
+        metricTitle: 'Biblical Event Duration (Days)',
+        metricLabel: 'Duration',
+        unit: 'days',
+        icon: '🌑',
+        name: 'Plague of Darkness in Egypt',
+        subtitle: 'Ninth Plague of Exodus',
+        value: 3,
+        ref: 'Exodus 10:22',
+        desc: 'A palpable darkness covered Egypt while the Israelites still had light in Goshen.',
+        fact: 'Total darkness covered the land of Egypt for 3 days.'
+      },
+
+      // ================= CATEGORY: AGE_MILESTONE (Years) =================
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🚢',
+        name: 'Noah When the Flood Began',
+        subtitle: 'Entering the Ark',
+        value: 600,
+        ref: 'Genesis 7:6',
+        desc: 'Noah’s exact age when the fountains of the great deep burst forth.',
+        fact: 'Noah was 600 years old when the floodwaters came upon the earth.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '👶',
+        name: 'Abraham When Isaac Was Born',
+        subtitle: 'Fulfillment of God’s Promise',
+        value: 100,
+        ref: 'Genesis 21:5',
+        desc: 'Abraham and Sarah rejoiced with laughter at the birth of their promised son.',
+        fact: 'Abraham was 100 years old when his son Isaac was born to him.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🍇',
+        name: 'Caleb Claiming Hebron',
+        subtitle: 'Faithful Spy of Israel',
+        value: 85,
+        ref: 'Joshua 14:10',
+        desc: 'Declared he was still as strong for battle as the day Moses sent him out.',
+        fact: 'Caleb was 85 years old when he asked Joshua for the hill country of Hebron.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🪄',
+        name: 'Moses Standing Before Pharaoh',
+        subtitle: 'Deliverer of Israel',
+        value: 80,
+        ref: 'Exodus 7:7',
+        desc: 'Moses and his 83-year-old brother Aaron confronted Pharaoh to demand Israel’s freedom.',
+        fact: 'Moses was 80 years old when he spoke to Pharaoh.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🌾',
+        name: 'Joseph Becoming Governor of Egypt',
+        subtitle: 'Second Only to Pharaoh',
+        value: 30,
+        ref: 'Genesis 41:46',
+        desc: 'Interpreted Pharaoh’s dreams of seven years of plenty and seven years of famine.',
+        fact: 'Joseph was 30 years old when he entered Pharaoh’s service—13 years after being sold into slavery at 17.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🐑',
+        name: 'Joseph Sold by His Brothers',
+        subtitle: 'Coat of Many Colors',
+        value: 17,
+        ref: 'Genesis 37:2',
+        desc: 'Shepherding the flocks with his brothers before being sold to Midianite traders.',
+        fact: 'Joseph was 17 years old when his brothers sold him into Egypt.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '👑',
+        name: 'Josiah Becoming King of Judah',
+        subtitle: 'Youngest Reformer Monarch',
+        value: 8,
+        ref: '2 Kings 22:1',
+        desc: 'Ascended the throne of Jerusalem as a child and walked faithfully in David’s ways.',
+        fact: 'Josiah was just 8 years old when he became king of Judah.'
+      },
+      {
+        category: 'AGE_MILESTONE',
+        metricTitle: 'Age at Biblical Milestone (Years)',
+        metricLabel: 'Age at Milestone',
+        unit: 'years old',
+        icon: '🕊️',
+        name: 'Joash Becoming King of Judah',
+        subtitle: 'Hidden in the Temple',
+        value: 7,
+        ref: '2 Kings 11:21',
+        desc: 'Rescued as an infant from Queen Athaliah and crowned at the Temple.',
+        fact: 'Joash was 7 years old when he began to reign in Jerusalem.'
+      }
+    ];
+
+    /**
+     * SOUND SYNTHESIZER (Web Audio API - zero external audio URLs)
+     */
+    class SoundEffects {
+      constructor() {
+        this.enabled = true;
+        this.ctx = null;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            this.ctx = new AudioCtx();
+          }
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playTone(freq, type, duration, delay = 0, gainVal = 0.12) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime + delay;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(gainVal, now + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration + 0.02);
+      }
+
+      playCorrect() {
+        // Uplifting ancient harp/chime triad (C5 - E5 - G5 - C6)
+        this.playTone(523.25, 'triangle', 0.25, 0.00, 0.14);
+        this.playTone(659.25, 'triangle', 0.25, 0.07, 0.14);
+        this.playTone(783.99, 'triangle', 0.35, 0.14, 0.15);
+        this.playTone(1046.50, 'sine', 0.50, 0.21, 0.12);
+      }
+
+      playWrong() {
+        // Low resonant horn/thud
+        this.playTone(220, 'sawtooth', 0.30, 0.00, 0.10);
+        this.playTone(164.81, 'sawtooth', 0.45, 0.14, 0.11);
+      }
+
+      playClick() {
+        this.playTone(440, 'sine', 0.08, 0, 0.06);
+      }
+    }
+
+    /**
+     * MAIN GAME STATE & CONTROLLER
+     */
+    const sfx = new SoundEffects();
+
+    const state = {
+      selectedCategory: 'ALL',
+      score: 0,
+      bestScore: parseInt(localStorage.getItem('ot_highlow_best') || '0', 10),
+      leftItem: null,
+      rightItem: null,
+      usedPairKeys: new Set(),
+      roundLocked: false
+    };
+
+    // DOM Elements
+    const el = {
+      currentScore: document.getElementById('current-score'),
+      bestScore: document.getElementById('best-score'),
+      metricTitle: document.getElementById('metric-title'),
+      categoryBtns: document.querySelectorAll('.cat-btn'),
+
+      leftCard: document.getElementById('left-card'),
+      leftIcon: document.getElementById('left-icon'),
+      leftSubtitle: document.getElementById('left-subtitle'),
+      leftName: document.getElementById('left-name'),
+      leftDesc: document.getElementById('left-desc'),
+      leftMetricLabel: document.getElementById('left-metric-label'),
+      leftValue: document.getElementById('left-value'),
+      leftUnit: document.getElementById('left-unit'),
+      leftRef: document.getElementById('left-ref'),
+
+      rightCard: document.getElementById('right-card'),
+      rightIcon: document.getElementById('right-icon'),
+      rightSubtitle: document.getElementById('right-subtitle'),
+      rightName: document.getElementById('right-name'),
+      rightDesc: document.getElementById('right-desc'),
+      rightMetricLabel: document.getElementById('right-metric-label'),
+      rightPromptName: document.getElementById('right-prompt-name'),
+      leftPromptValue: document.getElementById('left-prompt-value'),
+
+      guessControls: document.getElementById('guess-controls'),
+      btnHigher: document.getElementById('btn-higher'),
+      btnLower: document.getElementById('btn-lower'),
+
+      revealBox: document.getElementById('reveal-box'),
+      rightValue: document.getElementById('right-value'),
+      rightUnit: document.getElementById('right-unit'),
+      rightRef: document.getElementById('right-ref'),
+
+      feedbackPanel: document.getElementById('feedback-panel'),
+      feedbackBadge: document.getElementById('feedback-badge'),
+      feedbackFact: document.getElementById('feedback-fact'),
+      nextRoundBtn: document.getElementById('next-round-btn'),
+      playAgainBtn: document.getElementById('play-again-btn'),
+
+      soundToggle: document.getElementById('sound-toggle'),
+      soundOnIcon: document.getElementById('sound-on-icon'),
+      soundOffIcon: document.getElementById('sound-off-icon'),
+
+      howToPlayBtn: document.getElementById('how-to-play-btn'),
+      howToPlayModal: document.getElementById('how-to-play-modal'),
+      closeModalBtn: document.getElementById('close-modal-btn'),
+      startPlayingModalBtn: document.getElementById('start-playing-modal-btn'),
+
+      gameoverModal: document.getElementById('gameover-modal'),
+      gameoverRecap: document.getElementById('gameover-recap'),
+      finalScore: document.getElementById('final-score'),
+      finalBest: document.getElementById('final-best'),
+      modalRestartBtn: document.getElementById('modal-restart-btn')
+    };
+
+    /**
+     * Initialize Scoreboard & Category Styling
+     */
+    function updateScoreUI() {
+      el.currentScore.textContent = state.score;
+      el.bestScore.textContent = state.bestScore;
+    }
+
+    function updateCategoryPills() {
+      el.categoryBtns.forEach(btn => {
+        const isSelected = btn.dataset.category === state.selectedCategory;
+        if (isSelected) {
+          btn.className = 'cat-btn active px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-amber-400 bg-amber-400/20 text-amber-200 shadow-sm transition cursor-pointer';
+        } else {
+          btn.className = 'cat-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200 hover:border-amber-500/40 transition cursor-pointer';
+        }
+      });
+    }
+
+    /**
+     * Pick two distinct items from the SAME category with DIFFERENT numeric values
+     */
+    function pickNextPair() {
+      const categories = ['LIFESPAN', 'CHAPTERS', 'REIGN', 'DURATION', 'AGE_MILESTONE'];
+      const activeCategory = state.selectedCategory === 'ALL'
+        ? categories[Math.floor(Math.random() * categories.length)]
+        : state.selectedCategory;
+
+      const pool = OT_DATA.filter(item => item.category === activeCategory);
+
+      // Build all valid distinct-value pairs in this category
+      const validPairs = [];
+      for (let i = 0; i < pool.length; i++) {
+        for (let j = 0; j < pool.length; j++) {
+          if (i !== j && pool[i].value !== pool[j].value) {
+            const pairKey = `${pool[i].name}|${pool[j].name}`;
+            validPairs.push({ left: pool[i], right: pool[j], key: pairKey });
+          }
+        }
+      }
+
+      // Filter out recently seen pairs if possible
+      let unseenPairs = validPairs.filter(p => !state.usedPairKeys.has(p.key));
+      if (unseenPairs.length === 0) {
+        state.usedPairKeys.clear();
+        unseenPairs = validPairs;
+      }
+
+      const chosen = unseenPairs[Math.floor(Math.random() * unseenPairs.length)];
+      state.usedPairKeys.add(chosen.key);
+      state.leftItem = chosen.left;
+      state.rightItem = chosen.right;
+    }
+
+    /**
+     * Render a New Round onto the Cards
+     */
+    function renderRound() {
+      state.roundLocked = false;
+      pickNextPair();
+
+      const L = state.leftItem;
+      const R = state.rightItem;
+
+      // Reset card visual states
+      el.leftCard.classList.remove('correct-glow', 'wrong-glow', 'animate-card-enter');
+      el.rightCard.classList.remove('correct-glow', 'wrong-glow', 'animate-card-enter');
+      void el.leftCard.offsetWidth; // trigger reflow for animation
+      el.leftCard.classList.add('animate-card-enter');
+      el.rightCard.classList.add('animate-card-enter');
+
+      // Metric Header
+      el.metricTitle.textContent = L.metricTitle;
+
+      // Left Card Population
+      el.leftIcon.textContent = L.icon;
+      el.leftSubtitle.textContent = L.subtitle;
+      el.leftName.textContent = L.name;
+      el.leftDesc.textContent = L.desc;
+      el.leftMetricLabel.textContent = L.metricLabel;
+      el.leftValue.textContent = L.value.toLocaleString();
+      el.leftUnit.textContent = L.unit;
+      el.leftRef.textContent = L.ref;
+
+      // Right Card Population
+      el.rightIcon.textContent = R.icon;
+      el.rightSubtitle.textContent = R.subtitle;
+      el.rightName.textContent = R.name;
+      el.rightDesc.textContent = R.desc;
+      el.rightMetricLabel.textContent = R.metricLabel;
+      el.rightPromptName.textContent = R.name;
+      el.leftPromptValue.textContent = `${L.value.toLocaleString()} ${L.unit}`;
+
+      // Show Guess Buttons, Hide Reveal & Feedback
+      el.guessControls.classList.remove('hidden');
+      el.revealBox.classList.add('hidden');
+      el.feedbackPanel.classList.add('hidden');
+      el.btnHigher.disabled = false;
+      el.btnLower.disabled = false;
+    }
+
+    /**
+     * Smooth Number Count-Up Animation
+     */
+    function animateNumberReveal(targetEl, finalValue, duration = 550) {
+      const startTime = performance.now();
+      const startValue = 0;
+
+      function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(startValue + (finalValue - startValue) * eased);
+        targetEl.textContent = current.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          targetEl.textContent = finalValue.toLocaleString();
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    /**
+     * Evaluate Player Guess ('HIGHER' or 'LOWER')
+     */
+    function handleGuess(guess) {
+      if (state.roundLocked) return;
+      state.roundLocked = true;
+
+      el.btnHigher.disabled = true;
+      el.btnLower.disabled = true;
+
+      const L = state.leftItem;
+      const R = state.rightItem;
+
+      const isCorrect =
+        (guess === 'HIGHER' && R.value > L.value) ||
+        (guess === 'LOWER' && R.value < L.value);
+
+      // Swap guess buttons for revealed value
+      el.guessControls.classList.add('hidden');
+      el.revealBox.classList.remove('hidden');
+      el.rightUnit.textContent = R.unit;
+      el.rightRef.textContent = R.ref;
+
+      animateNumberReveal(el.rightValue, R.value, 500);
+
+      if (isCorrect) {
+        sfx.playCorrect();
+        state.score += 1;
+        if (state.score > state.bestScore) {
+          state.bestScore = state.score;
+          localStorage.setItem('ot_highlow_best', String(state.bestScore));
+        }
+        updateScoreUI();
+
+        el.rightCard.classList.add('correct-glow');
+        el.rightValue.className = 'font-cinzel text-4xl sm:text-5xl font-extrabold text-emerald-400';
+
+        el.feedbackBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300';
+        el.feedbackBadge.innerHTML = '<span>✓</span> Correct! Streak +1';
+        el.feedbackFact.textContent = R.fact;
+
+        el.nextRoundBtn.classList.remove('hidden');
+        el.playAgainBtn.classList.add('hidden');
+        el.feedbackPanel.classList.remove('hidden');
+      } else {
+        sfx.playWrong();
+        el.rightCard.classList.add('wrong-glow');
+        el.rightValue.className = 'font-cinzel text-4xl sm:text-5xl font-extrabold text-rose-400';
+
+        el.feedbackBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 bg-rose-500/20 border border-rose-400/40 text-rose-300';
+        el.feedbackBadge.innerHTML = `<span>✕</span> Not Quite! (${R.name}: ${R.value.toLocaleString()} vs ${L.name}: ${L.value.toLocaleString()})`;
+        el.feedbackFact.textContent = R.fact;
+
+        el.nextRoundBtn.classList.add('hidden');
+        el.playAgainBtn.classList.remove('hidden');
+        el.feedbackPanel.classList.remove('hidden');
+
+        // Show Game Over Modal after brief pause so player sees the revealed number
+        setTimeout(() => {
+          showGameOverModal();
+        }, 1250);
+      }
+    }
+
+    /**
+     * Show Game Over Summary Modal
+     */
+    function showGameOverModal() {
+      const L = state.leftItem;
+      const R = state.rightItem;
+      el.finalScore.textContent = state.score;
+      el.finalBest.textContent = state.bestScore;
+      el.gameoverRecap.innerHTML = `
+        <strong class="text-amber-300">${R.name}</strong> had <strong>${R.value.toLocaleString()} ${R.unit}</strong> (${R.ref}),
+        whereas <strong class="text-amber-300">${L.name}</strong> had <strong>${L.value.toLocaleString()} ${L.unit}</strong> (${L.ref}).
+      `;
+      el.gameoverModal.classList.remove('hidden');
+      el.gameoverModal.classList.add('flex');
+    }
+
+    /**
+     * Restart Game / Start New Streak
+     */
+    function resetGame() {
+      sfx.playClick();
+      state.score = 0;
+      updateScoreUI();
+      el.gameoverModal.classList.add('hidden');
+      el.gameoverModal.classList.remove('flex');
+      renderRound();
+    }
+
+    // ================= EVENT LISTENERS =================
+    el.btnHigher.addEventListener('click', () => handleGuess('HIGHER'));
+    el.btnLower.addEventListener('click', () => handleGuess('LOWER'));
+
+    el.nextRoundBtn.addEventListener('click', () => {
+      sfx.playClick();
+      renderRound();
+    });
+
+    el.playAgainBtn.addEventListener('click', resetGame);
+    el.modalRestartBtn.addEventListener('click', resetGame);
+
+    // Category Filter Selection
+    el.categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chosenCat = btn.dataset.category;
+        if (chosenCat === state.selectedCategory) return;
+        sfx.playClick();
+        state.selectedCategory = chosenCat;
+        state.score = 0;
+        updateScoreUI();
+        updateCategoryPills();
+        renderRound();
+      });
+    });
+
+    // Sound Toggle
+    el.soundToggle.addEventListener('click', () => {
+      sfx.enabled = !sfx.enabled;
+      el.soundOnIcon.classList.toggle('hidden', !sfx.enabled);
+      el.soundOffIcon.classList.toggle('hidden', sfx.enabled);
+      if (sfx.enabled) sfx.playClick();
+    });
+
+    // How to Play Modal Controls
+    el.howToPlayBtn.addEventListener('click', () => {
+      sfx.playClick();
+      el.howToPlayModal.classList.remove('hidden');
+      el.howToPlayModal.classList.add('flex');
+    });
+
+    function closeHowToPlay() {
+      sfx.playClick();
+      el.howToPlayModal.classList.add('hidden');
+      el.howToPlayModal.classList.remove('flex');
+    }
+
+    el.closeModalBtn.addEventListener('click', closeHowToPlay);
+    el.startPlayingModalBtn.addEventListener('click', closeHowToPlay);
+    el.howToPlayModal.addEventListener('click', (e) => {
+      if (e.target === el.howToPlayModal) closeHowToPlay();
+    });
+
+    // Keyboard Shortcuts (ArrowUp = Higher, ArrowDown = Lower, Enter/Space = Next)
+    window.addEventListener('keydown', (e) => {
+      const modalOpen =
+        !el.howToPlayModal.classList.contains('hidden') ||
+        !el.gameoverModal.classList.contains('hidden');
+      if (modalOpen) return;
+
+      if (!state.roundLocked) {
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          handleGuess('HIGHER');
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          handleGuess('LOWER');
+        }
+      } else if (!el.nextRoundBtn.classList.contains('hidden')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          sfx.playClick();
+          renderRound();
+        }
+      }
+    });
+
+    // Initialize Game on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateScoreUI();
+      updateCategoryPills();
+      renderRound();
+    });
+  </script>
+
+</body></html>
