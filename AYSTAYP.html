@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)file:///C:/Users/adamg/Downloads/are_you_smarter_than_a_youth_pastor_whole_bible_hard_mode-v2%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You Smarter Than a Youth Pastor? — Whole Bible Edition (Hard Mode)</title>
+  <style>
+    :root {
+      --bg: #FBFBFA;
+      --card: #FFFFFF;
+      --sidebar: #F7F6F3;
+      --border: #E6E6E4;
+      --text: #2F3437;
+      --muted: #787774;
+      --indigo: #4F46E5;
+      --indigo-hover: #4338CA;
+      --indigo-light: #EEF2FF;
+      --indigo-border: #C7D2FE;
+      --gold: #D97706;
+      --gold-light: #FEF3C7;
+      --gold-border: #FDE68A;
+      --emerald: #059669;
+      --emerald-light: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      --rose: #E11D48;
+      --rose-light: #FFF1F2;
+      --rose-border: #FECDD3;
+      --shadow: 0 1px 2px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input {
+      font-family: inherit;
+    }
+
+    /* Slim Notion-Style Top Header Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(251, 251, 250, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 14px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-muted {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .header-reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .header-reset-btn:hover {
+      background: var(--sidebar);
+    }
+
+    /* Main Compact Embed Container (max-w-3xl / 780px) */
+    main {
+      flex: 1;
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 18px 14px 32px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .pill-gold {
+      background: var(--gold-light);
+      color: #92400E;
+      border-color: var(--gold-border);
+    }
+
+    .pill-indigo {
+      background: var(--indigo-light);
+      color: #3730A3;
+      border-color: var(--indigo-border);
+    }
+
+    .pill-rose {
+      background: var(--rose-light);
+      color: #9F1239;
+      border-color: var(--rose-border);
+    }
+
+    /* 1. Welcome Screen */
+    .welcome-wrap {
+      padding: 26px;
+    }
+
+    .welcome-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    h1 {
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 18px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .overview-card {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 13px;
+    }
+
+    .overview-card-icon {
+      font-size: 19px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .overview-card strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .overview-card span {
+      color: var(--muted);
+      font-size: 12px;
+      display: block;
+      line-height: 1.35;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      font-size: 14px;
+      color: var(--text);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--indigo);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--indigo);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--indigo-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--text);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-dark:hover:not(:disabled) {
+      background: #181B1D;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--sidebar);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn-gold:hover:not(:disabled) {
+      background: #B45309;
+    }
+
+    .btn-danger-outline {
+      background: #fff;
+      color: var(--rose);
+      border-color: var(--rose-border);
+      font-size: 12px;
+      padding: 6px 11px;
+    }
+
+    .btn-danger-outline:hover:not(:disabled) {
+      background: var(--rose-light);
+    }
+
+    /* 2. Active Game Screen */
+    .game-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Top Status Bar */
+    .status-bar {
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .status-metrics {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* 10-Step Visual Progress Ladder */
+    .ladder-card {
+      padding: 12px 14px;
+    }
+
+    .ladder-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .ladder-top span {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .ladder-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+    }
+
+    .ladder-step {
+      padding: 6px 7px;
+      border-radius: 7px;
+      background: var(--sidebar);
+      border: 1px solid transparent;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .ladder-step .step-prize {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ladder-step.milestone {
+      border-style: dashed;
+      border-color: var(--gold-border);
+    }
+
+    .ladder-step.current {
+      background: var(--indigo-light);
+      border-color: var(--indigo-border);
+      color: var(--indigo);
+    }
+
+    .ladder-step.passed {
+      background: var(--emerald-light);
+      color: #065F46;
+    }
+
+    /* Lifelines Bar */
+    .lifelines-bar {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lifelines-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .lifeline-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .lifeline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .lifeline-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: var(--indigo-light);
+      color: var(--indigo);
+    }
+
+    .lifeline-btn.used {
+      background: #EFEFED;
+      color: #A1A09C;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .lifeline-btn.active-save {
+      border-color: var(--emerald-border);
+      background: var(--emerald-light);
+      color: #065F46;
+      cursor: default;
+    }
+
+    /* Question Stage Card */
+    .stage-card {
+      padding: 20px;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stage-badges {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 7px;
+      background: var(--indigo-light);
+      color: var(--indigo);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .grade-badge.bonus-mode {
+      background: var(--gold-light);
+      color: #92400E;
+    }
+
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 7px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+
+    .prize-tag {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    /* Peek Callout Box */
+    .peek-banner {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-left: 4px solid var(--gold);
+      border-radius: 9px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .peek-banner-title {
+      font-weight: 700;
+      color: #92400E;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .peek-answer-text {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .peek-actions {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Scripture Prompt / Question Box */
+    .question-box {
+      background: var(--sidebar);
+      border-left: 4px solid var(--indigo);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+
+    .question-box.bonus-box {
+      border-left-color: var(--gold);
+    }
+
+    .question-text {
+      font-family: var(--font-serif);
+      font-size: 18.5px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    /* 4 Multiple-Choice Options */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+
+    .options-grid.single-col {
+      grid-template-columns: 1fr;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: #F8F9FF;
+      transform: translateY(-1px);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      font-size: 11.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .option-btn.correct {
+      background: var(--emerald-light);
+      border-color: var(--emerald);
+      color: #064E3B;
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #fff;
+    }
+
+    .option-btn.wrong {
+      background: var(--rose-light);
+      border-color: var(--rose);
+      color: #881337;
+    }
+
+    .option-btn.wrong .option-letter {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .option-btn.dimmed {
+      opacity: 0.45;
+    }
+
+    /* Post-Answer Feedback Panel */
+    .feedback-panel {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .feedback-status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      font-size: 14.5px;
+      margin-bottom: 10px;
+    }
+
+    .status-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .status-icon.ok {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      border: 1px solid var(--emerald-border);
+    }
+
+    .status-icon.saved {
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .status-icon.bad {
+      background: var(--rose-light);
+      color: var(--rose);
+      border: 1px solid var(--rose-border);
+    }
+
+    .yp-note-card {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .yp-note-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .yp-note-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .scripture-ref {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--indigo);
+      background: var(--indigo-light);
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .yp-paper-pill {
+      font-size: 11.5px;
+      color: #92400E;
+      background: var(--gold-light);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    .yp-note-body {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Pre-$1,000,000 Decision Screen */
+    .bonus-decision {
+      padding: 26px;
+      text-align: center;
+    }
+
+    .bonus-category-box {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .bonus-decision-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* 3. Final Results & Confession Screen */
+    .results-wrap {
+      padding: 26px;
+      text-align: center;
+    }
+
+    .result-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+    }
+
+    .victory-banner {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--indigo-light) 100%);
+      border: 2px solid var(--gold);
+      color: #1E1B4B;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 17px;
+      margin: 14px 0 20px;
+    }
+
+    .confession-box {
+      background: var(--rose-light);
+      border: 2px dashed var(--rose);
+      color: #881337;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 14px 0 20px;
+    }
+
+    .confession-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #BE123C;
+    }
+
+    .confession-quote {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .stat-box {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .stat-box strong {
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .recap-box {
+      text-align: left;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 18px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .recap-box h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .recap-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    .recap-item:last-child {
+      border-bottom: none;
+    }
+
+    .results-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Inline Drop-Out Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 15, 15, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .modal-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      max-width: 420px;
+      width: 100%;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .modal-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .modal-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    /* Instant Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 60;
+      background: var(--text);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      border-radius: 9px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.22s ease;
+    }
+
+    @media (max-width: 640px) {
+      .welcome-wrap, .stage-card, .results-wrap, .bonus-decision {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .overview-grid, .options-grid, .stats-row, .bonus-decision-btns {
+        grid-template-columns: 1fr;
+      }
+
+      .ladder-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .question-text {
+        font-size: 16.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Slim Notion-Style Header Bar -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" onclick="returnHome()">
+        <span style="font-size: 16px;">📖</span>
+        <div>
+          <span class="brand-muted">Youth Curriculum / </span>
+          <span>Are You Smarter Than a Youth Pastor? — Whole Bible Edition</span>
+        </div>
+      </div>
+
+      <button type="button" class="header-reset-btn" onclick="returnHome()" title="Reset to Welcome Screen">
+        <span>↺</span>
+        <span>Reset / Home</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. WELCOME SCREEN -->
+    <section id="welcome-screen" class="card welcome-wrap fade-in">
+      <div class="welcome-top">
+        <div class="hero-icon">🏆</div>
+        <div class="badge-group">
+          <span class="pill pill-indigo">Genesis – Revelation</span>
+          <span class="pill pill-rose">🔥 Hard Mode</span>
+          <span class="pill pill-gold">10 Grades + $1,000,000 Bonus</span>
+        </div>
+      </div>
+
+      <h1>Are You Smarter Than a Youth Pastor?</h1>
+      <p class="subtitle">Whole Bible Edition (Hard Mode) • Deep Scripture Showdown</p>
+
+      <!-- 3 Compact Overview Cards -->
+      <div class="overview-grid">
+        <div class="overview-card">
+          <span class="overview-card-icon">📈</span>
+          <strong>10 Progressive Grades ($1K–$500K)</strong>
+          <span>Spanning Pentateuch, Prophets, Gospels, Acts, and Epistles—no softball questions!</span>
+        </div>
+        <div class="overview-card">
+          <span class="overview-card-icon">🤝</span>
+          <strong>3 Lifelines: Peek, Copy &amp; Auto-Save</strong>
+          <span>Use the Youth Pastor's paper to check, copy, or get automatically rescued once!</span>
+        </div>
+        <div class="overview-card">
+          <span class="overview-card-icon">🛡️</span>
+          <strong>Safety Nets at $25K &amp; $500K</strong>
+          <span>Reach Grade 5 ($25,000) or Grade 10 ($500,000) to lock in guaranteed winnings.</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="player-name-input">Contestant or Team Name (Optional)</label>
+        <input type="text" id="player-name-input" class="text-input" placeholder="e.g., Berean Scholars or Pastor Jake" maxlength="40">
+      </div>
+
+      <button type="button" class="btn btn-primary" onclick="startGame()">
+        <span>Start Hard Mode Challenge</span>
+        <span>→</span>
+      </button>
+    </section>
+
+    <!-- 2. ACTIVE GAME SCREEN -->
+    <section id="game-screen" class="game-wrap hidden fade-in">
+      <!-- Top Status Bar -->
+      <div class="card status-bar" id="top-status-bar">
+        <div class="status-metrics">
+          <span class="pill pill-indigo" id="status-grade">1st Grade • $1,000</span>
+          <span class="pill pill-gold" id="status-banked">Banked: $0</span>
+          <span class="pill" id="status-safety">🛡️ Safety Net: $0</span>
+        </div>
+        <button type="button" class="btn btn-danger-outline" id="dropout-btn" onclick="openDropOutModal()" disabled="">
+          Drop Out &amp; Take Money
+        </button>
+      </div>
+
+      <!-- 10-Step Visual Progress Ladder -->
+      <div class="card ladder-card" id="ladder-card">
+        <div class="ladder-top">
+          <span>10-Grade Prize Ladder</span>
+          <span>🛡️ Safety Nets: Grade 5 ($25K) &amp; Grade 10 ($500K)</span>
+        </div>
+        <ul class="ladder-grid" id="ladder-grid"></ul>
+      </div>
+
+      <!-- Question Card -->
+      <div class="card stage-card" id="question-stage">
+        <div class="stage-header">
+          <div class="stage-badges">
+            <span class="grade-badge" id="grade-badge">1st Grade</span>
+            <span class="topic-badge" id="topic-badge">Pentateuch &amp; Genealogy</span>
+          </div>
+          <span class="prize-tag" id="prize-tag">$1,000</span>
+        </div>
+
+        <!-- Lifelines Bar -->
+        <div class="lifelines-bar" id="lifelines-bar">
+          <span class="lifelines-label">Youth Pastor Lifelines</span>
+          <div class="lifeline-buttons">
+            <button type="button" class="lifeline-btn" id="btn-peek" onclick="usePeek()">
+              <span>👀</span>
+              <span>Peek</span>
+            </button>
+            <button type="button" class="lifeline-btn" id="btn-copy" onclick="useCopy()">
+              <span>📋</span>
+              <span>Copy</span>
+            </button>
+            <button type="button" class="lifeline-btn active-save" id="btn-save" disabled="">
+              <span>🛡️</span>
+              <span id="save-label">Auto Save: Ready</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Peek Callout Banner -->
+        <div class="peek-banner hidden fade-in" id="peek-banner">
+          <div class="peek-banner-title">📝 What the Youth Pastor wrote down:</div>
+          <div class="peek-answer-text" id="peek-answer-text"></div>
+          <div class="peek-actions" id="peek-actions">
+            <button type="button" class="btn btn-gold" style="padding: 6px 12px; font-size: 12.5px;" onclick="acceptPeekAnswer()">Follow Youth Pastor's Answer</button>
+            <span style="font-size: 12px; color: #92400E;">...or pick your own option below!</span>
+          </div>
+        </div>
+
+        <!-- Scripture Prompt / Question -->
+        <div class="question-box" id="question-box">
+          <p class="question-text" id="question-text"></p>
+        </div>
+
+        <!-- 4 Multiple Choice Options (A, B, C, D) -->
+        <div class="options-grid" id="options-grid"></div>
+
+        <!-- Post-Answer Feedback Panel -->
+        <div class="feedback-panel hidden fade-in" id="feedback-panel">
+          <div class="feedback-status" id="feedback-status"></div>
+
+          <div class="yp-note-card">
+            <div class="yp-note-header">
+              <span class="yp-note-title">💡 Youth Commentary &amp; Context</span>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="yp-paper-pill" id="yp-paper-status">Youth Pastor: ...</span>
+                <span class="scripture-ref" id="scripture-ref">Genesis 4:25</span>
+              </div>
+            </div>
+            <p class="yp-note-body" id="yp-note-body"></p>
+          </div>
+
+          <button type="button" class="btn btn-dark" id="next-btn" onclick="handleNextStep()">
+            <span id="next-btn-label">Next Grade</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pre-$1,000,000 Decision Screen (Shown after clearing Grade 10) -->
+      <div class="card bonus-decision hidden fade-in" id="bonus-decision-card">
+        <div class="hero-icon" style="margin: 0 auto 12px;">👑</div>
+        <span class="grade-badge bonus-mode">Grade 10 Cleared • $500,000 Safety Net Reached</span>
+        <h2 style="font-size: 23px; margin: 10px 0 6px;">The $1,000,000 Youth Pastor Question</h2>
+        <p style="color: var(--muted); font-size: 13.5px;">
+          You have already earned the title <strong>Smarter Than a Youth Pastor</strong> with <strong>$500,000</strong>! No lifelines are allowed on the final question. Review the category below and make your choice:
+        </p>
+
+        <div class="bonus-category-box">
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #92400E; margin-bottom: 4px;">
+            $1,000,000 Final Category
+          </div>
+          <div style="font-size: 19px; font-weight: 800; color: var(--text);">
+            Biblical Geography &amp; Pauline Epistles
+          </div>
+        </div>
+
+        <p style="font-size: 12.5px; color: var(--muted);">
+          High-stakes rule: If you risk it for <strong>$1,000,000</strong> and miss, you lose half back to <strong>$250,000</strong> and must read the confession!
+        </p>
+
+        <div class="bonus-decision-btns">
+          <button type="button" class="btn btn-secondary" onclick="walkAwayAt500k()">
+            Walk Away with $500,000 (Smarter Than a Youth Pastor!)
+          </button>
+          <button type="button" class="btn btn-gold" onclick="startBonusQuestion()">
+            Risk It for $1,000,000
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FINAL RESULTS & CONFESSION SCREEN -->
+    <section id="results-screen" class="card results-wrap hidden fade-in">
+      <div class="result-icon" id="result-icon">🎓</div>
+      <span class="grade-badge" id="result-badge">Challenge Complete</span>
+      <h1 id="result-title" style="margin-top: 8px;">Game Over</h1>
+      <p class="subtitle" id="result-subtitle" style="margin-bottom: 10px;"></p>
+
+      <!-- Victory Banner or Read-Aloud Confession Box -->
+      <div id="result-verdict-container"></div>
+
+      <!-- 3 Summary Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <span>Final Winnings</span>
+          <strong id="final-winnings" style="color: var(--gold);">$0</strong>
+        </div>
+        <div class="stat-box">
+          <span>Grades Cleared</span>
+          <strong id="final-correct">0 / 10</strong>
+        </div>
+        <div class="stat-box">
+          <span>Youth Pastor Comparison</span>
+          <strong id="final-yp-match">0 / 10</strong>
+        </div>
+      </div>
+
+      <!-- Question Recap -->
+      <div class="recap-box">
+        <h4>Question-by-Question Recap</h4>
+        <div id="recap-list"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="results-actions">
+        <button type="button" class="btn btn-secondary" id="copy-result-btn" onclick="copyResultSummary()">
+          <span>📋 Copy Result</span>
+        </button>
+        <button type="button" class="btn btn-primary" style="width: auto; min-width: 170px;" onclick="startGame()">
+          <span>Play Again</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Inline Drop-Out Modal -->
+  <div class="modal-overlay hidden" id="dropout-modal">
+    <div class="modal-card fade-in">
+      <div style="font-size: 30px; margin-bottom: 6px;">🚪</div>
+      <h3>Drop Out &amp; Take Money?</h3>
+      <p>
+        You will lock in <strong id="modal-prize-text" style="color: var(--text);">$0</strong>—and read aloud to the group: <em>“I am NOT smarter than a Youth Pastor... yet!”</em>
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeDropOutModal()">Keep Playing</button>
+        <button type="button" class="btn btn-gold" onclick="confirmDropOut()">Yes, Drop Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instant Toast Notification -->
+  <div id="toast">✓ Result copied to clipboard!</div>
+
+  <script>
+    /**
+     * 11 Whole-Bible Questions — Hard Mode (Grades 1–10 + $1,000,000 Final Question)
+     * Youth Pastor gets 9 out of 10 right, intentionally missing Grade 8 ("Jehoiada" vs "Hilkiah")
+     * so players using Peek or Copy lifelines have to think critically!
+     */
+    const QUESTIONS = [
+      {
+            "grade": "1st Grade",
+            "topic": "Pentateuch & Genealogy",
+            "prize": 1000,
+            "milestone": false,
+            "question": "Which son of Adam and Eve was born after Abel's death, through whose lineage Noah and eventually Jesus descended?",
+            "options": [
+                  "Enosh",
+                  "Enoch",
+                  "Seth",
+                  "Lamech"
+            ],
+            "correctIndex": 2,
+            "ypIndex": 2,
+            "reference": "Genesis 4:25; Luke 3:38",
+            "note": "Eve named him Seth ('granted'), saying, 'God has granted me another child in place of Abel, since Cain killed him.' Enosh was Seth's son, and Luke's genealogy traces Jesus straight back through Seth to Adam."
+      },
+      {
+            "grade": "2nd Grade",
+            "topic": "Conquest & Judges",
+            "prize": 2000,
+            "milestone": false,
+            "question": "Which left-handed judge from the tribe of Benjamin assassinated King Eglon of Moab with a double-edged sword hidden on his right thigh?",
+            "options": [
+                  "Shamgar",
+                  "Ehud",
+                  "Othniel",
+                  "Barak"
+            ],
+            "correctIndex": 1,
+            "ypIndex": 1,
+            "reference": "Judges 3:15–21",
+            "note": "Because most warriors wore swords on their left hip, Eglon's guards didn't detect Ehud's 18-inch blade strapped to his right thigh—allowing Ehud to deliver Israel from 18 years of Moabite oppression."
+      },
+      {
+            "grade": "3rd Grade",
+            "topic": "Gospel Parallels",
+            "prize": 5000,
+            "milestone": false,
+            "question": "Who was the high priest that presided over Jesus' night trial and prophesied that 'it is better for you that one man die for the people than that the whole nation perish'?",
+            "options": [
+                  "Annas",
+                  "Gamaliel",
+                  "Zechariah",
+                  "Caiaphas"
+            ],
+            "correctIndex": 3,
+            "ypIndex": 3,
+            "reference": "John 11:49–50; Matthew 26:57",
+            "note": "While Annas (Caiaphas' father-in-law) questioned Jesus first, Caiaphas was the serving high priest that year—unwittingly speaking a true prophecy about Jesus' substitutionary death for the nation."
+      },
+      {
+            "grade": "4th Grade",
+            "topic": "Early Church & Acts",
+            "prize": 10000,
+            "milestone": false,
+            "question": "Who was the wealthy widow in Joppa—known for making robes and clothing for the poor—whom Peter raised from the dead?",
+            "options": [
+                  "Tabitha (Dorcas)",
+                  "Lydia",
+                  "Priscilla",
+                  "Rhoda"
+            ],
+            "correctIndex": 0,
+            "ypIndex": 0,
+            "reference": "Acts 9:36–41",
+            "note": "Tabitha (translated 'Dorcas' in Greek, both meaning 'gazelle') was a beloved disciple in Joppa. Peter knelt, prayed, and said, 'Tabitha, get up'—leading many across Joppa to believe in the Lord."
+      },
+      {
+            "grade": "5th Grade",
+            "topic": "Tabernacle & Law",
+            "prize": 25000,
+            "milestone": true,
+            "question": "According to Hebrews 9, besides the golden jar of manna and Aaron's staff that had budded, what third item was inside the Ark of the Covenant?",
+            "options": [
+                  "Moses' bronze serpent",
+                  "The stone tablets of the covenant",
+                  "The golden censer of incense",
+                  "The Urim and Thummim"
+            ],
+            "correctIndex": 1,
+            "ypIndex": 1,
+            "reference": "Hebrews 9:4",
+            "note": "Hebrews 9:4 lists the three items inside the gold-covered Ark: the gold jar of manna, Aaron's staff that had budded, and the stone tablets of the covenant—topped by the atonement cover (mercy seat) beneath the cherubim."
+      },
+      {
+            "grade": "6th Grade",
+            "topic": "Divided Kingdom & Kings",
+            "prize": 50000,
+            "milestone": false,
+            "question": "Which king of Judah had 15 years added to his life after praying in tears—with God confirming the promise by making the shadow go back ten steps on the stairway of Ahaz?",
+            "options": [
+                  "Josiah",
+                  "Jehoshaphat",
+                  "Uzziah",
+                  "Hezekiah"
+            ],
+            "correctIndex": 3,
+            "ypIndex": 3,
+            "reference": "2 Kings 20:1–11; Isaiah 38:5–8",
+            "note": "When Isaiah told mortally ill King Hezekiah to put his house in order, Hezekiah turned his face to the wall and wept bitterly in prayer—and God immediately sent Isaiah back to promise healing and 15 more years."
+      },
+      {
+            "grade": "7th Grade",
+            "topic": "Paul's Ministry & Companions",
+            "prize": 100000,
+            "milestone": false,
+            "question": "Which young man fell asleep in a third-story window in Troas and fell to his death while Paul was preaching until midnight, before Paul raised him back to life?",
+            "options": [
+                  "Tychicus",
+                  "Eutychus",
+                  "Epaphroditus",
+                  "Onesimus"
+            ],
+            "correctIndex": 1,
+            "ypIndex": 1,
+            "reference": "Acts 20:7–12",
+            "note": "Eutychus (whose name ironically means 'fortunate') was overcome by deep sleep during Paul's marathon farewell sermon in Troas, fell three stories, and was picked up dead—until Paul threw himself on him and restored him alive."
+      },
+      {
+            "grade": "8th Grade",
+            "topic": "Temple Reformation",
+            "prize": 200000,
+            "milestone": false,
+            "question": "Which high priest found the lost Book of the Law in the temple during King Josiah's renovations, sparking a nationwide spiritual revival?",
+            "options": [
+                  "Jehoiada",
+                  "Zadok",
+                  "Hilkiah",
+                  "Azariah"
+            ],
+            "correctIndex": 2,
+            "ypIndex": 0,
+            "reference": "2 Kings 22:8; 2 Chronicles 34:14",
+            "note": "Famous high priests are easy to mix up, and even the Youth Pastor guessed Jehoiada (who hid young Joash from Athaliah in 2 Kings 11)! It was Hilkiah who discovered the Book of the Law during 26-year-old King Josiah's temple repairs."
+      },
+      {
+            "grade": "9th Grade",
+            "topic": "Minor Prophets & Messianic Prophecy",
+            "prize": 350000,
+            "milestone": false,
+            "question": "Which Minor Prophet foretold that the Messiah would enter Jerusalem 'lowly and riding on a donkey, on a colt, the foal of a donkey'?",
+            "options": [
+                  "Zechariah",
+                  "Malachi",
+                  "Micah",
+                  "Zephaniah"
+            ],
+            "correctIndex": 0,
+            "ypIndex": 0,
+            "reference": "Zechariah 9:9; Matthew 21:4–5",
+            "note": "Written over 500 years before Palm Sunday, Zechariah 9:9 prophesied Jerusalem's righteous, victorious King arriving in humility on a donkey's colt rather than a warhorse."
+      },
+      {
+            "grade": "10th Grade",
+            "topic": "General Epistles & Old Testament Typology",
+            "prize": 500000,
+            "milestone": true,
+            "question": "In Jude verse 9, which archangel disputed with the devil over the body of Moses and said, 'The Lord rebuke you!'?",
+            "options": [
+                  "Gabriel",
+                  "Raphael",
+                  "Uriel",
+                  "Michael"
+            ],
+            "correctIndex": 3,
+            "ypIndex": 3,
+            "reference": "Jude 1:9",
+            "note": "Jude contrasts arrogant false teachers—who slander celestial beings—with the archangel Michael, who wouldn't even pronounce a slanderous judgment against Satan when disputing over Moses' body, deferring instead to the Lord."
+      }
+];
+
+    const BONUS_QUESTION = {
+      "grade": "$1,000,000 Bonus",
+      "topic": "Biblical Geography & Pauline Epistles",
+      "prize": 1000000,
+      "question": "In which Roman province—where Paul explicitly mentions leaving a cloak, scrolls, and parchments with Carpus—was the city of Troas located?",
+      "options": [
+            "Macedonia",
+            "Mysia (in the Roman province of Asia)",
+            "Achaia",
+            "Galatia"
+      ],
+      "correctIndex": 1,
+      "ypIndex": 1,
+      "reference": "Acts 16:7–8; 2 Timothy 4:13",
+      "note": "Troas sat on the Aegean coast in the region of Mysia (part of the Roman province of Asia, modern-day northwestern Turkey)—the exact port where Paul received the Macedonian vision (Acts 16) and later left his cloak and scrolls with Carpus (2 Timothy 4:13)!"
+};
+
+    // Application State
+    let state = {
+      playerName: "Youth Challenger",
+      currentIdx: 0,
+      isBonus: false,
+      bankedPrize: 0,
+      safetyNetPrize: 0,
+      lifelines: {
+        peekUsed: false,
+        copyUsed: false,
+        saveUsed: false
+      },
+      answered: false,
+      history: [],
+      endOutcomeType: "" // "won_million" | "won_500k" | "dropout" | "missed"
+    };
+
+    function formatMoney(num) {
+      return "$" + num.toLocaleString("en-US");
+    }
+
+    function returnHome() {
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("welcome-screen").classList.remove("hidden");
+    }
+
+    function startGame() {
+      const rawName = document.getElementById("player-name-input").value.trim();
+      state = {
+        playerName: rawName || "Youth Challenger",
+        currentIdx: 0,
+        isBonus: false,
+        bankedPrize: 0,
+        safetyNetPrize: 0,
+        lifelines: {
+          peekUsed: false,
+          copyUsed: false,
+          saveUsed: false
+        },
+        answered: false,
+        history: [],
+        endOutcomeType: ""
+      };
+
+      document.getElementById("welcome-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("ladder-card").classList.remove("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      document.getElementById("game-screen").classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    // Render 10-Step Visual Progress Ladder
+    function renderLadder() {
+      const grid = document.getElementById("ladder-grid");
+      grid.innerHTML = "";
+
+      QUESTIONS.forEach((q, idx) => {
+        const li = document.createElement("li");
+        let cls = "ladder-step";
+        if (q.milestone) cls += " milestone";
+        if (!state.isBonus && idx === state.currentIdx) cls += " current";
+        else if (idx < state.currentIdx || state.isBonus) cls += " passed";
+
+        li.className = cls;
+        li.innerHTML = `
+          <span>${q.grade}${q.milestone ? " 🛡️" : ""}</span>
+          <span class="step-prize">${formatMoney(q.prize)}</span>
+        `;
+        grid.appendChild(li);
+      });
+    }
+
+    // Update Top Status Bar & Lifeline Buttons
+    function updateStatusAndLifelines() {
+      const currentQ = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+
+      document.getElementById("status-grade").textContent =
+        `${currentQ.grade} • ${formatMoney(currentQ.prize)}`;
+      document.getElementById("status-banked").textContent =
+        `Banked: ${formatMoney(state.bankedPrize)}`;
+      document.getElementById("status-safety").textContent =
+        `🛡️ Safety Net: ${formatMoney(state.safetyNetPrize)}`;
+
+      const dropoutBtn = document.getElementById("dropout-btn");
+      if (state.isBonus) {
+        dropoutBtn.classList.add("hidden");
+      } else {
+        dropoutBtn.classList.remove("hidden");
+        dropoutBtn.disabled = state.answered || state.bankedPrize < 1000;
+      }
+
+      const peekBtn = document.getElementById("btn-peek");
+      const copyBtn = document.getElementById("btn-copy");
+      const saveBtn = document.getElementById("btn-save");
+      const saveLabel = document.getElementById("save-label");
+
+      peekBtn.disabled = state.lifelines.peekUsed || state.answered;
+      peekBtn.classList.toggle("used", state.lifelines.peekUsed);
+
+      copyBtn.disabled = state.lifelines.copyUsed || state.answered;
+      copyBtn.classList.toggle("used", state.lifelines.copyUsed);
+
+      if (state.lifelines.saveUsed) {
+        saveBtn.classList.remove("active-save");
+        saveBtn.classList.add("used");
+        saveLabel.textContent = "Auto Save: Used";
+      } else {
+        saveBtn.classList.add("active-save");
+        saveBtn.classList.remove("used");
+        saveLabel.textContent = "Auto Save: Ready";
+      }
+    }
+
+    // Render Active Question Card
+    function renderQuestion() {
+      state.answered = false;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const gradeBadge = document.getElementById("grade-badge");
+      gradeBadge.textContent = q.grade;
+      gradeBadge.className = state.isBonus ? "grade-badge bonus-mode" : "grade-badge";
+
+      document.getElementById("topic-badge").textContent = q.topic;
+      document.getElementById("prize-tag").textContent = formatMoney(q.prize);
+      document.getElementById("question-text").textContent = q.question;
+
+      const qBox = document.getElementById("question-box");
+      qBox.className = state.isBonus ? "question-box bonus-box" : "question-box";
+
+      // Disable lifelines on the $1,000,000 Bonus Question
+      document.getElementById("lifelines-bar").classList.toggle("hidden", state.isBonus);
+      document.getElementById("peek-banner").classList.add("hidden");
+      document.getElementById("feedback-panel").classList.add("hidden");
+
+      const grid = document.getElementById("options-grid");
+      grid.innerHTML = "";
+      grid.className = state.isBonus ? "options-grid single-col" : "options-grid";
+
+      const letters = ["A", "B", "C", "D"];
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.innerHTML = `
+          <span class="option-letter">${letters[idx]}</span>
+          <span class="option-label">${optText}</span>
+        `;
+        btn.addEventListener("click", () => submitAnswer(idx, false));
+        grid.appendChild(btn);
+      });
+
+      renderLadder();
+      updateStatusAndLifelines();
+    }
+
+    // Lifeline 1: Peek
+    function usePeek() {
+      if (state.lifelines.peekUsed || state.answered || state.isBonus) return;
+      state.lifelines.peekUsed = true;
+
+      const q = QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      document.getElementById("peek-answer-text").textContent =
+        `${letters[q.ypIndex]}. ${q.options[q.ypIndex]}`;
+      document.getElementById("peek-actions").classList.remove("hidden");
+      document.getElementById("peek-banner").classList.remove("hidden");
+
+      updateStatusAndLifelines();
+    }
+
+    function acceptPeekAnswer() {
+      if (state.answered) return;
+      const q = QUESTIONS[state.currentIdx];
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Lifeline 2: Copy
+    function useCopy() {
+      if (state.lifelines.copyUsed || state.answered || state.isBonus) return;
+      state.lifelines.copyUsed = true;
+      const q = QUESTIONS[state.currentIdx];
+      updateStatusAndLifelines();
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Lock In & Evaluate Answer
+    function submitAnswer(selectedIdx, usedYpAnswer) {
+      if (state.answered) return;
+      state.answered = true;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      const isCorrect = selectedIdx === q.correctIndex;
+      const ypIsCorrect = q.ypIndex === q.correctIndex;
+
+      let outcome = "wrong";
+
+      if (isCorrect) {
+        outcome = "correct";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.safetyNetPrize = q.prize;
+        }
+      } else if (!state.isBonus && !state.lifelines.saveUsed && ypIsCorrect) {
+        // Lifeline 3: Auto Save
+        state.lifelines.saveUsed = true;
+        outcome = "saved";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.safetyNetPrize = q.prize;
+        }
+      } else {
+        outcome = "wrong";
+        if (state.isBonus) {
+          // Missing the $1,000,000 question cuts winnings in half back to $250,000
+          state.bankedPrize = 250000;
+        } else {
+          state.bankedPrize = state.safetyNetPrize;
+        }
+      }
+
+      document.getElementById("peek-actions").classList.add("hidden");
+
+      const buttons = document.querySelectorAll("#options-grid .option-btn");
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        const letterEl = btn.querySelector(".option-letter");
+
+        if (idx === q.correctIndex) {
+          btn.classList.add("correct");
+          letterEl.textContent = "✓";
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.add("wrong");
+          letterEl.textContent = "✕";
+        } else {
+          btn.classList.add("dimmed");
+        }
+      });
+
+      state.history.push({
+        grade: q.grade,
+        topic: q.topic,
+        correctAnswer: q.options[q.correctIndex],
+        userPassed: outcome === "correct" || outcome === "saved",
+        ypCorrect: ypIsCorrect,
+        outcome: outcome,
+        prize: q.prize
+      });
+
+      const statusEl = document.getElementById("feedback-status");
+      if (outcome === "correct") {
+        statusEl.innerHTML = `
+          <span class="status-icon ok">✓</span>
+          <span style="color: #065F46;">${usedYpAnswer ? "The Youth Pastor nailed it!" : "Correct!"} You banked ${formatMoney(q.prize)}.</span>
+        `;
+      } else if (outcome === "saved") {
+        statusEl.innerHTML = `
+          <span class="status-icon saved">🛡️</span>
+          <span style="color: #92400E;">AUTO-SAVED BY THE YOUTH PASTOR! You picked ${letters[selectedIdx]}, but the Youth Pastor wrote ${letters[q.ypIndex]} (${q.options[q.ypIndex]})!</span>
+        `;
+      } else {
+        statusEl.innerHTML = `
+          <span class="status-icon bad">✕</span>
+          <span style="color: #881337;">Incorrect! The correct answer was ${letters[q.correctIndex]}. ${q.options[q.correctIndex]}.</span>
+        `;
+      }
+
+      document.getElementById("yp-paper-status").textContent =
+        `Youth Pastor: ${letters[q.ypIndex]}. ${q.options[q.ypIndex]} (${ypIsCorrect ? "Right ✓" : "Missed ✕"})`;
+      document.getElementById("scripture-ref").textContent = q.reference;
+      document.getElementById("yp-note-body").textContent = q.note;
+
+      const nextLabel = document.getElementById("next-btn-label");
+      if (outcome === "wrong") {
+        nextLabel.textContent = "See Final Results";
+      } else if (state.isBonus) {
+        nextLabel.textContent = "Claim $1,000,000 Victory!";
+      } else if (state.currentIdx === QUESTIONS.length - 1) {
+        nextLabel.textContent = "Continue to $1,000,000 Decision";
+      } else {
+        nextLabel.textContent = `Next Grade (${QUESTIONS[state.currentIdx + 1].grade})`;
+      }
+
+      document.getElementById("feedback-panel").classList.remove("hidden");
+      updateStatusAndLifelines();
+      renderLadder();
+    }
+
+    function handleNextStep() {
+      const lastEntry = state.history[state.history.length - 1];
+
+      if (lastEntry && lastEntry.outcome === "wrong") {
+        endGame("missed");
+        return;
+      }
+
+      if (state.isBonus) {
+        endGame("won_million");
+        return;
+      }
+
+      if (state.currentIdx < QUESTIONS.length - 1) {
+        state.currentIdx += 1;
+        renderQuestion();
+      } else {
+        // Show Pre-$1,000,000 Decision Screen after Grade 10 ($500,000)
+        document.getElementById("question-stage").classList.add("hidden");
+        document.getElementById("ladder-card").classList.add("hidden");
+        document.getElementById("bonus-decision-card").classList.remove("hidden");
+      }
+    }
+
+    function walkAwayAt500k() {
+      state.bankedPrize = 500000;
+      endGame("won_500k");
+    }
+
+    function startBonusQuestion() {
+      state.isBonus = true;
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      renderQuestion();
+    }
+
+    // Drop-Out Modal Controls
+    function openDropOutModal() {
+      if (state.answered || state.bankedPrize < 1000) return;
+      document.getElementById("modal-prize-text").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("dropout-modal").classList.remove("hidden");
+    }
+
+    function closeDropOutModal() {
+      document.getElementById("dropout-modal").classList.add("hidden");
+    }
+
+    function confirmDropOut() {
+      closeDropOutModal();
+      endGame("dropout");
+    }
+
+    // Final Results & Confession Screen
+    function endGame(outcomeType) {
+      state.endOutcomeType = outcomeType;
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.remove("hidden");
+
+      const iconEl = document.getElementById("result-icon");
+      const badgeEl = document.getElementById("result-badge");
+      const titleEl = document.getElementById("result-title");
+      const subEl = document.getElementById("result-subtitle");
+      const verdictEl = document.getElementById("result-verdict-container");
+
+      const totalAnswered = state.history.length;
+      const gradesCleared = state.history.filter(h => h.userPassed).length;
+      const matchedOrBeatYp = state.history.filter(h =>
+        h.userPassed || (!h.userPassed && !h.ypCorrect)
+      ).length;
+
+      if (outcomeType === "won_million") {
+        iconEl.textContent = "👑";
+        badgeEl.textContent = "$1,000,000 Grand Champion • Hard Mode";
+        badgeEl.className = "grade-badge bonus-mode";
+        titleEl.textContent = `Unbelievable, ${state.playerName}!`;
+        subEl.textContent = "You conquered all 10 Hard Mode grades AND the $1,000,000 Youth Pastor Question!";
+        verdictEl.innerHTML = `
+          <div class="victory-banner">
+            🎉 YOU ARE SMARTER THAN A YOUTH PASTOR!
+          </div>
+        `;
+      } else if (outcomeType === "won_500k") {
+        iconEl.textContent = "🏆";
+        badgeEl.textContent = "10th Grade Graduate • $500,000";
+        badgeEl.className = "grade-badge bonus-mode";
+        titleEl.textContent = `Congratulations, ${state.playerName}!`;
+        subEl.textContent = "You cleared all 10 Whole Bible Hard Mode grades and walked away with $500,000!";
+        verdictEl.innerHTML = `
+          <div class="victory-banner">
+            🎉 YOU ARE SMARTER THAN A YOUTH PASTOR!
+          </div>
+        `;
+      } else if (outcomeType === "dropout") {
+        iconEl.textContent = "🚪";
+        badgeEl.textContent = "Dropped Out";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Smart Play, ${state.playerName}!`;
+        subEl.textContent = `You locked in ${formatMoney(state.bankedPrize)} safely in the bank.`;
+        verdictEl.innerHTML = `
+          <div class="confession-box">
+            <div class="confession-label">📣 Read Aloud to the Group</div>
+            <div class="confession-quote">“I am NOT smarter than a Youth Pastor... yet!”</div>
+          </div>
+        `;
+      } else {
+        iconEl.textContent = "📖";
+        badgeEl.textContent = "Eliminated";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Good Effort, ${state.playerName}!`;
+        subEl.textContent = state.bankedPrize > 0
+          ? `Your safety net caught you! You still walk away with ${formatMoney(state.bankedPrize)}.`
+          : "You missed before reaching the $25,000 safety net, finishing with $0.";
+        verdictEl.innerHTML = `
+          <div class="confession-box">
+            <div class="confession-label">📣 Read Aloud to the Group</div>
+            <div class="confession-quote">“I am NOT smarter than a Youth Pastor... yet!”</div>
+          </div>
+        `;
+      }
+
+      document.getElementById("final-winnings").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("final-correct").textContent = `${gradesCleared} / ${totalAnswered}`;
+      document.getElementById("final-yp-match").textContent = `${matchedOrBeatYp} / ${totalAnswered}`;
+
+      const recapList = document.getElementById("recap-list");
+      recapList.innerHTML = "";
+
+      if (state.history.length === 0) {
+        recapList.innerHTML = '<div style="font-size: 12.5px; color: var(--muted);">No questions answered before dropping out.</div>';
+      } else {
+        state.history.forEach(item => {
+          const row = document.createElement("div");
+          row.className = "recap-item";
+          const tag = item.outcome === "correct"
+            ? '<span style="color: var(--emerald); font-weight: 700;">✓ Correct</span>'
+            : item.outcome === "saved"
+              ? '<span style="color: var(--gold); font-weight: 700;">🛡️ Auto-Saved</span>'
+              : '<span style="color: var(--rose); font-weight: 700;">✕ Missed</span>';
+
+          row.innerHTML = `
+            <div>
+              <strong>${item.grade} (${item.topic})</strong>
+              <div style="color: var(--muted); font-size: 11.5px;">Answer: ${item.correctAnswer}</div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              ${tag}
+              <div style="font-size: 11px; color: var(--muted);">${formatMoney(item.prize)}</div>
+            </div>
+          `;
+          recapList.appendChild(row);
+        });
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.style.opacity = "1";
+      toast.style.transform = "translateY(0)";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(10px)";
+      }, 2800);
+    }
+
+    function copyResultSummary() {
+      const totalAnswered = state.history.length;
+      const gradesCleared = state.history.filter(h => h.userPassed).length;
+      const matchedOrBeatYp = state.history.filter(h =>
+        h.userPassed || (!h.userPassed && !h.ypCorrect)
+      ).length;
+
+      const isWinner = state.endOutcomeType === "won_million" || state.endOutcomeType === "won_500k";
+      const verdict = isWinner
+        ? `🎉 YOU ARE SMARTER THAN A YOUTH PASTOR! (${formatMoney(state.bankedPrize)})`
+        : `📣 Confession: "I am NOT smarter than a Youth Pastor... yet!" (${formatMoney(state.bankedPrize)})`;
+
+      const summary = [
+        `📖 Are You Smarter Than a Youth Pastor? — Whole Bible Edition (Hard Mode)`,
+        `Contestant: ${state.playerName}`,
+        `Grades Cleared: ${gradesCleared} / ${totalAnswered}`,
+        `Youth Pastor Comparison: ${matchedOrBeatYp} / ${totalAnswered}`,
+        `Final Winnings: ${formatMoney(state.bankedPrize)}`,
+        verdict
+      ].join("\n");
+
+      const textarea = document.createElement("textarea");
+      textarea.value = summary;
+      textarea.style.position = "fixed";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      const btn = document.getElementById("copy-result-btn");
+      try {
+        document.execCommand("copy");
+        if (btn) btn.innerHTML = "<span>✓ Copied!</span>";
+        showToast("✓ Result copied to clipboard!");
+      } catch (err) {
+        showToast("Unable to copy automatically.");
+      } finally {
+        document.body.removeChild(textarea);
+        setTimeout(() => {
+          if (btn) btn.innerHTML = "<span>📋 Copy Result</span>";
+        }, 2400);
+      }
+    }
+  </script>
+
+</body></html>
