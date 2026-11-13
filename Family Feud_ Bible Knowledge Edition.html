@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/adamg/Downloads/family_feud_bible_knowledge_edition.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Feud: Bible Knowledge Edition</title>
+  <!-- Tailwind CSS -->
+  <script src="./Family Feud_ Bible Knowledge Edition_files/saved_resource"></script>
+  <!-- Google Fonts: Oswald, Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Family Feud_ Bible Knowledge Edition_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --stage-navy: #070d1f;
+      --stage-indigo: #111c3d;
+      --royal-crimson: #7f1d1d;
+      --gold-bright: #fde047;
+      --gold-warm: #f59e0b;
+      --gold-deep: #b45309;
+      --tile-blue-top: #1d4ed8;
+      --tile-blue-bot: #1e3a8a;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--stage-navy);
+      color: #f8fafc;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.24) 0%, transparent 52%),
+        radial-gradient(circle at 12% 25%, rgba(127, 29, 29, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 88% 25%, rgba(30, 58, 138, 0.42) 0%, transparent 48%),
+        linear-gradient(180deg, #060b19 0%, #0d1630 55%, #070b17 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Oswald', Impact, sans-serif;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+
+    /* Animated Stage Marquee Border */
+    .stage-board-frame {
+      background: linear-gradient(145deg, #162247 0%, #0b1229 100%);
+      border: 3px solid #f59e0b;
+      box-shadow:
+        0 0 0 4px #451a03,
+        0 0 36px rgba(245, 158, 11, 0.32),
+        inset 0 0 28px rgba(0, 0, 0, 0.75);
+      position: relative;
+    }
+
+    /* Dotted stage bulbs effect along top/bottom of board */
+    .stage-bulbs {
+      background-image: radial-gradient(circle, #fef08a 2px, transparent 2.5px);
+      background-size: 18px 8px;
+      animation: bulbPulse 1.6s infinite alternate;
+    }
+
+    @keyframes bulbPulse {
+      0% { opacity: 0.55; }
+      100% { opacity: 1; }
+    }
+
+    /* 3D Flip Card System for Answer Board */
+    .flip-slot {
+      perspective: 1000px;
+      height: 62px;
+    }
+
+    @media (min-width: 640px) {
+      .flip-slot {
+        height: 68px;
+      }
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .flip-slot.revealed .flip-inner {
+      transform: rotateX(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 0.65rem;
+      overflow: hidden;
+    }
+
+    /* Unrevealed Blue/Gold Beveled Tile */
+    .flip-front {
+      background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 48%, #1e3a8a 100%);
+      border: 2px solid #93c5fd;
+      box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.35),
+        inset 0 -3px 6px rgba(15, 23, 42, 0.6),
+        0 4px 10px rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flip-slot.host-clickable .flip-front:hover {
+      border-color: #fde047;
+      filter: brightness(1.12);
+      cursor: pointer;
+    }
+
+    .tile-number-oval {
+      background: radial-gradient(circle at 35% 30%, #1e3a8a, #0f172a);
+      border: 2px solid #fde047;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+
+    /* Revealed Answer Tile */
+    .flip-back {
+      transform: rotateX(180deg);
+      background: linear-gradient(180deg, #1e40af 0%, #172554 100%);
+      border: 2px solid #fbbf24;
+      box-shadow:
+        inset 0 1px 3px rgba(255, 255, 255, 0.25),
+        0 4px 12px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+
+    .points-box {
+      background: linear-gradient(180deg, #f59e0b 0%, #b45309 100%);
+      border-left: 2px solid #fef08a;
+      color: #090d16;
+      min-width: 58px;
+    }
+
+    @media (min-width: 640px) {
+      .points-box {
+        min-width: 68px;
+      }
+    }
+
+    /* LED Score & Bank Displays */
+    .led-display {
+      background: radial-gradient(circle at 50% 30%, #1e1b18 0%, #09090b 100%);
+      border: 2px solid #f59e0b;
+      box-shadow:
+        inset 0 0 16px rgba(245, 158, 11, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 0 14px rgba(251, 191, 36, 0.65);
+    }
+
+    .team-panel-active {
+      border-color: #fde047 !important;
+      box-shadow:
+        0 0 26px rgba(253, 224, 71, 0.35),
+        inset 0 0 14px rgba(253, 224, 71, 0.12) !important;
+    }
+
+    /* Big Red X Strike Overlay */
+    @keyframes strikeFlash {
+      0% {
+        opacity: 0;
+        transform: scale(0.45);
+      }
+      18% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+      80% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    .animate-strike-overlay {
+      animation: strikeFlash 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .red-x-box {
+      background: linear-gradient(180deg, #dc2626 0%, #7f1d1d 100%);
+      border: 5px solid #fef2f2;
+      box-shadow:
+        0 0 45px rgba(220, 38, 38, 0.85),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Gold Action Button */
+    .btn-gold {
+      background: linear-gradient(135deg, #fde047 0%, #f59e0b 55%, #d97706 100%);
+      color: #090d16;
+      border: 1px solid #fef9c3;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover:not(:disabled) {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 7px 22px rgba(245, 158, 11, 0.55);
+    }
+    .btn-gold:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef9c3 0%, #facc15 48%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-30{z-index:30}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-0\.5{margin-top:0.125rem;margin-bottom:0.125rem}.my-1{margin-top:0.25rem;margin-bottom:0.25rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-3\.5{margin-bottom:0.875rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mt-0\.5{margin-top:0.125rem}.mt-3\.5{margin-top:0.875rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-20{height:5rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-full{height:100%}.w-10{width:2.5rem}.w-2\.5{width:0.625rem}.w-20{width:5rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-amber-400\/35{border-color:rgb(251 191 36 / 0.35)}.border-amber-400\/40{border-color:rgb(251 191 36 / 0.4)}.border-amber-400\/45{border-color:rgb(251 191 36 / 0.45)}.border-amber-400\/50{border-color:rgb(251 191 36 / 0.5)}.border-amber-400\/60{border-color:rgb(251 191 36 / 0.6)}.border-amber-500\/20{border-color:rgb(245 158 11 / 0.2)}.border-amber-500\/25{border-color:rgb(245 158 11 / 0.25)}.border-amber-500\/30{border-color:rgb(245 158 11 / 0.3)}.border-amber-500\/40{border-color:rgb(245 158 11 / 0.4)}.border-blue-300{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity, 1))}.border-blue-400\/40{border-color:rgb(96 165 250 / 0.4)}.border-blue-500\/60{border-color:rgb(59 130 246 / 0.6)}.border-indigo-400\/40{border-color:rgb(129 140 248 / 0.4)}.border-indigo-400\/50{border-color:rgb(129 140 248 / 0.5)}.border-red-500\/60{border-color:rgb(239 68 68 / 0.6)}.border-rose-300{--tw-border-opacity:1;border-color:rgb(253 164 175 / var(--tw-border-opacity, 1))}.border-rose-400\/40{border-color:rgb(251 113 133 / 0.4)}.border-rose-500\/60{border-color:rgb(244 63 94 / 0.6)}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-700\/80{border-color:rgb(51 65 85 / 0.8)}.bg-amber-400\/15{background-color:rgb(251 191 36 / 0.15)}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-amber-500\/10{background-color:rgb(245 158 11 / 0.1)}.bg-amber-500\/15{background-color:rgb(245 158 11 / 0.15)}.bg-amber-500\/20{background-color:rgb(245 158 11 / 0.2)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-blue-950{--tw-bg-opacity:1;background-color:rgb(23 37 84 / var(--tw-bg-opacity, 1))}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-indigo-900\/90{background-color:rgb(49 46 129 / 0.9)}.bg-indigo-950\/90{background-color:rgb(30 27 75 / 0.9)}.bg-red-900\/80{background-color:rgb(127 29 29 / 0.8)}.bg-red-950{--tw-bg-opacity:1;background-color:rgb(69 10 10 / var(--tw-bg-opacity, 1))}.bg-red-950\/35{background-color:rgb(69 10 10 / 0.35)}.bg-red-950\/80{background-color:rgb(69 10 10 / 0.8)}.bg-rose-950{--tw-bg-opacity:1;background-color:rgb(76 5 25 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-900\/95{background-color:rgb(15 23 42 / 0.95)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.bg-slate-950\/85{background-color:rgb(2 6 23 / 0.85)}.bg-slate-950\/90{background-color:rgb(2 6 23 / 0.9)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-amber-400{--tw-gradient-from:#fbbf24 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 191 36 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-700{--tw-gradient-from:#1d4ed8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(29 78 216 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-rose-700{--tw-gradient-from:#be123c var(--tw-gradient-from-position);--tw-gradient-to:rgb(190 18 60 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-amber-600{--tw-gradient-to:rgb(217 119 6 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #d97706 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-blue-600{--tw-gradient-to:#2563eb var(--tw-gradient-to-position)}.to-red-900{--tw-gradient-to:#7f1d1d var(--tw-gradient-to-position)}.to-rose-600{--tw-gradient-to:#e11d48 var(--tw-gradient-to-position)}.p-0\.5{padding:0.125rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-3\.5{padding-bottom:0.875rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pt-1{padding-top:0.25rem}.pt-2{padding-top:0.5rem}.pt-3\.5{padding-top:0.875rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.tracking-\[0\.22em\]{letter-spacing:0.22em}.tracking-\[0\.25em\]{letter-spacing:0.25em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-100{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.text-amber-100\/90{color:rgb(254 243 199 / 0.9)}.text-amber-100\/95{color:rgb(254 243 199 / 0.95)}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-200\/80{color:rgb(253 230 138 / 0.8)}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-300\/80{color:rgb(252 211 77 / 0.8)}.text-amber-300\/85{color:rgb(252 211 77 / 0.85)}.text-amber-300\/90{color:rgb(252 211 77 / 0.9)}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity, 1))}.text-blue-300{--tw-text-opacity:1;color:rgb(147 197 253 / var(--tw-text-opacity, 1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255 / var(--tw-text-opacity, 1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254 / var(--tw-text-opacity, 1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.text-red-200{--tw-text-opacity:1;color:rgb(254 202 202 / var(--tw-text-opacity, 1))}.text-rose-200{--tw-text-opacity:1;color:rgb(254 205 211 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-\[2px\]{--tw-backdrop-blur:blur(2px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-amber-400\/30 *::selection{background-color:rgb(251 191 36 / 0.3)}.selection\:text-amber-200 *::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.selection\:bg-amber-400\/30::selection{background-color:rgb(251 191 36 / 0.3)}.selection\:text-amber-200::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.placeholder\:text-slate-500::placeholder{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.hover\:border-amber-400\/50:hover{border-color:rgb(251 191 36 / 0.5)}.hover\:bg-amber-500\/15:hover{background-color:rgb(245 158 11 / 0.15)}.hover\:bg-amber-500\/25:hover{background-color:rgb(245 158 11 / 0.25)}.hover\:bg-blue-900:hover{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-800:hover{--tw-bg-opacity:1;background-color:rgb(55 48 163 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-900:hover{--tw-bg-opacity:1;background-color:rgb(49 46 129 / var(--tw-bg-opacity, 1))}.hover\:bg-red-900:hover{--tw-bg-opacity:1;background-color:rgb(127 29 29 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-900:hover{--tw-bg-opacity:1;background-color:rgb(136 19 55 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:from-blue-600:hover{--tw-gradient-from:#2563eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 99 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:from-rose-600:hover{--tw-gradient-from:#e11d48 var(--tw-gradient-from-position);--tw-gradient-to:rgb(225 29 72 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-blue-500:hover{--tw-gradient-to:#3b82f6 var(--tw-gradient-to-position)}.hover\:to-rose-500:hover{--tw-gradient-to:#f43f5e var(--tw-gradient-to-position)}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-amber-300:focus{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.focus\:border-amber-400:focus{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:gap-3{gap:0.75rem}.sm\:gap-5{gap:1.25rem}.sm\:gap-6{gap:1.5rem}.sm\:p-10{padding:2.5rem}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:p-9{padding:2.25rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:px-7{padding-left:1.75rem;padding-right:1.75rem}.sm\:py-5{padding-top:1.25rem;padding-bottom:1.25rem}.sm\:py-7{padding-top:1.75rem;padding-bottom:1.75rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="flex flex-col justify-between selection:bg-amber-400/30 selection:text-amber-200">
+
+  <!-- ==================== DRAMATIC RED X STRIKE OVERLAY ==================== -->
+  <div id="strike-overlay" class="fixed inset-0 z-50 hidden items-center justify-center pointer-events-none bg-red-950/35 backdrop-blur-[2px]">
+    <div id="strike-x-container" class="flex items-center justify-center gap-4 sm:gap-6 px-4">
+      <!-- Populated dynamically with 1, 2, or 3 huge red X boxes -->
+    </div>
+  </div>
+
+  <!-- ==================== TOP STAGE HEADER ==================== -->
+  <header class="w-full border-b border-amber-500/30 bg-slate-950/85 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <!-- Show Logo -->
+      <button id="logo-home-btn" type="button" class="flex items-center gap-3 text-left group cursor-pointer" title="Return to Stage Lobby">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-600 to-red-900 p-0.5 shadow-lg">
+          <div class="w-full h-full rounded-[10px] bg-slate-950 flex items-center justify-center text-amber-300 font-cinzel font-black text-lg">
+            FF
+          </div>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-lg sm:text-xl font-black tracking-wider gold-gradient-text leading-none">
+            FAMILY FEUD
+          </h1>
+          <p class="text-[11px] uppercase tracking-[0.22em] text-amber-300/85 font-bold mt-0.5">
+            Bible Knowledge Edition
+          </p>
+        </div>
+      </button>
+
+      <!-- Round Indicator & Utility Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div id="header-round-pill" class="hidden px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/45 text-amber-200 text-xs font-extrabold uppercase tracking-wider">
+          Round 1 of 4 • 1x Points
+        </div>
+
+        <!-- Host Controls Quick Toggle (visible during game) -->
+        <button id="toggle-host-bar-btn" type="button" class="hidden px-3 py-1.5 rounded-xl bg-indigo-950/90 border border-indigo-400/40 text-indigo-200 hover:bg-indigo-900 text-xs font-bold transition cursor-pointer">
+          🎛️ Host Panel
+        </button>
+
+        <!-- Sound Toggle -->
+        <button id="sound-toggle-btn" type="button" title="Toggle Stage Audio" class="p-2 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-300 hover:bg-amber-500/15 transition cursor-pointer">
+          <svg id="icon-sound-on" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          </svg>
+          <svg id="icon-sound-off" class="w-5 h-5 hidden text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
+          </svg>
+        </button>
+
+        <!-- How to Play Modal Trigger -->
+        <button id="rules-btn" type="button" class="px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-400/45 text-amber-200 hover:bg-amber-500/25 text-xs font-bold transition cursor-pointer">
+          Rules
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN STAGE CONTAINER ==================== -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-3 sm:px-5 py-5 sm:py-7 flex flex-col items-center justify-center">
+
+    <!-- ==================== VIEW 1: GAME SETUP / LOBBY ==================== -->
+    <section id="lobby-view" class="w-full max-w-3xl">
+      <div class="stage-board-frame rounded-3xl overflow-hidden">
+        <div class="stage-bulbs h-2.5 w-full"></div>
+
+        <div class="p-6 sm:p-9">
+          <div class="text-center mb-7">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-red-950/80 border border-amber-400/45 text-amber-300 text-xs font-extrabold uppercase tracking-[0.22em] mb-2.5">
+              Survey Says...
+            </span>
+            <h2 class="font-cinzel text-3xl sm:text-5xl font-black gold-gradient-text mb-2">
+              FAMILY FEUD: BIBLE KNOWLEDGE
+            </h2>
+            <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
+              Put your Scripture knowledge to the test! Battle from Genesis to Revelation across 18 Bible surveys to reach <strong class="text-amber-300">Fast Money</strong>.
+            </p>
+          </div>
+
+          <!-- Team Name Inputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-blue-400/40">
+              <label for="input-team1-name" class="block text-xs uppercase tracking-wider text-blue-300 font-bold mb-1.5">
+                Team 1 Name
+              </label>
+              <input id="input-team1-name" type="text" value="The Bereans" maxlength="22" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-400 focus:outline-none text-white font-bold text-base">
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-rose-400/40">
+              <label for="input-team2-name" class="block text-xs uppercase tracking-wider text-rose-300 font-bold mb-1.5">
+                Team 2 Name
+              </label>
+              <input id="input-team2-name" type="text" value="The Scribes" maxlength="22" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-400 focus:outline-none text-white font-bold text-base">
+            </div>
+          </div>
+
+          <!-- Match Length Selection -->
+          <div class="mb-6">
+            <span class="block text-xs uppercase tracking-wider text-amber-300 font-bold mb-2">
+              Match Format
+            </span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="match-length-group">
+              <button type="button" data-rounds="3" class="length-option py-3 px-3 rounded-xl border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-amber-400/50 text-left transition cursor-pointer">
+                <span class="block font-bold text-sm text-white">Quick Match</span>
+                <span class="block text-[11px] text-slate-400">3 Rounds + Fast Money</span>
+              </button>
+              <button type="button" data-rounds="4" class="length-option active py-3 px-3 rounded-xl border-2 border-amber-400 bg-amber-400/15 text-amber-100 text-left transition cursor-pointer">
+                <span class="block font-bold text-sm text-amber-300">Standard TV Match</span>
+                <span class="block text-[11px] text-amber-200/80">4 Rounds (1x–3x) + Fast Money</span>
+              </button>
+              <button type="button" data-rounds="ENDLESS" class="length-option py-3 px-3 rounded-xl border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-amber-400/50 text-left transition cursor-pointer">
+                <span class="block font-bold text-sm text-white">Endless Free Play</span>
+                <span class="block text-[11px] text-slate-400">All 18 Bible Surveys</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Play Mode Toggle -->
+          <div class="mb-7">
+            <span class="block text-xs uppercase tracking-wider text-amber-300 font-bold mb-2">
+              Control Style
+            </span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="control-mode-group">
+              <button type="button" data-control="AUTO" class="control-option active py-3 px-4 rounded-xl border-2 border-amber-400 bg-amber-400/15 text-left transition cursor-pointer">
+                <span class="block font-bold text-sm text-amber-300">⌨️ Pass &amp; Play (Smart Auto-Match)</span>
+                <span class="block text-[11px] text-slate-300 mt-0.5">Type guesses with automatic synonym &amp; keyword matching + optional Host tools.</span>
+              </button>
+              <button type="button" data-control="HOST" class="control-option py-3 px-4 rounded-xl border border-slate-700 bg-slate-900/90 text-left hover:border-amber-400/50 transition cursor-pointer">
+                <span class="block font-bold text-sm text-white">🎛️ Live Host / Emcee Mode</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Click tiles directly to reveal answers, award strikes, and manage team banks.</span>
+              </button>
+            </div>
+          </div>
+
+          <button id="start-show-btn" type="button" class="btn-gold w-full py-4 rounded-2xl font-display text-xl sm:text-2xl font-bold tracking-wider uppercase cursor-pointer">
+            Take the Stage! →
+          </button>
+        </div>
+
+        <div class="stage-bulbs h-2.5 w-full"></div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: MAIN STAGE BOARD ==================== -->
+    <section id="stage-view" class="hidden w-full flex-col items-center">
+
+      <!-- TOP SCOREBOARD: TEAM 1 | ROUND BANK | TEAM 2 -->
+      <div class="w-full grid grid-cols-3 gap-2.5 sm:gap-5 mb-4 items-stretch">
+        <!-- Team 1 Score Box -->
+        <div id="team1-panel" class="led-display rounded-2xl p-3 sm:p-4 text-center flex flex-col justify-between transition">
+          <div class="flex items-center justify-center gap-1.5">
+            <span id="team1-control-dot" class="hidden w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span id="display-team1-name" class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-blue-300 truncate">
+              The Bereans
+            </span>
+          </div>
+          <div id="display-team1-score" class="font-display text-3xl sm:text-5xl font-bold text-amber-300 my-1">
+            0
+          </div>
+          <span id="team1-badge" class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400">
+            Waiting
+          </span>
+        </div>
+
+        <!-- Center Round Bank & Multiplier -->
+        <div class="led-display rounded-2xl p-3 sm:p-4 text-center flex flex-col justify-between border-amber-300">
+          <div class="flex items-center justify-center gap-1.5">
+            <span id="display-multiplier" class="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/50 text-[10px] sm:text-xs font-extrabold text-amber-300 uppercase">
+              1X POINTS
+            </span>
+          </div>
+          <div id="display-round-bank" class="font-display text-4xl sm:text-6xl font-bold text-white my-0.5">
+            0
+          </div>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-amber-400">
+            Round Bank
+          </span>
+        </div>
+
+        <!-- Team 2 Score Box -->
+        <div id="team2-panel" class="led-display rounded-2xl p-3 sm:p-4 text-center flex flex-col justify-between transition">
+          <div class="flex items-center justify-center gap-1.5">
+            <span id="team2-control-dot" class="hidden w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span id="display-team2-name" class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-rose-300 truncate">
+              The Scribes
+            </span>
+          </div>
+          <div id="display-team2-score" class="font-display text-3xl sm:text-5xl font-bold text-amber-300 my-1">
+            0
+          </div>
+          <span id="team2-badge" class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400">
+            Waiting
+          </span>
+        </div>
+      </div>
+
+      <!-- SURVEY PROMPT BANNER -->
+      <div class="w-full stage-board-frame rounded-2xl overflow-hidden mb-4">
+        <div class="stage-bulbs h-2 w-full"></div>
+        <div class="px-4 py-4 sm:px-7 sm:py-5 text-center">
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-1.5">
+            <span id="phase-pill" class="px-3 py-0.5 rounded-full bg-red-900/80 border border-amber-400/50 text-amber-200 text-[11px] font-extrabold uppercase tracking-widest">
+              Face-Off
+            </span>
+            <span id="survey-count-pill" class="text-xs text-amber-300/80 font-semibold">
+              Top 8 Answers on the Board
+            </span>
+          </div>
+          <h2 id="survey-question-text" class="font-display text-xl sm:text-3xl font-bold tracking-wide text-white uppercase">
+            Name one of the first five books of the Bible (The Pentateuch)
+          </h2>
+        </div>
+
+        <!-- 8-SLOT FAMILY FEUD FLIP BOARD (2 Columns x 4 Rows) -->
+        <div class="px-3 sm:px-6 pb-5">
+          <div id="answer-board-grid" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 bg-slate-950/90 p-3 sm:p-4 rounded-2xl border-2 border-amber-500/40">
+            <!-- 8 flip slots generated by JS -->
+          </div>
+
+          <!-- STRIKE LIGHTS ROW -->
+          <div class="mt-3.5 flex items-center justify-center gap-3">
+            <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Strikes:</span>
+            <div id="strike-indicators" class="flex items-center gap-2">
+              <span class="strike-pip w-8 h-8 rounded-lg border border-slate-700 bg-slate-900 flex items-center justify-center font-display font-bold text-slate-600 text-lg">X</span>
+              <span class="strike-pip w-8 h-8 rounded-lg border border-slate-700 bg-slate-900 flex items-center justify-center font-display font-bold text-slate-600 text-lg">X</span>
+              <span class="strike-pip w-8 h-8 rounded-lg border border-slate-700 bg-slate-900 flex items-center justify-center font-display font-bold text-slate-600 text-lg">X</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-bulbs h-2 w-full"></div>
+      </div>
+
+      <!-- ==================== DYNAMIC INTERACTION CONSOLE ==================== -->
+      <div class="w-full max-w-4xl bg-slate-900/95 border border-amber-500/40 rounded-2xl p-4 sm:p-5 shadow-2xl">
+
+        <!-- Status Announcement Line -->
+        <div id="stage-status-msg" class="text-center text-sm sm:text-base font-bold text-amber-200 mb-3.5">
+          Face-Off! Who buzzes in first to answer?
+        </div>
+
+        <!-- PHASE A: FACE-OFF BUZZER SELECTION -->
+        <div id="controls-faceoff-buzz" class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button id="buzz-team1-btn" type="button" class="w-full sm:w-auto flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 border-2 border-blue-300 text-white font-display text-lg font-bold tracking-wider uppercase shadow-lg transition cursor-pointer">
+            🔔 <span id="buzz-t1-label">The Bereans</span> Buzz In!
+          </button>
+          <button id="buzz-team2-btn" type="button" class="w-full sm:w-auto flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-600 hover:to-rose-500 border-2 border-rose-300 text-white font-display text-lg font-bold tracking-wider uppercase shadow-lg transition cursor-pointer">
+            🔔 <span id="buzz-t2-label">The Scribes</span> Buzz In!
+          </button>
+        </div>
+
+        <!-- PHASE B: PLAY OR PASS DECISION -->
+        <div id="controls-play-pass" class="hidden flex-col sm:flex-row items-center justify-center gap-3">
+          <button id="choose-play-btn" type="button" class="btn-gold w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl font-display text-lg font-bold tracking-wider uppercase cursor-pointer">
+            ▶ We Will PLAY the Board
+          </button>
+          <button id="choose-pass-btn" type="button" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 border-2 border-amber-400/50 text-amber-200 font-display text-lg font-bold tracking-wider uppercase transition cursor-pointer">
+            ⇄ PASS to Other Team
+          </button>
+        </div>
+
+        <!-- PHASE C: GUESS INPUT FORM -->
+        <form id="guess-form" class="hidden flex-col sm:flex-row items-stretch gap-2.5">
+          <input id="guess-input" type="text" autocomplete="off" placeholder="Type your Bible knowledge answer..." class="flex-1 px-4 py-3.5 rounded-xl bg-slate-950 border-2 border-amber-400/50 focus:border-amber-300 focus:outline-none text-white font-semibold text-base placeholder:text-slate-500">
+          <button type="submit" class="btn-gold px-7 py-3.5 rounded-xl font-display text-lg font-bold tracking-wider uppercase cursor-pointer">
+            Survey Says!
+          </button>
+        </form>
+
+        <!-- PHASE D: ROUND OVER / SCRIPTURE NOTE & NEXT ROUND CONTROLS -->
+        <div id="controls-round-end" class="hidden flex-col items-center gap-3.5">
+          <!-- Scripture Connection Callout -->
+          <div id="round-scripture-note" class="w-full p-3.5 rounded-xl bg-amber-500/10 border border-amber-400/35 text-center">
+            <span id="scripture-ref-badge" class="inline-block px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-extrabold uppercase tracking-wider mb-1">
+              Genesis 1:1 – Deuteronomy 34:12
+            </span>
+            <p id="scripture-note-text" class="text-xs sm:text-sm text-amber-100/95 leading-relaxed">
+              The Pentateuch (Torah) comprises the first five books of the Old Testament: Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.
+            </p>
+          </div>
+
+          <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button id="reveal-remaining-btn" type="button" class="w-full sm:w-auto py-3 px-5 rounded-xl bg-indigo-900/90 hover:bg-indigo-800 border border-indigo-400/50 text-indigo-100 font-bold text-sm transition cursor-pointer">
+              Reveal Remaining Answers
+            </button>
+            <button id="next-round-btn" type="button" class="btn-gold w-full sm:w-auto py-3 px-7 rounded-xl font-display text-lg font-bold tracking-wider uppercase cursor-pointer">
+              Next Round →
+            </button>
+          </div>
+        </div>
+
+        <!-- HOST / EMCEE OVERRIDE DRAWER -->
+        <div id="host-control-drawer" class="hidden mt-4 pt-4 border-t border-slate-700/80">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-300">
+              🎛️ Host Controls (Click any numbered tile above to flip it)
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <button id="host-strike-btn" type="button" class="py-2 px-3 rounded-xl bg-red-950 hover:bg-red-900 border border-red-500/60 text-red-200 font-bold text-xs transition cursor-pointer">
+              ❌ Give Strike (X)
+            </button>
+            <button id="host-award-t1-btn" type="button" class="py-2 px-3 rounded-xl bg-blue-950 hover:bg-blue-900 border border-blue-500/60 text-blue-200 font-bold text-xs transition cursor-pointer">
+              🏆 Award Bank → T1
+            </button>
+            <button id="host-award-t2-btn" type="button" class="py-2 px-3 rounded-xl bg-rose-950 hover:bg-rose-900 border border-rose-500/60 text-rose-200 font-bold text-xs transition cursor-pointer">
+              🏆 Award Bank → T2
+            </button>
+            <button id="host-reveal-all-btn" type="button" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 font-bold text-xs transition cursor-pointer">
+              👁️ Reveal All Tiles
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: FAST MONEY BONUS ROUND ==================== -->
+    <section id="fastmoney-view" class="hidden w-full max-w-4xl flex-col items-center">
+      <div class="w-full stage-board-frame rounded-3xl overflow-hidden">
+        <div class="stage-bulbs h-2.5 w-full"></div>
+
+        <div class="p-5 sm:p-8">
+          <!-- Fast Money Header & 60s Timer -->
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-amber-500/30 pb-4 mb-5">
+            <div>
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-1">
+                Bonus Championship Round
+              </span>
+              <h2 class="font-cinzel text-2xl sm:text-4xl font-black gold-gradient-text">
+                FAST MONEY: <span id="fm-team-name">THE BEREANS</span>
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-300 mt-0.5">
+                Answer 5 rapid-fire Bible knowledge prompts in 60 seconds! Reach <strong class="text-amber-300">200 points</strong> to win the Grand Title!
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="led-display px-4 py-2.5 rounded-2xl text-center">
+                <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Timer</span>
+                <span id="fm-timer" class="font-display text-3xl sm:text-4xl font-bold text-rose-400">60</span>
+              </div>
+              <div class="led-display px-4 py-2.5 rounded-2xl text-center">
+                <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Total / 200</span>
+                <span id="fm-total-score" class="font-display text-3xl sm:text-4xl font-bold text-amber-300">0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pre-Start Fast Money Intro -->
+          <div id="fm-intro-box" class="text-center py-6">
+            <p class="text-sm sm:text-base text-amber-100/90 max-w-xl mx-auto mb-5 leading-relaxed">
+              Congratulations to <strong id="fm-intro-winner" class="text-amber-300">The Bereans</strong> on winning the main match! You will face 5 rapid-fire Scripture survey questions. Type the top survey answer for each prompt before the 60-second clock expires!
+            </p>
+            <button id="fm-start-clock-btn" type="button" class="btn-gold px-8 py-4 rounded-2xl font-display text-xl font-bold tracking-wider uppercase cursor-pointer">
+              ⏱️ Start 60-Second Fast Money!
+            </button>
+          </div>
+
+          <!-- Active Fast Money Questions & Tally Board -->
+          <div id="fm-play-area" class="hidden">
+            <div id="fm-active-prompt-card" class="p-4 sm:p-5 rounded-2xl bg-slate-950/90 border-2 border-amber-400/60 mb-5">
+              <div class="flex items-center justify-between text-xs font-bold text-amber-300 uppercase tracking-wider mb-1.5">
+                <span id="fm-q-number">Question 1 of 5</span>
+                <span>Top Survey Answer Worth Up To 54 Pts</span>
+              </div>
+              <h3 id="fm-q-text" class="font-display text-xl sm:text-2xl font-bold text-white mb-3.5">
+                Name one of the Four Gospels in the New Testament
+              </h3>
+              <form id="fm-form" class="flex flex-col sm:flex-row gap-2.5">
+                <input id="fm-input" type="text" autocomplete="off" placeholder="Quick! Type top Bible survey answer..." class="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-amber-400/50 focus:border-amber-300 focus:outline-none text-white font-semibold text-base">
+                <button type="submit" class="btn-gold px-6 py-3 rounded-xl font-display text-base font-bold tracking-wider uppercase cursor-pointer">
+                  Lock In →
+                </button>
+              </form>
+            </div>
+
+            <!-- 5-Row Fast Money Scoreboard -->
+            <div id="fm-board-rows" class="space-y-2 mb-5">
+              <!-- Populated dynamically -->
+            </div>
+
+            <!-- Post-Fast-Money Action -->
+            <div id="fm-finish-bar" class="hidden text-center pt-2">
+              <button id="fm-to-podium-btn" type="button" class="btn-gold px-8 py-3.5 rounded-2xl font-display text-lg font-bold tracking-wider uppercase cursor-pointer">
+                View Final Podium 🏆
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-bulbs h-2.5 w-full"></div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: FINAL VICTORY / PODIUM SCREEN ==================== -->
+    <section id="victory-view" class="hidden w-full max-w-2xl">
+      <div class="stage-board-frame rounded-3xl overflow-hidden text-center">
+        <div class="stage-bulbs h-2.5 w-full"></div>
+        <div class="p-6 sm:p-10">
+          <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-400/20 border-2 border-amber-400 flex items-center justify-center text-4xl shadow-lg">
+            🏆
+          </div>
+          <p id="victory-kicker" class="text-xs uppercase tracking-[0.25em] text-amber-300 font-extrabold mb-1">
+            Match Complete
+          </p>
+          <h2 id="victory-headline" class="font-cinzel text-3xl sm:text-5xl font-black gold-gradient-text mb-3">
+            The Bereans Win!
+          </h2>
+          <p id="victory-subtext" class="text-sm sm:text-base text-slate-300 max-w-lg mx-auto mb-6 leading-relaxed">
+            What a match! Both teams demonstrated remarkable command of the Old and New Testaments.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="led-display p-4 rounded-2xl">
+              <span id="vic-t1-name" class="block text-xs uppercase font-bold text-blue-300 mb-1">The Bereans</span>
+              <span id="vic-t1-score" class="font-display text-4xl font-bold text-amber-300">0</span>
+            </div>
+            <div class="led-display p-4 rounded-2xl">
+              <span id="vic-t2-name" class="block text-xs uppercase font-bold text-rose-300 mb-1">The Scribes</span>
+              <span id="vic-t2-score" class="font-display text-4xl font-bold text-amber-300">0</span>
+            </div>
+          </div>
+
+          <div id="vic-fastmoney-banner" class="hidden p-4 rounded-2xl bg-amber-500/15 border border-amber-400/50 text-amber-200 text-sm font-bold mb-6">
+            Fast Money Score: 215 / 200 — GRAND CHAMPIONS!
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <button id="play-again-btn" type="button" class="btn-gold px-7 py-3.5 rounded-xl font-display text-lg font-bold tracking-wider uppercase cursor-pointer">
+              Play New Match ↻
+            </button>
+            <button id="copy-match-btn" type="button" class="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-400/40 text-amber-200 font-bold text-sm transition cursor-pointer">
+              <span id="copy-match-text">Copy Match Summary</span>
+            </button>
+          </div>
+        </div>
+        <div class="stage-bulbs h-2.5 w-full"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full border-t border-amber-500/20 py-3.5 px-4 text-center text-xs text-slate-400">
+    <p>Family Feud: Bible Knowledge Edition • Old &amp; New Testament Game Show</p>
+  </footer>
+
+  <!-- ==================== HOW TO PLAY / RULES MODAL ==================== -->
+  <div id="rules-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="stage-board-frame max-w-lg w-full rounded-2xl p-6 sm:p-7 text-left shadow-2xl">
+      <div class="flex items-center justify-between border-b border-amber-500/30 pb-3.5 mb-4">
+        <h3 class="font-cinzel text-xl sm:text-2xl font-black gold-gradient-text">How to Play</h3>
+        <button id="close-rules-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+      <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
+        <p><strong>1. The Face-Off:</strong> Two teams buzz in to give a top Bible survey answer. Whoever lands the higher-ranked answer chooses to <strong>Play</strong> or <strong>Pass</strong> the board.</p>
+        <p><strong>2. Clearing the Board:</strong> The controlling team guesses answers to build the <strong>Round Bank</strong>. Wrong guesses earn a <strong class="text-rose-400">Strike (X)</strong>.</p>
+        <p><strong>3. Three Strikes &amp; The Steal:</strong> After 3 strikes, the opposing team gets <strong>one chance to steal</strong> the entire Round Bank with any remaining unrevealed answer!</p>
+        <p><strong>4. Multipliers &amp; Fast Money:</strong> Rounds 1–2 pay <strong>1x</strong>, Round 3 pays <strong>2x</strong>, and Round 4 pays <strong>3x</strong>. The winning team advances to the 60-second <strong>Fast Money</strong> bonus round to reach 200 points!</p>
+        <p class="text-xs text-amber-300/90 pt-1">💡 Tip: Toggle <strong>Host Panel</strong> in the header anytime if an emcee wants to click tiles directly for a live church, class, or small group.</p>
+      </div>
+      <div class="mt-5 pt-3.5 border-t border-amber-500/25 flex justify-end">
+        <button id="got-it-rules-btn" type="button" class="btn-gold px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer">
+          Back to Stage
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * =========================================================================
+     * 1. SURVEY BANK: 18 BIBLE KNOWLEDGE FAMILY FEUD SURVEYS (100 Points Each)
+     * Spans Old & New Testaments with fuzzy keywords & Scripture notes.
+     * =========================================================================
+     */
+    const BIBLE_SURVEY_BANK = [
+      {
+        question: 'Name one of the first five books of the Bible (The Pentateuch / Torah)',
+        scriptureRef: 'Genesis 1:1 – Deuteronomy 34:12',
+        scriptureNote: 'The Pentateuch (Torah) comprises the first five foundational books of Scripture: Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.',
+        answers: [
+          { label: 'Genesis', points: 36, keywords: ['genesis', 'gen'] },
+          { label: 'Exodus', points: 26, keywords: ['exodus', 'ex'] },
+          { label: 'Leviticus', points: 15, keywords: ['leviticus', 'lev'] },
+          { label: 'Deuteronomy', points: 13, keywords: ['deuteronomy', 'deut'] },
+          { label: 'Numbers', points: 10, keywords: ['numbers', 'num'] }
+        ]
+      },
+      {
+        question: 'Name one of Jesus’ Twelve Apostles',
+        scriptureRef: 'Matthew 10:2–4',
+        scriptureNote: 'Jesus appointed twelve apostles to be with Him and to preach the gospel, later choosing Matthias to replace Judas Iscariot in Acts 1.',
+        answers: [
+          { label: 'Peter (Simon Peter)', points: 33, keywords: ['peter', 'simon', 'cephas'] },
+          { label: 'John', points: 20, keywords: ['john'] },
+          { label: 'Judas Iscariot', points: 16, keywords: ['judas', 'iscariot'] },
+          { label: 'Matthew', points: 11, keywords: ['matthew', 'levi'] },
+          { label: 'Thomas', points: 8, keywords: ['thomas', 'doubting'] },
+          { label: 'James', points: 6, keywords: ['james'] },
+          { label: 'Andrew', points: 4, keywords: ['andrew'] },
+          { label: 'Philip / Bartholomew / Matthias', points: 2, keywords: ['philip', 'bartholomew', 'nathanael', 'thaddaeus', 'matthias'] }
+        ]
+      },
+      {
+        question: 'Name one of the Ten Commandments given on Mount Sinai',
+        scriptureRef: 'Exodus 20:3–17',
+        scriptureNote: 'God spoke the Ten Commandments to Moses on Mount Sinai—summarized by Jesus as loving God wholeheartedly and loving your neighbor as yourself.',
+        answers: [
+          { label: 'Do Not Murder / Kill', points: 26, keywords: ['murder', 'kill'] },
+          { label: 'Honor Your Father and Mother', points: 20, keywords: ['honor', 'father', 'mother', 'parents'] },
+          { label: 'Do Not Steal', points: 16, keywords: ['steal', 'theft'] },
+          { label: 'Have No Other Gods Before Me', points: 12, keywords: ['other gods', 'no gods', 'first', 'god'] },
+          { label: 'Do Not Bear False Witness / Lie', points: 10, keywords: ['lie', 'false', 'witness'] },
+          { label: 'Do Not Commit Adultery', points: 7, keywords: ['adultery', 'faithful'] },
+          { label: 'Remember the Sabbath Day', points: 5, keywords: ['sabbath', 'holy', 'rest'] },
+          { label: 'No Idols / Do Not Covet / Lord’s Name', points: 4, keywords: ['idol', 'idols', 'covet', 'vain', 'name'] }
+        ]
+      },
+      {
+        question: 'Name a king of Israel or Judah in the Old Testament',
+        scriptureRef: '1 Samuel 10:1 & 1 Kings 11:42',
+        scriptureNote: 'Saul, David, and Solomon each reigned 40 years over the united kingdom of Israel before it divided into Israel (north) and Judah (south).',
+        answers: [
+          { label: 'King David', points: 35, keywords: ['david'] },
+          { label: 'King Solomon', points: 28, keywords: ['solomon'] },
+          { label: 'King Saul', points: 16, keywords: ['saul'] },
+          { label: 'King Josiah', points: 8, keywords: ['josiah'] },
+          { label: 'King Hezekiah', points: 6, keywords: ['hezekiah'] },
+          { label: 'King Ahab', points: 4, keywords: ['ahab'] },
+          { label: 'King Jeroboam / Rehoboam / Manasseh', points: 3, keywords: ['jeroboam', 'rehoboam', 'manasseh', 'uzziah', 'jehoshaphat'] }
+        ]
+      },
+      {
+        question: 'Name a Major or Minor Prophet of the Old Testament',
+        scriptureRef: 'Isaiah 6:8 & Jeremiah 1:5',
+        scriptureNote: 'The Old Testament concludes with 17 prophetic books—5 Major Prophets (Isaiah through Daniel) and 12 Minor Prophets (Hosea through Malachi).',
+        answers: [
+          { label: 'Isaiah', points: 26, keywords: ['isaiah'] },
+          { label: 'Elijah', points: 21, keywords: ['elijah'] },
+          { label: 'Jeremiah', points: 16, keywords: ['jeremiah'] },
+          { label: 'Daniel', points: 13, keywords: ['daniel'] },
+          { label: 'Jonah', points: 10, keywords: ['jonah'] },
+          { label: 'Ezekiel', points: 6, keywords: ['ezekiel'] },
+          { label: 'Elisha', points: 5, keywords: ['elisha'] },
+          { label: 'Amos / Micah / Hosea / Malachi', points: 3, keywords: ['amos', 'micah', 'hosea', 'malachi', 'samuel', 'joel', 'habakkuk'] }
+        ]
+      },
+      {
+        question: 'Name a miracle Jesus performed in the Four Gospels',
+        scriptureRef: 'John 2:11 & Mark 4:39',
+        scriptureNote: 'Jesus’ miracles demonstrated His divine authority over nature, sickness, demonic forces, and even death itself.',
+        answers: [
+          { label: 'Turning Water into Wine', points: 27, keywords: ['wine', 'water', 'cana'] },
+          { label: 'Feeding the 5,000', points: 24, keywords: ['5000', '5,000', 'five thousand', 'loaves', 'fish', 'bread', 'crowd'] },
+          { label: 'Walking on Water', points: 18, keywords: ['walk', 'walking', 'sea', 'lake', 'waves'] },
+          { label: 'Raising Lazarus from the Dead', points: 14, keywords: ['lazarus', 'dead', 'raise', 'raising', 'resurrect'] },
+          { label: 'Healing the Blind', points: 8, keywords: ['blind', 'sight', 'eyes', 'bartimaeus'] },
+          { label: 'Calming the Storm', points: 5, keywords: ['storm', 'wind', 'calm'] },
+          { label: 'Healing Lepers / Paralytic', points: 4, keywords: ['leper', 'leprosy', 'paralytic', 'lame', 'heal'] }
+        ]
+      },
+      {
+        question: 'Name one of the Parables Jesus told',
+        scriptureRef: 'Luke 10:30 & Luke 15:11',
+        scriptureNote: 'Jesus used earthly stories with heavenly meaning—such as the Good Samaritan and Prodigal Son—to reveal the Kingdom of God.',
+        answers: [
+          { label: 'The Good Samaritan', points: 31, keywords: ['samaritan'] },
+          { label: 'The Prodigal Son', points: 27, keywords: ['prodigal', 'lost son'] },
+          { label: 'The Lost Sheep', points: 15, keywords: ['sheep', '99', 'ninety'] },
+          { label: 'The Sower and the Seeds', points: 10, keywords: ['sower', 'seed', 'seeds', 'soil'] },
+          { label: 'The Mustard Seed', points: 8, keywords: ['mustard'] },
+          { label: 'The Ten Virgins', points: 5, keywords: ['virgin', 'virgins', 'lamps', 'oil'] },
+          { label: 'The Talents / Lost Coin / Pearl', points: 4, keywords: ['talent', 'talents', 'coin', 'pearl', 'rich fool'] }
+        ]
+      },
+      {
+        question: 'Name one of the Fruits of the Spirit in Galatians 5',
+        scriptureRef: 'Galatians 5:22–23',
+        scriptureNote: 'Paul contrasts the works of the flesh with the ninefold Fruit of the Spirit produced in believers who walk by the Spirit.',
+        answers: [
+          { label: 'Love', points: 30, keywords: ['love'] },
+          { label: 'Joy', points: 19, keywords: ['joy', 'joyful'] },
+          { label: 'Peace', points: 16, keywords: ['peace', 'peaceful'] },
+          { label: 'Patience', points: 12, keywords: ['patience', 'patient', 'longsuffering'] },
+          { label: 'Kindness', points: 9, keywords: ['kindness', 'kind'] },
+          { label: 'Faithfulness', points: 6, keywords: ['faithfulness', 'faithful', 'faith'] },
+          { label: 'Goodness / Gentleness', points: 5, keywords: ['goodness', 'good', 'gentleness', 'gentle', 'meekness'] },
+          { label: 'Self-Control', points: 3, keywords: ['self-control', 'self control', 'temperance'] }
+        ]
+      },
+      {
+        question: 'Name a piece of the Full Armor of God in Ephesians 6',
+        scriptureRef: 'Ephesians 6:13–17',
+        scriptureNote: 'Writing from Roman custody, Paul used the imagery of a Roman soldier’s armor to describe spiritual readiness in Christ.',
+        answers: [
+          { label: 'Shield of Faith', points: 28, keywords: ['shield', 'faith'] },
+          { label: 'Sword of the Spirit', points: 24, keywords: ['sword', 'spirit', 'word'] },
+          { label: 'Helmet of Salvation', points: 19, keywords: ['helmet', 'salvation'] },
+          { label: 'Breastplate of Righteousness', points: 14, keywords: ['breastplate', 'righteousness', 'chest'] },
+          { label: 'Belt of Truth', points: 9, keywords: ['belt', 'truth', 'waist'] },
+          { label: 'Shoes / Gospel of Peace', points: 6, keywords: ['shoe', 'shoes', 'sandals', 'feet', 'boot', 'boots', 'peace'] }
+        ]
+      },
+      {
+        question: 'Name one of the Ten Plagues God sent upon Egypt',
+        scriptureRef: 'Exodus 7:14 – Exodus 12:29',
+        scriptureNote: 'Each of the ten plagues demonstrated the Lord’s supremacy over Egypt’s false deities and led to Israel’s Exodus.',
+        answers: [
+          { label: 'Water Turned to Blood', points: 27, keywords: ['blood', 'river', 'nile'] },
+          { label: 'Frogs', points: 22, keywords: ['frog', 'frogs'] },
+          { label: 'Locusts', points: 17, keywords: ['locust', 'locusts', 'grasshopper'] },
+          { label: 'Three Days of Darkness', points: 13, keywords: ['dark', 'darkness'] },
+          { label: 'Death of the Firstborn', points: 9, keywords: ['firstborn', 'first born', 'death', 'passover'] },
+          { label: 'Lice / Gnats / Flies', points: 6, keywords: ['lice', 'gnat', 'gnats', 'flies', 'fly', 'insects'] },
+          { label: 'Hail and Fire', points: 4, keywords: ['hail', 'storm'] },
+          { label: 'Boils / Death of Livestock', points: 2, keywords: ['boil', 'boils', 'livestock', 'cattle', 'sores'] }
+        ]
+      },
+      {
+        question: 'Name a human author who wrote books of the Bible',
+        scriptureRef: '2 Peter 1:21 & 2 Timothy 3:16',
+        scriptureNote: 'Over 1,500 years, roughly 40 human authors—kings, fishermen, prophets, a physician, and a tax collector—wrote as carried along by the Holy Spirit.',
+        answers: [
+          { label: 'Apostle Paul', points: 32, keywords: ['paul', 'saul'] },
+          { label: 'Moses', points: 24, keywords: ['moses'] },
+          { label: 'Apostle John', points: 14, keywords: ['john'] },
+          { label: 'King David', points: 11, keywords: ['david'] },
+          { label: 'Luke (The Physician)', points: 7, keywords: ['luke'] },
+          { label: 'King Solomon', points: 5, keywords: ['solomon'] },
+          { label: 'Matthew / Mark / Peter', points: 4, keywords: ['matthew', 'mark', 'peter'] },
+          { label: 'Isaiah / Jeremiah / James', points: 3, keywords: ['isaiah', 'jeremiah', 'james', 'daniel', 'jude', 'ezra'] }
+        ]
+      },
+      {
+        question: 'Name a prominent woman in the Old or New Testament',
+        scriptureRef: 'Ruth 1:16 & Esther 4:14',
+        scriptureNote: 'From matriarchs and judges to queens and disciples, women play pivotal roles throughout God’s redemptive story.',
+        answers: [
+          { label: 'Mary (Mother of Jesus)', points: 28, keywords: ['mary'] },
+          { label: 'Queen Esther', points: 23, keywords: ['esther', 'hadassah'] },
+          { label: 'Ruth', points: 18, keywords: ['ruth'] },
+          { label: 'Eve', points: 11, keywords: ['eve'] },
+          { label: 'Sarah', points: 8, keywords: ['sarah', 'sarai'] },
+          { label: 'Deborah', points: 6, keywords: ['deborah'] },
+          { label: 'Mary Magdalene / Martha', points: 4, keywords: ['magdalene', 'martha'] },
+          { label: 'Rahab / Hannah / Rebekah', points: 2, keywords: ['rahab', 'hannah', 'rebekah', 'rebecca', 'lydia'] }
+        ]
+      },
+      {
+        question: 'Name a famous mountain mentioned in Scripture',
+        scriptureRef: 'Exodus 19:20 & Acts 1:12',
+        scriptureNote: 'Mountains in Scripture often serve as places of divine encounter—from Sinai and Carmel to the Mount of Olives.',
+        answers: [
+          { label: 'Mount Sinai (Horeb)', points: 34, keywords: ['sinai', 'horeb'] },
+          { label: 'Mount of Olives', points: 23, keywords: ['olive', 'olives'] },
+          { label: 'Mount Ararat', points: 16, keywords: ['ararat', 'ark'] },
+          { label: 'Mount Carmel', points: 11, keywords: ['carmel'] },
+          { label: 'Mount Zion', points: 9, keywords: ['zion'] },
+          { label: 'Mount Moriah / Calvary / Nebo', points: 7, keywords: ['moriah', 'calvary', 'golgotha', 'tabor', 'nebo', 'hermon'] }
+        ]
+      },
+      {
+        question: 'Name a river, sea, or body of water in the Bible',
+        scriptureRef: 'Exodus 14:21 & Mark 1:9',
+        scriptureNote: 'From Israel crossing the Red Sea on dry ground to Jesus’ baptism in the Jordan, waters mark turning points in Bible history.',
+        answers: [
+          { label: 'The Red Sea', points: 34, keywords: ['red', 'red sea'] },
+          { label: 'The Jordan River', points: 28, keywords: ['jordan'] },
+          { label: 'Sea of Galilee', points: 18, keywords: ['galilee', 'tiberias', 'gennesaret'] },
+          { label: 'The Nile River', points: 10, keywords: ['nile'] },
+          { label: 'The Dead Sea (Salt Sea)', points: 6, keywords: ['dead', 'salt'] },
+          { label: 'Euphrates / Tigris / Mediterranean', points: 4, keywords: ['euphrates', 'tigris', 'mediterranean', 'great sea'] }
+        ]
+      },
+      {
+        question: 'Name an animal featured in a famous Bible story',
+        scriptureRef: 'Daniel 6:22 & Jonah 1:17',
+        scriptureNote: 'Scripture includes memorable encounters with lions, a great fish, Balaam’s donkey, Noah’s dove, and the Lamb of God.',
+        answers: [
+          { label: 'Lion (Daniel / Samson / Judah)', points: 29, keywords: ['lion', 'lions'] },
+          { label: 'Great Fish / Whale (Jonah)', points: 23, keywords: ['fish', 'whale', 'jonah'] },
+          { label: 'Sheep / Lamb', points: 17, keywords: ['sheep', 'lamb', 'ram'] },
+          { label: 'Donkey (Balaam / Palm Sunday)', points: 13, keywords: ['donkey', 'colt', 'ass'] },
+          { label: 'Serpent / Snake (Eden / Bronze)', points: 9, keywords: ['serpent', 'snake', 'viper'] },
+          { label: 'Dove / Raven (Noah / Baptism)', points: 5, keywords: ['dove', 'raven', 'bird', 'birds'] },
+          { label: 'Camel / Pig / Rooster', points: 4, keywords: ['camel', 'pig', 'pigs', 'swine', 'rooster', 'cock', 'frog'] }
+        ]
+      },
+      {
+        question: 'Name a book of the New Testament written by the Apostle Paul',
+        scriptureRef: 'Romans 1:1 & Philippians 1:1',
+        scriptureNote: 'Paul authored thirteen New Testament epistles addressed to churches and fellow workers across the Roman Empire.',
+        answers: [
+          { label: 'Romans', points: 31, keywords: ['romans'] },
+          { label: '1 & 2 Corinthians', points: 23, keywords: ['corinthians', 'corinthian'] },
+          { label: 'Ephesians', points: 16, keywords: ['ephesians'] },
+          { label: 'Galatians', points: 11, keywords: ['galatians'] },
+          { label: 'Philippians', points: 9, keywords: ['philippians'] },
+          { label: '1 & 2 Timothy', points: 5, keywords: ['timothy'] },
+          { label: 'Colossians / 1 & 2 Thessalonians', points: 3, keywords: ['colossians', 'thessalonians'] },
+          { label: 'Titus / Philemon', points: 2, keywords: ['titus', 'philemon'] }
+        ]
+      },
+      {
+        question: 'Name one of the seven churches of Revelation (Chapters 2–3)',
+        scriptureRef: 'Revelation 1:11 & 2:1–3:22',
+        scriptureNote: 'The risen Christ dictated letters to seven churches in Asia Minor: Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea.',
+        answers: [
+          { label: 'Ephesus', points: 32, keywords: ['ephesus'] },
+          { label: 'Laodicea', points: 26, keywords: ['laodicea'] },
+          { label: 'Philadelphia', points: 16, keywords: ['philadelphia'] },
+          { label: 'Smyrna', points: 10, keywords: ['smyrna'] },
+          { label: 'Sardis', points: 7, keywords: ['sardis'] },
+          { label: 'Pergamum (Pergamos)', points: 5, keywords: ['pergamum', 'pergamos'] },
+          { label: 'Thyatira', points: 4, keywords: ['thyatira'] }
+        ]
+      },
+      {
+        question: 'Name one of the twelve tribes of Israel',
+        scriptureRef: 'Genesis 49:28 & Revelation 7:5–8',
+        scriptureNote: 'Descended from the twelve sons of Jacob (Israel), each tribe received an inheritance in the Promised Land except Levi, whose inheritance was the Lord.',
+        answers: [
+          { label: 'Judah', points: 34, keywords: ['judah'] },
+          { label: 'Levi', points: 21, keywords: ['levi', 'levite'] },
+          { label: 'Benjamin', points: 16, keywords: ['benjamin'] },
+          { label: 'Joseph (Ephraim & Manasseh)', points: 11, keywords: ['joseph', 'ephraim', 'manasseh'] },
+          { label: 'Reuben', points: 7, keywords: ['reuben'] },
+          { label: 'Dan / Simeon / Gad', points: 6, keywords: ['dan', 'simeon', 'gad'] },
+          { label: 'Asher / Naphtali / Zebulun / Issachar', points: 5, keywords: ['asher', 'naphtali', 'zebulun', 'issachar'] }
+        ]
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * 2. FAST MONEY 5-QUESTION LIGHTNING BANK (Bible Knowledge Edition)
+     * =========================================================================
+     */
+    const BIBLE_FAST_MONEY_BANK = [
+      {
+        prompt: 'Name the very first book of the Bible',
+        answers: [
+          { label: 'Genesis', points: 54, keywords: ['genesis', 'gen'] },
+          { label: 'Exodus / Matthew (Misread)', points: 10, keywords: ['exodus', 'matthew'] }
+        ]
+      },
+      {
+        prompt: 'Name one of the Four Gospels in the New Testament',
+        answers: [
+          { label: 'John', points: 42, keywords: ['john'] },
+          { label: 'Matthew', points: 31, keywords: ['matthew'] },
+          { label: 'Luke', points: 17, keywords: ['luke'] },
+          { label: 'Mark', points: 10, keywords: ['mark'] }
+        ]
+      },
+      {
+        prompt: 'Name the man who built the Ark to survive the Great Flood',
+        answers: [
+          { label: 'Noah', points: 52, keywords: ['noah'] },
+          { label: 'Shem / Ham / Japheth', points: 8, keywords: ['shem', 'ham', 'japheth'] }
+        ]
+      },
+      {
+        prompt: 'Name the Philistine giant defeated by young David with a sling',
+        answers: [
+          { label: 'Goliath', points: 50, keywords: ['goliath'] },
+          { label: 'Giant of Gath', points: 12, keywords: ['gath', 'giant'] }
+        ]
+      },
+      {
+        prompt: 'Name the final book of the entire Bible',
+        answers: [
+          { label: 'Revelation', points: 52, keywords: ['revelation', 'revelations', 'apocalypse'] },
+          { label: 'Malachi / Jude', points: 8, keywords: ['malachi', 'jude'] }
+        ]
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * 3. WEB AUDIO API GAME SHOW SOUND SYNTHESIZER
+     * =========================================================================
+     */
+    class GameShowAudio {
+      constructor() {
+        this.enabled = true;
+        this.ctx = null;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      tone(freq, type, duration, delay = 0, gainVal = 0.14) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime + delay;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(gainVal, now + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration + 0.02);
+      }
+
+      playDing() {
+        this.tone(1318.51, 'sine', 0.55, 0, 0.22);
+        this.tone(2637.02, 'sine', 0.35, 0, 0.08);
+      }
+
+      playBuzzer() {
+        this.tone(110, 'sawtooth', 0.55, 0, 0.18);
+        this.tone(116.54, 'sawtooth', 0.55, 0, 0.16);
+        this.tone(73.42, 'square', 0.55, 0, 0.12);
+      }
+
+      playFaceOffBuzz() {
+        this.tone(880, 'triangle', 0.25, 0, 0.18);
+        this.tone(1174.66, 'triangle', 0.35, 0.06, 0.18);
+      }
+
+      playFanfare() {
+        const notes = [523.25, 659.25, 783.99, 1046.50, 783.99, 1046.50];
+        const times = [0.00, 0.10, 0.20, 0.32, 0.48, 0.60];
+        const durs  = [0.15, 0.15, 0.18, 0.22, 0.16, 0.55];
+        notes.forEach((f, i) => {
+          this.tone(f, 'triangle', durs[i], times[i], 0.16);
+        });
+      }
+
+      playTick() {
+        this.tone(900, 'sine', 0.05, 0, 0.06);
+      }
+
+      playClick() {
+        this.tone(520, 'sine', 0.07, 0, 0.06);
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 4. GAME STATE & CONTROLLER
+     * =========================================================================
+     */
+    const audio = new GameShowAudio();
+
+    const state = {
+      team1Name: 'The Bereans',
+      team2Name: 'The Scribes',
+      team1Score: 0,
+      team2Score: 0,
+      totalRounds: 4,          // 3 | 4 | 'ENDLESS'
+      controlStyle: 'AUTO',    // 'AUTO' | 'HOST'
+      hostPanelOpen: false,
+
+      currentRound: 1,
+      multiplier: 1,
+      surveyDeck: [],
+      currentSurvey: null,
+      revealedIndices: new Set(),
+      roundBank: 0,
+      strikes: 0,
+
+      phase: 'FACEOFF_BUZZ',
+      faceOffBuzzerTeam: null,
+      faceOffFirstAnswerRank: null,
+      faceOffSecondTeam: null,
+      controllingTeam: null,
+
+      // Fast Money State
+      fmWinnerTeam: 1,
+      fmIndex: 0,
+      fmScore: 0,
+      fmTimeLeft: 60,
+      fmInterval: null,
+      fmResults: []
+    };
+
+    const el = {
+      lobbyView: document.getElementById('lobby-view'),
+      stageView: document.getElementById('stage-view'),
+      fastmoneyView: document.getElementById('fastmoney-view'),
+      victoryView: document.getElementById('victory-view'),
+
+      logoHomeBtn: document.getElementById('logo-home-btn'),
+      headerRoundPill: document.getElementById('header-round-pill'),
+      toggleHostBarBtn: document.getElementById('toggle-host-bar-btn'),
+      soundToggleBtn: document.getElementById('sound-toggle-btn'),
+      iconSoundOn: document.getElementById('icon-sound-on'),
+      iconSoundOff: document.getElementById('icon-sound-off'),
+      rulesBtn: document.getElementById('rules-btn'),
+      rulesModal: document.getElementById('rules-modal'),
+      closeRulesBtn: document.getElementById('close-rules-btn'),
+      gotItRulesBtn: document.getElementById('got-it-rules-btn'),
+
+      strikeOverlay: document.getElementById('strike-overlay'),
+      strikeXContainer: document.getElementById('strike-x-container'),
+
+      inputTeam1Name: document.getElementById('input-team1-name'),
+      inputTeam2Name: document.getElementById('input-team2-name'),
+      lengthOptions: document.querySelectorAll('.length-option'),
+      controlOptions: document.querySelectorAll('.control-option'),
+      startShowBtn: document.getElementById('start-show-btn'),
+
+      team1Panel: document.getElementById('team1-panel'),
+      team1ControlDot: document.getElementById('team1-control-dot'),
+      displayTeam1Name: document.getElementById('display-team1-name'),
+      displayTeam1Score: document.getElementById('display-team1-score'),
+      team1Badge: document.getElementById('team1-badge'),
+
+      team2Panel: document.getElementById('team2-panel'),
+      team2ControlDot: document.getElementById('team2-control-dot'),
+      displayTeam2Name: document.getElementById('display-team2-name'),
+      displayTeam2Score: document.getElementById('display-team2-score'),
+      team2Badge: document.getElementById('team2-badge'),
+
+      displayMultiplier: document.getElementById('display-multiplier'),
+      displayRoundBank: document.getElementById('display-round-bank'),
+
+      phasePill: document.getElementById('phase-pill'),
+      surveyCountPill: document.getElementById('survey-count-pill'),
+      surveyQuestionText: document.getElementById('survey-question-text'),
+      answerBoardGrid: document.getElementById('answer-board-grid'),
+      strikePips: document.querySelectorAll('.strike-pip'),
+
+      stageStatusMsg: document.getElementById('stage-status-msg'),
+      controlsFaceoffBuzz: document.getElementById('controls-faceoff-buzz'),
+      buzzTeam1Btn: document.getElementById('buzz-team1-btn'),
+      buzzTeam2Btn: document.getElementById('buzz-team2-btn'),
+      buzzT1Label: document.getElementById('buzz-t1-label'),
+      buzzT2Label: document.getElementById('buzz-t2-label'),
+
+      controlsPlayPass: document.getElementById('controls-play-pass'),
+      choosePlayBtn: document.getElementById('choose-play-btn'),
+      choosePassBtn: document.getElementById('choose-pass-btn'),
+
+      guessForm: document.getElementById('guess-form'),
+      guessInput: document.getElementById('guess-input'),
+
+      controlsRoundEnd: document.getElementById('controls-round-end'),
+      scriptureRefBadge: document.getElementById('scripture-ref-badge'),
+      scriptureNoteText: document.getElementById('scripture-note-text'),
+      revealRemainingBtn: document.getElementById('reveal-remaining-btn'),
+      nextRoundBtn: document.getElementById('next-round-btn'),
+
+      hostControlDrawer: document.getElementById('host-control-drawer'),
+      hostStrikeBtn: document.getElementById('host-strike-btn'),
+      hostAwardT1Btn: document.getElementById('host-award-t1-btn'),
+      hostAwardT2Btn: document.getElementById('host-award-t2-btn'),
+      hostRevealAllBtn: document.getElementById('host-reveal-all-btn'),
+
+      fmTeamName: document.getElementById('fm-team-name'),
+      fmTimer: document.getElementById('fm-timer'),
+      fmTotalScore: document.getElementById('fm-total-score'),
+      fmIntroBox: document.getElementById('fm-intro-box'),
+      fmIntroWinner: document.getElementById('fm-intro-winner'),
+      fmStartClockBtn: document.getElementById('fm-start-clock-btn'),
+      fmPlayArea: document.getElementById('fm-play-area'),
+      fmActivePromptCard: document.getElementById('fm-active-prompt-card'),
+      fmQNumber: document.getElementById('fm-q-number'),
+      fmQText: document.getElementById('fm-q-text'),
+      fmForm: document.getElementById('fm-form'),
+      fmInput: document.getElementById('fm-input'),
+      fmBoardRows: document.getElementById('fm-board-rows'),
+      fmFinishBar: document.getElementById('fm-finish-bar'),
+      fmToPodiumBtn: document.getElementById('fm-to-podium-btn'),
+
+      victoryKicker: document.getElementById('victory-kicker'),
+      victoryHeadline: document.getElementById('victory-headline'),
+      victorySubtext: document.getElementById('victory-subtext'),
+      vicT1Name: document.getElementById('vic-t1-name'),
+      vicT1Score: document.getElementById('vic-t1-score'),
+      vicT2Name: document.getElementById('vic-t2-name'),
+      vicT2Score: document.getElementById('vic-t2-score'),
+      vicFastmoneyBanner: document.getElementById('vic-fastmoney-banner'),
+      playAgainBtn: document.getElementById('play-again-btn'),
+      copyMatchBtn: document.getElementById('copy-match-btn'),
+      copyMatchText: document.getElementById('copy-match-text')
+    };
+
+    function shuffle(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Fuzzy Answer Matcher
+     */
+    function matchAnswer(userGuess, answerList, alreadyRevealedSet = new Set()) {
+      const cleaned = userGuess
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      if (!cleaned || cleaned.length < 2) return -1;
+
+      const guessWords = cleaned.split(' ').filter(w => w.length >= 2);
+
+      for (let i = 0; i < answerList.length; i++) {
+        if (alreadyRevealedSet.has(i)) continue;
+        const ans = answerList[i];
+        const labelClean = ans.label.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+
+        if (labelClean.includes(cleaned) && cleaned.length >= 3) {
+          return i;
+        }
+
+        for (const kw of ans.keywords) {
+          const kwClean = kw.toLowerCase();
+          if (cleaned === kwClean || cleaned.includes(kwClean)) {
+            return i;
+          }
+          for (const gw of guessWords) {
+            if (gw === kwClean) return i;
+          }
+        }
+      }
+      return -1;
+    }
+
+    function switchView(viewName) {
+      el.lobbyView.classList.add('hidden');
+      el.stageView.classList.add('hidden');
+      el.stageView.classList.remove('flex');
+      el.fastmoneyView.classList.add('hidden');
+      el.fastmoneyView.classList.remove('flex');
+      el.victoryView.classList.add('hidden');
+
+      el.headerRoundPill.classList.toggle('hidden', viewName !== 'STAGE');
+      el.toggleHostBarBtn.classList.toggle('hidden', viewName !== 'STAGE');
+
+      if (viewName === 'LOBBY') {
+        clearInterval(state.fmInterval);
+        el.lobbyView.classList.remove('hidden');
+      } else if (viewName === 'STAGE') {
+        el.stageView.classList.remove('hidden');
+        el.stageView.classList.add('flex');
+      } else if (viewName === 'FASTMONEY') {
+        el.fastmoneyView.classList.remove('hidden');
+        el.fastmoneyView.classList.add('flex');
+      } else if (viewName === 'VICTORY') {
+        el.victoryView.classList.remove('hidden');
+      }
+    }
+
+    function triggerStrikeOverlay(strikeCount) {
+      audio.playBuzzer();
+      el.strikeXContainer.innerHTML = '';
+
+      for (let i = 0; i < strikeCount; i++) {
+        const xDiv = document.createElement('div');
+        xDiv.className = 'red-x-box w-24 h-28 sm:w-32 sm:h-36 rounded-2xl flex items-center justify-center font-display text-7xl sm:text-8xl font-black text-white select-none';
+        xDiv.textContent = 'X';
+        el.strikeXContainer.appendChild(xDiv);
+      }
+
+      el.strikeOverlay.classList.remove('hidden');
+      el.strikeOverlay.classList.add('flex', 'animate-strike-overlay');
+
+      setTimeout(() => {
+        el.strikeOverlay.classList.add('hidden');
+        el.strikeOverlay.classList.remove('flex', 'animate-strike-overlay');
+      }, 1250);
+    }
+
+    function getRoundMultiplier(roundNum) {
+      if (state.totalRounds === 'ENDLESS') return 1;
+      if (roundNum === 3) return 2;
+      if (roundNum >= 4) return 3;
+      return 1;
+    }
+
+    function updateScoreboards() {
+      el.displayTeam1Name.textContent = state.team1Name;
+      el.displayTeam2Name.textContent = state.team2Name;
+      el.displayTeam1Score.textContent = state.team1Score;
+      el.displayTeam2Score.textContent = state.team2Score;
+      el.displayRoundBank.textContent = state.roundBank;
+      el.displayMultiplier.textContent = `${state.multiplier}X POINTS`;
+
+      const roundLabel = state.totalRounds === 'ENDLESS'
+        ? `Survey ${state.currentRound} • Free Play`
+        : `Round ${state.currentRound} of ${state.totalRounds} • ${state.multiplier}x Points`;
+      el.headerRoundPill.textContent = roundLabel;
+
+      const activeTeam = getActiveTeamNumber();
+      el.team1Panel.classList.toggle('team-panel-active', activeTeam === 1);
+      el.team2Panel.classList.toggle('team-panel-active', activeTeam === 2);
+      el.team1ControlDot.classList.toggle('hidden', activeTeam !== 1);
+      el.team2ControlDot.classList.toggle('hidden', activeTeam !== 2);
+
+      el.team1Badge.textContent = activeTeam === 1 ? '● Active Turn' : 'Standing By';
+      el.team1Badge.className = activeTeam === 1
+        ? 'text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-emerald-400'
+        : 'text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400';
+
+      el.team2Badge.textContent = activeTeam === 2 ? '● Active Turn' : 'Standing By';
+      el.team2Badge.className = activeTeam === 2
+        ? 'text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-emerald-400'
+        : 'text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400';
+
+      el.strikePips.forEach((pip, idx) => {
+        if (idx < state.strikes) {
+          pip.className = 'strike-pip w-8 h-8 rounded-lg border-2 border-red-300 bg-red-600 flex items-center justify-center font-display font-bold text-white text-lg shadow-md';
+        } else {
+          pip.className = 'strike-pip w-8 h-8 rounded-lg border border-slate-700 bg-slate-900 flex items-center justify-center font-display font-bold text-slate-600 text-lg';
+        }
+      });
+    }
+
+    function getActiveTeamNumber() {
+      if (state.phase === 'FACEOFF_GUESS') return state.faceOffBuzzerTeam;
+      if (state.phase === 'PLAY_OR_PASS') return state.controllingTeam;
+      if (state.phase === 'MAIN_PLAY') return state.controllingTeam;
+      if (state.phase === 'STEAL') return state.controllingTeam === 1 ? 2 : 1;
+      return null;
+    }
+
+    function getTeamName(num) {
+      return num === 1 ? state.team1Name : state.team2Name;
+    }
+
+    function buildAnswerBoard() {
+      const answers = state.currentSurvey.answers;
+      el.answerBoardGrid.innerHTML = '';
+
+      const desktopOrder = [0, 4, 1, 5, 2, 6, 3, 7];
+
+      desktopOrder.forEach(slotIdx => {
+        const ans = answers[slotIdx];
+        const slotEl = document.createElement('div');
+        slotEl.dataset.slotIndex = slotIdx;
+
+        if (!ans) {
+          slotEl.className = 'flip-slot opacity-35';
+          slotEl.innerHTML = `
+            <div class="flip-inner">
+              <div class="flip-front bg-slate-900 border-slate-700">
+                <div class="w-8 h-1 rounded-full bg-slate-700"></div>
+              </div>
+            </div>
+          `;
+        } else {
+          const isHostClickable = state.hostPanelOpen || state.controlStyle === 'HOST';
+          slotEl.className = `flip-slot ${isHostClickable ? 'host-clickable' : ''}`;
+          slotEl.innerHTML = `
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="tile-number-oval w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-display text-2xl sm:text-3xl font-bold text-amber-300">
+                  ${slotIdx + 1}
+                </div>
+              </div>
+              <div class="flip-back">
+                <div class="flex-1 px-3.5 sm:px-4 flex items-center justify-between gap-2 overflow-hidden">
+                  <span class="font-display text-base sm:text-xl font-bold tracking-wide text-white uppercase truncate">
+                    ${ans.label}
+                  </span>
+                </div>
+                <div class="points-box flex items-center justify-center font-display text-2xl sm:text-3xl font-bold">
+                  ${ans.points}
+                </div>
+              </div>
+            </div>
+          `;
+
+          slotEl.addEventListener('click', () => {
+            if (!(state.hostPanelOpen || state.controlStyle === 'HOST')) return;
+            if (!state.revealedIndices.has(slotIdx)) {
+              revealAnswerSlot(slotIdx, true);
+            }
+          });
+        }
+
+        el.answerBoardGrid.appendChild(slotEl);
+      });
+    }
+
+    function revealAnswerSlot(slotIdx, addPointsToBank = true) {
+      if (state.revealedIndices.has(slotIdx)) return;
+      state.revealedIndices.add(slotIdx);
+
+      audio.playDing();
+
+      const slotEl = el.answerBoardGrid.querySelector(`[data-slot-index="${slotIdx}"]`);
+      if (slotEl) {
+        slotEl.classList.add('revealed');
+      }
+
+      if (addPointsToBank) {
+        const pts = state.currentSurvey.answers[slotIdx].points * state.multiplier;
+        state.roundBank += pts;
+        updateScoreboards();
+      }
+    }
+
+    function revealAllRemaining() {
+      const answers = state.currentSurvey.answers;
+      answers.forEach((_, idx) => {
+        if (!state.revealedIndices.has(idx)) {
+          revealAnswerSlot(idx, false);
+        }
+      });
+    }
+
+    function startMatch() {
+      audio.playClick();
+      state.team1Name = el.inputTeam1Name.value.trim() || 'The Bereans';
+      state.team2Name = el.inputTeam2Name.value.trim() || 'The Scribes';
+      state.team1Score = 0;
+      state.team2Score = 0;
+      state.currentRound = 1;
+      state.surveyDeck = shuffle(BIBLE_SURVEY_BANK);
+
+      state.hostPanelOpen = state.controlStyle === 'HOST';
+      el.hostControlDrawer.classList.toggle('hidden', !state.hostPanelOpen);
+
+      el.buzzT1Label.textContent = state.team1Name;
+      el.buzzT2Label.textContent = state.team2Name;
+      el.hostAwardT1Btn.textContent = `🏆 Award Bank → ${state.team1Name}`;
+      el.hostAwardT2Btn.textContent = `🏆 Award Bank → ${state.team2Name}`;
+
+      switchView('STAGE');
+      setupRound(1);
+    }
+
+    function setupRound(roundNum) {
+      state.currentRound = roundNum;
+      state.multiplier = getRoundMultiplier(roundNum);
+      state.revealedIndices.clear();
+      state.roundBank = 0;
+      state.strikes = 0;
+      state.faceOffBuzzerTeam = null;
+      state.faceOffFirstAnswerRank = null;
+      state.faceOffSecondTeam = null;
+      state.controllingTeam = null;
+
+      const deckIdx = (roundNum - 1) % state.surveyDeck.length;
+      if (deckIdx === 0 && roundNum > 1) {
+        state.surveyDeck = shuffle(BIBLE_SURVEY_BANK);
+      }
+      state.currentSurvey = state.surveyDeck[deckIdx];
+
+      el.surveyQuestionText.textContent = state.currentSurvey.question;
+      el.surveyCountPill.textContent = `Top ${state.currentSurvey.answers.length} Answers on the Board`;
+      el.scriptureRefBadge.textContent = state.currentSurvey.scriptureRef;
+      el.scriptureNoteText.textContent = state.currentSurvey.scriptureNote;
+
+      buildAnswerBoard();
+
+      if (state.controlStyle === 'HOST') {
+        state.phase = 'MAIN_PLAY';
+        state.controllingTeam = 1;
+        setConsolePhase('HOST_FREE');
+      } else {
+        setConsolePhase('FACEOFF_BUZZ');
+      }
+
+      updateScoreboards();
+    }
+
+    function setConsolePhase(phaseName) {
+      state.phase = phaseName;
+
+      el.controlsFaceoffBuzz.classList.add('hidden');
+      el.controlsFaceoffBuzz.classList.remove('flex');
+      el.controlsPlayPass.classList.add('hidden');
+      el.controlsPlayPass.classList.remove('flex');
+      el.guessForm.classList.add('hidden');
+      el.guessForm.classList.remove('flex');
+      el.controlsRoundEnd.classList.add('hidden');
+      el.controlsRoundEnd.classList.remove('flex');
+
+      if (phaseName === 'FACEOFF_BUZZ') {
+        el.phasePill.textContent = 'Face-Off';
+        el.stageStatusMsg.textContent = 'Face-Off! Which team buzzes in first?';
+        el.controlsFaceoffBuzz.classList.remove('hidden');
+        el.controlsFaceoffBuzz.classList.add('flex');
+      } else if (phaseName === 'FACEOFF_GUESS') {
+        el.phasePill.textContent = 'Face-Off Answer';
+        const teamName = getTeamName(state.faceOffBuzzerTeam);
+        el.stageStatusMsg.textContent = `${teamName} buzzed in! Enter your answer for the top spot:`;
+        el.guessInput.value = '';
+        el.guessInput.placeholder = `${teamName}'s Face-Off guess...`;
+        el.guessForm.classList.remove('hidden');
+        el.guessForm.classList.add('flex');
+        el.guessInput.focus();
+      } else if (phaseName === 'PLAY_OR_PASS') {
+        el.phasePill.textContent = 'Play or Pass';
+        const winnerName = getTeamName(state.controllingTeam);
+        el.stageStatusMsg.textContent = `${winnerName} wins the Face-Off! Will you PLAY or PASS?`;
+        el.controlsPlayPass.classList.remove('hidden');
+        el.controlsPlayPass.classList.add('flex');
+      } else if (phaseName === 'MAIN_PLAY') {
+        el.phasePill.textContent = 'Board Control';
+        const ctrlName = getTeamName(state.controllingTeam);
+        el.stageStatusMsg.textContent = `${ctrlName} is playing the board! Guess all remaining answers:`;
+        el.guessInput.value = '';
+        el.guessInput.placeholder = `${ctrlName}'s guess...`;
+        el.guessForm.classList.remove('hidden');
+        el.guessForm.classList.add('flex');
+        el.guessInput.focus();
+      } else if (phaseName === 'STEAL') {
+        el.phasePill.textContent = 'Steal Opportunity!';
+        const stealTeam = state.controllingTeam === 1 ? 2 : 1;
+        const stealName = getTeamName(stealTeam);
+        el.stageStatusMsg.textContent = `3 Strikes! ${stealName}, name ONE unrevealed answer to STEAL ${state.roundBank} points!`;
+        el.guessInput.value = '';
+        el.guessInput.placeholder = `${stealName}'s STEAL guess...`;
+        el.guessForm.classList.remove('hidden');
+        el.guessForm.classList.add('flex');
+        el.guessInput.focus();
+      } else if (phaseName === 'ROUND_OVER') {
+        el.phasePill.textContent = 'Round Complete';
+        const isFinalMainRound = state.totalRounds !== 'ENDLESS' && state.currentRound >= state.totalRounds;
+        el.nextRoundBtn.textContent = isFinalMainRound ? 'Advance to Fast Money! ⚡' : 'Next Round →';
+        el.controlsRoundEnd.classList.remove('hidden');
+        el.controlsRoundEnd.classList.add('flex');
+      } else if (phaseName === 'HOST_FREE') {
+        el.phasePill.textContent = 'Live Host Mode';
+        el.stageStatusMsg.textContent = 'Host Mode Active: Click any numbered tile to reveal it, or use the Host Controls below.';
+        el.controlsRoundEnd.classList.remove('hidden');
+        el.controlsRoundEnd.classList.add('flex');
+      }
+
+      updateScoreboards();
+    }
+
+    function concludeRound(winnerTeamNum, customBannerText) {
+      audio.playFanfare();
+      if (winnerTeamNum === 1) {
+        state.team1Score += state.roundBank;
+      } else {
+        state.team2Score += state.roundBank;
+      }
+      const wonPts = state.roundBank;
+      state.roundBank = 0;
+
+      el.stageStatusMsg.textContent =
+        customBannerText || `🎉 ${getTeamName(winnerTeamNum)} wins the round and banks ${wonPts} points!`;
+      setConsolePhase('ROUND_OVER');
+    }
+
+    function handleGuessSubmission(e) {
+      e.preventDefault();
+      const rawGuess = el.guessInput.value.trim();
+      if (!rawGuess) return;
+
+      const answers = state.currentSurvey.answers;
+      const matchedIdx = matchAnswer(rawGuess, answers, state.revealedIndices);
+
+      // 1. FACE-OFF GUESS
+      if (state.phase === 'FACEOFF_GUESS') {
+        const currentTeam = state.faceOffBuzzerTeam;
+        const otherTeam = currentTeam === 1 ? 2 : 1;
+
+        if (matchedIdx !== -1) {
+          revealAnswerSlot(matchedIdx, true);
+
+          if (matchedIdx === 0) {
+            state.controllingTeam = currentTeam;
+            setConsolePhase('PLAY_OR_PASS');
+            return;
+          }
+
+          if (state.faceOffFirstAnswerRank === null) {
+            state.faceOffFirstAnswerRank = matchedIdx;
+            state.faceOffBuzzerTeam = otherTeam;
+            state.faceOffSecondTeam = otherTeam;
+            setConsolePhase('FACEOFF_GUESS');
+            el.stageStatusMsg.textContent = `Survey says #${matchedIdx + 1}! ${getTeamName(otherTeam)}, can you beat it?`;
+            return;
+          } else {
+            state.controllingTeam = matchedIdx < state.faceOffFirstAnswerRank
+              ? currentTeam
+              : (currentTeam === 1 ? 2 : 1);
+            setConsolePhase('PLAY_OR_PASS');
+            return;
+          }
+        } else {
+          triggerStrikeOverlay(1);
+          if (state.faceOffSecondTeam === null && state.faceOffFirstAnswerRank === null) {
+            state.faceOffBuzzerTeam = otherTeam;
+            state.faceOffSecondTeam = otherTeam;
+            setConsolePhase('FACEOFF_GUESS');
+            el.stageStatusMsg.textContent = `Not on the board! ${getTeamName(otherTeam)}, any answer on the board wins control!`;
+            return;
+          } else if (state.faceOffFirstAnswerRank !== null) {
+            state.controllingTeam = otherTeam;
+            setConsolePhase('PLAY_OR_PASS');
+            return;
+          } else {
+            setConsolePhase('FACEOFF_BUZZ');
+            el.stageStatusMsg.textContent = 'Neither team hit the board! Buzz in again for the Face-Off!';
+            return;
+          }
+        }
+      }
+
+      // 2. MAIN BOARD PLAY
+      if (state.phase === 'MAIN_PLAY') {
+        if (matchedIdx !== -1) {
+          revealAnswerSlot(matchedIdx, true);
+          el.guessInput.value = '';
+
+          if (state.revealedIndices.size >= answers.length) {
+            concludeRound(
+              state.controllingTeam,
+              `🎉 Board Cleared! ${getTeamName(state.controllingTeam)} sweeps the round for ${state.roundBank} points!`
+            );
+          } else {
+            el.stageStatusMsg.textContent = `Good answer! ${getTeamName(state.controllingTeam)}, keep going!`;
+          }
+        } else {
+          state.strikes += 1;
+          triggerStrikeOverlay(state.strikes);
+          updateScoreboards();
+          el.guessInput.value = '';
+
+          if (state.strikes >= 3) {
+            setConsolePhase('STEAL');
+          } else {
+            el.stageStatusMsg.textContent = `Strike ${state.strikes}! ${getTeamName(state.controllingTeam)}, try again!`;
+          }
+        }
+        return;
+      }
+
+      // 3. STEAL ATTEMPT
+      if (state.phase === 'STEAL') {
+        const stealingTeam = state.controllingTeam === 1 ? 2 : 1;
+        if (matchedIdx !== -1) {
+          revealAnswerSlot(matchedIdx, true);
+          concludeRound(
+            stealingTeam,
+            `🔥 STEAL SUCCESSFUL! ${getTeamName(stealingTeam)} steals ${state.roundBank} points!`
+          );
+        } else {
+          triggerStrikeOverlay(1);
+          concludeRound(
+            state.controllingTeam,
+            `🛡️ Steal Missed! ${getTeamName(state.controllingTeam)} keeps the ${state.roundBank} points!`
+          );
+        }
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 5. FAST MONEY BONUS ROUND LOGIC
+     * =========================================================================
+     */
+    function startFastMoney() {
+      state.fmWinnerTeam = state.team1Score >= state.team2Score ? 1 : 2;
+      const winnerName = getTeamName(state.fmWinnerTeam);
+
+      state.fmIndex = 0;
+      state.fmScore = 0;
+      state.fmTimeLeft = 60;
+      state.fmResults = [];
+
+      el.fmTeamName.textContent = winnerName;
+      el.fmIntroWinner.textContent = winnerName;
+      el.fmTimer.textContent = '60';
+      el.fmTotalScore.textContent = '0';
+
+      el.fmIntroBox.classList.remove('hidden');
+      el.fmPlayArea.classList.add('hidden');
+      el.fmFinishBar.classList.add('hidden');
+      el.fmActivePromptCard.classList.remove('hidden');
+
+      switchView('FASTMONEY');
+    }
+
+    function beginFastMoneyClock() {
+      audio.playFaceOffBuzz();
+      el.fmIntroBox.classList.add('hidden');
+      el.fmPlayArea.classList.remove('hidden');
+      renderFastMoneyRows();
+      loadFastMoneyQuestion();
+
+      state.fmInterval = setInterval(() => {
+        state.fmTimeLeft -= 1;
+        el.fmTimer.textContent = state.fmTimeLeft;
+        if (state.fmTimeLeft <= 10 && state.fmTimeLeft > 0) {
+          audio.playTick();
+        }
+        if (state.fmTimeLeft <= 0) {
+          clearInterval(state.fmInterval);
+          audio.playBuzzer();
+          finishFastMoney();
+        }
+      }, 1000);
+    }
+
+    function loadFastMoneyQuestion() {
+      if (state.fmIndex >= BIBLE_FAST_MONEY_BANK.length) {
+        clearInterval(state.fmInterval);
+        finishFastMoney();
+        return;
+      }
+      const q = BIBLE_FAST_MONEY_BANK[state.fmIndex];
+      el.fmQNumber.textContent = `Question ${state.fmIndex + 1} of 5`;
+      el.fmQText.textContent = q.prompt;
+      el.fmInput.value = '';
+      el.fmInput.focus();
+    }
+
+    function renderFastMoneyRows() {
+      el.fmBoardRows.innerHTML = BIBLE_FAST_MONEY_BANK.map((q, idx) => {
+        const res = state.fmResults[idx];
+        if (!res) {
+          return `
+            <div class="flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-slate-500 text-sm">
+              <span>${idx + 1}. ${q.prompt}</span>
+              <span class="font-display font-bold">--</span>
+            </div>
+          `;
+        }
+        return `
+          <div class="flex items-center justify-between px-4 py-2.5 rounded-xl bg-blue-950/80 border border-amber-400/50 text-white text-sm">
+            <div>
+              <span class="font-bold text-amber-200 uppercase">${res.guess}</span>
+              <span class="text-xs text-slate-300 ml-2">(${res.matchedLabel})</span>
+            </div>
+            <span class="font-display text-xl font-bold text-amber-300">${res.points}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleFastMoneySubmit(e) {
+      e.preventDefault();
+      if (state.fmIndex >= BIBLE_FAST_MONEY_BANK.length) return;
+
+      const raw = el.fmInput.value.trim();
+      if (!raw) return;
+
+      const q = BIBLE_FAST_MONEY_BANK[state.fmIndex];
+      const matchIdx = matchAnswer(raw, q.answers);
+
+      if (matchIdx !== -1) {
+        audio.playDing();
+        const pts = q.answers[matchIdx].points;
+        state.fmScore += pts;
+        state.fmResults.push({
+          guess: raw,
+          matchedLabel: q.answers[matchIdx].label,
+          points: pts
+        });
+      } else {
+        audio.playBuzzer();
+        state.fmResults.push({
+          guess: raw,
+          matchedLabel: `Top answer: ${q.answers[0].label}`,
+          points: 0
+        });
+      }
+
+      el.fmTotalScore.textContent = state.fmScore;
+      renderFastMoneyRows();
+      state.fmIndex += 1;
+      loadFastMoneyQuestion();
+    }
+
+    function finishFastMoney() {
+      el.fmActivePromptCard.classList.add('hidden');
+      el.fmFinishBar.classList.remove('hidden');
+      if (state.fmScore >= 200) {
+        audio.playFanfare();
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 6. FINAL VICTORY PODIUM
+     * =========================================================================
+     */
+    function showVictoryScreen(playedFastMoney = false) {
+      switchView('VICTORY');
+
+      el.vicT1Name.textContent = state.team1Name;
+      el.vicT1Score.textContent = state.team1Score;
+      el.vicT2Name.textContent = state.team2Name;
+      el.vicT2Score.textContent = state.team2Score;
+
+      const winnerName = state.team1Score === state.team2Score
+        ? 'It’s a Tie Game!'
+        : `${state.team1Score > state.team2Score ? state.team1Name : state.team2Name} Win!`;
+
+      el.victoryHeadline.textContent = winnerName;
+      el.copyMatchText.textContent = 'Copy Match Summary';
+
+      if (playedFastMoney) {
+        el.vicFastmoneyBanner.classList.remove('hidden');
+        if (state.fmScore >= 200) {
+          el.vicFastmoneyBanner.textContent = `🏆 Fast Money Score: ${state.fmScore} / 200 — GRAND CHAMPIONS!`;
+          el.victorySubtext.textContent = `${getTeamName(state.fmWinnerTeam)} conquered the board AND broke 200 points in Fast Money!`;
+        } else {
+          el.vicFastmoneyBanner.textContent = `⚡ Fast Money Score: ${state.fmScore} / 200 — Great Effort!`;
+          el.victorySubtext.textContent = `${getTeamName(state.fmWinnerTeam)} won the match and scored ${state.fmScore} points in Fast Money!`;
+        }
+      } else {
+        el.vicFastmoneyBanner.classList.add('hidden');
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 7. EVENT LISTENERS
+     * =========================================================================
+     */
+    el.lengthOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        audio.playClick();
+        const val = btn.dataset.rounds;
+        state.totalRounds = val === 'ENDLESS' ? 'ENDLESS' : parseInt(val, 10);
+        el.lengthOptions.forEach(b => {
+          const active = b.dataset.rounds === val;
+          b.className = active
+            ? 'length-option active py-3 px-3 rounded-xl border-2 border-amber-400 bg-amber-400/15 text-amber-100 text-left transition cursor-pointer'
+            : 'length-option py-3 px-3 rounded-xl border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-amber-400/50 text-left transition cursor-pointer';
+        });
+      });
+    });
+
+    el.controlOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        audio.playClick();
+        state.controlStyle = btn.dataset.control;
+        el.controlOptions.forEach(b => {
+          const active = b.dataset.control === state.controlStyle;
+          b.className = active
+            ? 'control-option active py-3 px-4 rounded-xl border-2 border-amber-400 bg-amber-400/15 text-left transition cursor-pointer'
+            : 'control-option py-3 px-4 rounded-xl border border-slate-700 bg-slate-900/90 text-left hover:border-amber-400/50 transition cursor-pointer';
+        });
+      });
+    });
+
+    el.startShowBtn.addEventListener('click', startMatch);
+
+    el.buzzTeam1Btn.addEventListener('click', () => {
+      audio.playFaceOffBuzz();
+      state.faceOffBuzzerTeam = 1;
+      setConsolePhase('FACEOFF_GUESS');
+    });
+
+    el.buzzTeam2Btn.addEventListener('click', () => {
+      audio.playFaceOffBuzz();
+      state.faceOffBuzzerTeam = 2;
+      setConsolePhase('FACEOFF_GUESS');
+    });
+
+    el.choosePlayBtn.addEventListener('click', () => {
+      audio.playClick();
+      setConsolePhase('MAIN_PLAY');
+    });
+
+    el.choosePassBtn.addEventListener('click', () => {
+      audio.playClick();
+      state.controllingTeam = state.controllingTeam === 1 ? 2 : 1;
+      setConsolePhase('MAIN_PLAY');
+    });
+
+    el.guessForm.addEventListener('submit', handleGuessSubmission);
+
+    el.revealRemainingBtn.addEventListener('click', () => {
+      audio.playClick();
+      revealAllRemaining();
+    });
+
+    el.nextRoundBtn.addEventListener('click', () => {
+      audio.playClick();
+      if (state.totalRounds !== 'ENDLESS' && state.currentRound >= state.totalRounds) {
+        startFastMoney();
+      } else {
+        setupRound(state.currentRound + 1);
+      }
+    });
+
+    el.toggleHostBarBtn.addEventListener('click', () => {
+      audio.playClick();
+      state.hostPanelOpen = !state.hostPanelOpen;
+      el.hostControlDrawer.classList.toggle('hidden', !state.hostPanelOpen);
+      el.answerBoardGrid.querySelectorAll('.flip-slot').forEach(slot => {
+        if (slot.dataset.slotIndex !== undefined && state.currentSurvey.answers[slot.dataset.slotIndex]) {
+          slot.classList.toggle('host-clickable', state.hostPanelOpen || state.controlStyle === 'HOST');
+        }
+      });
+    });
+
+    el.hostStrikeBtn.addEventListener('click', () => {
+      if (state.strikes < 3) state.strikes += 1;
+      triggerStrikeOverlay(state.strikes);
+      updateScoreboards();
+    });
+
+    el.hostAwardT1Btn.addEventListener('click', () => {
+      concludeRound(1);
+    });
+
+    el.hostAwardT2Btn.addEventListener('click', () => {
+      concludeRound(2);
+    });
+
+    el.hostRevealAllBtn.addEventListener('click', () => {
+      audio.playClick();
+      revealAllRemaining();
+    });
+
+    el.fmStartClockBtn.addEventListener('click', beginFastMoneyClock);
+    el.fmForm.addEventListener('submit', handleFastMoneySubmit);
+    el.fmToPodiumBtn.addEventListener('click', () => {
+      audio.playClick();
+      showVictoryScreen(true);
+    });
+
+    el.playAgainBtn.addEventListener('click', () => {
+      audio.playClick();
+      switchView('LOBBY');
+    });
+
+    el.logoHomeBtn.addEventListener('click', () => {
+      audio.playClick();
+      switchView('LOBBY');
+    });
+
+    el.copyMatchBtn.addEventListener('click', () => {
+      audio.playClick();
+      const summary = `📖 Family Feud: Bible Knowledge Edition — ${state.team1Name}: ${state.team1Score} vs ${state.team2Name}: ${state.team2Score} | Fast Money: ${state.fmScore}/200`;
+      const ta = document.createElement('textarea');
+      ta.value = summary;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        el.copyMatchText.textContent = 'Copied!';
+      } catch (e) {
+        el.copyMatchText.textContent = 'Ready!';
+      }
+      document.body.removeChild(ta);
+    });
+
+    el.soundToggleBtn.addEventListener('click', () => {
+      audio.enabled = !audio.enabled;
+      el.iconSoundOn.classList.toggle('hidden', !audio.enabled);
+      el.iconSoundOff.classList.toggle('hidden', audio.enabled);
+      if (audio.enabled) audio.playClick();
+    });
+
+    el.rulesBtn.addEventListener('click', () => {
+      audio.playClick();
+      el.rulesModal.classList.remove('hidden');
+      el.rulesModal.classList.add('flex');
+    });
+
+    function closeRules() {
+      audio.playClick();
+      el.rulesModal.classList.add('hidden');
+      el.rulesModal.classList.remove('flex');
+    }
+
+    el.closeRulesBtn.addEventListener('click', closeRules);
+    el.gotItRulesBtn.addEventListener('click', closeRules);
+    el.rulesModal.addEventListener('click', e => {
+      if (e.target === el.rulesModal) closeRules();
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      switchView('LOBBY');
+    });
+  </script>
+
+</body></html>
