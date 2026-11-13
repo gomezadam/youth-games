@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)file:///C:/Users/adamg/Downloads/are_you_smarter_than_a_youth_pastor_the_four_gospels.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You Smarter Than a Youth Pastor? — The Four Gospels Edition</title>
+  <style>
+    :root {
+      --bg: #FBFBFA;
+      --card: #FFFFFF;
+      --sidebar: #F7F6F3;
+      --border: #E6E6E4;
+      --text: #2F3437;
+      --muted: #787774;
+      --indigo: #4F46E5;
+      --indigo-hover: #4338CA;
+      --indigo-light: #EEF2FF;
+      --indigo-border: #C7D2FE;
+      --gold: #D97706;
+      --gold-light: #FEF3C7;
+      --gold-border: #FDE68A;
+      --emerald: #059669;
+      --emerald-light: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      --rose: #E11D48;
+      --rose-light: #FFF1F2;
+      --rose-border: #FECDD3;
+      --shadow: 0 1px 3px rgba(15, 15, 15, 0.04), 0 6px 16px rgba(15, 15, 15, 0.04);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input {
+      font-family: inherit;
+    }
+
+    /* Top Notion-Style Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(251, 251, 250, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 18px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .brand-muted {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .header-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .pill-gold {
+      background: var(--gold-light);
+      color: #92400E;
+      border-color: var(--gold-border);
+    }
+
+    .pill-indigo {
+      background: var(--indigo-light);
+      color: #3730A3;
+      border-color: var(--indigo-border);
+    }
+
+    /* Main Layout */
+    main {
+      flex: 1;
+      max-width: 1060px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Welcome Screen */
+    .welcome-wrap {
+      max-width: 680px;
+      width: 100%;
+      padding: 34px;
+    }
+
+    .welcome-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--indigo-light);
+      border: 1px solid var(--indigo-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .feature-item {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px;
+      font-size: 13px;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-size: 14px;
+      margin-top: 4px;
+      color: var(--text);
+    }
+
+    .feature-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .rules-box {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 13.5px;
+    }
+
+    .rules-box h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .rules-box ul {
+      padding-left: 18px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      font-size: 15px;
+      color: var(--text);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--indigo);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 11px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--indigo);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--indigo-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--text);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-dark:hover:not(:disabled) {
+      background: #181B1D;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--sidebar);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn-gold:hover:not(:disabled) {
+      background: #B45309;
+    }
+
+    .btn-danger-outline {
+      background: #fff;
+      color: var(--rose);
+      border-color: var(--rose-border);
+      font-size: 13px;
+      padding: 8px 13px;
+    }
+
+    .btn-danger-outline:hover:not(:disabled) {
+      background: var(--rose-light);
+    }
+
+    /* Active Game Layout */
+    .game-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .stage-card {
+      padding: 26px;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      background: var(--indigo-light);
+      color: var(--indigo);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .grade-badge.bonus-mode {
+      background: var(--gold-light);
+      color: #92400E;
+    }
+
+    .prize-tag {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    /* Lifelines Bar */
+    .lifelines-bar {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lifelines-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .lifeline-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lifeline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lifeline-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: var(--indigo-light);
+      color: var(--indigo);
+    }
+
+    .lifeline-btn.used {
+      background: #EFEFED;
+      color: #A1A09C;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .lifeline-btn.active-save {
+      border-color: var(--emerald-border);
+      background: var(--emerald-light);
+      color: #065F46;
+      cursor: default;
+    }
+
+    /* Youth Pastor Peek Banner */
+    .peek-banner {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .peek-banner-title {
+      font-weight: 700;
+      color: #92400E;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .peek-answer-text {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .peek-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Question Prompt */
+    .question-box {
+      background: var(--sidebar);
+      border-left: 4px solid var(--indigo);
+      border-radius: 0 12px 12px 0;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .question-box.bonus-box {
+      border-left-color: var(--gold);
+    }
+
+    .question-text {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    /* Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--indigo);
+      background: #F8F9FF;
+      transform: translateY(-1px);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .option-btn.correct {
+      background: var(--emerald-light);
+      border-color: var(--emerald);
+      color: #064E3B;
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #fff;
+    }
+
+    .option-btn.wrong {
+      background: var(--rose-light);
+      border-color: var(--rose);
+      color: #881337;
+    }
+
+    .option-btn.wrong .option-letter {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .option-btn.dimmed {
+      opacity: 0.48;
+    }
+
+    /* Bottom Stage Controls */
+    .stage-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contestant-tag {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contestant-tag strong {
+      color: var(--text);
+    }
+
+    /* Feedback Panel */
+    .feedback-panel {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .feedback-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .status-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .status-icon.ok {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      border: 1px solid var(--emerald-border);
+    }
+
+    .status-icon.saved {
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .status-icon.bad {
+      background: var(--rose-light);
+      color: var(--rose);
+      border: 1px solid var(--rose-border);
+    }
+
+    .yp-note-card {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .yp-note-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .yp-note-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .scripture-ref {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--indigo);
+      background: var(--indigo-light);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .yp-paper-pill {
+      font-size: 12px;
+      color: #92400E;
+      background: var(--gold-light);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .yp-note-body {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    /* Prize Ladder Sidebar */
+    .ladder-card {
+      padding: 16px;
+    }
+
+    .ladder-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .ladder-header h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .ladder-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 5px;
+    }
+
+    .ladder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--sidebar);
+      border: 1px solid transparent;
+    }
+
+    .ladder-item.current {
+      background: var(--indigo-light);
+      color: var(--indigo);
+      border-color: var(--indigo-border);
+      font-weight: 700;
+    }
+
+    .ladder-item.passed {
+      background: var(--emerald-light);
+      color: #065F46;
+    }
+
+    .ladder-item.milestone {
+      border-style: dashed;
+      border-color: var(--gold-border);
+    }
+
+    .ladder-item.bonus-step {
+      background: var(--gold-light);
+      color: #92400E;
+      border-color: var(--gold-border);
+      font-weight: 700;
+    }
+
+    .ladder-item.bonus-step.current {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* Bonus Decision Card */
+    .bonus-decision {
+      padding: 32px;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .bonus-category-box {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 20px 0;
+    }
+
+    .bonus-decision-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* End / Results Screen */
+    .results-wrap {
+      max-width: 680px;
+      width: 100%;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .result-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 20px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+    }
+
+    .confession-banner {
+      background: var(--rose-light);
+      border: 1px solid var(--rose-border);
+      color: #881337;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      margin: 16px 0 22px;
+    }
+
+    .victory-banner {
+      background: var(--emerald-light);
+      border: 1px solid var(--emerald-border);
+      color: #064E3B;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      margin: 16px 0 22px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-box {
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .stat-box strong {
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .recap-box {
+      text-align: left;
+      background: var(--sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .recap-box h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .recap-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .recap-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Inline Modal Overlay for Drop-Out Confirmation */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 15, 15, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 440px;
+      width: 100%;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    .modal-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .modal-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive Mobile Adjustments */
+    @media (max-width: 820px) {
+      .game-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ladder-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .welcome-wrap, .stage-card, .results-wrap {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-decision-btns {
+        grid-template-columns: 1fr;
+      }
+
+      .question-text {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Notion-Style Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand" onclick="returnHome()">
+        <span style="font-size: 19px;">🎓</span>
+        <div>
+          <span class="brand-muted">Youth Games / </span>
+          <span>Are You Smarter Than a Youth Pastor?</span>
+        </div>
+      </div>
+
+      <div class="header-status" id="header-status">
+        <span class="pill pill-indigo">Matthew • Mark • Luke • John</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. WELCOME SCREEN -->
+    <section id="welcome-screen" class="card welcome-wrap fade-in">
+      <div class="welcome-top">
+        <div class="hero-icon">📖</div>
+        <div class="badge-group">
+          <span class="pill pill-indigo">10 Grade Levels</span>
+          <span class="pill pill-gold">$1,000,000 Bonus</span>
+        </div>
+      </div>
+
+      <h1>Are You Smarter Than a Youth Pastor?</h1>
+      <p class="subtitle">The Four Gospels Challenge • Matthew, Mark, Luke &amp; John</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span>📚 Progressive Ladder</span>
+          <strong>10 Gospel Questions</strong>
+        </div>
+        <div class="feature-item">
+          <span>🤝 Youth Pastor Help</span>
+          <strong>3 Classic Lifelines</strong>
+        </div>
+        <div class="feature-item">
+          <span>🏆 Grand Finale</span>
+          <strong>$1,000,000 Question</strong>
+        </div>
+      </div>
+
+      <div class="rules-box">
+        <h3>How to Play</h3>
+        <ul>
+          <li>Climb from <strong>1st Grade ($1,000)</strong> up to <strong>10th Grade ($500,000)</strong>, then take on the <strong>$1,000,000 Youth Pastor Question</strong>.</li>
+          <li><strong>3 Lifelines:</strong> Use <em>Peek</em> (see the Youth Pastor's paper), <em>Copy</em> (lock in the Youth Pastor's answer), or <em>Save</em> (automatic rescue if you miss once and the Youth Pastor got it right!).</li>
+          <li><strong>Drop Out Anytime:</strong> Walk away with your current winnings—if you're willing to confess you're not smarter than a Youth Pastor!</li>
+        </ul>
+      </div>
+
+      <div class="input-group">
+        <label for="player-name-input">Contestant or Team Name (Optional)</label>
+        <input type="text" id="player-name-input" class="text-input" placeholder="e.g., Team Galilee or Sarah M." maxlength="40">
+      </div>
+
+      <button class="btn btn-primary" onclick="startGame()">
+        <span>Start the Challenge</span>
+        <span>→</span>
+      </button>
+    </section>
+
+    <!-- 2. ACTIVE GAME BOARD & PRIZE LADDER -->
+    <section id="game-screen" class="game-grid hidden fade-in">
+      <!-- Left / Main Question Stage -->
+      <div class="card stage-card" id="question-stage">
+        <div class="stage-header">
+          <span class="grade-badge" id="grade-badge">1st Grade • Jesus' Birth</span>
+          <span class="prize-tag" id="prize-tag">Playing for $1,000</span>
+        </div>
+
+        <!-- Lifelines Strip (Hidden on $1,000,000 Question per classic show rules) -->
+        <div class="lifelines-bar" id="lifelines-bar">
+          <span class="lifelines-label">Youth Pastor Lifelines</span>
+          <div class="lifeline-buttons">
+            <button type="button" class="lifeline-btn" id="btn-peek" onclick="usePeek()" title="See what the Youth Pastor wrote down">
+              <span>👀</span>
+              <span>Peek</span>
+            </button>
+            <button type="button" class="lifeline-btn" id="btn-copy" onclick="useCopy()" title="Automatically lock in the Youth Pastor's answer">
+              <span>📋</span>
+              <span>Copy</span>
+            </button>
+            <button type="button" class="lifeline-btn active-save" id="btn-save" disabled="" title="Automatically activates if you answer wrong and the Youth Pastor is right">
+              <span>🛡️</span>
+              <span id="save-label">Save: Ready</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Youth Pastor Peek Reveal Box -->
+        <div class="peek-banner hidden fade-in" id="peek-banner">
+          <div class="peek-banner-title">📝 The Youth Pastor wrote down:</div>
+          <div class="peek-answer-text" id="peek-answer-text"></div>
+          <div class="peek-actions" id="peek-actions">
+            <button type="button" class="btn btn-gold" style="padding: 7px 14px; font-size: 13px;" onclick="acceptPeekAnswer()">Lock In Youth Pastor's Answer</button>
+            <span style="font-size: 12px; color: #92400E; align-self: center;">...or choose any option below!</span>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="question-box" id="question-box">
+          <p class="question-text" id="question-text"></p>
+        </div>
+
+        <!-- 4 Multiple Choice Options -->
+        <div class="options-grid" id="options-grid"></div>
+
+        <!-- Stage Footer (Contestant Info & Drop Out Option) -->
+        <div class="stage-footer" id="stage-footer">
+          <div class="contestant-tag">
+            Contestant: <strong id="contestant-display">Youth Challenger</strong> • Banked: <strong id="banked-display">$0</strong>
+          </div>
+          <button type="button" class="btn btn-danger-outline" id="dropout-btn" onclick="openDropOutModal()">
+            Drop Out &amp; Take <span id="dropout-amount">$0</span>
+          </button>
+        </div>
+
+        <!-- Post-Answer Feedback & Youth Pastor's Note -->
+        <div class="feedback-panel hidden fade-in" id="feedback-panel">
+          <div class="feedback-status" id="feedback-status"></div>
+
+          <div class="yp-note-card">
+            <div class="yp-note-header">
+              <span class="yp-note-title">💡 Youth Pastor's Note</span>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="yp-paper-pill" id="yp-paper-status">Youth Pastor wrote: ...</span>
+                <span class="scripture-ref" id="scripture-ref">Matthew 1:1</span>
+              </div>
+            </div>
+            <p class="yp-note-body" id="yp-note-body"></p>
+          </div>
+
+          <button type="button" class="btn btn-dark" id="next-btn" onclick="handleNextStep()">
+            <span id="next-btn-label">Continue to Next Grade</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bonus Decision Card (Shown after 10th Grade before $1,000,000 Question) -->
+      <div class="card bonus-decision hidden fade-in" id="bonus-decision-card">
+        <div class="hero-icon" style="margin: 0 auto 14px; background: var(--gold-light); border-color: var(--gold-border);">🏆</div>
+        <span class="grade-badge bonus-mode">Final Round • $500,000 Secured</span>
+        <h2 style="font-size: 26px; margin: 12px 0 8px;">The $1,000,000 Youth Pastor Question</h2>
+        <p style="color: var(--muted); font-size: 14px;">
+          You've passed all 10 grades! No lifelines are allowed on the final question. Look at the category below and decide: will you play for <strong>$1,000,000</strong> or drop out with <strong>$500,000</strong>?
+        </p>
+
+        <div class="bonus-category-box">
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #92400E; margin-bottom: 4px;">
+            Final Category
+          </div>
+          <div style="font-size: 20px; font-weight: 800; color: var(--text);">
+            The Risen Christ &amp; Apostolic Commission
+          </div>
+        </div>
+
+        <p style="font-size: 13px; color: var(--muted);">
+          Warning: If you play and miss the $1,000,000 question, you drop back to the $25,000 milestone!
+        </p>
+
+        <div class="bonus-decision-btns">
+          <button type="button" class="btn btn-secondary" onclick="confirmDropOut(true)">
+            Drop Out ($500,000)
+          </button>
+          <button type="button" class="btn btn-gold" onclick="startBonusQuestion()">
+            Play for $1,000,000!
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Sidebar: Prize Ladder -->
+      <aside class="card ladder-card">
+        <div class="ladder-header">
+          <h3>Prize Ladder</h3>
+          <span style="font-size: 11px; color: var(--muted);">🛡️ = Safety Net</span>
+        </div>
+        <ul class="ladder-list" id="ladder-list"></ul>
+      </aside>
+    </section>
+
+    <!-- 3. FINAL VICTORY / END SCREEN -->
+    <section id="results-screen" class="card results-wrap hidden fade-in">
+      <div class="result-icon" id="result-icon">🎓</div>
+      <span class="grade-badge" id="result-badge">Challenge Complete</span>
+      <h1 id="result-title" style="margin-top: 10px;">Game Over</h1>
+      <p class="subtitle" id="result-subtitle" style="margin-bottom: 12px;"></p>
+
+      <div id="result-banner" class="confession-banner">
+        “I am NOT smarter than a Youth Pastor!”
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span>Final Winnings</span>
+          <strong id="final-winnings" style="color: var(--gold);">$0</strong>
+        </div>
+        <div class="stat-box">
+          <span>Questions Correct</span>
+          <strong id="final-correct">0 / 10</strong>
+        </div>
+        <div class="stat-box">
+          <span>Lifelines Used</span>
+          <strong id="final-lifelines">0 / 3</strong>
+        </div>
+      </div>
+
+      <div class="recap-box">
+        <h4>Question-by-Question Recap</h4>
+        <div id="recap-list"></div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" class="btn btn-primary" style="width: auto; min-width: 200px;" onclick="startGame()">
+          <span>Play Again</span>
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="returnHome()">
+          <span>Change Team Name</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Drop Out Confirmation Modal -->
+  <div class="modal-overlay hidden" id="dropout-modal">
+    <div class="modal-card fade-in">
+      <div style="font-size: 34px; margin-bottom: 8px;">🏳️</div>
+      <h3>Drop Out &amp; Lock In Winnings?</h3>
+      <p>
+        If you drop out now, you will walk away with <strong id="modal-prize-text" style="color: var(--text);">$0</strong>—and you must confess to the youth group: <em>“I am NOT smarter than a Youth Pastor!”</em>
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeDropOutModal()">Keep Playing</button>
+        <button type="button" class="btn btn-gold" onclick="confirmDropOut(false)">Yes, Drop Out</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Are You Smarter Than a Youth Pastor? • Four Gospels Curriculum • Self-Contained Interactive Edition
+  </footer>
+
+  <script>
+    /**
+     * 10 Progressive Gospel Questions + 1 Final $1,000,000 Youth Pastor Question
+     * Includes Youth Pastor's pre-written answer (right 90% of the time, tricky once!)
+     * and rich, youth-accessible Scripture commentary revealed only after locking in.
+     */
+    const QUESTIONS = [
+      {
+        grade: "1st Grade",
+        category: "Jesus' Birth",
+        prize: 1000,
+        milestone: false,
+        question: "In which small Judean town was Jesus born and laid in a manger because there was no guest room available?",
+        options: ["Nazareth", "Bethlehem", "Jericho", "Capernaum"],
+        correctIndex: 1,
+        ypIndex: 1, // Youth Pastor is right
+        reference: "Luke 2:4–7",
+        note: "Jesus grew up in Nazareth, which is why He was called 'Jesus of Nazareth,' but Mary and Joseph traveled to Bethlehem for the Roman census—fulfilling Micah 5:2 that the Messiah would come from King David's hometown."
+      },
+      {
+        grade: "2nd Grade",
+        category: "Parables",
+        prize: 2000,
+        milestone: false,
+        question: "In Jesus' Parable of the Good Samaritan, which two religious travelers walked past the wounded man before the Samaritan stopped to help?",
+        options: [
+          "A Pharisee and a Sadducee",
+          "A Priest and a Levite",
+          "A Scribe and a Tax Collector",
+          "A Zealot and a Centurion"
+        ],
+        correctIndex: 1,
+        ypIndex: 1,
+        reference: "Luke 10:30–35",
+        note: "Both the priest and the Levite served in the Jerusalem temple, yet they crossed to the other side of the road. Jesus used a Samaritan—someone His audience viewed as an outsider—to show that true neighbor-love crosses every barrier."
+      },
+      {
+        grade: "3rd Grade",
+        category: "Miracles",
+        prize: 5000,
+        milestone: false,
+        question: "At a wedding in Cana of Galilee, what was the very first miraculous sign Jesus performed in John's Gospel?",
+        options: [
+          "Healing a blind man with mud",
+          "Walking on the Sea of Galilee",
+          "Turning water into wine",
+          "Feeding 5,000 with five loaves"
+        ],
+        correctIndex: 2,
+        ypIndex: 2,
+        reference: "John 2:1–11",
+        note: "When the wedding host ran out of wine—a major social embarrassment in the first century—Jesus turned six stone water jars used for ceremonial washing into the finest wine, revealing His glory and showing He cares about everyday joy."
+      },
+      {
+        grade: "4th Grade",
+        category: "The Disciples",
+        prize: 10000,
+        milestone: false,
+        question: "Before Jesus called him to follow Him along the Sea of Galilee, what was Matthew's (Levi's) profession?",
+        options: [
+          "A fisherman",
+          "A tentmaker",
+          "A Roman soldier",
+          "A tax collector"
+        ],
+        correctIndex: 3,
+        ypIndex: 3,
+        reference: "Matthew 9:9; Luke 5:27–28",
+        note: "Tax collectors worked for the Roman Empire and were widely despised by their neighbors. Yet Jesus walked right up to Matthew's tax booth and said, 'Follow me'—and Matthew left everything behind to become a Gospel writer."
+      },
+      {
+        grade: "5th Grade",
+        category: "Sermon on the Mount",
+        prize: 25000,
+        milestone: true, // Safety Net #1
+        question: "In Matthew 5, Jesus told His followers they are 'the salt of the earth' and 'the light of the world.' Where did He say a town cannot be hidden?",
+        options: [
+          "Beside a river",
+          "Built on a hill",
+          "In a valley",
+          "Near the temple"
+        ],
+        correctIndex: 1,
+        ypIndex: 1,
+        reference: "Matthew 5:13–16",
+        note: "At night in ancient Israel, oil lamps burning inside homes on a hilltop could be seen for miles across the dark countryside. Jesus calls His disciples to let their good deeds shine so people praise our Father in heaven."
+      },
+      {
+        grade: "6th Grade",
+        category: "Holy Week",
+        prize: 50000,
+        milestone: false,
+        question: "As Jesus was carrying His cross toward Golgotha, whom did the Roman soldiers force to carry it for Him?",
+        options: [
+          "Joseph of Arimathea",
+          "Nicodemus",
+          "Simon of Cyrene",
+          "Barabbas"
+        ],
+        correctIndex: 2,
+        ypIndex: 2,
+        reference: "Mark 15:21; Luke 23:26",
+        note: "Simon was visiting Jerusalem from Cyrene in North Africa (modern-day Libya). Mark notes that Simon was the father of Alexander and Rufus—names familiar to early Christians, suggesting Simon's family became believers!"
+      },
+      {
+        grade: "7th Grade",
+        category: "Gospel of John",
+        prize: 100000,
+        milestone: false,
+        question: "Which of the following is NOT one of Jesus' seven famous 'I Am' statements in the Gospel of John?",
+        options: [
+          "I am the bread of life",
+          "I am the good shepherd",
+          "I am the rock of ages",
+          "I am the true vine"
+        ],
+        correctIndex: 2,
+        ypIndex: 2,
+        reference: "John 6:35; 10:11; 15:1",
+        note: "Jesus' seven 'I Am' statements in John are: Bread of Life, Light of the World, Gate for the Sheep, Good Shepherd, Resurrection and the Life, Way/Truth/Life, and True Vine. 'Rock of Ages' is a beloved hymn inspired by Isaiah 26:4!"
+      },
+      {
+        grade: "8th Grade",
+        category: "Old Testament Prophecies",
+        prize: 175000,
+        milestone: false,
+        question: "When Jesus entered Jerusalem on Palm Sunday riding a young donkey, which Old Testament prophet did Matthew quote to show this fulfilled Scripture?",
+        options: [
+          "Zechariah",
+          "Jeremiah",
+          "Ezekiel",
+          "Malachi"
+        ],
+        correctIndex: 0,
+        ypIndex: 1, // Tricky! Youth Pastor wrote Jeremiah instead of Zechariah!
+        reference: "Matthew 21:4–5; Zechariah 9:9",
+        note: "Whoa—even the Youth Pastor mixed up the minor prophets here! Matthew quotes Zechariah 9:9 ('See, your king comes to you, gentle and riding on a donkey'). Unlike earthly kings who rode warhorses, Jesus came in humility and peace."
+      },
+      {
+        grade: "9th Grade",
+        category: "Geography & Culture",
+        prize: 300000,
+        milestone: false,
+        question: "In John 4, Jesus traveled through Samaria and spoke with a Samaritan woman at Jacob's well near which town?",
+        options: [
+          "Bethany",
+          "Sychar",
+          "Emmaus",
+          "Caesarea Philippi"
+        ],
+        correctIndex: 1,
+        ypIndex: 1,
+        reference: "John 4:4–7",
+        note: "Sychar lay near Mount Gerizim in Samaria. Most Jews took a longer route around Samaria to avoid contact, yet Jesus intentionally went right through Sychar to offer 'living water'—and she became one of the first evangelists to her town."
+      },
+      {
+        grade: "10th Grade",
+        category: "Deep Gospel Theology",
+        prize: 500000,
+        milestone: true, // Safety Net #2
+        question: "In the prologue of John's Gospel ('In the beginning was the Word...'), what is the original Greek word translated as 'Word'?",
+        options: [
+          "Agape",
+          "Pneuma",
+          "Logos",
+          "Charis"
+        ],
+        correctIndex: 2,
+        ypIndex: 2,
+        reference: "John 1:1, 14",
+        note: "John chose 'Logos' brilliantly: to Jewish readers it echoed God's creative Word in Genesis 1, and to Greek thinkers it meant the divine Reason ordering the universe. John 1:14 declares that this eternal Logos 'became flesh and made his dwelling among us.'"
+      }
+    ];
+
+    const BONUS_QUESTION = {
+      grade: "Youth Pastor Question",
+      category: "The Risen Christ & Apostolic Commission",
+      prize: 1000000,
+      question: "In John 21, after breakfast by the Sea of Tiberias, Jesus asked Simon Peter 'Do you love me?' three times. What specific command did Jesus give Peter after his third answer?",
+        options: [
+          "Go and baptize all nations",
+          "Feed my sheep",
+          "Write down everything you have seen",
+          "Guard the tomb in Jerusalem"
+        ],
+      correctIndex: 1,
+      ypIndex: 1,
+      reference: "John 21:15–17",
+      note: "Peter had denied Jesus three times beside a charcoal fire on the night of His arrest. Here beside another charcoal fire, Jesus graciously restored Peter three times—commissioning him to care for and shepherd God's people ('Feed my sheep')."
+    };
+
+    // Game State
+    let state = {
+      playerName: "Youth Challenger",
+      currentIdx: 0, // 0..9 for main questions, 10 for bonus
+      isBonus: false,
+      bankedPrize: 0,
+      milestonePrize: 0,
+      lifelines: {
+        peekUsed: false,
+        copyUsed: false,
+        saveUsed: false
+      },
+      peekActive: false,
+      answered: false,
+      history: []
+    };
+
+    // Utility: Format USD currency
+    function formatMoney(num) {
+      return "$" + num.toLocaleString("en-US");
+    }
+
+    // Return to Welcome Screen
+    function returnHome() {
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("welcome-screen").classList.remove("hidden");
+      document.getElementById("header-status").innerHTML =
+        '<span class="pill pill-indigo">Matthew • Mark • Luke • John</span>';
+    }
+
+    // Start / Reset Game
+    function startGame() {
+      const rawName = document.getElementById("player-name-input").value.trim();
+      state = {
+        playerName: rawName || "Youth Challenger",
+        currentIdx: 0,
+        isBonus: false,
+        bankedPrize: 0,
+        milestonePrize: 0,
+        lifelines: {
+          peekUsed: false,
+          copyUsed: false,
+          saveUsed: false
+        },
+        peekActive: false,
+        answered: false,
+        history: []
+      };
+
+      document.getElementById("welcome-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.add("hidden");
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      document.getElementById("game-screen").classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    // Render Prize Ladder Sidebar
+    function renderLadder() {
+      const list = document.getElementById("ladder-list");
+      list.innerHTML = "";
+
+      QUESTIONS.forEach((q, idx) => {
+        const li = document.createElement("li");
+        let cls = "ladder-item";
+        if (q.milestone) cls += " milestone";
+        if (!state.isBonus && idx === state.currentIdx) cls += " current";
+        else if (idx < state.currentIdx || state.isBonus) cls += " passed";
+
+        li.className = cls;
+        li.innerHTML = `
+          <span>${q.grade}${q.milestone ? " 🛡️" : ""}</span>
+          <span>${formatMoney(q.prize)}</span>
+        `;
+        list.appendChild(li);
+      });
+
+      // Top $1,000,000 Bonus Step
+      const bonusLi = document.createElement("li");
+      bonusLi.className = "ladder-item bonus-step" + (state.isBonus ? " current" : "");
+      bonusLi.innerHTML = `
+        <span>🎓 Youth Pastor</span>
+        <span>$1,000,000</span>
+      `;
+      list.appendChild(bonusLi);
+    }
+
+    // Update Lifeline Buttons & Header Pill
+    function updateLifelinesUI() {
+      const peekBtn = document.getElementById("btn-peek");
+      const copyBtn = document.getElementById("btn-copy");
+      const saveBtn = document.getElementById("btn-save");
+      const saveLabel = document.getElementById("save-label");
+
+      peekBtn.disabled = state.lifelines.peekUsed || state.answered;
+      peekBtn.classList.toggle("used", state.lifelines.peekUsed);
+
+      copyBtn.disabled = state.lifelines.copyUsed || state.answered;
+      copyBtn.classList.toggle("used", state.lifelines.copyUsed);
+
+      if (state.lifelines.saveUsed) {
+        saveBtn.classList.remove("active-save");
+        saveBtn.classList.add("used");
+        saveLabel.textContent = "Save: Used";
+      } else {
+        saveBtn.classList.add("active-save");
+        saveBtn.classList.remove("used");
+        saveLabel.textContent = "Save: Ready";
+      }
+
+      // Header status
+      const remaining = (state.lifelines.peekUsed ? 0 : 1) +
+                        (state.lifelines.copyUsed ? 0 : 1) +
+                        (state.lifelines.saveUsed ? 0 : 1);
+      document.getElementById("header-status").innerHTML = `
+        <span class="pill pill-indigo">Lifelines: ${remaining}/3</span>
+        <span class="pill pill-gold">Banked: ${formatMoney(state.bankedPrize)}</span>
+      `;
+    }
+
+    // Render Current Question
+    function renderQuestion() {
+      state.answered = false;
+      state.peekActive = false;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const badge = document.getElementById("grade-badge");
+      badge.textContent = `${q.grade} • ${q.category}`;
+      badge.className = state.isBonus ? "grade-badge bonus-mode" : "grade-badge";
+
+      document.getElementById("prize-tag").textContent = `Playing for ${formatMoney(q.prize)}`;
+      document.getElementById("question-text").textContent = q.question;
+
+      const qBox = document.getElementById("question-box");
+      qBox.className = state.isBonus ? "question-box bonus-box" : "question-box";
+
+      // Show/Hide Lifelines bar (no lifelines on $1,000,000 question)
+      document.getElementById("lifelines-bar").classList.toggle("hidden", state.isBonus);
+      document.getElementById("peek-banner").classList.add("hidden");
+      document.getElementById("feedback-panel").classList.add("hidden");
+
+      // Contestant & Drop-out footer
+      document.getElementById("contestant-display").textContent = state.playerName;
+      document.getElementById("banked-display").textContent = formatMoney(state.bankedPrize);
+
+      const dropoutBtn = document.getElementById("dropout-btn");
+      if (state.isBonus) {
+        // Decision was already made before viewing the $1,000,000 question
+        dropoutBtn.classList.add("hidden");
+      } else {
+        dropoutBtn.classList.remove("hidden");
+        dropoutBtn.disabled = false;
+        document.getElementById("dropout-amount").textContent = formatMoney(state.bankedPrize);
+      }
+
+      // Render 4 Options
+      const grid = document.getElementById("options-grid");
+      grid.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.dataset.index = idx;
+        btn.innerHTML = `
+          <span class="option-letter">${letters[idx]}</span>
+          <span class="option-label">${optText}</span>
+        `;
+        btn.addEventListener("click", () => submitAnswer(idx, false));
+        grid.appendChild(btn);
+      });
+
+      renderLadder();
+      updateLifelinesUI();
+    }
+
+    // Lifeline 1: PEEK
+    function usePeek() {
+      if (state.lifelines.peekUsed || state.answered || state.isBonus) return;
+      state.lifelines.peekUsed = true;
+      state.peekActive = true;
+
+      const q = QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      document.getElementById("peek-answer-text").textContent =
+        `${letters[q.ypIndex]}. ${q.options[q.ypIndex]}`;
+      document.getElementById("peek-actions").classList.remove("hidden");
+      document.getElementById("peek-banner").classList.remove("hidden");
+
+      updateLifelinesUI();
+    }
+
+    function acceptPeekAnswer() {
+      if (state.answered) return;
+      const q = QUESTIONS[state.currentIdx];
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Lifeline 2: COPY
+    function useCopy() {
+      if (state.lifelines.copyUsed || state.answered || state.isBonus) return;
+      state.lifelines.copyUsed = true;
+      const q = QUESTIONS[state.currentIdx];
+      updateLifelinesUI();
+      submitAnswer(q.ypIndex, true);
+    }
+
+    // Evaluate Submitted Answer
+    function submitAnswer(selectedIdx, usedYpAnswer) {
+      if (state.answered) return;
+      state.answered = true;
+
+      const q = state.isBonus ? BONUS_QUESTION : QUESTIONS[state.currentIdx];
+      const letters = ["A", "B", "C", "D"];
+      const isCorrect = selectedIdx === q.correctIndex;
+      const ypIsCorrect = q.ypIndex === q.correctIndex;
+
+      let savedByYp = false;
+      let outcome = "wrong";
+
+      if (isCorrect) {
+        outcome = "correct";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.milestonePrize = q.prize;
+        }
+      } else if (!state.isBonus && !state.lifelines.saveUsed && ypIsCorrect) {
+        // Lifeline 3: SAVE triggers automatically!
+        state.lifelines.saveUsed = true;
+        savedByYp = true;
+        outcome = "saved";
+        state.bankedPrize = q.prize;
+        if (q.milestone) {
+          state.milestonePrize = q.prize;
+        }
+      } else {
+        // Missed without a save: fall back to milestone prize
+        outcome = "wrong";
+        state.bankedPrize = state.milestonePrize;
+      }
+
+      // Hide peek quick-accept button once locked in
+      document.getElementById("peek-actions").classList.add("hidden");
+      document.getElementById("dropout-btn").disabled = true;
+
+      // Style Option Buttons
+      const buttons = document.querySelectorAll("#options-grid .option-btn");
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        const letterEl = btn.querySelector(".option-letter");
+
+        if (idx === q.correctIndex) {
+          btn.classList.add("correct");
+          letterEl.textContent = "✓";
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.add("wrong");
+          letterEl.textContent = "✕";
+        } else {
+          btn.classList.add("dimmed");
+        }
+      });
+
+      // Record History
+      state.history.push({
+        grade: q.grade,
+        category: q.category,
+        question: q.question,
+        correctAnswer: q.options[q.correctIndex],
+        userAnswer: q.options[selectedIdx],
+        outcome: outcome,
+        prize: q.prize
+      });
+
+      // Populate Feedback Banner
+      const statusEl = document.getElementById("feedback-status");
+      if (outcome === "correct") {
+        statusEl.innerHTML = `
+          <span class="status-icon ok">✓</span>
+          <span style="color: #065F46;">${usedYpAnswer ? "The Youth Pastor nailed it!" : "Correct!"} You banked ${formatMoney(q.prize)}.</span>
+        `;
+      } else if (outcome === "saved") {
+        statusEl.innerHTML = `
+          <span class="status-icon saved">🛡️</span>
+          <span style="color: #92400E;">SAVED BY THE YOUTH PASTOR! You picked ${letters[selectedIdx]}, but the Youth Pastor wrote ${letters[q.ypIndex]} (${q.options[q.ypIndex]})!</span>
+        `;
+      } else {
+        statusEl.innerHTML = `
+          <span class="status-icon bad">✕</span>
+          <span style="color: #881337;">Incorrect! The correct answer was ${letters[q.correctIndex]}. ${q.options[q.correctIndex]}.</span>
+        `;
+      }
+
+      // Youth Pastor's Paper & Commentary
+      document.getElementById("yp-paper-status").textContent =
+        `Youth Pastor wrote: ${letters[q.ypIndex]}. ${q.options[q.ypIndex]} (${ypIsCorrect ? "Right ✓" : "Missed ✕"})`;
+      document.getElementById("scripture-ref").textContent = q.reference;
+      document.getElementById("yp-note-body").textContent = q.note;
+
+      // Configure Next Step Button
+      const nextLabel = document.getElementById("next-btn-label");
+      if (outcome === "wrong") {
+        nextLabel.textContent = "See Final Results";
+      } else if (state.isBonus) {
+        nextLabel.textContent = "Claim $1,000,000 Victory!";
+      } else if (state.currentIdx === QUESTIONS.length - 1) {
+        nextLabel.textContent = "Proceed to $1,000,000 Bonus Round";
+      } else {
+        nextLabel.textContent = `Advance to ${QUESTIONS[state.currentIdx + 1].grade}`;
+      }
+
+      document.getElementById("banked-display").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("feedback-panel").classList.remove("hidden");
+      updateLifelinesUI();
+      renderLadder();
+    }
+
+    // Handle Progression After Feedback
+    function handleNextStep() {
+      const lastEntry = state.history[state.history.length - 1];
+
+      if (lastEntry && lastEntry.outcome === "wrong") {
+        endGame("missed");
+        return;
+      }
+
+      if (state.isBonus) {
+        endGame("won_million");
+        return;
+      }
+
+      if (state.currentIdx < QUESTIONS.length - 1) {
+        state.currentIdx += 1;
+        renderQuestion();
+      } else {
+        // Show Bonus Decision Screen before $1,000,000 Question
+        document.getElementById("question-stage").classList.add("hidden");
+        document.getElementById("bonus-decision-card").classList.remove("hidden");
+      }
+    }
+
+    // Start the $1,000,000 Final Question
+    function startBonusQuestion() {
+      state.isBonus = true;
+      document.getElementById("bonus-decision-card").classList.add("hidden");
+      document.getElementById("question-stage").classList.remove("hidden");
+      renderQuestion();
+    }
+
+    // Drop Out Modal Handlers
+    function openDropOutModal() {
+      if (state.answered) return;
+      document.getElementById("modal-prize-text").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("dropout-modal").classList.remove("hidden");
+    }
+
+    function closeDropOutModal() {
+      document.getElementById("dropout-modal").classList.add("hidden");
+    }
+
+    function confirmDropOut(fromBonusScreen) {
+      closeDropOutModal();
+      if (fromBonusScreen) {
+        state.bankedPrize = 500000;
+      }
+      endGame("dropout");
+    }
+
+    // Show Final Results Screen
+    function endGame(reason) {
+      document.getElementById("game-screen").classList.add("hidden");
+      document.getElementById("results-screen").classList.remove("hidden");
+
+      const iconEl = document.getElementById("result-icon");
+      const badgeEl = document.getElementById("result-badge");
+      const titleEl = document.getElementById("result-title");
+      const subEl = document.getElementById("result-subtitle");
+      const bannerEl = document.getElementById("result-banner");
+
+      const totalAnswered = state.history.length;
+      const totalPassed = state.history.filter(h => h.outcome === "correct" || h.outcome === "saved").length;
+      const lifelinesUsedCount = (state.lifelines.peekUsed ? 1 : 0) +
+                                 (state.lifelines.copyUsed ? 1 : 0) +
+                                 (state.lifelines.saveUsed ? 1 : 0);
+
+      if (reason === "won_million") {
+        iconEl.textContent = "👑";
+        badgeEl.textContent = "$1,000,000 Champion";
+        badgeEl.className = "grade-badge bonus-mode";
+        titleEl.textContent = `Congratulations, ${state.playerName}!`;
+        subEl.textContent = "You conquered all 10 grades AND the $1,000,000 Youth Pastor Question!";
+        bannerEl.className = "victory-banner";
+        bannerEl.textContent = "🎉 OFFICIAL VERDICT: You ARE Smarter Than a Youth Pastor!";
+      } else if (reason === "dropout") {
+        iconEl.textContent = "🏳️";
+        badgeEl.textContent = "Dropped Out";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Smart Play, ${state.playerName}!`;
+        subEl.textContent = `You locked in ${formatMoney(state.bankedPrize)} before risking it all.`;
+        bannerEl.className = "confession-banner";
+        bannerEl.textContent = "📢 REQUIRED CONFESSION: “I am NOT smarter than a Youth Pastor!”";
+      } else {
+        iconEl.textContent = "📖";
+        badgeEl.textContent = "Flunked Out";
+        badgeEl.className = "grade-badge";
+        titleEl.textContent = `Good Effort, ${state.playerName}!`;
+        subEl.textContent = state.bankedPrize > 0
+          ? `Your safety net caught you! You still walk away with ${formatMoney(state.bankedPrize)}.`
+          : "You missed before reaching the $25,000 milestone, so you leave with $0.";
+        bannerEl.className = "confession-banner";
+        bannerEl.textContent = "📢 REQUIRED CONFESSION: “I am NOT smarter than a Youth Pastor!”";
+      }
+
+      document.getElementById("final-winnings").textContent = formatMoney(state.bankedPrize);
+      document.getElementById("final-correct").textContent = `${totalPassed} / ${totalAnswered}`;
+      document.getElementById("final-lifelines").textContent = `${lifelinesUsedCount} / 3`;
+
+      // Render Question Recap
+      const recapList = document.getElementById("recap-list");
+      recapList.innerHTML = "";
+
+      if (state.history.length === 0) {
+        recapList.innerHTML = '<div style="font-size: 13px; color: var(--muted);">No questions were answered before dropping out.</div>';
+      } else {
+        state.history.forEach(item => {
+          const row = document.createElement("div");
+          row.className = "recap-item";
+          const tag = item.outcome === "correct"
+            ? '<span style="color: var(--emerald); font-weight: 700;">✓ Correct</span>'
+            : item.outcome === "saved"
+              ? '<span style="color: var(--gold); font-weight: 700;">🛡️ Saved</span>'
+              : '<span style="color: var(--rose); font-weight: 700;">✕ Missed</span>';
+
+          row.innerHTML = `
+            <div>
+              <strong>${item.grade} (${item.category})</strong>
+              <div style="color: var(--muted); font-size: 12px;">Answer: ${item.correctAnswer}</div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              ${tag}
+              <div style="font-size: 11px; color: var(--muted);">${formatMoney(item.prize)}</div>
+            </div>
+          `;
+          recapList.appendChild(row);
+        });
+      }
+
+      document.getElementById("header-status").innerHTML =
+        `<span class="pill pill-gold">Final Winnings: ${formatMoney(state.bankedPrize)}</span>`;
+    }
+  </script>
+
+</body></html>
