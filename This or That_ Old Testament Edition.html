@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/adamg/Downloads/this_or_that_old_testament_edition.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This or That: Old Testament Edition</title>
+  <!-- Tailwind CSS -->
+  <script src="./This or That_ Old Testament Edition_files/saved_resource"></script>
+  <!-- Google Fonts: Cinzel, Lora & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./This or That_ Old Testament Edition_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-obsidian: #120d0a;
+      --bg-sepia-dark: #1d140e;
+      --parchment-light: #fcf6e8;
+      --parchment-mid: #f2e4c9;
+      --parchment-edge: #dfc79d;
+      --ink-primary: #231810;
+      --ink-secondary: #5c4632;
+      --gold-bright: #f4d67c;
+      --gold-primary: #c99b32;
+      --gold-deep: #855e12;
+      --crimson-royal: #7f1d1d;
+      --lapis-royal: #1e3a5f;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-obsidian);
+      color: #f9f2e4;
+      background-image:
+        radial-gradient(circle at 18% 15%, rgba(127, 29, 29, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 82% 18%, rgba(30, 58, 95, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 50% 88%, rgba(201, 155, 50, 0.14) 0%, transparent 52%),
+        linear-gradient(170deg, #100b08 0%, #1b120c 50%, #130d09 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+
+    .font-lora {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* Aged Hebrew Parchment Card */
+    .scroll-card {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.55) 0%, transparent 70%),
+        linear-gradient(155deg, #fcf6e8 0%, #f1e1c3 60%, #e7d1aa 100%);
+      color: var(--ink-primary);
+      border: 2px solid rgba(201, 155, 50, 0.8);
+      box-shadow:
+        0 18px 40px -12px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(133, 94, 18, 0.35),
+        inset 0 0 28px rgba(180, 140, 80, 0.22);
+      position: relative;
+      transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    .scroll-card::before {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(133, 94, 18, 0.32);
+      border-radius: 0.75rem;
+      pointer-events: none;
+    }
+
+    .scroll-card.interactive:hover:not(:disabled) {
+      transform: translateY(-5px) scale(1.012);
+      border-color: #f4d67c;
+      box-shadow:
+        0 24px 48px -10px rgba(0, 0, 0, 0.85),
+        0 0 25px rgba(201, 155, 50, 0.35),
+        inset 0 0 20px rgba(255, 248, 225, 0.45);
+    }
+
+    .scroll-card.interactive:active:not(:disabled) {
+      transform: translateY(-1px) scale(0.995);
+    }
+
+    /* Card States */
+    .scroll-card.state-correct {
+      border-color: #10b981;
+      box-shadow:
+        0 0 34px rgba(16, 185, 129, 0.55),
+        0 18px 40px -10px rgba(0, 0, 0, 0.8),
+        inset 0 0 22px rgba(16, 185, 129, 0.16);
+    }
+
+    .scroll-card.state-wrong {
+      border-color: #dc2626;
+      box-shadow:
+        0 0 34px rgba(220, 38, 38, 0.55),
+        0 18px 40px -10px rgba(0, 0, 0, 0.8),
+        inset 0 0 22px rgba(220, 38, 38, 0.16);
+      animation: shakeScroll 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    .scroll-card.state-selected-poll {
+      border-color: #1e3a5f;
+      box-shadow:
+        0 0 34px rgba(59, 130, 246, 0.45),
+        0 18px 40px -10px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(30, 58, 95, 0.14);
+    }
+
+    .scroll-card.state-dimmed {
+      opacity: 0.78;
+      transform: scale(0.985);
+    }
+
+    /* Dark Obsidian Panel / Modal */
+    .obsidian-panel {
+      background: linear-gradient(160deg, #1b130d 0%, #130d09 100%);
+      border: 1px solid rgba(201, 155, 50, 0.45);
+      box-shadow:
+        0 24px 50px -12px rgba(0, 0, 0, 0.88),
+        inset 0 1px 0 rgba(255, 245, 215, 0.1);
+    }
+
+    @keyframes shakeScroll {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    @keyframes cardEnter {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-enter {
+      animation: cardEnter 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Gold Typography */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fbe8a6 0%, #d4a338 50%, #996d14 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e5be58 0%, #b3821c 100%);
+      color: #160f09;
+      border: 1px solid #fef0c3;
+      box-shadow: 0 4px 16px rgba(201, 155, 50, 0.38);
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 7px 22px rgba(201, 155, 50, 0.52);
+    }
+    .btn-gold:active {
+      transform: translateY(0);
+    }
+
+    /* Central Ornate OR Medallion */
+    .or-medallion {
+      background: radial-gradient(circle at 30% 30%, #fef3c7, #c99b32 62%, #6e4c0d 100%);
+      color: #1c120a;
+      box-shadow:
+        0 0 28px rgba(201, 155, 50, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.85);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #120d0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(201, 155, 50, 0.4);
+      border-radius: 9999px;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.sticky{position:sticky}.top-0{top:0px}.z-10{z-index:10}.z-30{z-index:30}.mx-auto{margin-left:auto;margin-right:auto}.my-0\.5{margin-top:0.125rem;margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-2\.5{margin-top:0.625rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-amber-400\/35{border-color:rgb(251 191 36 / 0.35)}.border-amber-400\/40{border-color:rgb(251 191 36 / 0.4)}.border-amber-400\/45{border-color:rgb(251 191 36 / 0.45)}.border-amber-400\/50{border-color:rgb(251 191 36 / 0.5)}.border-amber-500\/20{border-color:rgb(245 158 11 / 0.2)}.border-amber-500\/25{border-color:rgb(245 158 11 / 0.25)}.border-amber-500\/30{border-color:rgb(245 158 11 / 0.3)}.border-amber-500\/40{border-color:rgb(245 158 11 / 0.4)}.border-amber-900\/20{border-color:rgb(120 53 15 / 0.2)}.border-amber-900\/25{border-color:rgb(120 53 15 / 0.25)}.border-red-900\/25{border-color:rgb(127 29 29 / 0.25)}.border-stone-600{--tw-border-opacity:1;border-color:rgb(87 83 78 / var(--tw-border-opacity, 1))}.border-stone-700{--tw-border-opacity:1;border-color:rgb(68 64 60 / var(--tw-border-opacity, 1))}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-amber-500\/15{background-color:rgb(245 158 11 / 0.15)}.bg-amber-900\/10{background-color:rgb(120 53 15 / 0.1)}.bg-amber-900\/15{background-color:rgb(120 53 15 / 0.15)}.bg-amber-950\/15{background-color:rgb(69 26 3 / 0.15)}.bg-red-950\/15{background-color:rgb(69 10 10 / 0.15)}.bg-red-950\/70{background-color:rgb(69 10 10 / 0.7)}.bg-red-950\/75{background-color:rgb(69 10 10 / 0.75)}.bg-red-950\/80{background-color:rgb(69 10 10 / 0.8)}.bg-sky-950\/80{background-color:rgb(8 47 73 / 0.8)}.bg-stone-800{--tw-bg-opacity:1;background-color:rgb(41 37 36 / var(--tw-bg-opacity, 1))}.bg-stone-900{--tw-bg-opacity:1;background-color:rgb(28 25 23 / var(--tw-bg-opacity, 1))}.bg-stone-900\/80{background-color:rgb(28 25 23 / 0.8)}.bg-stone-900\/90{background-color:rgb(28 25 23 / 0.9)}.bg-stone-900\/95{background-color:rgb(28 25 23 / 0.95)}.bg-stone-950\/85{background-color:rgb(12 10 9 / 0.85)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-red-900{--tw-gradient-from:#7f1d1d var(--tw-gradient-from-position);--tw-gradient-to:rgb(127 29 29 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-red-950{--tw-gradient-from:#450a0a var(--tw-gradient-from-position);--tw-gradient-to:rgb(69 10 10 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-800{--tw-gradient-from:#075985 var(--tw-gradient-from-position);--tw-gradient-to:rgb(7 89 133 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-red-700{--tw-gradient-to:#b91c1c var(--tw-gradient-to-position)}.to-sky-600{--tw-gradient-to:#0284c7 var(--tw-gradient-to-position)}.to-stone-900{--tw-gradient-to:#1c1917 var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.22em\]{letter-spacing:0.22em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-100{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.text-amber-100\/85{color:rgb(254 243 199 / 0.85)}.text-amber-100\/90{color:rgb(254 243 199 / 0.9)}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-200\/75{color:rgb(253 230 138 / 0.75)}.text-amber-200\/85{color:rgb(253 230 138 / 0.85)}.text-amber-200\/90{color:rgb(253 230 138 / 0.9)}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-300\/80{color:rgb(252 211 77 / 0.8)}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-400\/90{color:rgb(251 191 36 / 0.9)}.text-amber-50{--tw-text-opacity:1;color:rgb(255 251 235 / var(--tw-text-opacity, 1))}.text-amber-50\/95{color:rgb(255 251 235 / 0.95)}.text-amber-950{--tw-text-opacity:1;color:rgb(69 26 3 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-red-900{--tw-text-opacity:1;color:rgb(127 29 29 / var(--tw-text-opacity, 1))}.text-red-950{--tw-text-opacity:1;color:rgb(69 10 10 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-sky-900{--tw-text-opacity:1;color:rgb(12 74 110 / var(--tw-text-opacity, 1))}.text-stone-200{--tw-text-opacity:1;color:rgb(231 229 228 / var(--tw-text-opacity, 1))}.text-stone-300{--tw-text-opacity:1;color:rgb(214 211 209 / var(--tw-text-opacity, 1))}.text-stone-400{--tw-text-opacity:1;color:rgb(168 162 158 / var(--tw-text-opacity, 1))}.text-stone-500{--tw-text-opacity:1;color:rgb(120 113 108 / var(--tw-text-opacity, 1))}.text-stone-600{--tw-text-opacity:1;color:rgb(87 83 78 / var(--tw-text-opacity, 1))}.text-stone-700{--tw-text-opacity:1;color:rgb(68 64 60 / var(--tw-text-opacity, 1))}.text-stone-900{--tw-text-opacity:1;color:rgb(28 25 23 / var(--tw-text-opacity, 1))}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-700{transition-duration:700ms}.selection\:bg-amber-500\/30 *::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200 *::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.selection\:bg-amber-500\/30::selection{background-color:rgb(245 158 11 / 0.3)}.selection\:text-amber-200::selection{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.hover\:border-amber-400:hover{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.hover\:border-amber-500\/40:hover{border-color:rgb(245 158 11 / 0.4)}.hover\:bg-amber-500\/15:hover{background-color:rgb(245 158 11 / 0.15)}.hover\:bg-amber-500\/25:hover{background-color:rgb(245 158 11 / 0.25)}.hover\:bg-stone-700:hover{--tw-bg-opacity:1;background-color:rgb(68 64 60 / var(--tw-bg-opacity, 1))}.hover\:bg-stone-800:hover{--tw-bg-opacity:1;background-color:rgb(41 37 36 / var(--tw-bg-opacity, 1))}.hover\:text-amber-200:hover{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-amber-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(251 191 36 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:flex{display:flex}.sm\:h-14{height:3.5rem}.sm\:w-14{width:3.5rem}.sm\:gap-3{gap:0.75rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:p-9{padding:2.25rem}.sm\:px-3{padding-left:0.75rem;padding-right:0.75rem}.sm\:py-8{padding-top:2rem;padding-bottom:2rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:my-0{margin-top:0px;margin-bottom:0px}.lg\:grid-cols-11{grid-template-columns:repeat(11, minmax(0, 1fr))}.lg\:gap-4{gap:1rem}}</style></head>
+<body class="flex flex-col justify-between selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- TOP HEADER BAR -->
+  <header class="w-full border-b border-amber-500/25 bg-stone-950/85 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand Logo & Title -->
+      <button id="home-logo-btn" type="button" class="flex items-center gap-3 text-left group cursor-pointer" title="Return to Mode Selection">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-950 to-stone-900 border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-inner group-hover:border-amber-300 transition">
+          <!-- Menorah / Sacred Scroll SVG -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0H8m4 0h4M6 6v4a6 6 0 0012 0V6M9 6v3a3 3 0 006 0V6"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-lg sm:text-xl font-extrabold tracking-wide gold-gradient-text leading-tight">
+            THIS OR THAT
+          </h1>
+          <p class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-amber-200/75 font-medium">
+            Old Testament Edition
+          </p>
+        </div>
+      </button>
+
+      <!-- Mode Switcher & Live Stats -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <!-- Quick Mode Switcher Pill -->
+        <div class="hidden md:flex items-center bg-stone-900/95 border border-amber-500/30 rounded-xl p-1">
+          <button id="header-mode-trivia" type="button" class="px-3 py-1 rounded-lg text-xs font-bold bg-amber-400/20 text-amber-200 border border-amber-400/40 transition cursor-pointer">
+            Trivia Challenge
+          </button>
+          <button id="header-mode-dilemma" type="button" class="px-3 py-1 rounded-lg text-xs font-bold text-stone-400 hover:text-amber-200 transition cursor-pointer">
+            Biblical Dilemmas
+          </button>
+        </div>
+
+        <!-- Trivia Score & Streak Counters -->
+        <div id="trivia-hud" class="flex items-center gap-2">
+          <div class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-stone-900/90 border border-amber-500/30 flex items-center gap-1.5">
+            <span class="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Score</span>
+            <span id="hud-score" class="font-cinzel text-base sm:text-lg font-bold text-amber-300">0</span>
+          </div>
+          <div class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-stone-900/90 border border-amber-500/30 flex items-center gap-1.5">
+            <span class="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Streak</span>
+            <span id="hud-streak" class="font-cinzel text-base sm:text-lg font-bold text-emerald-400">0</span>
+          </div>
+          <div class="hidden sm:flex px-3 py-1.5 rounded-xl bg-stone-900/90 border border-amber-500/30 items-center gap-1.5">
+            <span class="text-[11px] text-stone-400 uppercase tracking-wider font-semibold">Best</span>
+            <span id="hud-best" class="font-cinzel text-base sm:text-lg font-bold text-amber-400">3</span>
+          </div>
+        </div>
+
+        <!-- Dilemma Progress Counter -->
+        <div id="dilemma-hud" class="hidden items-center gap-2">
+          <div class="px-3 py-1.5 rounded-xl bg-stone-900/90 border border-amber-500/30 flex items-center gap-2">
+            <span class="text-xs text-stone-400 uppercase tracking-wider font-semibold">Dilemma</span>
+            <span id="hud-dilemma-progress" class="font-cinzel text-base sm:text-lg font-bold text-amber-300">1 / 10</span>
+          </div>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button id="sound-toggle" type="button" title="Toggle Sound Effects" class="p-2.5 rounded-xl bg-stone-900/90 border border-amber-500/30 text-amber-300 hover:bg-amber-500/15 transition cursor-pointer">
+          <svg id="sound-on-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          </svg>
+          <svg id="sound-off-icon" class="w-5 h-5 hidden text-stone-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
+          </svg>
+        </button>
+
+        <!-- Menu / Modes Button -->
+        <button id="open-menu-btn" type="button" class="px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-400/45 text-amber-200 hover:bg-amber-500/25 text-xs sm:text-sm font-semibold transition cursor-pointer">
+          Modes
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-6 sm:py-8 flex flex-col items-center justify-center">
+
+    <!-- ==================== VIEW 1: START / MODE SELECTION SCREEN ==================== -->
+    <section id="start-screen" class="w-full max-w-4xl animate-enter">
+      <div class="text-center mb-8">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-red-950/70 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">
+          Genesis Through Malachi
+        </span>
+        <h2 class="font-cinzel text-3xl sm:text-5xl font-extrabold gold-gradient-text mb-3">
+          Choose Your Scroll
+        </h2>
+        <p class="font-lora text-base sm:text-lg text-amber-100/85 max-w-2xl mx-auto">
+          Test your command of Old Testament history, prophets, and kings—or step into ancient dilemmas to uncover your Biblical Archetype.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Mode Card 1: Scripture Trivia Challenge -->
+        <div class="obsidian-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-amber-500/40 hover:border-amber-400 transition">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-red-950/80 border border-amber-400/45 flex items-center justify-center text-3xl mb-4">
+              📜
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-amber-200">
+                Scripture Trivia Challenge
+              </h3>
+            </div>
+            <p class="text-sm text-stone-300 leading-relaxed mb-5">
+              45+ factual Old Testament matchups spanning the Patriarchs, Exodus, Judges, Kings, Prophets, and Wisdom Literature. Pick the true answer, build your streak, and explore Scripture citations.
+            </p>
+
+            <!-- Sub-option: 10-Question vs Endless -->
+            <div class="mb-6">
+              <span class="block text-xs uppercase tracking-wider text-amber-300/80 font-bold mb-2">
+                Session Format
+              </span>
+              <div class="grid grid-cols-2 gap-2.5" id="trivia-length-selector">
+                <button type="button" data-length="10" class="length-btn active py-2.5 px-3 rounded-xl border border-amber-400 bg-amber-400/20 text-amber-100 text-xs sm:text-sm font-bold transition cursor-pointer">
+                  10 Questions
+                </button>
+                <button type="button" data-length="ENDLESS" class="length-btn py-2.5 px-3 rounded-xl border border-stone-700 bg-stone-900/80 text-stone-300 hover:border-amber-500/40 text-xs sm:text-sm font-bold transition cursor-pointer">
+                  Endless Scroll
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button id="start-trivia-btn" type="button" class="btn-gold w-full py-3.5 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+            Begin Trivia Challenge →
+          </button>
+        </div>
+
+        <!-- Mode Card 2: Biblical Dilemmas & Preferences -->
+        <div class="obsidian-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-amber-500/40 hover:border-amber-400 transition">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sky-950/80 border border-amber-400/45 flex items-center justify-center text-3xl mb-4">
+              ⚖️
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-amber-200">
+                Biblical Dilemmas &amp; Poll
+              </h3>
+            </div>
+            <p class="text-sm text-stone-300 leading-relaxed mb-5">
+              Would you rather dine at Solomon’s royal banquet or camp under the stars with Abraham? Compare your choices with fellow scribes across 10 dilemmas and discover your <strong>Old Testament Archetype</strong>.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-stone-900/90 border border-amber-500/20 mb-6">
+              <p class="text-xs text-amber-200/90 font-medium">
+                ✦ Reveals community vote splits after each pick<br>
+                ✦ Evaluates 4 Archetypes: <em>Warrior, Counselor, Pilgrim, Prophet</em>
+              </p>
+            </div>
+          </div>
+
+          <button id="start-dilemma-btn" type="button" class="btn-gold w-full py-3.5 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+            Enter Dilemmas Mode →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: ACTIVE GAMEPLAY ARENA ==================== -->
+    <section id="game-screen" class="hidden w-full flex-col items-center">
+
+      <!-- Round Progress & Category Tag -->
+      <div class="w-full max-w-4xl flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span id="round-category-badge" class="px-3.5 py-1 rounded-full bg-red-950/75 border border-amber-400/40 text-amber-200 text-xs font-bold uppercase tracking-widest">
+          Patriarchs &amp; Genesis
+        </span>
+        <span id="round-counter-label" class="text-xs sm:text-sm font-semibold text-amber-200/85">
+          Question 1 of 10
+        </span>
+      </div>
+
+      <!-- Prompt / Question Banner -->
+      <div class="w-full max-w-4xl obsidian-panel rounded-2xl p-5 sm:p-7 text-center mb-6 shadow-xl">
+        <p id="prompt-kicker" class="text-[11px] uppercase tracking-[0.22em] text-amber-400/90 font-bold mb-1.5">
+          Scripture Inquiry
+        </p>
+        <h2 id="question-text" class="font-lora text-xl sm:text-3xl font-bold text-amber-50 leading-snug">
+          Who was thrown into the den of lions for praying to God?
+        </h2>
+      </div>
+
+      <!-- Split-Card Arena: THIS (Left/Top) + OR Medallion + THAT (Right/Bottom) -->
+      <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-4 items-stretch relative">
+
+        <!-- OPTION A: THIS (Left / Top) -->
+        <button id="card-this" type="button" class="lg:col-span-5 scroll-card interactive rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400">
+          <div class="w-full">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-amber-900/15 text-amber-950 border border-amber-900/25">
+                THIS • [1 / ←]
+              </span>
+              <span id="this-status-pill" class="hidden px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider"></span>
+            </div>
+
+            <div id="this-icon" class="w-16 h-16 mx-auto rounded-2xl bg-amber-900/10 border border-amber-900/25 flex items-center justify-center text-4xl mb-4 shadow-inner">
+              🦁
+            </div>
+
+            <p id="this-subtitle" class="text-xs uppercase tracking-[0.18em] text-red-900 font-bold mb-1">
+              Statesman in Babylon
+            </p>
+            <h3 id="this-title" class="font-cinzel text-2xl sm:text-3xl font-extrabold text-stone-900 mb-2">
+              Daniel
+            </h3>
+            <p id="this-desc" class="font-lora text-sm text-stone-700 leading-relaxed max-w-sm mx-auto">
+              Prayed three times a day toward Jerusalem despite King Darius’ royal decree.
+            </p>
+          </div>
+
+          <!-- Poll Percentage Bar (Dilemma Mode Only) -->
+          <div id="this-poll-box" class="hidden w-full mt-5 pt-4 border-t border-amber-900/20">
+            <div class="flex items-baseline justify-between mb-1.5">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-600">Scribes Chose This</span>
+              <span id="this-poll-pct" class="font-cinzel text-2xl font-extrabold text-sky-900">50%</span>
+            </div>
+            <div class="w-full h-3 rounded-full bg-amber-950/15 overflow-hidden">
+              <div id="this-poll-bar" class="h-full bg-gradient-to-r from-sky-800 to-sky-600 rounded-full transition-all duration-700" style="width: 0%"></div>
+            </div>
+          </div>
+        </button>
+
+        <!-- CENTER OR MEDALLION -->
+        <div class="lg:col-span-1 flex items-center justify-center my-0.5 lg:my-0 z-10">
+          <div class="or-medallion w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-cinzel font-black text-sm sm:text-base tracking-wider select-none border-2 border-amber-100">
+            OR
+          </div>
+        </div>
+
+        <!-- OPTION B: THAT (Right / Bottom) -->
+        <button id="card-that" type="button" class="lg:col-span-5 scroll-card interactive rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400">
+          <div class="w-full">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-red-950/15 text-red-950 border border-red-900/25">
+                THAT • [2 / →]
+              </span>
+              <span id="that-status-pill" class="hidden px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider"></span>
+            </div>
+
+            <div id="that-icon" class="w-16 h-16 mx-auto rounded-2xl bg-amber-900/10 border border-amber-900/25 flex items-center justify-center text-4xl mb-4 shadow-inner">
+              🔥
+            </div>
+
+            <p id="that-subtitle" class="text-xs uppercase tracking-[0.18em] text-red-900 font-bold mb-1">
+              Companion of Hananiah
+            </p>
+            <h3 id="that-title" class="font-cinzel text-2xl sm:text-3xl font-extrabold text-stone-900 mb-2">
+              Shadrach
+            </h3>
+            <p id="that-desc" class="font-lora text-sm text-stone-700 leading-relaxed max-w-sm mx-auto">
+              Refused to bow before King Nebuchadnezzar’s golden image on the plain of Dura.
+            </p>
+          </div>
+
+          <!-- Poll Percentage Bar (Dilemma Mode Only) -->
+          <div id="that-poll-box" class="hidden w-full mt-5 pt-4 border-t border-amber-900/20">
+            <div class="flex items-baseline justify-between mb-1.5">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-600">Scribes Chose That</span>
+              <span id="that-poll-pct" class="font-cinzel text-2xl font-extrabold text-red-900">50%</span>
+            </div>
+            <div class="w-full h-3 rounded-full bg-amber-950/15 overflow-hidden">
+              <div id="that-poll-bar" class="h-full bg-gradient-to-r from-red-900 to-red-700 rounded-full transition-all duration-700" style="width: 0%"></div>
+            </div>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- POST-SELECTION FEEDBACK & EXPLANATION DRAWER -->
+      <div id="feedback-box" class="hidden w-full max-w-3xl mt-6 obsidian-panel rounded-2xl p-5 sm:p-6 text-center animate-enter">
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-2.5">
+          <span id="feedback-verdict" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            ✓ Correct!
+          </span>
+          <span id="feedback-ref" class="px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/35 text-amber-300 text-xs font-bold">
+            Daniel 6:16
+          </span>
+        </div>
+        <p id="feedback-explanation" class="font-lora text-sm sm:text-base text-amber-50/95 leading-relaxed mb-5">
+          Daniel was cast into the lions’ den after continuing to pray openly to God, and the Lord sent His angel to shut the lions’ mouths.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <button id="next-btn" type="button" class="btn-gold px-7 py-3 rounded-xl font-bold text-sm sm:text-base tracking-wide cursor-pointer">
+            Next Scroll →
+          </button>
+          <button id="end-endless-btn" type="button" class="hidden px-5 py-3 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 font-semibold text-sm transition cursor-pointer">
+            Finish &amp; View Summary
+          </button>
+        </div>
+        <p class="mt-2.5 text-[11px] text-stone-400 hidden sm:block">
+          Press <kbd class="px-1.5 py-0.5 rounded bg-stone-800 border border-stone-700 text-stone-300">Enter</kbd> or <kbd class="px-1.5 py-0.5 rounded bg-stone-800 border border-stone-700 text-stone-300">Space</kbd> to continue
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ==================== VIEW 3: FINAL RESULTS / SUMMARY SCREEN ==================== -->
+    <section id="results-screen" class="hidden w-full max-w-2xl obsidian-panel rounded-2xl p-6 sm:p-9 text-center animate-enter">
+      <div id="results-emblem" class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-500/15 border border-amber-400/50 flex items-center justify-center text-4xl shadow-inner">
+        🏆
+      </div>
+      <p id="results-kicker" class="text-xs uppercase tracking-[0.22em] text-amber-400 font-bold mb-1">
+        Scroll Completed
+      </p>
+      <h2 id="results-title" class="font-cinzel text-2xl sm:text-4xl font-extrabold gold-gradient-text mb-3">
+        Master Scribe of Israel
+      </h2>
+      <p id="results-desc" class="font-lora text-sm sm:text-base text-amber-100/90 leading-relaxed mb-6 max-w-xl mx-auto">
+        Your command of the Law, the Prophets, and the Writings shines bright!
+      </p>
+
+      <!-- Stats Grid (Trivia Mode) -->
+      <div id="results-trivia-stats" class="grid grid-cols-3 gap-3 mb-6">
+        <div class="p-3.5 rounded-xl bg-stone-900/90 border border-amber-500/30">
+          <span class="block text-[11px] uppercase tracking-wider text-stone-400 font-semibold">Final Score</span>
+          <span id="res-score" class="font-cinzel text-2xl sm:text-3xl font-extrabold text-amber-300">0/10</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-stone-900/90 border border-amber-500/30">
+          <span class="block text-[11px] uppercase tracking-wider text-stone-400 font-semibold">Accuracy</span>
+          <span id="res-accuracy" class="font-cinzel text-2xl sm:text-3xl font-extrabold text-sky-400">0%</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-stone-900/90 border border-amber-500/30">
+          <span class="block text-[11px] uppercase tracking-wider text-stone-400 font-semibold">Best Streak</span>
+          <span id="res-best-streak" class="font-cinzel text-2xl sm:text-3xl font-extrabold text-emerald-400">0</span>
+        </div>
+      </div>
+
+      <!-- Archetype Breakdown (Dilemma Mode) -->
+      <div id="results-archetype-box" class="hidden text-left bg-stone-900/90 border border-amber-500/30 rounded-xl p-4 sm:p-5 mb-6 space-y-3">
+        <p class="text-xs uppercase tracking-wider text-amber-300 font-bold mb-2">Your Old Testament Spirit Profile</p>
+        <div id="archetype-bars" class="space-y-2.5 text-xs sm:text-sm"></div>
+      </div>
+
+      <!-- Action Buttons: Replay, Share/Copy Score, Switch Mode -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button id="replay-btn" type="button" class="btn-gold px-6 py-3 rounded-xl font-bold text-sm sm:text-base cursor-pointer">
+          Play Again ↻
+        </button>
+        <button id="share-btn" type="button" class="px-5 py-3 rounded-xl bg-stone-800 hover:bg-stone-700 border border-amber-400/40 text-amber-200 font-bold text-sm sm:text-base transition flex items-center gap-2 cursor-pointer">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+          </svg>
+          <span id="share-btn-text">Copy Result</span>
+        </button>
+        <button id="results-switch-mode-btn" type="button" class="px-5 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-stone-300 font-semibold text-sm transition cursor-pointer">
+          All Modes
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t border-amber-500/20 py-4 px-4 text-center text-xs text-stone-400">
+    <p>Old Testament Canon • Genesis to Malachi • Keyboard Ready: ← / → or 1 / 2 to choose</p>
+  </footer>
+
+  <script>
+    /**
+     * =========================================================================
+     * 1. DATASET: 45 OLD TESTAMENT SCRIPTURE TRIVIA QUESTIONS (Genesis - Malachi)
+     * =========================================================================
+     */
+    const TRIVIA_QUESTIONS = [
+      // --- PATRIARCHS & GENESIS ---
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Who built the ark of gopher wood to survive the Great Flood?',
+        correct: 'THIS',
+        thisOpt: { icon: '🚢', title: 'Noah', subtitle: 'Son of Lamech', desc: 'Constructed a three-decked ark 300 cubits long according to God’s exact blueprint.' },
+        thatOpt: { icon: '🧺', title: 'Moses', subtitle: 'Deliverer of Israel', desc: 'Placed as an infant in a papyrus basket coated with bitumen along the Nile.' },
+        ref: 'Genesis 6:14',
+        explanation: 'God commanded Noah to make an ark of gopher wood and pitch it inside and out before the floodwaters came.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Who sold his birthright to his twin brother for a bowl of red lentil stew?',
+        correct: 'THIS',
+        thisOpt: { icon: '🍲', title: 'Esau', subtitle: 'Firstborn of Isaac', desc: 'Came in famished from hunting in the field and despised his birthright.' },
+        thatOpt: { icon: '🪜', title: 'Jacob', subtitle: 'Father of the 12 Tribes', desc: 'Cooked the red stew and later dreamed of angels ascending a ladder to heaven.' },
+        ref: 'Genesis 25:29–34',
+        explanation: 'Esau traded his firstborn birthright to his younger twin Jacob for bread and red lentil stew.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Which son of Jacob was given a coat of many colors and sold into Egypt?',
+        correct: 'THAT',
+        thisOpt: { icon: '🦁', title: 'Judah', subtitle: 'Fourth Son of Jacob', desc: 'Proposed selling his brother to passing Ishmaelite traders instead of shedding blood.' },
+        thatOpt: { icon: '🌾', title: 'Joseph', subtitle: 'Dreamer of Canaan', desc: 'Interpreted Pharaoh’s dreams and rose to become governor over all Egypt.' },
+        ref: 'Genesis 37:3, 28',
+        explanation: 'Israel loved Joseph more than any other of his sons and made him a robe of many colors.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Which city’s builders attempted to construct a tower reaching to the heavens?',
+        correct: 'THIS',
+        thisOpt: { icon: '🗼', title: 'Babel', subtitle: 'Plain of Shinar', desc: 'Where the Lord confused human language and scattered the people across the earth.' },
+        thatOpt: { icon: '🧱', title: 'Jericho', subtitle: 'City of Palms', desc: 'First Canaanite fortress conquered by Israel after crossing the Jordan River.' },
+        ref: 'Genesis 11:4–9',
+        explanation: 'At Babel in the land of Shinar, humanity tried to make a name for themselves by building a tower with its top in the heavens.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Who laughed in disbelief when told she would bear a son at age ninety?',
+        correct: 'THAT',
+        thisOpt: { icon: '💧', title: 'Rebekah', subtitle: 'Wife of Isaac', desc: 'Watered Abraham’s servant’s camels at the well in Nahor.' },
+        thatOpt: { icon: '👑', title: 'Sarah', subtitle: 'Wife of Abraham', desc: 'Gave birth to Isaac ("he laughs") in her old age as God had promised.' },
+        ref: 'Genesis 18:12',
+        explanation: 'Sarah laughed to herself when she overheard the Lord tell Abraham that she would have a son in old age.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'What was the sign of God’s covenant never again to destroy all flesh by a flood?',
+        correct: 'THIS',
+        thisOpt: { icon: '🌈', title: 'The Rainbow', subtitle: 'Set in the Clouds', desc: 'Appears in the clouds as a perpetual reminder between God and every living creature.' },
+        thatOpt: { icon: '🔥', title: 'Pillar of Fire', subtitle: 'Wilderness Guide', desc: 'Led the Israelites by night during their journey from Egypt to Sinai.' },
+        ref: 'Genesis 9:13',
+        explanation: 'God set His bow in the cloud as the sign of the everlasting covenant with Noah and all earth.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Who wrestled all night with a mysterious man at Peniel and was renamed Israel?',
+        correct: 'THIS',
+        thisOpt: { icon: '🤼', title: 'Jacob', subtitle: 'Son of Isaac', desc: 'Refused to let go until blessed, receiving the new name Israel ("strives with God").' },
+        thatOpt: { icon: '⛺', title: 'Abraham', subtitle: 'Pilgrim from Ur', desc: 'Received his new name when God promised he would be the father of a multitude.' },
+        ref: 'Genesis 32:24–28',
+        explanation: 'At Peniel beside the Jabbok ford, Jacob wrestled until daybreak and was renamed Israel.'
+      },
+      {
+        category: 'Genesis & Patriarchs',
+        question: 'Who walked faithfully with God and was taken up without seeing death?',
+        correct: 'THAT',
+        thisOpt: { icon: '🌳', title: 'Methuselah', subtitle: 'Lived 969 Years', desc: 'Oldest person recorded in Scripture, grandfather of Noah.' },
+        thatOpt: { icon: '☁️', title: 'Enoch', subtitle: 'Seventh from Adam', desc: 'Lived 365 years and was not found, because God took him.' },
+        ref: 'Genesis 5:24',
+        explanation: 'Genesis 5:24 states that Enoch walked with God, and he was not, for God took him.'
+      },
+
+      // --- EXODUS & WILDERNESS ---
+      {
+        category: 'Exodus & Wilderness',
+        question: 'Which plague in Egypt turned the waters of the Nile River into blood?',
+        correct: 'THIS',
+        thisOpt: { icon: '🩸', title: 'The First Plague', subtitle: 'Staff Struck the Nile', desc: 'Fish died and the river smelled foul so Egyptians could not drink from it.' },
+        thatOpt: { icon: '🌑', title: 'The Ninth Plague', subtitle: 'Palpable Darkness', desc: 'Three days of thick darkness covered Egypt while Israel had light in Goshen.' },
+        ref: 'Exodus 7:20',
+        explanation: 'Turning the Nile into blood was the very first of the ten plagues sent upon Egypt.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'On which mountain did Moses receive the stone tablets of the Ten Commandments?',
+        correct: 'THAT',
+        thisOpt: { icon: '⛰️', title: 'Mount Carmel', subtitle: 'Coastal Ridge', desc: 'Where Elijah challenged the prophets of Baal to call down fire from heaven.' },
+        thatOpt: { icon: '⚡', title: 'Mount Sinai', subtitle: 'Mountain of God', desc: 'Wrapped in smoke, thunder, and lightning as the Lord descended in fire.' },
+        ref: 'Exodus 19:20; 31:18',
+        explanation: 'The Lord called Moses to the top of Mount Sinai (also called Horeb) and gave him the two tablets of the Testimony.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'What bread-like food did God rain from heaven to feed Israel in the wilderness?',
+        correct: 'THIS',
+        thisOpt: { icon: '🍞', title: 'Manna', subtitle: '"What Is It?"', desc: 'Appeared like fine white frost each morning, tasting like wafers made with honey.' },
+        thatOpt: { icon: '🍇', title: 'Clusters of Eshcol', subtitle: 'Fruit of Canaan', desc: 'Giant cluster of grapes carried on a pole between two of the twelve spies.' },
+        ref: 'Exodus 16:14–15, 31',
+        explanation: 'For forty years in the wilderness, God sustained Israel each morning with manna.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'Who fashioned the Golden Calf while Moses was up on Mount Sinai?',
+        correct: 'THAT',
+        thisOpt: { icon: '⚔️', title: 'Joshua', subtitle: 'Aide to Moses', desc: 'Waited partway up the mountain and heard the noise of shouting in the camp.' },
+        thatOpt: { icon: '🪄', title: 'Aaron', subtitle: 'Brother of Moses', desc: 'Collected golden earrings from the people and cast them into a molded calf.' },
+        ref: 'Exodus 32:2–4',
+        explanation: 'Aaron gathered the people’s gold earrings and shaped the molten calf while Moses lingered on Sinai.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'Which two spies urged Israel to trust God and enter the Promised Land?',
+        correct: 'THIS',
+        thisOpt: { icon: '🍇', title: 'Joshua & Caleb', subtitle: 'Men of Faith', desc: 'Declared that the Lord was with Israel and would give them the land.' },
+        thatOpt: { icon: '🔥', title: 'Nadab & Abihu', subtitle: 'Sons of Aaron', desc: 'Priests who offered unauthorized fire before the Lord in the wilderness.' },
+        ref: 'Numbers 14:6–9',
+        explanation: 'Out of the twelve spies sent into Canaan, only Joshua and Caleb brought back a faithful report.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'Whose donkey spoke aloud when an angel stood in the road with a drawn sword?',
+        correct: 'THAT',
+        thisOpt: { icon: '👑', title: 'King Balak', subtitle: 'King of Moab', desc: 'Hired a diviner to curse Israel from the high places of Baal.' },
+        thatOpt: { icon: '🫏', title: 'Balaam', subtitle: 'Son of Beor', desc: 'Had his eyes opened to see the Angel of the Lord blocking his path.' },
+        ref: 'Numbers 22:28',
+        explanation: 'The Lord opened the mouth of Balaam’s donkey after Balaam struck her three times.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'What bronze object did Moses lift on a pole so bitten Israelites could look and live?',
+        correct: 'THIS',
+        thisOpt: { icon: '🐍', title: 'Bronze Serpent', subtitle: 'Nehushtan', desc: 'Anyone bitten by fiery serpents who looked at the bronze serpent lived.' },
+        thatOpt: { icon: '🏺', title: 'Bronze Laver', subtitle: 'Tabernacle Basin', desc: 'Used by Aaron and his sons to wash their hands and feet before ministering.' },
+        ref: 'Numbers 21:9',
+        explanation: 'God instructed Moses to make a fiery serpent of bronze and set it on a pole for healing.'
+      },
+      {
+        category: 'Exodus & Wilderness',
+        question: 'Which object inside the Most Holy Place held the two stone tablets of the Covenant?',
+        correct: 'THAT',
+        thisOpt: { icon: '🕯️', title: 'Golden Lampstand', subtitle: 'The Menorah', desc: 'Hammered from pure gold with seven lamps illuminating the Holy Place.' },
+        thatOpt: { icon: '📦', title: 'Ark of the Covenant', subtitle: 'Overlaid with Gold', desc: 'Topped with the Mercy Seat and two golden cherubim facing each other.' },
+        ref: 'Exodus 25:16, 21',
+        explanation: 'Moses placed the tablets of the Testimony inside the Ark of the Covenant.'
+      },
+
+      // --- CONQUEST & JUDGES ---
+      {
+        category: 'Conquest & Judges',
+        question: 'Which city’s walls collapsed after Israel marched around it for seven days?',
+        correct: 'THIS',
+        thisOpt: { icon: '🎺', title: 'Jericho', subtitle: 'Fortress of Canaan', desc: 'Fell flat when the priests blew the ram’s horns and the people gave a great shout.' },
+        thatOpt: { icon: '⛰️', title: 'Ai', subtitle: 'Near Bethel', desc: 'Conquered by an ambush strategy after Achan’s hidden sin was resolved.' },
+        ref: 'Joshua 6:20',
+        explanation: 'On the seventh day, after circling Jericho seven times, the walls collapsed at the trumpet blast and shout.'
+      },
+      {
+        category: 'Conquest & Judges',
+        question: 'Who hid the two Israelite spies on her roof under stalks of flax in Jericho?',
+        correct: 'THAT',
+        thisOpt: { icon: '🌾', title: 'Ruth', subtitle: 'Moabite Widow', desc: 'Gleaned barley in the fields of Boaz in Bethlehem.' },
+        thatOpt: { icon: '🧵', title: 'Rahab', subtitle: 'Hung a Scarlet Cord', desc: 'Protected the spies and had her entire household spared when Jericho fell.' },
+        ref: 'Joshua 2:4–6',
+        explanation: 'Rahab hid the spies under stalks of flax on her roof and tied a scarlet cord in her window.'
+      },
+      {
+        category: 'Conquest & Judges',
+        question: 'Which judge defeated a vast Midianite army with only 300 men carrying trumpets and torches?',
+        correct: 'THIS',
+        thisOpt: { icon: '🏺', title: 'Gideon', subtitle: 'Son of Joash', desc: 'Tested God with a wool fleece and routed Midian by smashing clay jars at night.' },
+        thatOpt: { icon: '🦁', title: 'Samson', subtitle: 'Nazirite Judge', desc: 'Possessed superhuman strength and tore a young lion apart with his bare hands.' },
+        ref: 'Judges 7:7, 20',
+        explanation: 'God reduced Gideon’s army to 300 men who lapped water like dogs so Israel would know the victory was God’s.'
+      },
+      {
+        category: 'Conquest & Judges',
+        question: 'Who was the female judge and prophetess who summoned Barak to defeat Sisera?',
+        correct: 'THAT',
+        thisOpt: { icon: '👸', title: 'Esther', subtitle: 'Queen of Persia', desc: 'Risked her life before King Ahasuerus to save the Jewish people.' },
+        thatOpt: { icon: '🌴', title: 'Deborah', subtitle: 'Held Court Under a Palm', desc: 'Accompanied Barak to Mount Tabor and sang a victory hymn over Canaan.' },
+        ref: 'Judges 4:4–6',
+        explanation: 'Deborah, a prophetess, was judging Israel at that time and called Barak to lead 10,000 men.'
+      },
+      {
+        category: 'Conquest & Judges',
+        question: 'What was the secret source of Samson’s extraordinary strength?',
+        correct: 'THIS',
+        thisOpt: { icon: '💇', title: 'His Uncut Hair', subtitle: 'Nazirite Vow', desc: 'No razor had ever touched his head from birth until Delilah betrayed him.' },
+        thatOpt: { icon: '💍', title: 'A Signet Ring', subtitle: 'Royal Emblem', desc: 'Given by Pharaoh to Joseph as a symbol of authority over Egypt.' },
+        ref: 'Judges 16:17',
+        explanation: 'Samson confided to Delilah that because of his Nazirite vow, if his head were shaved, his strength would leave him.'
+      },
+      {
+        category: 'Conquest & Judges',
+        question: 'Who spoke the famous vow, "Where you go I will go, and where you stay I will stay"?',
+        correct: 'THAT',
+        thisOpt: { icon: '🙏', title: 'Hannah', subtitle: 'Mother of Samuel', desc: 'Prayed fervently at Shiloh for a son and dedicated Samuel to the Lord.' },
+        thatOpt: { icon: '🌾', title: 'Ruth', subtitle: 'Daughter-in-Law of Naomi', desc: 'Left Moab behind to care for Naomi in Bethlehem and became King David’s great-grandmother.' },
+        ref: 'Ruth 1:16',
+        explanation: 'Ruth spoke these words of steadfast loyalty to her mother-in-law Naomi on the road to Judah.'
+      },
+
+      // --- UNITED & DIVIDED KINGDOMS ---
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'Who was anointed as the very first king of Israel by the prophet Samuel?',
+        correct: 'THIS',
+        thisOpt: { icon: '👑', title: 'Saul', subtitle: 'Son of Kish of Benjamin', desc: 'Stood head and shoulders taller than anyone else in Israel when chosen.' },
+        thatOpt: { icon: '🎶', title: 'David', subtitle: 'Son of Jesse of Bethlehem', desc: 'Shepherd boy and harpist anointed to replace Saul as a man after God’s heart.' },
+        ref: '1 Samuel 10:1',
+        explanation: 'Samuel poured a flask of oil on Saul’s head and anointed him prince over Israel.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'What weapon did young David use to strike down the Philistine giant Goliath?',
+        correct: 'THAT',
+        thisOpt: { icon: '🗡️', title: 'King Saul’s Bronze Sword', subtitle: 'Heavy Armor', desc: 'David tried on Saul’s armor and sword but took them off because he was not used to them.' },
+        thatOpt: { icon: '🪨', title: 'A Sling & Smooth Stone', subtitle: 'Picked from the Brook', desc: 'David chose five smooth stones from the wadi and slung one into Goliath’s forehead.' },
+        ref: '1 Samuel 17:40, 49',
+        explanation: 'David prevailed over the Philistine with a sling and a stone, without a sword in his hand.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'What did King Solomon ask God for when offered anything he wished at Gibeon?',
+        correct: 'THIS',
+        thisOpt: { icon: '🦉', title: 'Wisdom & Understanding', subtitle: 'A Discerning Heart', desc: 'To govern God’s people justly and discern between good and evil.' },
+        thatOpt: { icon: '💰', title: 'Long Life & Riches', subtitle: 'Wealth & Conquest', desc: 'God granted Solomon wealth and honor anyway because he did not ask for them.' },
+        ref: '1 Kings 3:9–12',
+        explanation: 'Solomon asked for an understanding mind to govern the people, pleasing the Lord greatly.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'Which king built the First Temple in Jerusalem using cedars from Lebanon?',
+        correct: 'THAT',
+        thisOpt: { icon: '🎸', title: 'King David', subtitle: 'Gathered Materials', desc: 'Desired to build the house of God, though God reserved the construction for his son.' },
+        thatOpt: { icon: '🏛️', title: 'King Solomon', subtitle: 'Son of David', desc: 'Completed the magnificent Temple in seven years with the help of King Hiram of Tyre.' },
+        ref: '1 Kings 6:1, 38',
+        explanation: 'King Solomon built the Temple of the Lord in Jerusalem, beginning in the fourth year of his reign.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'Which boy king of Judah was only eight years old when he began to reign?',
+        correct: 'THIS',
+        thisOpt: { icon: '📜', title: 'King Josiah', subtitle: 'Great Reformer King', desc: 'Rediscovered the Book of the Law during Temple repairs and tore his robes in repentance.' },
+        thatOpt: { icon: '☀️', title: 'King Hezekiah', subtitle: 'Reigned at Age 25', desc: 'Trusted God during Assyria’s siege and saw the sundial shadow move backward ten steps.' },
+        ref: '2 Kings 22:1',
+        explanation: 'Josiah was eight years old when he began to reign in Jerusalem and walked in all the ways of David.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'Which wicked queen of Israel opposed the prophet Elijah and seized Naboth’s vineyard?',
+        correct: 'THAT',
+        thisOpt: { icon: '👑', title: 'Queen Vashti', subtitle: 'Queen of Persia', desc: 'Refused King Ahasuerus’ command to display her beauty at a royal banquet.' },
+        thatOpt: { icon: '🐍', title: 'Queen Jezebel', subtitle: 'Wife of King Ahab', desc: 'Promoted Baal worship in Samaria and threatened Elijah’s life after Mount Carmel.' },
+        ref: '1 Kings 19:2; 21:7',
+        explanation: 'Jezebel, daughter of Ethbaal king of the Sidonians, led King Ahab into idolatry and orchestrated Naboth’s death.'
+      },
+      {
+        category: 'Kings of Israel & Judah',
+        question: 'Which Babylonian king destroyed Jerusalem in 586 BC and took Judah into exile?',
+        correct: 'THIS',
+        thisOpt: { icon: '🦁', title: 'Nebuchadnezzar', subtitle: 'King of Babylon', desc: 'Broke down Jerusalem’s walls, burned the Temple, and carried captives to Babylon.' },
+        thatOpt: { icon: '🕊️', title: 'Cyrus the Great', subtitle: 'King of Persia', desc: 'Issued the decree allowing the Jewish exiles to return and rebuild the Temple.' },
+        ref: '2 Kings 25:8–11',
+        explanation: 'King Nebuchadnezzar of Babylon besieged Jerusalem and carried Judah away into captivity.'
+      },
+
+      // --- MAJOR & MINOR PROPHETS ---
+      {
+        category: 'Prophets & Exile',
+        question: 'Which prophet challenged 450 prophets of Baal on Mount Carmel to call down fire?',
+        correct: 'THIS',
+        thisOpt: { icon: '🔥', title: 'Elijah', subtitle: 'The Tishbite', desc: 'Drenched his altar with twelve jars of water before fire from the Lord consumed it.' },
+        thatOpt: { icon: '🧥', title: 'Elisha', subtitle: 'Successor to Elijah', desc: 'Received a double portion of Elijah’s spirit and told Naaman to wash in the Jordan.' },
+        ref: '1 Kings 18:22, 38',
+        explanation: 'Elijah prayed on Mount Carmel, and the fire of the Lord fell and consumed the burnt offering, wood, stones, and water.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'How was the prophet Elijah taken up into heaven in front of Elisha?',
+        correct: 'THAT',
+        thisOpt: { icon: '🐋', title: 'Swallowed by a Great Fish', subtitle: 'In the Mediterranean', desc: 'Happened to Jonah when he fled by ship toward Tarshish.' },
+        thatOpt: { icon: '🐎', title: 'Chariot of Fire & Whirlwind', subtitle: 'Across the Jordan', desc: 'Chariots and horses of fire separated them, and Elijah went up by a whirlwind.' },
+        ref: '2 Kings 2:11',
+        explanation: 'A chariot of fire and horses of fire appeared, and Elijah ascended by a whirlwind into heaven.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Who was thrown into the den of lions for continuing to pray to God?',
+        correct: 'THIS',
+        thisOpt: { icon: '🦁', title: 'Daniel', subtitle: 'Belteshazzar', desc: 'Opened his upper-room windows toward Jerusalem three times a day to pray.' },
+        thatOpt: { icon: '🔥', title: 'Shadrach', subtitle: 'Hananiah', desc: 'Cast into Nebuchadnezzar’s blazing fiery furnace alongside Meshach and Abednego.' },
+        ref: 'Daniel 6:10, 16',
+        explanation: 'Daniel was thrown into the lions’ den under King Darius, and God sent His angel to shut the lions’ mouths.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Whose disembodied hand wrote "MENE, MENE, TEKEL, PARSIN" on the palace wall?',
+        correct: 'THAT',
+        thisOpt: { icon: '👑', title: 'King Darius', subtitle: 'The Mede', desc: 'Grieved all night when tricked into throwing Daniel into the lions’ den.' },
+        thatOpt: { icon: '🍷', title: 'King Belshazzar', subtitle: 'Feast in Babylon', desc: 'Drank wine from the sacred gold vessels taken from Jerusalem’s Temple.' },
+        ref: 'Daniel 5:5, 25',
+        explanation: 'During King Belshazzar’s sacrilegious feast, fingers of a human hand appeared and wrote on the plaster wall.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Which reluctant prophet fled on a ship to Tarshish instead of preaching to Nineveh?',
+        correct: 'THIS',
+        thisOpt: { icon: '🐋', title: 'Jonah', subtitle: 'Son of Amittai', desc: 'Spent three days and three nights in the belly of a great fish before preaching in Nineveh.' },
+        thatOpt: { icon: '🌳', title: 'Amos', subtitle: 'Shepherd of Tekoa', desc: 'Called from tending flocks and sycamore figs to proclaim justice in Bethel.' },
+        ref: 'Jonah 1:3, 17',
+        explanation: 'Jonah boarded a ship to Tarshish to flee from the presence of the Lord rather than go to Nineveh.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Which prophet saw a vision of a valley full of dry bones coming back to life?',
+        correct: 'THAT',
+        thisOpt: { icon: '😢', title: 'Jeremiah', subtitle: 'The Weeping Prophet', desc: 'Bought a field at Anathoth as a sign of hope before Jerusalem’s fall.' },
+        thatOpt: { icon: '🦴', title: 'Ezekiel', subtitle: 'Exile by the Kebar River', desc: 'Prophesied to the dry bones until sinews, flesh, skin, and breath restored them.' },
+        ref: 'Ezekiel 37:1–10',
+        explanation: 'The hand of the Lord brought Ezekiel out in the Spirit into the middle of the valley full of dry bones.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Who saw the Lord seated on a high throne with seraphim calling "Holy, holy, holy"?',
+        correct: 'THIS',
+        thisOpt: { icon: '🔥', title: 'Isaiah', subtitle: 'Prophet in Jerusalem', desc: 'A seraph touched his lips with a burning coal from the altar, and he answered, "Here I am! Send me."' },
+        thatOpt: { icon: '🧺', title: 'Hosea', subtitle: 'Prophet to Israel', desc: 'Illustrated God’s covenant faithfulness through his marriage to Gomer.' },
+        ref: 'Isaiah 6:1–8',
+        explanation: 'In the year King Uzziah died, Isaiah saw the Lord high and lifted up with six-winged seraphim.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Which exile cupbearer led the rebuilding of Jerusalem’s broken walls in 52 days?',
+        correct: 'THAT',
+        thisOpt: { icon: '📜', title: 'Ezra', subtitle: 'Priest & Scribe', desc: 'Read the Book of the Law of Moses aloud from a wooden platform at the Water Gate.' },
+        thatOpt: { icon: '🧱', title: 'Nehemiah', subtitle: 'Cupbearer to Artaxerxes', desc: 'Inspected the ruined gates by night and equipped builders with a trowel in one hand and weapon in the other.' },
+        ref: 'Nehemiah 2:17; 6:15',
+        explanation: 'Nehemiah rallied the people of Jerusalem to rebuild the city wall in just fifty-two days.'
+      },
+      {
+        category: 'Prophets & Exile',
+        question: 'Which prophet foretold that the Messiah would be born in Bethlehem Ephrathah?',
+        correct: 'THIS',
+        thisOpt: { icon: '⭐', title: 'Micah', subtitle: 'Prophet of Moresheth', desc: 'Declared that out of little Bethlehem would come forth one to be ruler in Israel.' },
+        thatOpt: { icon: '🦗', title: 'Joel', subtitle: 'Son of Pethuel', desc: 'Foretold a devastating locust plague and the outpouring of God’s Spirit on all flesh.' },
+        ref: 'Micah 5:2',
+        explanation: 'Micah 5:2 prophesied that Bethlehem Ephrathah would be the birthplace of Israel’s eternal ruler.'
+      },
+
+      // --- WISDOM LITERATURE & WRITINGS ---
+      {
+        category: 'Wisdom & Writings',
+        question: 'Which righteous man from the land of Uz lost his wealth, children, and health yet refused to curse God?',
+        correct: 'THAT',
+        thisOpt: { icon: '🎵', title: 'Asaph', subtitle: 'Chief Musician', desc: 'Levite singer appointed by David who composed twelve psalms.' },
+        thatOpt: { icon: '🌪️', title: 'Job', subtitle: 'Blameless & Upright', desc: 'Debated his three friends before God spoke to him out of the whirlwind.' },
+        ref: 'Job 1:1, 22; 38:1',
+        explanation: 'Job endured catastrophic trials with integrity and was later restored twice as much as he had before.'
+      },
+      {
+        category: 'Wisdom & Writings',
+        question: 'Which Old Testament book famously never explicitly mentions the name of God?',
+        correct: 'THIS',
+        thisOpt: { icon: '👸', title: 'Book of Esther', subtitle: 'Set in Susa, Persia', desc: 'Shows God’s unseen providence working through Esther and Mordecai to rescue His people.' },
+        thatOpt: { icon: '🎵', title: 'Book of Psalms', subtitle: 'Hymnal of Israel', desc: 'Contains 150 sacred songs of praise, lament, thanksgiving, and royal prophecy.' },
+        ref: 'Esther 4:14',
+        explanation: 'The Book of Esther demonstrates God’s sovereign care behind the scenes without directly naming Him.'
+      },
+      {
+        category: 'Wisdom & Writings',
+        question: 'Which wisdom book opens with the famous line, "Vanity of vanities! All is vanity"?',
+        correct: 'THAT',
+        thisOpt: { icon: '💡', title: 'Book of Proverbs', subtitle: 'Wisdom Sayings', desc: 'Begins with "The fear of the Lord is the beginning of knowledge."' },
+        thatOpt: { icon: '⏳', title: 'Book of Ecclesiastes', subtitle: 'Words of the Preacher', desc: 'Reflects on the seasons of life ("For everything there is a season") and meaning under the sun.' },
+        ref: 'Ecclesiastes 1:2; 3:1',
+        explanation: 'Ecclesiastes ("Qoheleth" / The Preacher) opens with the meditation on vanity under the sun.'
+      },
+      {
+        category: 'Wisdom & Writings',
+        question: 'Which Psalm begins with "The Lord is my shepherd; I shall not want"?',
+        correct: 'THIS',
+        thisOpt: { icon: '🐑', title: 'Psalm 23', subtitle: 'A Psalm of David', desc: 'Speaks of green pastures, still waters, and walking through the valley of the shadow of death.' },
+        thatOpt: { icon: '📜', title: 'Psalm 119', subtitle: 'Acrostic Ode to Torah', desc: 'The longest chapter in the Bible with 176 verses celebrating God’s statutes.' },
+        ref: 'Psalm 23:1',
+        explanation: 'David’s beloved Psalm 23 portrays the Lord as the faithful Shepherd and gracious Host.'
+      },
+      {
+        category: 'Wisdom & Writings',
+        question: 'Who was the final prophet of the Old Testament canon, foretelling Elijah’s return before the Day of the Lord?',
+        correct: 'THAT',
+        thisOpt: { icon: '🏛️', title: 'Haggai', subtitle: 'Post-Exile Prophet', desc: 'Urged Zerubbabel and the returned exiles to finish rebuilding the Second Temple.' },
+        thatOpt: { icon: '🌅', title: 'Malachi', subtitle: '"My Messenger"', desc: 'Closes the Old Testament with prophecies of the Sun of Righteousness and the coming messenger.' },
+        ref: 'Malachi 4:2, 5',
+        explanation: 'Malachi is the 39th and final book of the Old Testament, pointing forward to the coming messenger.'
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * 2. DATASET: 14 BIBLICAL DILEMMAS & ARCHETYPE POLLS
+     * Archetypes: WARRIOR (Courageous Warrior), COUNSELOR (Wise Counselor),
+     *             PILGRIM (Faithful Pilgrim), PROPHET (Bold Prophet)
+     * =========================================================================
+     */
+    const DILEMMA_QUESTIONS = [
+      {
+        category: 'Royal Court vs. Wilderness',
+        question: 'Which Old Testament evening would you rather experience?',
+        thisOpt: {
+          icon: '👑',
+          title: 'Dine at Solomon’s Royal Banquet',
+          subtitle: 'Jerusalem Palace',
+          desc: 'Feast at golden tables while listening to Solomon’s 3,000 proverbs and songs.',
+          pct: 58,
+          archetype: 'COUNSELOR'
+        },
+        thatOpt: {
+          icon: '🌌',
+          title: 'Camp Under the Stars with Abraham',
+          subtitle: 'Hills of Hebron',
+          desc: 'Sit beside a crackling campfire beneath a sky filled with uncountable stars of promise.',
+          pct: 42,
+          archetype: 'PILGRIM'
+        },
+        ref: '1 Kings 4:32 & Genesis 15:5',
+        insight: 'Whether drawn to Solomon’s courtly wisdom or Abraham’s starlit covenant, both paths reflect deep reverence for God’s word.'
+      },
+      {
+        category: 'Miracles of Deliverance',
+        question: 'Which historic moment of faith would you rather stand in?',
+        thisOpt: {
+          icon: '🌊',
+          title: 'Part the Red Sea with Moses’ Staff',
+          subtitle: 'Shores of Exodus',
+          desc: 'Stretch out your hand as a strong east wind divides the waters into towering walls.',
+          pct: 64,
+          archetype: 'PROPHET'
+        },
+        thatOpt: {
+          icon: '🪨',
+          title: 'Sling a Stone at Goliath with David',
+          subtitle: 'Valley of Elah',
+          desc: 'Step onto the battlefield armed only with five smooth stones and unshakable trust.',
+          pct: 36,
+          archetype: 'WARRIOR'
+        },
+        ref: 'Exodus 14:21 & 1 Samuel 17:49',
+        insight: '64% of scribes chose the awe of standing beside Moses at the Red Sea, while 36% favored David’s fearless charge!'
+      },
+      {
+        category: 'Gifts of the Spirit',
+        question: 'Which divine gift would you rather exercise in the ancient world?',
+        thisOpt: {
+          icon: '🌙',
+          title: 'Interpret Dreams in Pharaoh’s Palace',
+          subtitle: 'Wisdom of Joseph',
+          desc: 'Unravel mysterious visions and wisely store grain to save entire nations from famine.',
+          pct: 61,
+          archetype: 'COUNSELOR'
+        },
+        thatOpt: {
+          icon: '🔥',
+          title: 'Call Down Fire on Mount Carmel',
+          subtitle: 'Boldness of Elijah',
+          desc: 'Stand alone before hundreds of false prophets and pray down heavenly fire.',
+          pct: 39,
+          archetype: 'PROPHET'
+        },
+        ref: 'Genesis 41:39 & 1 Kings 18:38',
+        insight: 'Joseph’s prophetic administration saved Egypt and Canaan, while Elijah’s boldness turned a nation’s heart back to God.'
+      },
+      {
+        category: 'Sacred Architecture',
+        question: 'Which monumental Old Testament project would you rather help build?',
+        thisOpt: {
+          icon: '🚢',
+          title: 'Construct Noah’s Ark of Gopher Wood',
+          subtitle: 'Before the Great Deluge',
+          desc: 'Work in faith for decades preparing a floating sanctuary on dry land.',
+          pct: 47,
+          archetype: 'PILGRIM'
+        },
+        thatOpt: {
+          icon: '🧱',
+          title: 'Rebuild Jerusalem’s Walls with Nehemiah',
+          subtitle: '52-Day Restoration',
+          desc: 'Hold a trowel in one hand and a sword in the other to restore the Holy City.',
+          pct: 53,
+          archetype: 'WARRIOR'
+        },
+        ref: 'Genesis 6:14 & Nehemiah 4:17',
+        insight: 'A near-even split! Both required relentless perseverance in the face of skeptics and opposition.'
+      },
+      {
+        category: 'Music & Poetry',
+        question: 'Which sacred composition would you rather witness firsthand?',
+        thisOpt: {
+          icon: '🎶',
+          title: 'Hear David Compose Psalms on His Harp',
+          subtitle: 'Hills of Bethlehem',
+          desc: 'Listen to the sweet psalmist of Israel write songs of comfort and triumph.',
+          pct: 69,
+          archetype: 'PILGRIM'
+        },
+        thatOpt: {
+          icon: '🎺',
+          title: 'Blow the Ram’s Horns Around Jericho',
+          subtitle: 'Seventh Day March',
+          desc: 'March in disciplined silence for six days before sounding the victory blast.',
+          pct: 31,
+          archetype: 'WARRIOR'
+        },
+        ref: '1 Samuel 16:23 & Joshua 6:20',
+        insight: 'Nearly 7 in 10 players chose David’s quiet harp melodies over the thunderous trumpet blast at Jericho.'
+      },
+      {
+        category: 'Courage Under Fire',
+        question: 'Which miraculous rescue would you rather experience?',
+        thisOpt: {
+          icon: '🦁',
+          title: 'Spend the Night in the Lions’ Den',
+          subtitle: 'With Daniel & God’s Angel',
+          desc: 'Rest peacefully in the dark den while an angel keeps the lions silent until dawn.',
+          pct: 54,
+          archetype: 'PILGRIM'
+        },
+        thatOpt: {
+          icon: '🔥',
+          title: 'Walk Unharmed in the Fiery Furnace',
+          subtitle: 'With Shadrach, Meshach & Abednego',
+          desc: 'Walk unbound amid flames heated seven times hotter alongside a fourth heavenly figure.',
+          pct: 46,
+          archetype: 'PROPHET'
+        },
+        ref: 'Daniel 6:22 & Daniel 3:25',
+        insight: 'Both trials showcase extraordinary steadfastness—refusing to compromise worship regardless of royal threats.'
+      },
+      {
+        category: 'Leadership & Calling',
+        question: 'Which role in ancient Israel would suit your temperament best?',
+        thisOpt: {
+          icon: '⚖️',
+          title: 'Judge Under Deborah’s Palm Tree',
+          subtitle: 'Wise Arbiter & Strategist',
+          desc: 'Settle disputes with discernment and rally leaders when the nation needs direction.',
+          pct: 56,
+          archetype: 'COUNSELOR'
+        },
+        thatOpt: {
+          icon: '🏺',
+          title: 'Lead Gideon’s 300 Night Raiders',
+          subtitle: 'Torches & Clay Jars',
+          desc: 'Execute a daring midnight surprise against overwhelming odds.',
+          pct: 44,
+          archetype: 'WARRIOR'
+        },
+        ref: 'Judges 4:5 & Judges 7:16',
+        insight: 'Deborah’s judicial wisdom and Gideon’s daring night tactics represent two vital pillars of leadership.'
+      },
+      {
+        category: 'Prophetic Visions',
+        question: 'Which awe-inspiring heavenly vision would you rather behold?',
+        thisOpt: {
+          icon: '🔥',
+          title: 'Isaiah’s Vision of the Seraphim',
+          subtitle: 'Temple Throne Room',
+          desc: 'See the Lord high and lifted up as six-winged seraphim cry "Holy, holy, holy!"',
+          pct: 62,
+          archetype: 'PROPHET'
+        },
+        thatOpt: {
+          icon: '🪜',
+          title: 'Jacob’s Ladder Reaching Heaven',
+          subtitle: 'Bethel Stone Pillow',
+          desc: 'See angels ascending and descending on a stairway between heaven and earth.',
+          pct: 38,
+          archetype: 'PILGRIM'
+        },
+        ref: 'Isaiah 6:1–3 & Genesis 28:12',
+        insight: 'Isaiah’s throne-room vision inspired his prophetic call, while Jacob’s ladder assured a weary traveler of God’s presence.'
+      },
+      {
+        category: 'Wisdom & Counsel',
+        question: 'Whose counsel would you seek before making a life-changing decision?',
+        thisOpt: {
+          icon: '👸',
+          title: 'Queen Esther & Mordecai in Susa',
+          subtitle: '"For Such a Time as This"',
+          desc: 'Strategic patience, fasting, and courageous timing inside the Persian royal court.',
+          pct: 52,
+          archetype: 'COUNSELOR'
+        },
+        thatOpt: {
+          icon: '📜',
+          title: 'The Prophet Samuel at Ramah',
+          subtitle: 'Seer of Israel',
+          desc: 'Direct, unfiltered prophetic clarity from a leader whose words never fell to the ground.',
+          pct: 48,
+          archetype: 'PROPHET'
+        },
+        ref: 'Esther 4:14 & 1 Samuel 3:19',
+        insight: 'A razor-thin 52% to 48% split between Esther’s courtly discernment and Samuel’s prophetic clarity!'
+      },
+      {
+        category: 'Journeys of Faith',
+        question: 'Which epic Old Testament journey would you rather embark upon?',
+        thisOpt: {
+          icon: '🍇',
+          title: 'Scout the Promised Land with Caleb',
+          subtitle: '40-Day Expedition',
+          desc: 'Explore the valleys of Hebron and bring back giant clusters of grapes.',
+          pct: 59,
+          archetype: 'WARRIOR'
+        },
+        thatOpt: {
+          icon: '🌾',
+          title: 'Journey to Bethlehem with Ruth & Naomi',
+          subtitle: 'Loyalty & Redemption',
+          desc: 'Walk the dusty road from Moab into a story of quiet devotion and providential grace.',
+          pct: 41,
+          archetype: 'PILGRIM'
+        },
+        ref: 'Numbers 13:23 & Ruth 1:19',
+        insight: 'Caleb’s bold exploration and Ruth’s humble loyalty both secured lasting legacies in Israel’s story.'
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * 3. ARCHETYPE DEFINITIONS (For Biblical Dilemmas Summary)
+     * =========================================================================
+     */
+    const ARCHETYPES = {
+      WARRIOR: {
+        title: 'The Courageous Warrior',
+        emblem: '🛡️',
+        desc: 'Like David, Joshua, and Nehemiah, you step forward with courage when challenges arise. You value decisive action, protecting your community, and trusting God in the heat of battle.'
+      },
+      COUNSELOR: {
+        title: 'The Wise Counselor',
+        emblem: '🦉',
+        desc: 'Like Solomon, Joseph, and Deborah, you seek discernment, strategy, and understanding. You thrive when bringing order out of chaos and guiding others with thoughtful wisdom.'
+      },
+      PILGRIM: {
+        title: 'The Faithful Pilgrim',
+        emblem: '⛺',
+        desc: 'Like Abraham, Ruth, and Noah, your strength lies in steadfast devotion and enduring faith. You cherish quiet trust in God’s promises, loyalty to loved ones, and walking the long road faithfully.'
+      },
+      PROPHET: {
+        title: 'The Bold Prophet',
+        emblem: '🔥',
+        desc: 'Like Elijah, Moses, and Isaiah, you are drawn to awe-inspiring encounters with God’s truth. You are unafraid to stand apart from the crowd and speak truth with conviction.'
+      }
+    };
+
+    /**
+     * =========================================================================
+     * 4. WEB AUDIO API SOUND EFFECTS (Zero external files)
+     * =========================================================================
+     */
+    class SoundEffects {
+      constructor() {
+        this.enabled = true;
+        this.ctx = null;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      tone(freq, type, duration, delay = 0, vol = 0.11) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime + delay;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(vol, now + 0.018);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration + 0.02);
+      }
+
+      playCorrect() {
+        // Warm harp/lyre major triad (C5 - E5 - G5 - C6)
+        this.tone(523.25, 'triangle', 0.24, 0.00, 0.13);
+        this.tone(659.25, 'triangle', 0.24, 0.06, 0.13);
+        this.tone(783.99, 'triangle', 0.34, 0.12, 0.14);
+        this.tone(1046.50, 'sine', 0.48, 0.18, 0.11);
+      }
+
+      playWrong() {
+        // Gentle low resonant thud
+        this.tone(196.00, 'triangle', 0.28, 0.00, 0.13);
+        this.tone(146.83, 'sine', 0.42, 0.12, 0.14);
+      }
+
+      playSelect() {
+        // Crisp parchment chime
+        this.tone(587.33, 'sine', 0.16, 0.00, 0.10);
+        this.tone(880.00, 'triangle', 0.25, 0.06, 0.09);
+      }
+
+      playClick() {
+        this.tone(440, 'sine', 0.07, 0, 0.05);
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 5. GAME STATE & CONTROLLER
+     * =========================================================================
+     */
+    const sfx = new SoundEffects();
+
+    const state = {
+      mode: 'TRIVIA',          // 'TRIVIA' | 'DILEMMA'
+      triviaLength: 10,        // 10 | 'ENDLESS'
+      deck: [],
+      index: 0,
+      score: 0,
+      streak: 0,
+      sessionBestStreak: 0,
+      allTimeBestStreak: parseInt(localStorage.getItem('ot_thisthat_best_streak') || '0', 10),
+      answered: false,
+      archetypeTally: { WARRIOR: 0, COUNSELOR: 0, PILGRIM: 0, PROPHET: 0 }
+    };
+
+    // Cached DOM References
+    const el = {
+      // Header
+      homeLogoBtn: document.getElementById('home-logo-btn'),
+      headerModeTrivia: document.getElementById('header-mode-trivia'),
+      headerModeDilemma: document.getElementById('header-mode-dilemma'),
+      triviaHud: document.getElementById('trivia-hud'),
+      dilemmaHud: document.getElementById('dilemma-hud'),
+      hudScore: document.getElementById('hud-score'),
+      hudStreak: document.getElementById('hud-streak'),
+      hudBest: document.getElementById('hud-best'),
+      hudDilemmaProgress: document.getElementById('hud-dilemma-progress'),
+      soundToggle: document.getElementById('sound-toggle'),
+      soundOnIcon: document.getElementById('sound-on-icon'),
+      soundOffIcon: document.getElementById('sound-off-icon'),
+      openMenuBtn: document.getElementById('open-menu-btn'),
+
+      // Start Screen
+      startScreen: document.getElementById('start-screen'),
+      lengthBtns: document.querySelectorAll('.length-btn'),
+      startTriviaBtn: document.getElementById('start-trivia-btn'),
+      startDilemmaBtn: document.getElementById('start-dilemma-btn'),
+
+      // Game Arena
+      gameScreen: document.getElementById('game-screen'),
+      roundCategoryBadge: document.getElementById('round-category-badge'),
+      roundCounterLabel: document.getElementById('round-counter-label'),
+      promptKicker: document.getElementById('prompt-kicker'),
+      questionText: document.getElementById('question-text'),
+
+      cardThis: document.getElementById('card-this'),
+      thisStatusPill: document.getElementById('this-status-pill'),
+      thisIcon: document.getElementById('this-icon'),
+      thisSubtitle: document.getElementById('this-subtitle'),
+      thisTitle: document.getElementById('this-title'),
+      thisDesc: document.getElementById('this-desc'),
+      thisPollBox: document.getElementById('this-poll-box'),
+      thisPollPct: document.getElementById('this-poll-pct'),
+      thisPollBar: document.getElementById('this-poll-bar'),
+
+      cardThat: document.getElementById('card-that'),
+      thatStatusPill: document.getElementById('that-status-pill'),
+      thatIcon: document.getElementById('that-icon'),
+      thatSubtitle: document.getElementById('that-subtitle'),
+      thatTitle: document.getElementById('that-title'),
+      thatDesc: document.getElementById('that-desc'),
+      thatPollBox: document.getElementById('that-poll-box'),
+      thatPollPct: document.getElementById('that-poll-pct'),
+      thatPollBar: document.getElementById('that-poll-bar'),
+
+      // Feedback Drawer
+      feedbackBox: document.getElementById('feedback-box'),
+      feedbackVerdict: document.getElementById('feedback-verdict'),
+      feedbackRef: document.getElementById('feedback-ref'),
+      feedbackExplanation: document.getElementById('feedback-explanation'),
+      nextBtn: document.getElementById('next-btn'),
+      endEndlessBtn: document.getElementById('end-endless-btn'),
+
+      // Results Screen
+      resultsScreen: document.getElementById('results-screen'),
+      resultsEmblem: document.getElementById('results-emblem'),
+      resultsKicker: document.getElementById('results-kicker'),
+      resultsTitle: document.getElementById('results-title'),
+      resultsDesc: document.getElementById('results-desc'),
+      resultsTriviaStats: document.getElementById('results-trivia-stats'),
+      resScore: document.getElementById('res-score'),
+      resAccuracy: document.getElementById('res-accuracy'),
+      resBestStreak: document.getElementById('res-best-streak'),
+      resultsArchetypeBox: document.getElementById('results-archetype-box'),
+      archetypeBars: document.getElementById('archetype-bars'),
+      replayBtn: document.getElementById('replay-btn'),
+      shareBtn: document.getElementById('share-btn'),
+      shareBtnText: document.getElementById('share-btn-text'),
+      resultsSwitchModeBtn: document.getElementById('results-switch-mode-btn')
+    };
+
+    /**
+     * Utility: Fisher-Yates Array Shuffle
+     */
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Switch Visible Screen ('START' | 'GAME' | 'RESULTS')
+     */
+    function showScreen(screenName) {
+      el.startScreen.classList.add('hidden');
+      el.gameScreen.classList.add('hidden');
+      el.gameScreen.classList.remove('flex');
+      el.resultsScreen.classList.add('hidden');
+
+      if (screenName === 'START') {
+        el.startScreen.classList.remove('hidden');
+      } else if (screenName === 'GAME') {
+        el.gameScreen.classList.remove('hidden');
+        el.gameScreen.classList.add('flex');
+      } else if (screenName === 'RESULTS') {
+        el.resultsScreen.classList.remove('hidden');
+      }
+    }
+
+    /**
+     * Sync Header Mode Toggle Pills & HUD Visibility
+     */
+    function updateHeaderUI() {
+      const isTrivia = state.mode === 'TRIVIA';
+
+      el.headerModeTrivia.className = isTrivia
+        ? 'px-3 py-1 rounded-lg text-xs font-bold bg-amber-400/20 text-amber-200 border border-amber-400/40 transition cursor-pointer'
+        : 'px-3 py-1 rounded-lg text-xs font-bold text-stone-400 hover:text-amber-200 transition cursor-pointer';
+
+      el.headerModeDilemma.className = !isTrivia
+        ? 'px-3 py-1 rounded-lg text-xs font-bold bg-amber-400/20 text-amber-200 border border-amber-400/40 transition cursor-pointer'
+        : 'px-3 py-1 rounded-lg text-xs font-bold text-stone-400 hover:text-amber-200 transition cursor-pointer';
+
+      if (isTrivia) {
+        el.triviaHud.classList.remove('hidden');
+        el.triviaHud.classList.add('flex');
+        el.dilemmaHud.classList.add('hidden');
+        el.dilemmaHud.classList.remove('flex');
+      } else {
+        el.triviaHud.classList.add('hidden');
+        el.triviaHud.classList.remove('flex');
+        el.dilemmaHud.classList.remove('hidden');
+        el.dilemmaHud.classList.add('flex');
+      }
+
+      el.hudScore.textContent = state.score;
+      el.hudStreak.textContent = state.streak;
+      el.hudBest.textContent = state.allTimeBestStreak;
+      el.hudDilemmaProgress.textContent = `${Math.min(state.index + 1, 10)} / 10`;
+    }
+
+    /**
+     * Start a New Session in the Selected Mode
+     */
+    function startSession(mode) {
+      sfx.playClick();
+      state.mode = mode;
+      state.index = 0;
+      state.score = 0;
+      state.streak = 0;
+      state.sessionBestStreak = 0;
+      state.answered = false;
+      state.archetypeTally = { WARRIOR: 0, COUNSELOR: 0, PILGRIM: 0, PROPHET: 0 };
+
+      if (mode === 'TRIVIA') {
+        const shuffled = shuffleArray(TRIVIA_QUESTIONS);
+        state.deck = state.triviaLength === 'ENDLESS' ? shuffled : shuffled.slice(0, 10);
+      } else {
+        state.deck = shuffleArray(DILEMMA_QUESTIONS).slice(0, 10);
+      }
+
+      updateHeaderUI();
+      showScreen('GAME');
+      renderCurrentCard();
+    }
+
+    /**
+     * Render Current Question / Dilemma onto Split Cards
+     */
+    function renderCurrentCard() {
+      // Replenish deck seamlessly if Endless mode runs through all 45 questions
+      if (state.index >= state.deck.length) {
+        if (state.mode === 'TRIVIA' && state.triviaLength === 'ENDLESS') {
+          state.deck = state.deck.concat(shuffleArray(TRIVIA_QUESTIONS));
+        } else {
+          renderResultsScreen();
+          return;
+        }
+      }
+
+      state.answered = false;
+      const item = state.deck[state.index];
+
+      // Reset card visual states
+      [el.cardThis, el.cardThat].forEach(card => {
+        card.disabled = false;
+        card.className = 'lg:col-span-5 scroll-card interactive rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400 animate-enter';
+      });
+
+      el.thisStatusPill.classList.add('hidden');
+      el.thatStatusPill.classList.add('hidden');
+      el.thisPollBox.classList.add('hidden');
+      el.thatPollBox.classList.add('hidden');
+      el.thisPollBar.style.width = '0%';
+      el.thatPollBar.style.width = '0%';
+      el.feedbackBox.classList.add('hidden');
+
+      // Labels & Counters
+      el.roundCategoryBadge.textContent = item.category;
+      if (state.mode === 'TRIVIA') {
+        el.promptKicker.textContent = 'Scripture Trivia Inquiry';
+        el.roundCounterLabel.textContent = state.triviaLength === 'ENDLESS'
+          ? `Question ${state.index + 1} • Endless Mode`
+          : `Question ${state.index + 1} of ${state.deck.length}`;
+      } else {
+        el.promptKicker.textContent = 'Old Testament Dilemma';
+        el.roundCounterLabel.textContent = `Dilemma ${state.index + 1} of ${state.deck.length}`;
+      }
+
+      el.questionText.textContent = item.question;
+
+      // Populate THIS (Left)
+      el.thisIcon.textContent = item.thisOpt.icon;
+      el.thisSubtitle.textContent = item.thisOpt.subtitle;
+      el.thisTitle.textContent = item.thisOpt.title;
+      el.thisDesc.textContent = item.thisOpt.desc;
+
+      // Populate THAT (Right)
+      el.thatIcon.textContent = item.thatOpt.icon;
+      el.thatSubtitle.textContent = item.thatOpt.subtitle;
+      el.thatTitle.textContent = item.thatOpt.title;
+      el.thatDesc.textContent = item.thatOpt.desc;
+
+      updateHeaderUI();
+    }
+
+    /**
+     * Handle Player Selection ('THIS' or 'THAT')
+     */
+    function handleChoice(choice) {
+      if (state.answered) return;
+      state.answered = true;
+
+      el.cardThis.disabled = true;
+      el.cardThat.disabled = true;
+      el.cardThis.classList.remove('interactive');
+      el.cardThat.classList.remove('interactive');
+
+      const item = state.deck[state.index];
+
+      if (state.mode === 'TRIVIA') {
+        const isCorrect = choice === item.correct;
+
+        if (isCorrect) {
+          sfx.playCorrect();
+          state.score += 1;
+          state.streak += 1;
+          if (state.streak > state.sessionBestStreak) state.sessionBestStreak = state.streak;
+          if (state.streak > state.allTimeBestStreak) {
+            state.allTimeBestStreak = state.streak;
+            localStorage.setItem('ot_thisthat_best_streak', String(state.allTimeBestStreak));
+          }
+        } else {
+          sfx.playWrong();
+          state.streak = 0;
+        }
+
+        updateHeaderUI();
+
+        // Highlight Correct & Incorrect Cards
+        const thisIsRight = item.correct === 'THIS';
+        if (thisIsRight) {
+          el.cardThis.classList.add('state-correct');
+          el.thisStatusPill.textContent = '✓ True Answer';
+          el.thisStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-600 text-white';
+          el.thisStatusPill.classList.remove('hidden');
+
+          if (choice === 'THAT') {
+            el.cardThat.classList.add('state-wrong');
+            el.thatStatusPill.textContent = '✕ Your Pick';
+            el.thatStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-red-600 text-white';
+            el.thatStatusPill.classList.remove('hidden');
+          } else {
+            el.cardThat.classList.add('state-dimmed');
+          }
+        } else {
+          el.cardThat.classList.add('state-correct');
+          el.thatStatusPill.textContent = '✓ True Answer';
+          el.thatStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-600 text-white';
+          el.thatStatusPill.classList.remove('hidden');
+
+          if (choice === 'THIS') {
+            el.cardThis.classList.add('state-wrong');
+            el.thisStatusPill.textContent = '✕ Your Pick';
+            el.thisStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-red-600 text-white';
+            el.thisStatusPill.classList.remove('hidden');
+          } else {
+            el.cardThis.classList.add('state-dimmed');
+          }
+        }
+
+        // Feedback Banner
+        el.feedbackVerdict.textContent = isCorrect ? '✓ Correct! Streak +1' : '✕ Not Quite!';
+        el.feedbackVerdict.className = isCorrect
+          ? 'px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 border border-emerald-400/40 text-emerald-300'
+          : 'px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-500/20 border border-red-400/40 text-red-300';
+        el.feedbackRef.textContent = item.ref;
+        el.feedbackExplanation.textContent = item.explanation;
+
+        const isLastQuestion = state.triviaLength !== 'ENDLESS' && state.index + 1 >= state.deck.length;
+        el.nextBtn.textContent = isLastQuestion ? 'View Final Score →' : 'Next Question →';
+        el.endEndlessBtn.classList.toggle('hidden', state.triviaLength !== 'ENDLESS');
+        el.feedbackBox.classList.remove('hidden');
+
+      } else {
+        // DILEMMA / POLL MODE
+        sfx.playSelect();
+        const pickedOpt = choice === 'THIS' ? item.thisOpt : item.thatOpt;
+        state.archetypeTally[pickedOpt.archetype] += 1;
+
+        if (choice === 'THIS') {
+          el.cardThis.classList.add('state-selected-poll');
+          el.cardThat.classList.add('state-dimmed');
+          el.thisStatusPill.textContent = '✓ Your Choice';
+          el.thisStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-sky-800 text-white';
+          el.thisStatusPill.classList.remove('hidden');
+        } else {
+          el.cardThat.classList.add('state-selected-poll');
+          el.cardThis.classList.add('state-dimmed');
+          el.thatStatusPill.textContent = '✓ Your Choice';
+          el.thatStatusPill.className = 'px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-red-800 text-white';
+          el.thatStatusPill.classList.remove('hidden');
+        }
+
+        // Reveal Community Poll Percentages
+        el.thisPollBox.classList.remove('hidden');
+        el.thatPollBox.classList.remove('hidden');
+        el.thisPollPct.textContent = `${item.thisOpt.pct}%`;
+        el.thatPollPct.textContent = `${item.thatOpt.pct}%`;
+
+        requestAnimationFrame(() => {
+          el.thisPollBar.style.width = `${item.thisOpt.pct}%`;
+          el.thatPollBar.style.width = `${item.thatOpt.pct}%`;
+        });
+
+        const archetypeLabel = ARCHETYPES[pickedOpt.archetype].title;
+        el.feedbackVerdict.textContent = `✦ Leans ${archetypeLabel}`;
+        el.feedbackVerdict.className = 'px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-500/20 border border-sky-400/40 text-sky-200';
+        el.feedbackRef.textContent = item.ref;
+        el.feedbackExplanation.textContent = item.insight;
+
+        const isLastDilemma = state.index + 1 >= state.deck.length;
+        el.nextBtn.textContent = isLastDilemma ? 'Reveal My Archetype →' : 'Next Dilemma →';
+        el.endEndlessBtn.classList.add('hidden');
+        el.feedbackBox.classList.remove('hidden');
+      }
+    }
+
+    /**
+     * Advance to Next Question or Final Results
+     */
+    function handleNext() {
+      sfx.playClick();
+      state.index += 1;
+      if (state.mode === 'TRIVIA' && state.triviaLength === 'ENDLESS') {
+        renderCurrentCard();
+      } else if (state.index < state.deck.length) {
+        renderCurrentCard();
+      } else {
+        renderResultsScreen();
+      }
+    }
+
+    /**
+     * Render End-of-Session Summary / Archetype Screen
+     */
+    function renderResultsScreen() {
+      showScreen('RESULTS');
+      el.shareBtnText.textContent = 'Copy Result';
+
+      if (state.mode === 'TRIVIA') {
+        const totalAnswered = Math.max(state.index, 1);
+        const pct = Math.round((state.score / totalAnswered) * 100);
+
+        el.resultsTriviaStats.classList.remove('hidden');
+        el.resultsArchetypeBox.classList.add('hidden');
+
+        el.resScore.textContent = `${state.score}/${totalAnswered}`;
+        el.resAccuracy.textContent = `${pct}%`;
+        el.resBestStreak.textContent = state.sessionBestStreak;
+
+        let rankTitle = 'Apprentice Scribe';
+        let rankEmblem = '📜';
+        let rankDesc = 'A solid journey through the Hebrew Scriptures. Return to the scrolls anytime to sharpen your recall!';
+
+        if (pct >= 90) {
+          rankTitle = 'Master Scribe of Jerusalem';
+          rankEmblem = '👑';
+          rankDesc = 'Remarkable! Your command of the Law, the Prophets, and the Writings rivals the elders at the gate.';
+        } else if (pct >= 70) {
+          rankTitle = 'Keeper of the Sacred Scrolls';
+          rankEmblem = '🏆';
+          rankDesc = 'Well done! You navigated the patriarchs, kings, and prophets with strong scriptural insight.';
+        } else if (pct >= 50) {
+          rankTitle = 'Traveler of the Wilderness';
+          rankEmblem = '🧭';
+          rankDesc = 'Good effort! You know many key landmarks of the Old Testament and are well on your way to mastery.';
+        }
+
+        el.resultsEmblem.textContent = rankEmblem;
+        el.resultsKicker.textContent = 'Scripture Trivia Summary';
+        el.resultsTitle.textContent = rankTitle;
+        el.resultsDesc.textContent = rankDesc;
+      } else {
+        // DILEMMA ARCHETYPE EVALUATION
+        el.resultsTriviaStats.classList.add('hidden');
+        el.resultsArchetypeBox.classList.remove('hidden');
+
+        // Determine top archetype
+        const entries = Object.entries(state.archetypeTally).sort((a, b) => b[1] - a[1]);
+        const topKey = entries[0][0];
+        const arch = ARCHETYPES[topKey];
+
+        el.resultsEmblem.textContent = arch.emblem;
+        el.resultsKicker.textContent = 'Your Old Testament Archetype';
+        el.resultsTitle.textContent = arch.title;
+        el.resultsDesc.textContent = arch.desc;
+
+        const totalPicks = Math.max(
+          Object.values(state.archetypeTally).reduce((sum, n) => sum + n, 0),
+          1
+        );
+
+        el.archetypeBars.innerHTML = entries.map(([key, count]) => {
+          const info = ARCHETYPES[key];
+          const share = Math.round((count / totalPicks) * 100);
+          return `
+            <div>
+              <div class="flex justify-between font-semibold text-amber-100 mb-1">
+                <span>${info.emblem} ${info.title}</span>
+                <span>${share}% (${count})</span>
+              </div>
+              <div class="w-full h-2.5 rounded-full bg-stone-800 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-amber-500 to-amber-300 rounded-full" style="width: ${share}%"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    /**
+     * Copy Formatted Score / Archetype Summary to Clipboard
+     */
+    function copyResultToClipboard() {
+      sfx.playClick();
+      let summaryText = '';
+      if (state.mode === 'TRIVIA') {
+        const totalAnswered = Math.max(state.index, 1);
+        summaryText = `📜 This or That: Old Testament Trivia — Score: ${state.score}/${totalAnswered} | Best Streak: ${state.sessionBestStreak} (${el.resultsTitle.textContent})`;
+      } else {
+        summaryText = `⚖️ This or That: Old Testament Dilemmas — My Archetype: ${el.resultsTitle.textContent} ${el.resultsEmblem.textContent}`;
+      }
+
+      const tempInput = document.createElement('textarea');
+      tempInput.value = summaryText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        el.shareBtnText.textContent = 'Copied to Clipboard!';
+      } catch (err) {
+        el.shareBtnText.textContent = 'Ready to Share!';
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    /**
+     * =========================================================================
+     * 6. EVENT LISTENERS & KEYBOARD SHORTCUTS
+     * =========================================================================
+     */
+    // Session Length Selector on Start Screen
+    el.lengthBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sfx.playClick();
+        const val = btn.dataset.length;
+        state.triviaLength = val === 'ENDLESS' ? 'ENDLESS' : 10;
+        el.lengthBtns.forEach(b => {
+          const active = b.dataset.length === val;
+          b.className = active
+            ? 'length-btn active py-2.5 px-3 rounded-xl border border-amber-400 bg-amber-400/20 text-amber-100 text-xs sm:text-sm font-bold transition cursor-pointer'
+            : 'length-btn py-2.5 px-3 rounded-xl border border-stone-700 bg-stone-900/80 text-stone-300 hover:border-amber-500/40 text-xs sm:text-sm font-bold transition cursor-pointer';
+        });
+      });
+    });
+
+    // Mode Launch Buttons
+    el.startTriviaBtn.addEventListener('click', () => startSession('TRIVIA'));
+    el.startDilemmaBtn.addEventListener('click', () => startSession('DILEMMA'));
+    el.headerModeTrivia.addEventListener('click', () => startSession('TRIVIA'));
+    el.headerModeDilemma.addEventListener('click', () => startSession('DILEMMA'));
+
+    // Return to Start Screen
+    function returnToModes() {
+      sfx.playClick();
+      showScreen('START');
+    }
+    el.homeLogoBtn.addEventListener('click', returnToModes);
+    el.openMenuBtn.addEventListener('click', returnToModes);
+    el.resultsSwitchModeBtn.addEventListener('click', returnToModes);
+
+    // Card Choices
+    el.cardThis.addEventListener('click', () => handleChoice('THIS'));
+    el.cardThat.addEventListener('click', () => handleChoice('THAT'));
+
+    // Next / Finish / Replay / Share
+    el.nextBtn.addEventListener('click', handleNext);
+    el.endEndlessBtn.addEventListener('click', () => {
+      sfx.playClick();
+      renderResultsScreen();
+    });
+    el.replayBtn.addEventListener('click', () => startSession(state.mode));
+    el.shareBtn.addEventListener('click', copyResultToClipboard);
+
+    // Sound Toggle
+    el.soundToggle.addEventListener('click', () => {
+      sfx.enabled = !sfx.enabled;
+      el.soundOnIcon.classList.toggle('hidden', !sfx.enabled);
+      el.soundOffIcon.classList.toggle('hidden', sfx.enabled);
+      if (sfx.enabled) sfx.playClick();
+    });
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (el.gameScreen.classList.contains('hidden')) return;
+
+      if (!state.answered) {
+        if (e.key === 'ArrowLeft' || e.key === '1') {
+          e.preventDefault();
+          handleChoice('THIS');
+        } else if (e.key === 'ArrowRight' || e.key === '2') {
+          e.preventDefault();
+          handleChoice('THAT');
+        }
+      } else {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleNext();
+        }
+      }
+    });
+
+    // Initial HUD Sync
+    window.addEventListener('DOMContentLoaded', () => {
+      updateHeaderUI();
+      showScreen('START');
+    });
+  </script>
+
+</body></html>
