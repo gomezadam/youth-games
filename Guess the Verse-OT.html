@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)file:///C:/Users/adamg/Downloads/guess_the_verse_old_testament_challenge.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Verse: The Old Testament Challenge</title>
+  <!-- Tailwind CSS -->
+  <script src="./Guess the Verse-OT_files/saved_resource"></script>
+  <!-- Google Fonts: Inter & Lora (for Scripture elegance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Guess the Verse-OT_files/css2" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Lora', 'serif'],
+          },
+          colors: {
+            notion: {
+              bg: '#FBFBFA',
+              card: '#FFFFFF',
+              sidebar: '#F7F6F3',
+              border: '#E6E6E4',
+              text: '#2F3437',
+              muted: '#787774',
+              accent: '#4F46E5',
+              gold: '#D97706',
+              goldLight: '#FEF3C7',
+              indigoLight: '#EEF2FF',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FBFBFA;
+      color: #2F3437;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .notion-shadow {
+      box-shadow: 0 1px 3px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.03);
+    }
+    .option-btn {
+      transition: all 0.18s ease;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.08);
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-5{bottom:1.25rem}.right-5{right:1.25rem}.top-0{top:0px}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.max-h-\[88vh\]{max-height:88vh}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-20{width:5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-lg{max-width:32rem}.flex-1{flex:1 1 0%}.flex-grow{flex-grow:1}.translate-y-20{--tw-translate-y:5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.375rem * var(--tw-space-x-reverse));margin-left:calc(0.375rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.625rem * var(--tw-space-x-reverse));margin-left:calc(0.625rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-r-xl{border-top-right-radius:0.75rem;border-bottom-right-radius:0.75rem}.rounded-t-2xl{border-top-left-radius:1rem;border-top-right-radius:1rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-200\/70{border-color:rgb(253 230 138 / 0.7)}.border-amber-500{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-indigo-200{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.border-indigo-200\/70{border-color:rgb(199 210 254 / 0.7)}.border-notion-border{--tw-border-opacity:1;border-color:rgb(230 230 228 / var(--tw-border-opacity, 1))}.border-notion-border\/60{border-color:rgb(230 230 228 / 0.6)}.bg-\[\#F7F6F3\]{--tw-bg-opacity:1;background-color:rgb(247 246 243 / var(--tw-bg-opacity, 1))}.bg-\[\#F7F6F3\]\/60{background-color:rgb(247 246 243 / 0.6)}.bg-\[\#FBFBFA\]\/90{background-color:rgb(251 251 250 / 0.9)}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-notion-card{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-notion-indigoLight{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-notion-text{--tw-bg-opacity:1;background-color:rgb(47 52 55 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-1\.5{padding:0.375rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-serif{font-family:Lora, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-notion-gold{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-notion-muted{--tw-text-opacity:1;color:rgb(120 119 116 / var(--tw-text-opacity, 1))}.text-notion-text{--tw-text-opacity:1;color:rgb(47 52 55 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}.selection\:bg-indigo-100 *::selection{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.selection\:text-indigo-900 *::selection{--tw-text-opacity:1;color:rgb(49 46 129 / var(--tw-text-opacity, 1))}.selection\:bg-indigo-100::selection{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.selection\:text-indigo-900::selection{--tw-text-opacity:1;color:rgb(49 46 129 / var(--tw-text-opacity, 1))}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200\/60:hover{background-color:rgb(229 231 235 / 0.6)}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:text-notion-text:hover{--tw-text-opacity:1;color:rgb(47 52 55 / var(--tw-text-opacity, 1))}.active\:bg-indigo-800:active{--tw-bg-opacity:1;background-color:rgb(55 48 163 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:w-auto{width:auto}.sm\:flex-1{flex:1 1 0%}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:gap-4{gap:1rem}.sm\:p-10{padding:2.5rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}</style></head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Top Notion-Style Navigation Bar -->
+  <header class="sticky top-0 z-30 bg-[#FBFBFA]/90 backdrop-blur-md border-b border-notion-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5 cursor-pointer" onclick="resetToHome()">
+        <span class="text-xl" role="img" aria-label="Scroll">📜</span>
+        <div class="flex items-center space-x-1.5 text-sm font-medium">
+          <span class="text-notion-muted hidden sm:inline">Youth Curriculum</span>
+          <span class="text-notion-muted hidden sm:inline">/</span>
+          <span class="font-semibold text-notion-text">Guess the Verse: Old Testament</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <button onclick="openStudyGuide()" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs sm:text-sm font-medium text-notion-text bg-white hover:bg-gray-50 border border-notion-border rounded-lg transition shadow-sm">
+          <svg class="w-4 h-4 text-notion-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>Study Guide (20)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
+    <div class="w-full max-w-2xl">
+
+      <!-- 1. WELCOME SCREEN -->
+      <section id="welcome-screen" class="fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow">
+        <!-- Notion Page Icon & Badges -->
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-notion-indigoLight border border-indigo-100 flex items-center justify-center text-3xl shadow-sm">
+            📜
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200/70 rounded-md">Torah • History • Wisdom • Prophets</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200/70 rounded-md">20 Questions</span>
+          </div>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight text-notion-text mb-2">
+          Guess the Verse: The Old Testament Challenge
+        </h1>
+        <p class="text-notion-muted text-sm sm:text-base mb-8">
+          Youth Group Edition • Old Testament Curriculum
+        </p>
+
+        <!-- Game Quick Overview -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">🎯</span>
+            <span class="text-notion-text font-medium">20 Key OT Verses</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">💡</span>
+            <span class="text-notion-text font-medium">Verse Context &amp; Notes</span>
+          </div>
+          <div class="p-3.5 rounded-xl border border-notion-border bg-[#F7F6F3]/60 flex items-center space-x-2.5">
+            <span class="text-lg">📋</span>
+            <span class="text-notion-text font-medium">Notion Markdown Ready</span>
+          </div>
+        </div>
+
+        <!-- Compact Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="startGame()" class="w-full sm:flex-1 py-3.5 px-6 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2 text-base">
+            <span>Start Quiz</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+          <button onclick="openStudyGuide()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm">
+            Study Guide (20)
+          </button>
+          <button onclick="copyForNotion()" class="w-full sm:w-auto py-3.5 px-4 bg-white hover:bg-gray-50 text-notion-text font-medium border border-notion-border rounded-xl transition text-sm flex items-center justify-center space-x-1.5">
+            <svg class="w-4 h-4 text-notion-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Copy for Notion</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 2. ACTIVE QUIZ SCREEN -->
+      <section id="quiz-screen" class="hidden fade-in">
+        <!-- Top Status Bar: Progress, Score, Streak -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-4 mb-4 notion-shadow">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-medium mb-2.5">
+            <span class="text-notion-muted">
+              Question <strong id="q-current" class="text-notion-text">1</strong> of <span id="q-total">20</span>
+            </span>
+            <div class="flex items-center space-x-3">
+              <span id="streak-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                🔥 Streak: <span id="streak-count" class="ml-1">0</span>
+              </span>
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                Score: <span id="score-count" class="ml-1">0</span>
+              </span>
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+            <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" style="width: 5%;"></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-8 notion-shadow">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+              <span>Scripture Passage</span>
+            </span>
+            <span id="section-hint-badge" class="hidden text-xs font-medium text-notion-muted bg-gray-100 px-2.5 py-1 rounded-md">
+              Old Testament
+            </span>
+          </div>
+
+          <!-- Verse Display -->
+          <blockquote class="relative bg-[#F7F6F3] border-l-4 border-amber-500 rounded-r-xl p-5 sm:p-6 mb-6">
+            <p id="verse-text" class="font-serif text-lg sm:text-2xl text-notion-text leading-relaxed font-medium">
+              "In the beginning God created the heavens and the earth."
+            </p>
+            <footer id="revealed-reference" class="hidden mt-3 text-sm font-semibold text-amber-800 flex items-center space-x-1.5">
+              <span>—</span>
+              <span id="reference-label">Genesis 1:1</span>
+            </footer>
+          </blockquote>
+
+          <!-- 4 Multiple Choice Options -->
+          <div id="options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
+            <!-- Buttons injected dynamically -->
+          </div>
+
+          <!-- Instant Feedback & Context Note (Hidden until answered) -->
+          <div id="feedback-panel" class="hidden mt-6 pt-6 border-t border-notion-border fade-in">
+            <div id="feedback-banner" class="flex items-center space-x-2.5 mb-3">
+              <!-- Status icon & message injected dynamically -->
+            </div>
+
+            <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4 sm:p-5 mb-5">
+              <div class="flex items-center space-x-2 mb-1.5">
+                <span class="text-sm">💡</span>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-notion-muted">Context &amp; Takeaway</h4>
+              </div>
+              <p id="commentary-text" class="text-sm text-notion-text leading-relaxed">
+                Commentary goes here...
+              </p>
+            </div>
+
+            <button id="next-btn" onclick="nextQuestion()" class="w-full py-3.5 px-6 bg-notion-text hover:bg-black text-white font-semibold rounded-xl transition flex items-center justify-center space-x-2 shadow-sm">
+              <span id="next-btn-text">Next Verse</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RESULTS SCREEN -->
+      <section id="results-screen" class="hidden fade-in bg-notion-card border border-notion-border rounded-2xl p-6 sm:p-10 notion-shadow text-center">
+        <div id="rank-emoji" class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-4xl shadow-sm">
+          🏆
+        </div>
+
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-700 rounded-full mb-2">
+          Challenge Complete
+        </span>
+        <h2 id="rank-title" class="text-2xl sm:text-3xl font-bold text-notion-text mb-2">
+          Old Testament Scholar
+        </h2>
+        <p id="rank-description" class="text-sm sm:text-base text-notion-muted max-w-lg mx-auto mb-8">
+          Outstanding work! You know the promises, poetry, and prophets of the Old Testament inside and out.
+        </p>
+
+        <!-- Stats Breakdown -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Final Score</p>
+            <p class="text-xl sm:text-2xl font-bold text-indigo-600"><span id="final-score">0</span>/20</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Accuracy</p>
+            <p class="text-xl sm:text-2xl font-bold text-notion-text"><span id="final-accuracy">0</span>%</p>
+          </div>
+          <div class="bg-[#F7F6F3] border border-notion-border rounded-xl p-4">
+            <p class="text-xs text-notion-muted font-medium mb-1">Best Streak</p>
+            <p class="text-xl sm:text-2xl font-bold text-amber-600">🔥 <span id="final-streak">0</span></p>
+          </div>
+        </div>
+
+        <!-- Old Testament Section Breakdown Pills -->
+        <div class="bg-white border border-notion-border rounded-xl p-4 mb-8 text-left">
+          <p class="text-xs font-semibold uppercase tracking-wider text-notion-muted mb-3">Performance by OT Section</p>
+          <div id="section-breakdown" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Action Buttons: Copy for Notion & Play Again -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="copyForNotion()" id="copy-notion-btn" class="flex-1 py-3.5 px-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span id="copy-btn-label">Copy for Notion</span>
+          </button>
+
+          <button onclick="startGame()" class="py-3.5 px-5 bg-white hover:bg-gray-50 text-notion-text font-semibold border border-notion-border rounded-xl transition flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            <span>Play Again</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-notion-text text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-2.5 text-sm font-medium">
+      <span class="text-emerald-400">✓</span>
+      <span id="toast-message">Copied Markdown for Notion!</span>
+    </div>
+  </div>
+
+  <!-- Study Guide Modal (All 20 Questions & Notes for Youth Leaders) -->
+  <div id="study-modal" class="fixed inset-0 z-40 hidden bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-notion-card border border-notion-border rounded-2xl w-full max-w-3xl max-h-[88vh] flex flex-col shadow-2xl fade-in">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-notion-border flex items-center justify-between bg-[#F7F6F3] rounded-t-2xl">
+        <div class="flex items-center space-x-2.5">
+          <span class="text-xl">📚</span>
+          <div>
+            <h3 class="font-bold text-notion-text text-base sm:text-lg">Study Guide: All 20 Old Testament Verses</h3>
+            <p class="text-xs text-notion-muted">Complete reference sheet &amp; context notes</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="copyForNotion()" class="px-3 py-1.5 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition flex items-center space-x-1">
+            <span>Copy Markdown</span>
+          </button>
+          <button onclick="closeStudyGuide()" class="p-1.5 text-notion-muted hover:text-notion-text hover:bg-gray-200/60 rounded-lg transition" aria-label="Close modal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="px-6 py-2.5 border-b border-notion-border bg-white flex items-center space-x-2 overflow-x-auto text-xs font-medium">
+        <button onclick="filterStudyGuide('All')" class="study-filter-btn px-3 py-1 rounded-md bg-indigo-50 text-indigo-700 font-semibold" data-section="All">All (20)</button>
+        <button onclick="filterStudyGuide('Torah')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Torah">Torah (3)</button>
+        <button onclick="filterStudyGuide('Historical')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Historical">Historical (4)</button>
+        <button onclick="filterStudyGuide('Wisdom')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Wisdom">Wisdom (5)</button>
+        <button onclick="filterStudyGuide('Prophets')" class="study-filter-btn px-3 py-1 rounded-md text-notion-muted hover:bg-gray-100" data-section="Prophets">Prophets (8)</button>
+      </div>
+
+      <!-- Modal Scrollable List -->
+      <div id="study-guide-list" class="p-6 overflow-y-auto space-y-4">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 text-center text-xs text-notion-muted border-t border-notion-border/60">
+    <p>Built for Youth Ministry • Old Testament Curriculum Series</p>
+  </footer>
+
+  <!-- Game Data & Application Logic -->
+  <script>
+    /**
+     * Complete 20-Question Dataset for "Guess the Verse: The Old Testament Challenge"
+     */
+    const OT_QUESTIONS = [
+      {
+            "id": 1,
+            "verse": "In the beginning God created the heavens and the earth.",
+            "answer": "Genesis 1:1",
+            "category": "Torah",
+            "options": [
+                  "Genesis 1:1",
+                  "Exodus 20:11",
+                  "Psalm 33:6",
+                  "Job 38:4"
+            ],
+            "commentary": "The opening sentence of the entire Bible establishes God as the sovereign Creator who spoke everything into existence out of nothing—setting the foundation for creation, purpose, and redemption."
+      },
+      {
+            "id": 2,
+            "verse": "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.",
+            "answer": "Numbers 6:24–26",
+            "category": "Torah",
+            "options": [
+                  "Numbers 6:24–26",
+                  "Deuteronomy 6:4–5",
+                  "Leviticus 19:18",
+                  "Genesis 12:2–3"
+            ],
+            "commentary": "Known as the Aaronic Blessing, God gave these exact words to Moses for Aaron and the priests to speak over Israel—placing God's own name and covenant peace upon His people."
+      },
+      {
+            "id": 3,
+            "verse": "Hear, O Israel: The Lord our God, the Lord is one. Love the Lord your God with all your heart and with all your soul and with all your strength.",
+            "answer": "Deuteronomy 6:4–5",
+            "category": "Torah",
+            "options": [
+                  "Deuteronomy 6:4–5",
+                  "Exodus 20:2–3",
+                  "Joshua 1:8",
+                  "Leviticus 11:45"
+            ],
+            "commentary": "Called the 'Shema' (from the Hebrew word for 'Hear'), this confession became the centerpiece of daily Jewish prayer—and the very verse Jesus quoted when asked to name the greatest commandment."
+      },
+      {
+            "id": 4,
+            "verse": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+            "answer": "Joshua 1:9",
+            "category": "Historical",
+            "options": [
+                  "Joshua 1:9",
+                  "Deuteronomy 31:6",
+                  "Judges 6:12",
+                  "1 Samuel 17:45"
+            ],
+            "commentary": "Spoken as Joshua stepped into Moses' shoes to lead Israel across the Jordan River. Biblical courage isn't pretending fear doesn't exist—it rests on God's guaranteed presence wherever He sends us."
+      },
+      {
+            "id": 5,
+            "verse": "Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God.",
+            "answer": "Ruth 1:16",
+            "category": "Historical",
+            "options": [
+                  "Ruth 1:16",
+                  "1 Samuel 18:3",
+                  "Esther 4:14",
+                  "Genesis 24:58"
+            ],
+            "commentary": "Ruth, a Moabite widow, spoke this fiercely loyal vow to her grieving mother-in-law Naomi—choosing covenant faithfulness over comfort, and eventually becoming King David's great-grandmother."
+      },
+      {
+            "id": 6,
+            "verse": "The Lord does not look at the things people look at. People look at the outward appearance, but the Lord looks at the heart.",
+            "answer": "1 Samuel 16:7",
+            "category": "Historical",
+            "options": [
+                  "1 Samuel 16:7",
+                  "Proverbs 4:23",
+                  "Psalm 139:1",
+                  "Jeremiah 17:10"
+            ],
+            "commentary": "When Samuel went to Bethlehem to anoint Israel's next king, he assumed Jesse's tall, impressive oldest son Eliab was the one—until God reminded him that He chooses shepherds based on heart posture, not resume."
+      },
+      {
+            "id": 7,
+            "verse": "And who knows but that you have come to your royal position for such a time as this?",
+            "answer": "Esther 4:14",
+            "category": "Historical",
+            "options": [
+                  "Esther 4:14",
+                  "Nehemiah 2:4",
+                  "Daniel 2:21",
+                  "Ruth 2:12"
+            ],
+            "commentary": "Mordecai sent this urgent challenge to Queen Esther when Haman's decree threatened to wipe out the Jewish people—reminding her that God's providence places us in specific moments to act with courage."
+      },
+      {
+            "id": 8,
+            "verse": "I know that my redeemer lives, and that in the end he will stand on the earth.",
+            "answer": "Job 19:25",
+            "category": "Wisdom",
+            "options": [
+                  "Job 19:25",
+                  "Psalm 16:10",
+                  "Isaiah 53:5",
+                  "Daniel 12:2"
+            ],
+            "commentary": "Spoken from the ash heap in the middle of unimaginable loss and physical agony, Job's cry of faith looks past his present suffering to a living Redeemer who will ultimately vindicate him."
+      },
+      {
+            "id": 9,
+            "verse": "The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+            "answer": "Psalm 23:1–3",
+            "category": "Wisdom",
+            "options": [
+                  "Psalm 23:1–3",
+                  "Psalm 91:1–2",
+                  "Psalm 27:1",
+                  "Isaiah 40:11"
+            ],
+            "commentary": "Written by David—a former shepherd who knew firsthand how helpless sheep are without constant care—Psalm 23 has comforted believers through valleys, fears, and trials for three thousand years."
+      },
+      {
+            "id": 10,
+            "verse": "Your word is a lamp for my feet, a light on my path.",
+            "answer": "Psalm 119:105",
+            "category": "Wisdom",
+            "options": [
+                  "Psalm 119:105",
+                  "Proverbs 6:23",
+                  "Psalm 19:8",
+                  "Isaiah 2:5"
+            ],
+            "commentary": "In the ancient world, a small clay oil lamp didn't light up a mile down the road—it illuminated just the next couple of steps in the dark. God's Word guides us step by step as we walk in trust."
+      },
+      {
+            "id": 11,
+            "verse": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+            "answer": "Proverbs 3:5–6",
+            "category": "Wisdom",
+            "options": [
+                  "Proverbs 3:5–6",
+                  "Psalm 37:5",
+                  "Proverbs 16:9",
+                  "Jeremiah 29:11"
+            ],
+            "commentary": "Solomon contrasts relying on our limited human perspective with wholehearted surrender to God's wisdom—promising that when we acknowledge Him in every decision, He directs our course."
+      },
+      {
+            "id": 12,
+            "verse": "There is a time for everything, and a season for every activity under the heavens.",
+            "answer": "Ecclesiastes 3:1",
+            "category": "Wisdom",
+            "options": [
+                  "Ecclesiastes 3:1",
+                  "Psalm 90:12",
+                  "Proverbs 27:1",
+                  "Job 14:5"
+            ],
+            "commentary": "Opening the famous poem on time in Ecclesiastes 3, this verse reminds us that life moves through God-ordained seasons of planting and uprooting, weeping and laughing—and God is sovereign over every one."
+      },
+      {
+            "id": 13,
+            "verse": "For to us a child is born, to us a son is given, and the government will be on his shoulders. And he will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.",
+            "answer": "Isaiah 9:6",
+            "category": "Prophets",
+            "options": [
+                  "Isaiah 9:6",
+                  "Isaiah 7:14",
+                  "Micah 5:2",
+                  "Zechariah 9:9"
+            ],
+            "commentary": "Delivered during a dark season of impending Assyrian invasion, Isaiah's prophecy unveils the four royal titles of the coming Messiah—a child who is both fully human ('born') and divine ('Mighty God')."
+      },
+      {
+            "id": 14,
+            "verse": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "answer": "Isaiah 40:31",
+            "category": "Prophets",
+            "options": [
+                  "Isaiah 40:31",
+                  "Psalm 46:1",
+                  "Habakkuk 3:19",
+                  "Isaiah 41:10"
+            ],
+            "commentary": "Spoken to exhausted exiles who felt forgotten by God, Isaiah reminds them that the Creator never grows tired—and shares His endurance with everyone who waits expectantly on Him."
+      },
+      {
+            "id": 15,
+            "verse": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+            "answer": "Isaiah 53:5",
+            "category": "Prophets",
+            "options": [
+                  "Isaiah 53:5",
+                  "Psalm 22:16",
+                  "Zechariah 12:10",
+                  "Daniel 9:26"
+            ],
+            "commentary": "Written roughly 700 years before the cross, Isaiah's fourth Servant Song vividly portrays Jesus bearing the penalty for our sin so we could be reconciled to God."
+      },
+      {
+            "id": 16,
+            "verse": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+            "answer": "Jeremiah 29:11",
+            "category": "Prophets",
+            "options": [
+                  "Jeremiah 29:11",
+                  "Proverbs 19:21",
+                  "Isaiah 55:8–9",
+                  "Lamentations 3:22–23"
+            ],
+            "commentary": "Jeremiah wrote this in a letter to Jewish exiles in Babylon—telling them to settle in for 70 years and pray for the city, anchored by the promise that exile wasn't the end of God's story for them."
+      },
+      {
+            "id": 17,
+            "verse": "Because of the Lord’s great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+            "answer": "Lamentations 3:22–23",
+            "category": "Prophets",
+            "options": [
+                  "Lamentations 3:22–23",
+                  "Psalm 103:8",
+                  "Psalm 136:1",
+                  "Zephaniah 3:17"
+            ],
+            "commentary": "Right in the center of a book mourning the destruction of Jerusalem, the poet lifts his eyes from the rubble to anchor his hope in God's covenant mercy—fresh every single sunrise."
+      },
+      {
+            "id": 18,
+            "verse": "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.",
+            "answer": "Ezekiel 36:26",
+            "category": "Prophets",
+            "options": [
+                  "Ezekiel 36:26",
+                  "Jeremiah 31:33",
+                  "Psalm 51:10",
+                  "Joel 2:28"
+            ],
+            "commentary": "Through Ezekiel, God promised that fixing humanity required more than external rules—it required spiritual heart surgery performed by God's own Spirit, fulfilled in the New Covenant."
+      },
+      {
+            "id": 19,
+            "verse": "He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God.",
+            "answer": "Micah 6:8",
+            "category": "Prophets",
+            "options": [
+                  "Micah 6:8",
+                  "Amos 5:24",
+                  "Hosea 6:6",
+                  "Zechariah 7:9"
+            ],
+            "commentary": "When people wondered if God wanted thousands of rams or extravagant rituals, Micah summed up true covenant living in three timeless essentials: justice, loyal mercy, and humble fellowship with God."
+      },
+      {
+            "id": 20,
+            "verse": "‘Not by might nor by power, but by my Spirit,’ says the Lord Almighty.",
+            "answer": "Zechariah 4:6",
+            "category": "Prophets",
+            "options": [
+                  "Zechariah 4:6",
+                  "Haggai 2:4",
+                  "Isaiah 30:15",
+                  "2 Chronicles 20:15"
+            ],
+            "commentary": "Spoken to Zerubbabel as he faced the daunting task of rebuilding Jerusalem's ruined temple with limited resources—reminding God's people that lasting spiritual work happens through the Holy Spirit, not human muscle."
+      }
+];
+
+    // State Management
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let streak = 0;
+    let bestStreak = 0;
+    let answered = false;
+    let sectionStats = {
+      Torah: { correct: 0, total: 0 },
+      Historical: { correct: 0, total: 0 },
+      Wisdom: { correct: 0, total: 0 },
+      Prophets: { correct: 0, total: 0 }
+    };
+
+    // DOM Elements
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultsScreen = document.getElementById('results-screen');
+    const studyModal = document.getElementById('study-modal');
+
+    /**
+     * Utility: Shuffle an array cleanly (Fisher-Yates)
+     */
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    /**
+     * Reset and Start a New 20-Question Game
+     */
+    function startGame() {
+      currentQuestions = OT_QUESTIONS.map(q => ({
+        ...q,
+        shuffledOptions: shuffleArray(q.options)
+      }));
+
+      currentIndex = 0;
+      score = 0;
+      streak = 0;
+      bestStreak = 0;
+      answered = false;
+      sectionStats = {
+        Torah: { correct: 0, total: 0 },
+        Historical: { correct: 0, total: 0 },
+        Wisdom: { correct: 0, total: 0 },
+        Prophets: { correct: 0, total: 0 }
+      };
+
+      welcomeScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      quizScreen.classList.remove('hidden');
+
+      updateScoreHeader();
+      renderQuestion();
+    }
+
+    /**
+     * Return to Home Welcome Screen
+     */
+    function resetToHome() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.add('hidden');
+      welcomeScreen.classList.remove('hidden');
+    }
+
+    /**
+     * Update Top Progress, Score, and Streak Display
+     */
+    function updateScoreHeader() {
+      document.getElementById('q-current').textContent = currentIndex + 1;
+      document.getElementById('q-total').textContent = currentQuestions.length;
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+
+      const progressPct = ((currentIndex) / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${Math.max(5, progressPct)}%`;
+    }
+
+    /**
+     * Render Current Question Card & Multiple Choice Buttons
+     */
+    function renderQuestion() {
+      answered = false;
+      const q = currentQuestions[currentIndex];
+      updateScoreHeader();
+
+      document.getElementById('verse-text').textContent = `"${q.verse}"`;
+      document.getElementById('revealed-reference').classList.add('hidden');
+      document.getElementById('feedback-panel').classList.add('hidden');
+      document.getElementById('section-hint-badge').classList.add('hidden');
+
+      const optionsGrid = document.getElementById('options-grid');
+      optionsGrid.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      q.shuffledOptions.forEach((optionText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'option-btn w-full text-left p-4 rounded-xl border border-notion-border bg-white hover:border-indigo-400 hover:bg-indigo-50/30 flex items-center space-x-3 font-medium text-notion-text focus:outline-none focus:ring-2 focus:ring-indigo-500/40';
+        btn.dataset.value = optionText;
+
+        btn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg bg-[#F7F6F3] border border-notion-border text-xs font-bold flex items-center justify-center text-notion-muted flex-shrink-0 option-letter">
+            ${letters[idx]}
+          </span>
+          <span class="text-sm sm:text-base font-semibold">${optionText}</span>
+        `;
+
+        btn.addEventListener('click', () => handleAnswer(optionText, btn));
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    /**
+     * Handle User's Option Selection & Show Instant Feedback
+     */
+    function handleAnswer(selectedOption, clickedBtn) {
+      if (answered) return;
+      answered = true;
+
+      const q = currentQuestions[currentIndex];
+      const isCorrect = selectedOption === q.answer;
+
+      sectionStats[q.category].total += 1;
+      if (isCorrect) {
+        score += 1;
+        streak += 1;
+        if (streak > bestStreak) bestStreak = streak;
+        sectionStats[q.category].correct += 1;
+      } else {
+        streak = 0;
+      }
+
+      document.getElementById('score-count').textContent = score;
+      document.getElementById('streak-count').textContent = streak;
+      const completedPct = ((currentIndex + 1) / currentQuestions.length) * 100;
+      document.getElementById('progress-bar').style.width = `${completedPct}%`;
+
+      const allButtons = document.querySelectorAll('#options-grid button');
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+        const val = btn.dataset.value;
+        const letterBadge = btn.querySelector('.option-letter');
+
+        if (val === q.answer) {
+          btn.classList.remove('bg-white', 'border-notion-border', 'hover:border-indigo-400');
+          btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-950', 'ring-1', 'ring-emerald-500');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+          letterBadge.textContent = '✓';
+        } else if (val === selectedOption && !isCorrect) {
+          btn.classList.remove('bg-white', 'border-notion-border');
+          btn.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-950');
+          letterBadge.classList.remove('bg-[#F7F6F3]', 'text-notion-muted');
+          letterBadge.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
+          letterBadge.textContent = '✕';
+        } else {
+          btn.classList.add('opacity-50');
+        }
+      });
+
+      document.getElementById('reference-label').textContent = `${q.answer} (${q.category})`;
+      document.getElementById('revealed-reference').classList.remove('hidden');
+
+      const hintBadge = document.getElementById('section-hint-badge');
+      hintBadge.textContent = q.category;
+      hintBadge.classList.remove('hidden');
+
+      const feedbackBanner = document.getElementById('feedback-banner');
+      if (isCorrect) {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold">✓</span>
+          <span class="font-bold text-emerald-800 text-sm sm:text-base">Spot on! That is ${q.answer}.</span>
+        `;
+      } else {
+        feedbackBanner.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-bold">!</span>
+          <span class="font-bold text-rose-800 text-sm sm:text-base">Good try! This verse is actually <span class="underline">${q.answer}</span>.</span>
+        `;
+      }
+
+      document.getElementById('commentary-text').textContent = q.commentary;
+
+      const nextBtnText = document.getElementById('next-btn-text');
+      nextBtnText.textContent = (currentIndex === currentQuestions.length - 1)
+        ? 'See Final Results'
+        : 'Next Verse';
+
+      document.getElementById('feedback-panel').classList.remove('hidden');
+    }
+
+    /**
+     * Advance to Next Question or Show Final Results
+     */
+    function nextQuestion() {
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    /**
+     * Display Final Score, Rank Title, and Section Breakdown
+     */
+    function showResults() {
+      quizScreen.classList.add('hidden');
+      resultsScreen.classList.remove('hidden');
+
+      const total = currentQuestions.length;
+      const accuracy = Math.round((score / total) * 100);
+
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('final-accuracy').textContent = accuracy;
+      document.getElementById('final-streak').textContent = bestStreak;
+
+      let rankEmoji = '🌱';
+      let rankTitle = 'Scribe in Training';
+      let rankDesc = "You're off to a great start! Every time you open the Old Testament, God's covenant story comes clearer into focus.";
+
+      if (score === 20) {
+        rankEmoji = '👑';
+        rankTitle = 'Old Testament Master';
+        rankDesc = "A perfect 20 out of 20! You know the Torah, Historical Books, Wisdom Literature, and Prophets inside and out.";
+      } else if (score >= 16) {
+        rankEmoji = '🏆';
+        rankTitle = 'Old Testament Scholar';
+        rankDesc = "Phenomenal work! You have a sharp memory for the exact words, context, and promises of the Hebrew Scriptures.";
+      } else if (score >= 11) {
+        rankEmoji = '📜';
+        rankTitle = 'Faithful Berean';
+        rankDesc = "Solid effort! You clearly spend time in Scripture and know the core chapters of the Old Testament well.";
+      }
+
+      document.getElementById('rank-emoji').textContent = rankEmoji;
+      document.getElementById('rank-title').textContent = rankTitle;
+      document.getElementById('rank-description').textContent = rankDesc;
+
+      const breakdownContainer = document.getElementById('section-breakdown');
+      breakdownContainer.innerHTML = '';
+
+      ['Torah', 'Historical', 'Wisdom', 'Prophets'].forEach(sec => {
+        const stat = sectionStats[sec];
+        const card = document.createElement('div');
+        card.className = 'p-3 rounded-lg bg-[#F7F6F3] border border-notion-border flex items-center justify-between';
+        card.innerHTML = `
+          <span class="text-xs font-semibold text-notion-text">${sec}</span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded bg-white border border-notion-border text-indigo-700">
+            ${stat.correct}/${stat.total}
+          </span>
+        `;
+        breakdownContainer.appendChild(card);
+      });
+    }
+
+    /**
+     * Generate Clean Markdown & Copy to Clipboard for Notion Templates
+     */
+    function copyForNotion() {
+      let md = `# 📜 Guess the Verse: The Old Testament Challenge\n`;
+      md += `> **Youth Group Curriculum:** *Use these 20 pivotal verses across the Torah, Historical Books, Wisdom Literature, and Prophets for youth group trivia nights, small group icebreakers, or Scripture memory.*\n\n`;
+      md += `---\n\n`;
+
+      OT_QUESTIONS.forEach((q, index) => {
+        md += `### ${index + 1}. ${q.answer} (${q.category})\n`;
+        md += `> *"${q.verse}"*\n\n`;
+        md += `- **Multiple Choice Options:** ${q.options.join(' • ')}\n`;
+        md += `- **💡 Context & Takeaway:** ${q.commentary}\n\n`;
+      });
+
+      const textArea = document.createElement('textarea');
+      textArea.value = md;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        showToast('Copied all 20 OT verses & study notes in Notion Markdown!');
+      } catch (err) {
+        showToast('Unable to copy automatically. Please open Study Guide.');
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+
+    /**
+     * Show Non-Blocking Toast Message
+     */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    /**
+     * Study Guide Modal Controls & Rendering
+     */
+    function openStudyGuide() {
+      renderStudyGuideList('All');
+      studyModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStudyGuide() {
+      studyModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function filterStudyGuide(sectionFilter) {
+      document.querySelectorAll('.study-filter-btn').forEach(btn => {
+        if (btn.dataset.section === sectionFilter) {
+          btn.classList.add('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.remove('text-notion-muted', 'hover:bg-gray-100');
+        } else {
+          btn.classList.remove('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          btn.classList.add('text-notion-muted', 'hover:bg-gray-100');
+        }
+      });
+
+      renderStudyGuideList(sectionFilter);
+    }
+
+    function renderStudyGuideList(sectionFilter) {
+      const container = document.getElementById('study-guide-list');
+      container.innerHTML = '';
+
+      const filtered = sectionFilter === 'All'
+        ? OT_QUESTIONS
+        : OT_QUESTIONS.filter(q => q.category === sectionFilter);
+
+      filtered.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'p-4 sm:p-5 rounded-xl border border-notion-border bg-[#FBFBFA] hover:bg-white transition';
+        item.innerHTML = `
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-flex items-center space-x-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">#${q.id}</span>
+              <span class="font-bold text-sm sm:text-base text-notion-text">${q.answer}</span>
+            </span>
+            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              ${q.category}
+            </span>
+          </div>
+          <p class="font-serif text-sm sm:text-base text-notion-text italic mb-3">
+            "${q.verse}"
+          </p>
+          <div class="text-xs sm:text-sm text-notion-muted bg-white p-3 rounded-lg border border-notion-border/80">
+            <strong class="text-notion-text">💡 Context &amp; Takeaway:</strong> ${q.commentary}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    studyModal.addEventListener('click', (e) => {
+      if (e.target === studyModal) {
+        closeStudyGuide();
+      }
+    });
+  </script>
+
+</body></html>
